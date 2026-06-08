@@ -1,0 +1,198 @@
+'use client'
+
+import { useState } from 'react'
+import Navbar from '@/components/navbar'
+import Footer from '@/components/footer'
+import TrustBar from '@/components/trust-bar'
+
+export default function OffertePage() {
+  const [submitted, setSubmitted] = useState(false)
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setSubmitted(true)
+  }
+
+  return (
+    <>
+      <Navbar />
+      <main>
+        {/* Hero */}
+        <section style={{ background: '#1e52a0' }} className="py-14 sm:py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3 text-balance">
+              Offerte aanvragen, reactie binnen 1 werkdag
+            </h1>
+            <p className="text-blue-200 text-lg">
+              Vul het formulier in en wij nemen dezelfde dag contact met u op, ook in het weekend.
+            </p>
+          </div>
+        </section>
+
+        <TrustBar />
+
+        {/* Form + Contact */}
+        <section className="bg-[#F8F9FA] py-14 sm:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
+              {/* Form */}
+              <div className="lg:col-span-3">
+                <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                  <h2 className="text-xl font-bold mb-6" style={{ color: '#1e52a0' }}>Uw offerte aanvraag</h2>
+                  {submitted ? (
+                    <div className="text-center py-10">
+                      <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: '#e6f7ee' }}>
+                        <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="#22a757" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-800 mb-2">Aanvraag ontvangen!</h3>
+                      <p className="text-gray-600 text-sm">
+                        Wij nemen zo snel mogelijk, uiterlijk binnen 1 werkdag, contact met u op.
+                      </p>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                      <div>
+                        <label htmlFor="naam" className="block text-sm font-semibold text-gray-700 mb-1.5">
+                          Naam <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          id="naam"
+                          type="text"
+                          required
+                          placeholder="Uw volledige naam"
+                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:border-transparent bg-[#F8F9FA]"
+                          style={{ '--tw-ring-color': '#1e52a0' } as React.CSSProperties}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="telefoon" className="block text-sm font-semibold text-gray-700 mb-1.5">
+                          Telefoon <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          id="telefoon"
+                          type="tel"
+                          required
+                          placeholder="Uw telefoonnummer"
+                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:border-transparent bg-[#F8F9FA]"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="dienst" className="block text-sm font-semibold text-gray-700 mb-1.5">
+                          Dienst
+                        </label>
+                        <select
+                          id="dienst"
+                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:border-transparent bg-[#F8F9FA] text-gray-700"
+                        >
+                          <option value="">Selecteer een dienst</option>
+                          <option>Elektra</option>
+                          <option>Airconditioning</option>
+                          <option>Ventilatie</option>
+                          <option>Technisch Vastgoedbeheer</option>
+                          <option>{"Camera's & Systemen"}</option>
+                          <option>Anders</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label htmlFor="omschrijving" className="block text-sm font-semibold text-gray-700 mb-1.5">
+                          Omschrijving project
+                        </label>
+                        <textarea
+                          id="omschrijving"
+                          rows={5}
+                          placeholder="Omschrijf kort uw project of situatie, dan kunnen wij een gerichte offerte opstellen."
+                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:border-transparent bg-[#F8F9FA] resize-none"
+                        />
+                      </div>
+                      <div>
+                        <button
+                          type="submit"
+                          className="w-full py-3.5 rounded-lg font-bold text-white text-base transition-opacity hover:opacity-90"
+                          style={{ background: '#F5A623' }}
+                        >
+                          Verstuur aanvraag
+                        </button>
+                        <p className="text-xs text-gray-500 mt-3 text-center">
+                          Wij reageren binnen 1 werkdag, meestal dezelfde dag. Ook bereikbaar via{' '}
+                          <a href="tel:0782032858" className="font-semibold" style={{ color: '#1e52a0' }}>
+                            078 203 28 58
+                          </a>
+                          .
+                        </p>
+                      </div>
+                    </form>
+                  )}
+                </div>
+              </div>
+
+              {/* Contact block */}
+              <div className="lg:col-span-2">
+                <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm h-full">
+                  <h2 className="text-xl font-bold mb-6" style={{ color: '#1e52a0' }}>Direct contact</h2>
+                  <ul className="space-y-5">
+                    <li className="flex gap-3">
+                      <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style={{ background: '#e8f0fe' }}>
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#1e52a0" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-gray-800">Adres</div>
+                        <div className="text-sm text-gray-500">Voltastraat 6A, 3335 KK Zwijndrecht</div>
+                      </div>
+                    </li>
+                    <li className="flex gap-3">
+                      <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style={{ background: '#e8f0fe' }}>
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#1e52a0" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-gray-800">Telefoon</div>
+                        <a href="tel:0782032858" className="text-sm transition-colors hover:text-[#1e52a0]" style={{ color: '#1e52a0' }}>078 203 28 58</a>
+                      </div>
+                    </li>
+                    <li className="flex gap-3">
+                      <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style={{ background: '#e8f0fe' }}>
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#1e52a0" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-gray-800">E-mail</div>
+                        <a href="mailto:info@kmsinstallaties.nl" className="text-sm" style={{ color: '#1e52a0' }}>info@kmsinstallaties.nl</a>
+                      </div>
+                    </li>
+                    <li className="flex gap-3">
+                      <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style={{ background: '#e8f0fe' }}>
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#1e52a0" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-gray-800">Bereikbaar</div>
+                        <div className="text-sm text-gray-500">Maandag t/m zondag, 08:00-22:00</div>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div className="mt-8 p-4 rounded-xl" style={{ background: '#F8F9FA' }}>
+                    <p className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-1">Spoed?</p>
+                    <p className="text-sm text-gray-600 mb-3">Bel ons direct, ook buiten kantooruren.</p>
+                    <a href="tel:0782032858" className="block text-center py-2.5 rounded-lg text-sm font-bold text-white transition-opacity hover:opacity-90" style={{ background: '#22a757' }}>
+                      078 203 28 58
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  )
+}
