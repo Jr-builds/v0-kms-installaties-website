@@ -129,19 +129,19 @@ This document tracks all front-end improvements identified during the site revie
 - [x] Add soft overlay on hero photos (`bg-kms-navy/20` gradient) for text contrast if needed
 - [x] Optional: faint geometric/grid pattern on navy backgrounds (CSS only)
 
-### 2.4 Brand logos (MerkLogos)
+### 2.4 Brand logos (MerkLogos) — complete
 
-- [ ] Source official logo SVGs/PNGs for key brands (ABB, Hager, Daikin, Mitsubishi, etc.)
-- [ ] Add logos to `public/brands/` folder
-- [ ] Update `components/merklogos.tsx` to render images instead of text pills
-- [ ] Grayscale + color on hover, or consistent monochrome treatment
-- [ ] Horizontal scroll on mobile if row overflows
+- [x] Source official logo SVGs/PNGs for key brands (ABB, Hager, Daikin, Mitsubishi, etc.)
+- [x] Add logos to `public/brands/` folder (12 brands, all mapped in `lib/brands.ts`)
+- [x] Update `components/merklogos.tsx` to render images instead of text pills
+- [x] Grayscale + color on hover, or consistent monochrome treatment
+- [x] Horizontal scroll on mobile if row overflows
 
 ### 2.5 Stats count-up animation
 
-- [ ] Add scroll-triggered count-up on home stats and over-ons stats bar
-- [ ] Respect `prefers-reduced-motion: reduce` — show final numbers immediately
-- [ ] Keep animation subtle (duration ~1.5s, ease-out)
+- [x] Add scroll-triggered count-up on home stats and over-ons stats bar
+- [x] Respect `prefers-reduced-motion: reduce` — show final numbers immediately
+- [x] Keep animation subtle (duration ~1.5s, ease-out)
 
 ---
 
@@ -394,7 +394,7 @@ Phase 7 items as time allows
 - [ ] Team photos for Kerem Sen & Mevlut Sumer (Over ons)
 - [ ] Additional project photos for categories without a matching asset
 - [ ] Before/after photo pairs (if doing slider)
-- [ ] Brand logo files for MerkLogos section
+- [x] Brand logo files for MerkLogos section (12 logos in `public/brands/`, all brands on elektra/airconditioning/ventilatie pages)
 - [ ] Confirm opening hours and address for structured data
 
 ---

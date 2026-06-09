@@ -6,6 +6,7 @@ import TrustBar from '@/components/trust-bar'
 import SiteImage from '@/components/site-image'
 import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
 import ClosingCTA from '@/components/closing-cta'
+import StatsBar from '@/components/stats-bar'
 import CertificationBadge from '@/components/certification-badge'
 import { certifications } from '@/lib/certifications'
 import { getImage, type SiteImageKey } from '@/lib/images'
@@ -118,23 +119,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* STATS */}
-        <section className="bg-kms-navy py-14">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-              {[
-                { number: '200+', label: 'Afgeronde projecten' },
-                { number: '10+', label: 'Jaar vakmanschap' },
-                { number: '56', label: 'Vijfsterrenreviews' },
-              ].map((stat, i) => (
-                <div key={i}>
-                  <div className="text-5xl font-bold mb-1 text-kms-yellow">{stat.number}</div>
-                  <div className="text-blue-200 font-medium">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <StatsBar
+          items={[
+            { value: '200+', label: 'Afgeronde projecten' },
+            { value: '10+', label: 'Jaar vakmanschap' },
+            { value: '56', label: 'Vijfsterrenreviews' },
+          ]}
+        />
 
         {/* RECENTE PROJECTEN */}
         <section className="bg-kms-light py-16 sm:py-20">
