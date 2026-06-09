@@ -149,11 +149,11 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 3.1 Clarify Contact vs Offerte
 
-- [ ] Sharpen hero copy on `app/contact/page.tsx` — storingsmelding, vragen, spoed
-- [ ] Sharpen hero copy on `app/offerte/page.tsx` — nieuw project, prijsindicatie
-- [ ] Add cross-link on contact page: "Wilt u een offerte? → Offerte aanvragen"
-- [ ] Add cross-link on offerte page: "Spoed of storing? → Contact"
-- [ ] Differentiate form field labels/placeholders between the two forms
+- [x] Sharpen hero copy on `app/contact/page.tsx` — storingsmelding, vragen, spoed
+- [x] Sharpen hero copy on `app/offerte/page.tsx` — nieuw project, prijsindicatie
+- [x] Add cross-link on contact page: "Wilt u een offerte? → Offerte aanvragen"
+- [x] Add cross-link on offerte page: "Spoed of storing? → Contact"
+- [x] Differentiate form field labels/placeholders between the two forms
 
 ### 3.2 Project cards interactivity
 
