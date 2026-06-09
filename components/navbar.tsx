@@ -222,7 +222,7 @@ export default function Navbar() {
                   >
                     Diensten
                     <svg
-                      className={`h-4 w-4 transition-transform ${mobileDienstenOpen ? 'rotate-180' : ''}`}
+                      className={`h-4 w-4 motion-safe:transition-transform${mobileDienstenOpen ? ' rotate-180' : ''}`}
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"

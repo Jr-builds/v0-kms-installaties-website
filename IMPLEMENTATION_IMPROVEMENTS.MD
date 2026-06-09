@@ -227,8 +227,8 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 4.4 Motion preferences
 
-- [ ] Wrap all animations in `@media (prefers-reduced-motion: no-preference)` or JS check
-- [ ] Disable count-up, filter transitions, and scroll reveals when reduced motion preferred
+- [x] Wrap all animations in `@media (prefers-reduced-motion: no-preference)` or JS check
+- [x] Disable count-up, filter transitions, and scroll reveals when reduced motion preferred
 
 ### 4.5 General accessibility pass
 
