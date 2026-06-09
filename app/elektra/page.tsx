@@ -53,6 +53,7 @@ export default function ElektraPage() {
           imageKey="hero.elektra"
           breadcrumbLabel="Elektra"
           breadcrumbPath="/elektra"
+          offerteDienst="elektra"
         />
         <TrustBar />
 
@@ -70,7 +71,7 @@ export default function ElektraPage() {
         <MerkLogos brands={['ABB', 'Hager', 'Alfen', 'Gira', 'Jung', 'Zaptec']} />
         <Reviews reviews={reviews} title="Klanten over ons elektrawerk" />
         <FAQ items={faqItems} />
-        <ClosingCTA />
+        <ClosingCTA primaryHref="/offerte?dienst=elektra" />
       </main>
       <Footer />
     </>
