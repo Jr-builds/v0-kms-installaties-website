@@ -49,6 +49,8 @@ export default function VentilatiePage() {
           title="Gezonde lucht in elke ruimte, inclusief advies over ISDE-subsidie"
           subtitle="WTW-systemen, mechanische ventilatie en onderhoud voor particulier en bedrijf."
           imageKey="hero.ventilatie"
+          breadcrumbLabel="Ventilatie"
+          breadcrumbPath="/ventilatie"
         />
         <TrustBar />
 

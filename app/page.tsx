@@ -87,7 +87,7 @@ export default function HomePage() {
         <TrustBar />
 
         {/* DIENSTEN GRID */}
-        <section className="bg-white py-16 sm:py-20">
+        <section id="diensten" className="bg-white py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="heading-section text-center mb-10 text-kms-navy">
               Onze diensten

@@ -165,10 +165,10 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 3.3 Breadcrumbs on service pages
 
-- [ ] Create `components/breadcrumbs.tsx`
-- [ ] Add to all 5 service pages: Home → Diensten → [Service name]
-- [ ] Style consistently below navbar or inside hero
-- [ ] Use semantic `<nav aria-label="Breadcrumb">` + structured data `BreadcrumbList` (optional)
+- [x] Create `components/breadcrumbs.tsx`
+- [x] Add to all 5 service pages: Home → Diensten → [Service name]
+- [x] Style consistently below navbar or inside hero
+- [x] Use semantic `<nav aria-label="Breadcrumb">` + structured data `BreadcrumbList` (optional)
 
 ### 3.4 Werkgebied visual (Over ons)
 

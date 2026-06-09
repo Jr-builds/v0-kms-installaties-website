@@ -49,6 +49,8 @@ export default function AirconditioningPage() {
           title="Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geinstalleerd"
           subtitle="Levering, installatie en onderhoud van A-merk airconditioning."
           imageKey="hero.airconditioning"
+          breadcrumbLabel="Airconditioning"
+          breadcrumbPath="/airconditioning"
         />
         <TrustBar />
 
