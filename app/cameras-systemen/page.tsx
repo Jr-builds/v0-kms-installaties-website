@@ -9,11 +9,11 @@ import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
 
 const dienstenCards = [
-  { imageLabel: 'Foto: camera bekabeling installatie', title: 'Installatie & montage', description: 'Bekabeling via Wifi/PoE/NVR, optimale zichtlijnen, recorders en monitoren' },
-  { imageLabel: 'Foto: camera configuratie systeem', title: 'Inbedrijfstelling', description: 'Configuratie, bewegingsdetectie, privacy-masking, beeldkwaliteit testen' },
-  { imageLabel: 'Foto: camera assortiment buiten', title: 'Cameralevering', description: 'Binnen en buiten, diverse resoluties, complete beveiligingsoplossingen' },
-  { imageLabel: 'Foto: smartphone app camera live', title: 'App-koppeling', description: 'Live meekijken op smartphone, gebruikersaccounts, uitleg gebruik' },
-  { imageLabel: 'Foto: camera onderhoud reparatie', title: 'Storingen, reparaties & onderhoud', description: 'Diagnose beeldproblemen, jaarlijks onderhoud, systeemupdates' },
+  { imageKey: 'camera.buiten' as const, imageLabel: 'Foto: camera bekabeling installatie', title: 'Installatie & montage', description: 'Bekabeling via Wifi/PoE/NVR, optimale zichtlijnen, recorders en monitoren' },
+  { imageKey: 'camera.buiten' as const, imageLabel: 'Foto: camera configuratie systeem', title: 'Inbedrijfstelling', description: 'Configuratie, bewegingsdetectie, privacy-masking, beeldkwaliteit testen' },
+  { imageKey: 'camera.buiten' as const, imageLabel: 'Foto: camera assortiment buiten', title: 'Cameralevering', description: 'Binnen en buiten, diverse resoluties, complete beveiligingsoplossingen' },
+  { imageKey: 'camera.buiten' as const, imageLabel: 'Foto: smartphone app camera live', title: 'App-koppeling', description: 'Live meekijken op smartphone, gebruikersaccounts, uitleg gebruik' },
+  { imageKey: 'camera.buiten' as const, imageLabel: 'Foto: camera onderhoud reparatie', title: 'Storingen, reparaties & onderhoud', description: 'Diagnose beeldproblemen, jaarlijks onderhoud, systeemupdates' },
 ]
 
 const waaromItems = [
@@ -42,7 +42,7 @@ export default function CamerasSystemenPage() {
         <ServiceHero
           title="Altijd zicht op uw pand, AVG-compliant geinstalleerd"
           subtitle="Camerasystemen voor woning en bedrijf, inclusief app-koppeling en jaarlijks onderhoud."
-          imageLabel="Foto: camera gemonteerd aan gevel"
+          imageKey="hero.cameras"
         />
         <TrustBar />
 

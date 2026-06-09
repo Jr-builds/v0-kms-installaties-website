@@ -2,21 +2,25 @@ import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import TrustBar from '@/components/trust-bar'
-import ImagePlaceholder from '@/components/image-placeholder'
+import SiteImage from '@/components/site-image'
+import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
 import ClosingCTA from '@/components/closing-cta'
+import CertificationBadge from '@/components/certification-badge'
+import { certifications } from '@/lib/certifications'
+import { getImage, type SiteImageKey } from '@/lib/images'
 
-const dienstenCards = [
-  { imageLabel: 'Foto: elektra installatie', title: 'Elektra', description: 'Complete elektrische installaties voor particulier en bedrijf', href: '/elektra' },
-  { imageLabel: 'Foto: airco unit interieur', title: 'Airconditioning', description: 'Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geinstalleerd', href: '/airconditioning' },
-  { imageLabel: 'Foto: ventilatie systeem', title: 'Ventilatie', description: 'Gezonde lucht in elke ruimte, inclusief advies over ISDE-subsidie', href: '/ventilatie' },
-  { imageLabel: 'Foto: bedrijfspand', title: 'Technisch Vastgoedbeheer', description: 'Zorgeloos technisch beheer van uw pand met vaste onderhoudscontracten', href: '/technisch-vastgoedbeheer' },
-  { imageLabel: "Foto: camera buiten", title: "Camera's en Systemen", description: 'Altijd zicht op uw pand, AVG-compliant geinstalleerd', href: '/cameras-systemen' },
+const dienstenCards: { imageKey: SiteImageKey; title: string; description: string; href: string }[] = [
+  { imageKey: 'dienst.elektra', title: 'Elektra', description: 'Complete elektrische installaties voor particulier en bedrijf', href: '/elektra' },
+  { imageKey: 'dienst.airconditioning', title: 'Airconditioning', description: 'Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geinstalleerd', href: '/airconditioning' },
+  { imageKey: 'dienst.ventilatie', title: 'Ventilatie', description: 'Gezonde lucht in elke ruimte, inclusief advies over ISDE-subsidie', href: '/ventilatie' },
+  { imageKey: 'dienst.vastgoedbeheer', title: 'Technisch Vastgoedbeheer', description: 'Zorgeloos technisch beheer van uw pand met vaste onderhoudscontracten', href: '/technisch-vastgoedbeheer' },
+  { imageKey: 'dienst.cameras', title: "Camera's en Systemen", description: 'Altijd zicht op uw pand, AVG-compliant geinstalleerd', href: '/cameras-systemen' },
 ]
 
-const recenteProjecten = [
-  { imageLabel: 'Foto: meterkast renovatie', category: 'Elektra', city: 'Zwijndrecht', title: 'Volledige herinstallatie meterkast', description: 'Groepenkast vervangen na waterschade, NEN-gecertificeerde keuring uitgevoerd.', resultaat: 'Veilige installatie die voldoet aan alle huidige NEN-normen.' },
-  { imageLabel: 'Foto: airco buitenunit dak', category: 'Airconditioning', city: 'Rotterdam', title: '3x Mitsubishi Heavy airco-units', description: 'Drie units geplaatst inclusief buitenunits op plat dak, samenwerking met dakdekker.', resultaat: 'Comfortabel binnenklimaat op alle verdiepingen, app-gestuurd.' },
-  { imageLabel: 'Foto: camera aan gevel', category: "Camera's", city: 'Almere', title: 'Camerabeveiliging woning', description: 'Volledig camerasysteem met app-koppeling en bewegingsdetectie geinstalleerd.', resultaat: 'Klant heeft 24/7 live zicht op het pand via smartphone.' },
+const recenteProjecten: { imageKey: SiteImageKey; category: string; city: string; title: string; description: string; resultaat: string }[] = [
+  { imageKey: 'project.elektra', category: 'Elektra', city: 'Zwijndrecht', title: 'Volledige herinstallatie meterkast', description: 'Groepenkast vervangen na waterschade, NEN-gecertificeerde keuring uitgevoerd.', resultaat: 'Veilige installatie die voldoet aan alle huidige NEN-normen.' },
+  { imageKey: 'project.airconditioning', category: 'Airconditioning', city: 'Rotterdam', title: '3x Mitsubishi Heavy airco-units', description: 'Drie units geplaatst inclusief buitenunits op plat dak, samenwerking met dakdekker.', resultaat: 'Comfortabel binnenklimaat op alle verdiepingen, app-gestuurd.' },
+  { imageKey: 'project.cameras', category: "Camera's", city: 'Almere', title: 'Camerabeveiliging woning', description: 'Volledig camerasysteem met app-koppeling en bewegingsdetectie geinstalleerd.', resultaat: 'Klant heeft 24/7 live zicht op het pand via smartphone.' },
 ]
 
 const reviews = [
@@ -25,10 +29,11 @@ const reviews = [
   { quote: 'Ook op zaterdagavond nog bereikbaar voor een storingsmelding. Binnen 2 uur was het opgelost.', name: 'Peter K.', platform: 'Google' },
 ]
 
-const certificeringen = ['NEN 3140', 'STEK', 'VCA']
 const merken = ['ABB', 'Hager', 'Alfen', 'Gira', 'Jung', 'Zaptec', 'Mitsubishi Heavy', 'Daikin', 'LG', 'Mitsubishi Electric', 'Itho Daalderop', 'DUCO']
 
 export default function HomePage() {
+  const heroImage = getImage('hero.home')
+
   return (
     <>
       <Navbar />
@@ -59,7 +64,14 @@ export default function HomePage() {
                 </div>
               </div>
               <div>
-                <ImagePlaceholder label="Foto: professionele elektra installatie" aspectRatio="aspect-[4/3]" className="w-full rounded-xl shadow-2xl" />
+                <SiteImage
+                  src={heroImage.src}
+                  alt={heroImage.alt}
+                  aspectRatio="aspect-[4/3]"
+                  className="w-full rounded-xl shadow-2xl"
+                  priority
+                  sizePreset="hero"
+                />
               </div>
             </div>
           </div>
@@ -77,7 +89,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {dienstenCards.slice(0, 3).map((card, i) => (
                 <Link key={i} href={card.href} className="group block bg-[#F8F9FA] rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
-                  <ImagePlaceholder label={card.imageLabel} aspectRatio="aspect-video" />
+                  <SiteImageOrPlaceholder imageKey={card.imageKey} placeholderLabel="" aspectRatio="aspect-video" />
                   <div className="p-5">
                     <h3 className="font-bold text-base mb-1.5 group-hover:text-[#F5A623] transition-colors" style={{ color: '#1e52a0' }}>{card.title}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed mb-3">{card.description}</p>
@@ -89,7 +101,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 sm:max-w-2xl sm:mx-auto">
               {dienstenCards.slice(3).map((card, i) => (
                 <Link key={i} href={card.href} className="group block bg-[#F8F9FA] rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
-                  <ImagePlaceholder label={card.imageLabel} aspectRatio="aspect-video" />
+                  <SiteImageOrPlaceholder imageKey={card.imageKey} placeholderLabel="" aspectRatio="aspect-video" />
                   <div className="p-5">
                     <h3 className="font-bold text-base mb-1.5 group-hover:text-[#F5A623] transition-colors" style={{ color: '#1e52a0' }}>{card.title}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed mb-3">{card.description}</p>
@@ -128,7 +140,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {recenteProjecten.map((project, i) => (
                 <article key={i} className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-                  <ImagePlaceholder label={project.imageLabel} aspectRatio="aspect-video" />
+                  <SiteImageOrPlaceholder imageKey={project.imageKey} placeholderLabel="" aspectRatio="aspect-video" />
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="px-2.5 py-0.5 rounded-full text-xs font-bold text-white" style={{ background: '#F5A623' }}>{project.category}</span>
@@ -181,10 +193,8 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-5">Onze certificeringen</p>
             <div className="flex flex-wrap justify-center gap-4 mb-10">
-              {certificeringen.map((cert) => (
-                <div key={cert} className="px-7 py-3 rounded-lg font-bold text-base border-2" style={{ borderColor: '#1e52a0', color: '#1e52a0', background: 'white' }}>
-                  {cert}
-                </div>
+              {certifications.map((cert) => (
+                <CertificationBadge key={cert.id} certification={cert} />
               ))}
             </div>
             <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-5">Waarmee wij werken</p>

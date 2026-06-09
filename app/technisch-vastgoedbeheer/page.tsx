@@ -9,12 +9,12 @@ import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
 
 const dienstenCards = [
-  { imageLabel: 'Foto: technisch onderhoud gebouw', title: 'Algemeen technisch onderhoud', description: 'Dagelijks klein onderhoud, vaste controlerondes' },
-  { imageLabel: 'Foto: renovatie elektra installatie', title: 'Renovatie & herstel', description: 'Herstel elektrische installaties, reparaties ventilatie' },
-  { imageLabel: 'Foto: storingsmelding snelle respons', title: 'Storingen & spoed', description: 'Snelle respons, tijdelijke noodoplossingen' },
-  { imageLabel: 'Foto: technische inspectie rapport', title: 'Inspectie & rapportage', description: 'Technische inspecties, onderhoudsrapporten, actiepuntenlijst' },
-  { imageLabel: 'Foto: periodiek onderhoud installaties', title: 'Periodiek onderhoud', description: 'Terugkerende beurten, controle kritieke installaties' },
-  { imageLabel: 'Foto: coordinatie kleine projecten', title: 'Coordinatie van kleine projecten', description: 'Aansturing werkzaamheden namens eigenaar, communicatie bewoners' },
+  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: technisch onderhoud gebouw', title: 'Algemeen technisch onderhoud', description: 'Dagelijks klein onderhoud, vaste controlerondes' },
+  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: renovatie elektra installatie', title: 'Renovatie & herstel', description: 'Herstel elektrische installaties, reparaties ventilatie' },
+  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: storingsmelding snelle respons', title: 'Storingen & spoed', description: 'Snelle respons, tijdelijke noodoplossingen' },
+  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: technische inspectie rapport', title: 'Inspectie & rapportage', description: 'Technische inspecties, onderhoudsrapporten, actiepuntenlijst' },
+  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: periodiek onderhoud installaties', title: 'Periodiek onderhoud', description: 'Terugkerende beurten, controle kritieke installaties' },
+  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: coordinatie kleine projecten', title: 'Coordinatie van kleine projecten', description: 'Aansturing werkzaamheden namens eigenaar, communicatie bewoners' },
 ]
 
 const waaromItems = [
@@ -43,7 +43,7 @@ export default function TechnischVastgoedbeheerPage() {
         <ServiceHero
           title="Zorgeloos technisch beheer van uw vastgoed, met vaste onderhoudscontracten"
           subtitle="Voor gebouweigenaren en VvE-beheerders in Zuid-Holland."
-          imageLabel="Foto: modern bedrijfspand exterieur"
+          imageKey="hero.vastgoedbeheer"
           primaryLabel="Vraag een onderhoudscontract aan"
         />
         <TrustBar />

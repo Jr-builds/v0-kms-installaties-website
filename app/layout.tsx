@@ -1,7 +1,14 @@
 import { Analytics } from '@vercel/analytics/next'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
+import MobileCtaBar from '@/components/mobile-cta-bar'
 import './globals.css'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+}
 
 const inter = Inter({
   variable: '--font-inter',
@@ -31,8 +38,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="nl" className={`${inter.variable} bg-background`}>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased mobile-cta-spacing">
         {children}
+        <MobileCtaBar />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

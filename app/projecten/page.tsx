@@ -4,27 +4,28 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import ImagePlaceholder from '@/components/image-placeholder'
+import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
+import { getProjectImageKey } from '@/lib/images'
 
 type Category = 'Alle' | 'Elektra' | 'Airconditioning' | 'Ventilatie' | "Camera's"
 
 const allProjects = [
   // Elektra
-  { imageLabel: 'Foto: meterkast', category: 'Elektra', city: 'Zwijndrecht', title: 'Volledige herinstallatie meterkast', description: 'Groepenkast vervangen na waterschade.', resultaat: 'Veilige NEN-gecertificeerde installatie.' },
-  { imageLabel: 'Foto: nieuwbouw elektra', category: 'Elektra', city: 'Rotterdam', title: 'Complete elektra nieuwbouwwoning', description: 'Volledige elektrische aanleg inclusief laadpaal.', resultaat: 'Gebruiksklare installatie opgeleverd binnen planning.' },
-  { imageLabel: 'Foto: laadpaal', category: 'Elektra', city: 'Dordrecht', title: 'Laadpaal installatie bedrijfspand', description: 'Drie laadpalen geplaatst met dynamic loadbalancing.', resultaat: 'Medewerkers kunnen elektrische auto\'s opladen tijdens werktijd.' },
+  { category: 'Elektra', city: 'Zwijndrecht', title: 'Volledige herinstallatie meterkast', description: 'Groepenkast vervangen na waterschade.', resultaat: 'Veilige NEN-gecertificeerde installatie.' },
+  { category: 'Elektra', city: 'Rotterdam', title: 'Complete elektra nieuwbouwwoning', description: 'Volledige elektrische aanleg inclusief laadpaal.', resultaat: 'Gebruiksklare installatie opgeleverd binnen planning.' },
+  { category: 'Elektra', city: 'Dordrecht', title: 'Laadpaal installatie bedrijfspand', description: 'Drie laadpalen geplaatst met dynamic loadbalancing.', resultaat: 'Medewerkers kunnen elektrische auto\'s opladen tijdens werktijd.' },
   // Airconditioning
-  { imageLabel: 'Foto: airco schilderij', category: 'Airconditioning', city: 'Rotterdam', title: 'LG Schilderij airco-unit woning', description: 'Nieuwe unit geplaatst op bestaande muur, creatieve oplossing voor beperkte ruimte.', resultaat: 'Strakke afwerking, klant zeer tevreden.' },
-  { imageLabel: 'Foto: airco buitenunit dak', category: 'Airconditioning', city: 'Rotterdam', title: '3x Mitsubishi Heavy airco-units', description: 'Drie units op plat dak, samenwerking met dakdekker.', resultaat: 'Comfortabel binnenklimaat alle verdiepingen, app-gestuurd.' },
-  { imageLabel: 'Foto: kantoor airco', category: 'Airconditioning', city: 'Zwijndrecht', title: 'Klimaatbeheersing kantoorruimte', description: 'Multisplit-systeem voor open kantoor van 200m2.', resultaat: 'Stabiele temperatuur het hele jaar, lagere energiekosten.' },
+  { category: 'Airconditioning', city: 'Rotterdam', title: 'LG Schilderij airco-unit woning', description: 'Nieuwe unit geplaatst op bestaande muur, creatieve oplossing voor beperkte ruimte.', resultaat: 'Strakke afwerking, klant zeer tevreden.' },
+  { category: 'Airconditioning', city: 'Rotterdam', title: '3x Mitsubishi Heavy airco-units', description: 'Drie units op plat dak, samenwerking met dakdekker.', resultaat: 'Comfortabel binnenklimaat alle verdiepingen, app-gestuurd.' },
+  { category: 'Airconditioning', city: 'Zwijndrecht', title: 'Klimaatbeheersing kantoorruimte', description: 'Multisplit-systeem voor open kantoor van 200m2.', resultaat: 'Stabiele temperatuur het hele jaar, lagere energiekosten.' },
   // Ventilatie
-  { imageLabel: 'Foto: WTW unit', category: 'Ventilatie', city: 'Ridderkerk', title: 'Vervangen WTW-unit en leidingen', description: 'Oude WTW vervangen, leidingen vernieuwd.', resultaat: 'Betere luchtkwaliteit, lagere stookkosten.' },
-  { imageLabel: 'Foto: mechanische ventilatie', category: 'Ventilatie', city: 'Dordrecht', title: 'Mechanische ventilatie nieuwbouw', description: 'Volledig ventilatiesysteem aangelegd.', resultaat: 'Frisse lucht in elke ruimte, voldoet aan bouwbesluit.' },
-  { imageLabel: 'Foto: ventilatie onderhoud', category: 'Ventilatie', city: 'Rotterdam', title: 'Jaarlijks onderhoud LBK utiliteit', description: 'Filters vervangen, GBS gecontroleerd.', resultaat: 'Optimale luchtkwaliteit gegarandeerd voor komend jaar.' },
+  { category: 'Ventilatie', city: 'Ridderkerk', title: 'Vervangen WTW-unit en leidingen', description: 'Oude WTW vervangen, leidingen vernieuwd.', resultaat: 'Betere luchtkwaliteit, lagere stookkosten.' },
+  { category: 'Ventilatie', city: 'Dordrecht', title: 'Mechanische ventilatie nieuwbouw', description: 'Volledig ventilatiesysteem aangelegd.', resultaat: 'Frisse lucht in elke ruimte, voldoet aan bouwbesluit.' },
+  { category: 'Ventilatie', city: 'Rotterdam', title: 'Jaarlijks onderhoud LBK utiliteit', description: 'Filters vervangen, GBS gecontroleerd.', resultaat: 'Optimale luchtkwaliteit gegarandeerd voor komend jaar.' },
   // Camera's
-  { imageLabel: 'Foto: camera gevel', category: "Camera's", city: 'Almere', title: 'Camerabeveiliging woning', description: 'Volledig systeem met app-koppeling.', resultaat: '24/7 live zicht via smartphone.' },
-  { imageLabel: 'Foto: camera bedrijf', category: "Camera's", city: 'Rotterdam', title: 'Camerasysteem bedrijfspand', description: '8 cameras buiten, NVR-systeem, bewegingsdetectie.', resultaat: 'Volledig beveiligd pand, AVG-conform geregistreerd.' },
-  { imageLabel: 'Foto: camera parkeerplaats', category: "Camera's", city: 'Zwijndrecht', title: 'Beveiliging parkeerterrein', description: '6 cameras met nachtzicht en app-bediening.', resultaat: 'Incidenten op parkeerterrein significant afgenomen.' },
+  { category: "Camera's", city: 'Almere', title: 'Camerabeveiliging woning', description: 'Volledig systeem met app-koppeling.', resultaat: '24/7 live zicht via smartphone.' },
+  { category: "Camera's", city: 'Rotterdam', title: 'Camerasysteem bedrijfspand', description: '8 cameras buiten, NVR-systeem, bewegingsdetectie.', resultaat: 'Volledig beveiligd pand, AVG-conform geregistreerd.' },
+  { category: "Camera's", city: 'Zwijndrecht', title: 'Beveiliging parkeerterrein', description: '6 cameras met nachtzicht en app-bediening.', resultaat: 'Incidenten op parkeerterrein significant afgenomen.' },
 ]
 
 const categories: Category[] = ['Alle', 'Elektra', 'Airconditioning', 'Ventilatie', "Camera's"]
@@ -71,7 +72,11 @@ export default function ProjectenPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map((project, i) => (
                 <article key={i} className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                  <ImagePlaceholder label={project.imageLabel} aspectRatio="aspect-video" />
+                  <SiteImageOrPlaceholder
+                    imageKey={getProjectImageKey(project.category)}
+                    placeholderLabel=""
+                    aspectRatio="aspect-video"
+                  />
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="px-2.5 py-0.5 rounded-full text-xs font-bold text-white" style={{ background: '#F5A623' }}>
