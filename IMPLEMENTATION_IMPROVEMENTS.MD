@@ -97,12 +97,12 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 1.6 LocalBusiness structured data
 
-- [ ] Add JSON-LD script in `app/layout.tsx` or a dedicated `components/structured-data.tsx`
-  - [ ] `@type`: `LocalBusiness` or `Electrician`
-  - [ ] `name`, `url`, `telephone`, `email`, `address`, `openingHours`
-  - [ ] `areaServed`: Zuid-Holland cities list
-  - [ ] `aggregateRating` if linking to Google reviews (optional)
-- [ ] Validate with Google Rich Results Test
+- [x] Add JSON-LD script in `app/layout.tsx` or a dedicated `components/structured-data.tsx`
+  - [x] `@type`: `LocalBusiness` or `Electrician`
+  - [x] `name`, `url`, `telephone`, `email`, `address`, `openingHours`
+  - [x] `areaServed`: Zuid-Holland cities list
+  - [x] `aggregateRating` if linking to Google reviews (optional)
+- [ ] Validate with Google Rich Results Test (manual — run after deploy)
 
 ---
 
