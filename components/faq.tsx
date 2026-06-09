@@ -12,41 +12,70 @@ interface FAQProps {
   title?: string
 }
 
+function faqId(index: number, part: 'question' | 'answer'): string {
+  return `faq-${part}-${index}`
+}
+
 export default function FAQ({ items, title = 'Veelgestelde vragen' }: FAQProps) {
-  const [open, setOpen] = useState<number | null>(null)
+  const [openItems, setOpenItems] = useState<Set<number>>(new Set())
+
+  function toggleItem(index: number) {
+    setOpenItems((current) => {
+      const next = new Set(current)
+      if (next.has(index)) {
+        next.delete(index)
+      } else {
+        next.add(index)
+      }
+      return next
+    })
+  }
 
   return (
-    <section className="bg-kms-light py-16 sm:py-20">
+    <section className="bg-kms-light py-16 sm:py-20" aria-labelledby="faq-heading">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="heading-section text-center mb-10 text-kms-navy">
+        <h2 id="faq-heading" className="heading-section text-center mb-10 text-kms-navy">
           {title}
         </h2>
         <div className="space-y-3">
-          {items.map((item, i) => (
-            <div key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-              <button
-                className="w-full px-6 py-4 text-left flex items-center justify-between gap-4 text-gray-800 font-medium hover:bg-gray-50 transition-colors"
-                onClick={() => setOpen(open === i ? null : i)}
-                aria-expanded={open === i}
-              >
-                <span className="text-sm sm:text-base">{item.question}</span>
-                <svg
-                  className={`w-5 h-5 flex-shrink-0 transition-transform ${open === i ? 'rotate-180' : ''}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="text-kms-navy"
+          {items.map((item, index) => {
+            const isOpen = openItems.has(index)
+            const questionId = faqId(index, 'question')
+            const answerId = faqId(index, 'answer')
+
+            return (
+              <div key={questionId} className="overflow-hidden rounded-xl border border-gray-200 bg-white">
+                <button
+                  type="button"
+                  id={questionId}
+                  className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left font-medium text-gray-800 transition-colors hover:bg-gray-50"
+                  onClick={() => toggleItem(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={answerId}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {open === i && (
-                <div className="px-6 pb-4 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+                  <span className="text-sm sm:text-base">{item.question}</span>
+                  <svg
+                    className={`h-5 w-5 flex-shrink-0 text-kms-navy motion-safe:transition-transform${isOpen ? ' rotate-180' : ''}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div
+                  id={answerId}
+                  role="region"
+                  aria-labelledby={questionId}
+                  hidden={!isOpen}
+                  className="border-t border-gray-100 px-6 pb-4 pt-3 text-sm leading-relaxed text-gray-600"
+                >
                   {item.answer}
                 </div>
-              )}
-            </div>
-          ))}
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

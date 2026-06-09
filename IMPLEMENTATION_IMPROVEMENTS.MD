@@ -221,9 +221,9 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 4.3 FAQ accordion
 
-- [ ] Add `id` on answer panels and `aria-controls` on toggle buttons (`components/faq.tsx`)
-- [ ] Consider `aria-labelledby` on panel region
-- [ ] Optional: allow multiple items open simultaneously
+- [x] Add `id` on answer panels and `aria-controls` on toggle buttons (`components/faq.tsx`)
+- [x] Consider `aria-labelledby` on panel region
+- [x] Optional: allow multiple items open simultaneously
 
 ### 4.4 Motion preferences
 
