@@ -172,9 +172,9 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 3.4 Werkgebied visual (Over ons)
 
-- [ ] Replace plain text werkgebied with styled city chips or list with map-pin icons
-- [ ] Optional: static map image or simplified Zuid-Holland region graphic
-- [ ] Link cities to offerte with pre-filled context (future: query param)
+- [x] Replace plain text werkgebied with styled city chips or list with map-pin icons
+- [x] Optional: static map image or simplified Zuid-Holland region graphic
+- [x] Link cities to offerte with pre-filled context (future: query param)
 
 ### 3.5 Contact map embed
 

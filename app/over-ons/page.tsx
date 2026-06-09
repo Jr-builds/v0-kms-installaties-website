@@ -4,6 +4,7 @@ import Footer from '@/components/footer'
 import ImagePlaceholder from '@/components/image-placeholder'
 import ClosingCTA from '@/components/closing-cta'
 import StatsBar from '@/components/stats-bar'
+import Werkgebied from '@/components/werkgebied'
 import { certifications } from '@/lib/certifications'
 import { getReviewPlatformBadgeClass } from '@/lib/review-badge'
 import { pageMetadata } from '@/lib/metadata'
@@ -110,15 +111,7 @@ export default function OverOnsPage() {
           </div>
         </section>
 
-        {/* Werkgebied */}
-        <section className="bg-kms-light py-12">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="heading-subsection mb-3 text-kms-navy">Ons werkgebied</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Wij werken door heel Zuid-Holland, waaronder Rotterdam, Dordrecht, Zwijndrecht, Ridderkerk, Barendrecht, Papendrecht en omgeving.
-            </p>
-          </div>
-        </section>
+        <Werkgebied />
 
         <ClosingCTA />
       </main>
