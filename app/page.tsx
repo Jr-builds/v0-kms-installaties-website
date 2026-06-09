@@ -93,25 +93,24 @@ export default function HomePage() {
               Onze diensten
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {dienstenCards.slice(0, 3).map((card, i) => (
-                <Link key={i} href={card.href} className="group block bg-kms-light rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
-                  <SiteImageOrPlaceholder imageKey={card.imageKey} placeholderLabel="" aspectRatio="aspect-video" />
-                  <div className="p-5">
-                    <h3 className="font-bold text-base mb-1.5 text-kms-navy group-hover:text-kms-yellow transition-colors">{card.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{card.description}</p>
-                    <span className="text-sm font-semibold text-kms-yellow">Meer informatie &rarr;</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 sm:max-w-2xl sm:mx-auto">
-              {dienstenCards.slice(3).map((card, i) => (
-                <Link key={i} href={card.href} className="group block bg-kms-light rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
-                  <SiteImageOrPlaceholder imageKey={card.imageKey} placeholderLabel="" aspectRatio="aspect-video" />
-                  <div className="p-5">
-                    <h3 className="font-bold text-base mb-1.5 text-kms-navy group-hover:text-kms-yellow transition-colors">{card.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{card.description}</p>
-                    <span className="text-sm font-semibold text-kms-yellow">Meer informatie &rarr;</span>
+              {dienstenCards.map((card) => (
+                <Link
+                  key={card.href}
+                  href={card.href}
+                  className="group flex h-full flex-col bg-kms-light rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow"
+                >
+                  <SiteImageOrPlaceholder
+                    imageKey={card.imageKey}
+                    placeholderLabel=""
+                    aspectRatio="aspect-video"
+                    className="w-full shrink-0"
+                  />
+                  <div className="flex flex-1 flex-col p-5">
+                    <h3 className="font-bold text-base mb-1.5 text-kms-navy group-hover:text-kms-yellow transition-colors">
+                      {card.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed mb-3 flex-1">{card.description}</p>
+                    <span className="text-sm font-semibold text-kms-yellow mt-auto">Meer informatie &rarr;</span>
                   </div>
                 </Link>
               ))}

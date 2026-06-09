@@ -192,8 +192,8 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 3.7 Homepage diensten layout
 
-- [ ] Refactor 3+2 grid to uniform layout (e.g. 5 cards: 3+2 → single responsive grid, or featured row)
-- [ ] Ensure equal card heights and consistent image aspect ratios
+- [x] Refactor 3+2 grid to uniform layout (e.g. 5 cards: 3+2 → single responsive grid, or featured row)
+- [x] Ensure equal card heights and consistent image aspect ratios
 
 ### 3.8 Projecten filter — Vastgoed category
 
