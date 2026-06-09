@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import SiteImage from './site-image'
+import Breadcrumbs, { buildServiceBreadcrumbs } from './breadcrumbs'
 import { getImage, type SiteImageKey } from '@/lib/images'
 
 interface ServiceHeroProps {
@@ -8,6 +9,8 @@ interface ServiceHeroProps {
   subtitle: string
   imageKey: SiteImageKey
   primaryLabel?: string
+  breadcrumbLabel?: string
+  breadcrumbPath?: string
 }
 
 export default function ServiceHero({
@@ -15,12 +18,20 @@ export default function ServiceHero({
   subtitle,
   imageKey,
   primaryLabel = 'Vraag een offerte aan',
+  breadcrumbLabel,
+  breadcrumbPath,
 }: ServiceHeroProps) {
   const { src, alt } = getImage(imageKey)
 
   return (
     <section className="hero-navy py-16 sm:py-24">
       <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {breadcrumbLabel && breadcrumbPath && (
+          <Breadcrumbs
+            items={buildServiceBreadcrumbs(breadcrumbLabel, breadcrumbPath)}
+            className="mb-8"
+          />
+        )}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="heading-hero text-white mb-4">
