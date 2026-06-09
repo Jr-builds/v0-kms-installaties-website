@@ -57,7 +57,7 @@ export default function ElektraPage() {
         {/* Intro quote */}
         <section className="bg-white py-12">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <blockquote className="text-xl font-semibold italic text-gray-700 border-l-4 pl-6 text-left" style={{ borderColor: '#F5A623' }}>
+            <blockquote className="text-xl font-semibold italic text-gray-700 border-l-4 border-l-kms-yellow pl-6 text-left">
               &ldquo;Elektrotechnisch maatwerk, veilig geinstalleerd door gecertificeerd vakmanschap.&rdquo;
             </blockquote>
           </div>

@@ -40,15 +40,15 @@ export default function ProjectenPage() {
       <Navbar />
       <main>
         {/* Header */}
-        <section style={{ background: '#1e52a0' }} className="py-14">
+        <section className="bg-kms-navy py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3 text-balance">Onze projecten</h1>
+            <h1 className="heading-page text-white mb-3">Onze projecten</h1>
             <p className="text-blue-200 text-lg">Een greep uit het werk dat wij hebben mogen uitvoeren in Zuid-Holland.</p>
           </div>
         </section>
 
         {/* Filter + Grid */}
-        <section className="bg-[#F8F9FA] py-12 sm:py-16">
+        <section className="bg-kms-light py-12 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Filter buttons */}
             <div className="flex flex-wrap gap-2 justify-center mb-10">
@@ -58,10 +58,9 @@ export default function ProjectenPage() {
                   onClick={() => setActive(cat)}
                   className={`px-5 py-2 rounded-full text-sm font-semibold border-2 transition-all ${
                     active === cat
-                      ? 'text-white border-transparent'
-                      : 'text-gray-600 border-gray-300 bg-white hover:border-[#1e52a0] hover:text-[#1e52a0]'
+                      ? 'text-white border-kms-navy bg-kms-navy'
+                      : 'text-gray-600 border-gray-300 bg-white hover:border-kms-navy hover:text-kms-navy'
                   }`}
-                  style={active === cat ? { background: '#1e52a0', borderColor: '#1e52a0' } : {}}
                 >
                   {cat}
                 </button>
@@ -79,14 +78,14 @@ export default function ProjectenPage() {
                   />
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="px-2.5 py-0.5 rounded-full text-xs font-bold text-white" style={{ background: '#F5A623' }}>
+                      <span className="px-2.5 py-0.5 rounded-full text-xs font-bold text-white bg-kms-yellow">
                         {project.category}
                       </span>
                       <span className="text-xs text-gray-500">{project.city}</span>
                     </div>
-                    <h3 className="font-bold text-base mb-1.5" style={{ color: '#1e52a0' }}>{project.title}</h3>
+                    <h3 className="font-bold text-base mb-1.5 text-kms-navy">{project.title}</h3>
                     <p className="text-sm text-gray-600 mb-3 leading-relaxed">{project.description}</p>
-                    <p className="text-sm font-semibold" style={{ color: '#F5A623' }}>Resultaat: {project.resultaat}</p>
+                    <p className="text-sm font-semibold text-kms-yellow">Resultaat: {project.resultaat}</p>
                   </div>
                 </article>
               ))}
@@ -95,15 +94,15 @@ export default function ProjectenPage() {
         </section>
 
         {/* Closing CTA */}
-        <section style={{ background: '#1e52a0' }} className="py-14">
+        <section className="bg-kms-navy py-14">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 text-balance">Wilt u ook zo&apos;n resultaat?</h2>
+            <h2 className="heading-section text-white mb-3">Wilt u ook zo&apos;n resultaat?</h2>
             <p className="text-blue-200 mb-8">Vraag een vrijblijvende offerte aan.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/offerte" className="inline-block px-8 py-3.5 rounded-lg text-base font-bold text-white transition-opacity hover:opacity-90" style={{ background: '#F5A623' }}>
+              <Link href="/offerte" className="inline-block px-8 py-3.5 rounded-lg text-base font-bold text-white bg-kms-yellow transition-opacity hover:opacity-90">
                 Vraag een offerte aan
               </Link>
-              <a href="tel:0782032858" className="inline-block px-8 py-3.5 rounded-lg text-base font-bold text-white border-2 border-white hover:bg-white hover:text-[#1e52a0] transition-colors">
+              <a href="tel:0782032858" className="inline-block px-8 py-3.5 rounded-lg text-base font-bold text-white border-2 border-white hover:bg-white hover:text-kms-navy transition-colors">
                 078 203 28 58
               </a>
             </div>

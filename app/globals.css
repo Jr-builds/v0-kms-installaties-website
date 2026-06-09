@@ -2,6 +2,23 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
+/*
+ * KMS design tokens — use Tailwind utilities, not hex literals in components.
+ * bg/text/border-kms-navy       → #1e52a0 (primary brand)
+ * bg-kms-navy-dark              → #0a2040 (footer, dark sections)
+ * bg/text/border-kms-yellow     → #F5A623 (CTAs, accents)
+ * bg/text-kms-green             → #22a757 (call / success)
+ * bg-kms-light                  → #F8F9FA (section backgrounds)
+ * border-kms-navy-muted         → #1e3560 (footer divider)
+ *
+ * Typography (Inter, font-heading on h1/h2 via @layer base):
+ * heading-hero-home             → home / over-ons hero
+ * heading-hero                  → service page heroes
+ * heading-page                  → contact, offerte, projecten headers
+ * heading-section               → section h2 titles
+ * heading-subsection            → form / minor section titles
+ */
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -12,6 +29,7 @@
   /* KMS Brand Colors */
   --color-kms-navy: #1e52a0;
   --color-kms-navy-dark: #0a2040;
+  --color-kms-navy-muted: #1e3560;
   --color-kms-yellow: #F5A623;
   --color-kms-green: #22a757;
   --color-kms-light: #F8F9FA;
@@ -69,6 +87,37 @@
   }
   html {
     @apply bg-background scroll-smooth;
+  }
+  h1,
+  h2 {
+    @apply font-heading text-balance;
+  }
+}
+
+@layer components {
+  /* Home hero — largest display size */
+  .heading-hero-home {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight;
+  }
+
+  /* Service page heroes with image */
+  .heading-hero {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight;
+  }
+
+  /* Compact page headers (contact, offerte, projecten) */
+  .heading-page {
+    @apply text-3xl sm:text-4xl font-bold leading-tight tracking-tight;
+  }
+
+  /* Section titles */
+  .heading-section {
+    @apply text-2xl sm:text-3xl font-bold tracking-tight;
+  }
+
+  /* Form blocks and minor sections */
+  .heading-subsection {
+    @apply text-xl font-semibold tracking-tight;
   }
 }
 

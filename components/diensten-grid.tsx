@@ -15,10 +15,10 @@ interface DienstenGridProps {
 
 export default function DienstenGrid({ title = 'Onze diensten', cards }: DienstenGridProps) {
   return (
-    <section className="bg-[#F8F9FA] py-16 sm:py-20">
+    <section className="bg-kms-light py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {title && (
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10 text-balance" style={{ color: '#1e52a0' }}>
+          <h2 className="heading-section text-center mb-10 text-kms-navy">
             {title}
           </h2>
         )}
@@ -31,7 +31,7 @@ export default function DienstenGrid({ title = 'Onze diensten', cards }: Dienste
                 aspectRatio="aspect-video"
               />
               <div className="p-5">
-                <h3 className="font-bold text-base mb-2" style={{ color: '#1e52a0' }}>{card.title}</h3>
+                <h3 className="font-bold text-base mb-2 text-kms-navy">{card.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{card.description}</p>
               </div>
             </article>

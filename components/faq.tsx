@@ -16,9 +16,9 @@ export default function FAQ({ items, title = 'Veelgestelde vragen' }: FAQProps) 
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="bg-[#F8F9FA] py-16 sm:py-20">
+    <section className="bg-kms-light py-16 sm:py-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10 text-balance" style={{ color: '#1e52a0' }}>
+        <h2 className="heading-section text-center mb-10 text-kms-navy">
           {title}
         </h2>
         <div className="space-y-3">
@@ -35,7 +35,7 @@ export default function FAQ({ items, title = 'Veelgestelde vragen' }: FAQProps) 
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  style={{ color: '#1e52a0' }}
+                  className="text-kms-navy"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>

@@ -54,7 +54,7 @@ export default function AirconditioningPage() {
 
         <section className="bg-white py-12">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <blockquote className="text-xl font-semibold italic text-gray-700 border-l-4 pl-6" style={{ borderColor: '#F5A623' }}>
+            <blockquote className="text-xl font-semibold italic text-gray-700 border-l-4 border-l-kms-yellow pl-6">
               &ldquo;Altijd een comfortabel binnenklimaat, vakkundig geregeld via A-merk airconditioning.&rdquo;
             </blockquote>
           </div>

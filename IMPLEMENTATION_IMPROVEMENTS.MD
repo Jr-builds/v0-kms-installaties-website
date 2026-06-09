@@ -110,18 +110,18 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 2.1 Design token consistency
 
-- [ ] Audit all inline `style={{ background: '#1e52a0' }}` and hex literals across components
-- [ ] Replace with Tailwind utilities: `bg-kms-navy`, `text-kms-yellow`, `bg-kms-light`, `text-kms-green`, etc. (tokens already in `globals.css`)
-- [ ] Replace `#F5A623` → `text-kms-yellow` / `bg-kms-yellow`
-- [ ] Replace `#0a2040` → `bg-kms-navy-dark`
-- [ ] Document token usage in a short comment block at top of `globals.css`
+- [x] Audit all inline `style={{ background: '#1e52a0' }}` and hex literals across components
+- [x] Replace with Tailwind utilities: `bg-kms-navy`, `text-kms-yellow`, `bg-kms-light`, `text-kms-green`, etc. (tokens already in `globals.css`)
+- [x] Replace `#F5A623` → `text-kms-yellow` / `bg-kms-yellow`
+- [x] Replace `#0a2040` → `bg-kms-navy-dark`
+- [x] Document token usage in a short comment block at top of `globals.css`
 
 ### 2.2 Typography hierarchy
 
-- [ ] Decide: keep Inter only with stronger weight scale, or add a display/heading font
-- [ ] Apply `font-heading` (or new font) to `h1`/`h2` via `@layer base` or component classes
-- [ ] Tune heading sizes: home hero `h1` vs service page `h1` vs section `h2`
-- [ ] Ensure consistent `text-balance` on all major headings
+- [x] Decide: keep Inter only with stronger weight scale, or add a display/heading font
+- [x] Apply `font-heading` (or new font) to `h1`/`h2` via `@layer base` or component classes
+- [x] Tune heading sizes: home hero `h1` vs service page `h1` vs section `h2`
+- [x] Ensure consistent `text-balance` on all major headings
 
 ### 2.3 Hero visual depth
 

@@ -5,7 +5,7 @@ interface MerkLogosProps {
 
 export default function MerkLogos({ brands, title = 'Waarmee wij werken' }: MerkLogosProps) {
   return (
-    <section className="bg-[#F8F9FA] py-12">
+    <section className="bg-kms-light py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">{title}</p>
         <div className="flex flex-wrap justify-center gap-3">

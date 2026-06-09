@@ -37,10 +37,10 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
             <SiteLogo size={48} priority />
             <div className="flex flex-col leading-tight">
-              <span className="font-bold text-lg" style={{ color: '#1e52a0' }}>
+              <span className="font-bold text-lg text-kms-navy">
                 KMS Installaties
               </span>
-              <span className="text-xs font-semibold tracking-widest" style={{ color: '#F5A623' }}>
+              <span className="text-xs font-semibold tracking-widest text-kms-yellow">
                 ELEKTRA &amp; AIRCONDITIONING
               </span>
             </div>
@@ -59,8 +59,8 @@ export default function Navbar() {
                   <button
                     className={`px-4 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-1 ${
                       isDiensten
-                        ? 'text-[#1e52a0] font-semibold'
-                        : 'text-gray-700 hover:text-[#1e52a0]'
+                        ? 'text-kms-navy font-semibold'
+                        : 'text-gray-700 hover:text-kms-navy'
                     }`}
                   >
                     Diensten
@@ -74,10 +74,10 @@ export default function Navbar() {
                         <Link
                           key={item.href}
                           href={item.href}
-                          className={`block px-4 py-2.5 text-sm transition-colors hover:bg-[#F8F9FA] ${
+                          className={`block px-4 py-2.5 text-sm transition-colors hover:bg-kms-light ${
                             pathname === item.href
-                              ? 'text-[#1e52a0] font-semibold bg-blue-50'
-                              : 'text-gray-700 hover:text-[#1e52a0]'
+                              ? 'text-kms-navy font-semibold bg-blue-50'
+                              : 'text-gray-700 hover:text-kms-navy'
                           }`}
                         >
                           {item.label}
@@ -92,8 +92,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
                     pathname === link.href
-                      ? 'text-[#1e52a0] font-semibold'
-                      : 'text-gray-700 hover:text-[#1e52a0]'
+                      ? 'text-kms-navy font-semibold'
+                      : 'text-gray-700 hover:text-kms-navy'
                   }`}
                 >
                   {link.label}
@@ -106,8 +106,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center">
             <Link
               href="/offerte"
-              className="px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ background: '#F5A623' }}
+              className="px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-kms-yellow transition-opacity hover:opacity-90"
             >
               Offerte aanvragen
             </Link>
@@ -140,7 +139,7 @@ export default function Navbar() {
               link.dropdown ? (
                 <div key={link.label}>
                   <button
-                    className="w-full text-left px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#1e52a0] flex items-center justify-between"
+                    className="w-full text-left px-3 py-2 text-sm font-medium text-gray-700 hover:text-kms-navy flex items-center justify-between"
                     onClick={() => setDienstenOpen(!dienstenOpen)}
                   >
                     Diensten
@@ -154,7 +153,7 @@ export default function Navbar() {
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="block px-3 py-2 text-sm text-gray-600 hover:text-[#1e52a0]"
+                          className="block px-3 py-2 text-sm text-gray-600 hover:text-kms-navy"
                           onClick={() => setMobileOpen(false)}
                         >
                           {item.label}
@@ -169,8 +168,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`block px-3 py-2 text-sm font-medium rounded-md ${
                     pathname === link.href
-                      ? 'text-[#1e52a0] font-semibold bg-blue-50'
-                      : 'text-gray-700 hover:text-[#1e52a0]'
+                      ? 'text-kms-navy font-semibold bg-blue-50'
+                      : 'text-gray-700 hover:text-kms-navy'
                   }`}
                   onClick={() => setMobileOpen(false)}
                 >
@@ -180,8 +179,7 @@ export default function Navbar() {
             )}
             <Link
               href="/offerte"
-              className="mt-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white text-center"
-              style={{ background: '#F5A623' }}
+              className="mt-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white text-center bg-kms-yellow"
               onClick={() => setMobileOpen(false)}
             >
               Offerte aanvragen
