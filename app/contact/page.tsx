@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 
@@ -20,10 +21,16 @@ export default function ContactPage() {
         <section className="hero-navy py-14 sm:py-20">
           <div className="hero-navy-content max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="heading-page text-white mb-3">
-              Heeft u een vraag of storingsmelding?
+              Vragen, storing of spoed?
             </h1>
-            <p className="text-blue-200 text-lg">
-              Wij reageren dezelfde dag, ook in het weekend. Voor spoed: bel direct.
+            <p className="text-blue-200 text-lg max-w-2xl mx-auto">
+              Gebruik dit formulier voor vragen en storingsmeldingen. Bij spoed belt u ons direct — wij zijn 7 dagen per week bereikbaar.
+            </p>
+            <p className="text-sm text-blue-200 mt-5">
+              Wilt u een offerte voor een nieuw project?{' '}
+              <Link href="/offerte" className="font-semibold text-kms-yellow hover:underline">
+                Offerte aanvragen →
+              </Link>
             </p>
           </div>
         </section>
@@ -35,7 +42,13 @@ export default function ContactPage() {
               {/* Form */}
               <div className="lg:col-span-3">
                 <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
-                  <h2 className="heading-subsection mb-6 text-kms-navy">Stuur ons een bericht</h2>
+                  <h2 className="heading-subsection mb-2 text-kms-navy">Vraag of storingsmelding</h2>
+                  <p className="text-sm text-gray-500 mb-6">
+                    Voor spoed liever bellen?{' '}
+                    <a href="tel:0782032858" className="font-semibold text-kms-navy hover:underline">
+                      078 203 28 58
+                    </a>
+                  </p>
                   {submitted ? (
                     <div className="text-center py-10">
                       <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 bg-green-50 text-kms-green">
@@ -59,7 +72,7 @@ export default function ContactPage() {
                           id="naam"
                           type="text"
                           required
-                          placeholder="Uw volledige naam"
+                          placeholder="Naam voor terugbelcontact"
                           className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light"
                         />
                       </div>
@@ -71,18 +84,19 @@ export default function ContactPage() {
                           id="telefoon"
                           type="tel"
                           required
-                          placeholder="Uw telefoonnummer"
+                          placeholder="Telefoonnummer (ook bereikbaar bij spoed)"
                           className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light"
                         />
                       </div>
                       <div>
                         <label htmlFor="vraag" className="block text-sm font-semibold text-gray-700 mb-1.5">
-                          Vraag of melding
+                          Vraag of storingsmelding <span className="text-red-500">*</span>
                         </label>
                         <textarea
                           id="vraag"
                           rows={5}
-                          placeholder="Stel uw vraag of omschrijf uw storing..."
+                          required
+                          placeholder="Beschrijf uw vraag, storing of situatie — bijv. geen stroom, defecte airco, kapotte schakelaar..."
                           className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light resize-none"
                         />
                       </div>
@@ -90,7 +104,7 @@ export default function ContactPage() {
                         type="submit"
                         className="w-full py-3.5 rounded-lg font-bold text-white text-base bg-kms-yellow transition-opacity hover:opacity-90"
                       >
-                        Verstuur bericht
+                        Verstuur melding
                       </button>
                     </form>
                   )}

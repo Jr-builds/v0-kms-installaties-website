@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import TrustBar from '@/components/trust-bar'
@@ -21,10 +22,16 @@ export default function OffertePage() {
         <section className="hero-navy py-14 sm:py-20">
           <div className="hero-navy-content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="heading-page text-white mb-3">
-              Offerte aanvragen, reactie binnen 1 werkdag
+              Offerte voor uw nieuwe project
             </h1>
-            <p className="text-blue-200 text-lg">
-              Vul het formulier in en wij nemen dezelfde dag contact met u op, ook in het weekend.
+            <p className="text-blue-200 text-lg max-w-2xl mx-auto">
+              Beschrijf uw situatie en ontvang een vrijblijvende prijsindicatie. Reactie binnen 1 werkdag, meestal dezelfde dag.
+            </p>
+            <p className="text-sm text-blue-200 mt-5">
+              Spoed of storing?{' '}
+              <Link href="/contact" className="font-semibold text-kms-yellow hover:underline">
+                Neem contact op →
+              </Link>
             </p>
           </div>
         </section>
@@ -38,7 +45,10 @@ export default function OffertePage() {
               {/* Form */}
               <div className="lg:col-span-3">
                 <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
-                  <h2 className="heading-subsection mb-6 text-kms-navy">Uw offerte aanvraag</h2>
+                  <h2 className="heading-subsection mb-2 text-kms-navy">Prijsindicatie aanvragen</h2>
+                  <p className="text-sm text-gray-500 mb-6">
+                    Vertel ons over uw project — wij sturen een offerte op maat.
+                  </p>
                   {submitted ? (
                     <div className="text-center py-10">
                       <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 bg-green-50 text-kms-green">
@@ -61,7 +71,7 @@ export default function OffertePage() {
                           id="naam"
                           type="text"
                           required
-                          placeholder="Uw volledige naam"
+                          placeholder="Naam contactpersoon"
                           className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light"
                          
                         />
@@ -74,19 +84,19 @@ export default function OffertePage() {
                           id="telefoon"
                           type="tel"
                           required
-                          placeholder="Uw telefoonnummer"
+                          placeholder="Telefoonnummer voor terugbelafspraak"
                           className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light"
                         />
                       </div>
                       <div>
                         <label htmlFor="dienst" className="block text-sm font-semibold text-gray-700 mb-1.5">
-                          Dienst
+                          Gewenste dienst
                         </label>
                         <select
                           id="dienst"
                           className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light text-gray-700"
                         >
-                          <option value="">Selecteer een dienst</option>
+                          <option value="">Kies de dienst voor uw offerte</option>
                           <option>Elektra</option>
                           <option>Airconditioning</option>
                           <option>Ventilatie</option>
@@ -97,12 +107,12 @@ export default function OffertePage() {
                       </div>
                       <div>
                         <label htmlFor="omschrijving" className="block text-sm font-semibold text-gray-700 mb-1.5">
-                          Omschrijving project
+                          Projectomschrijving
                         </label>
                         <textarea
                           id="omschrijving"
                           rows={5}
-                          placeholder="Omschrijf kort uw project of situatie, dan kunnen wij een gerichte offerte opstellen."
+                          placeholder="Beschrijf uw project: type pand, gewenste werkzaamheden, planning en eventuele bijzonderheden voor een gerichte offerte."
                           className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light resize-none"
                         />
                       </div>
@@ -111,7 +121,7 @@ export default function OffertePage() {
                           type="submit"
                           className="w-full py-3.5 rounded-lg font-bold text-white text-base bg-kms-yellow transition-opacity hover:opacity-90"
                         >
-                          Verstuur aanvraag
+                          Offerte aanvragen
                         </button>
                         <p className="text-xs text-gray-500 mt-3 text-center">
                           Wij reageren binnen 1 werkdag, meestal dezelfde dag. Ook bereikbaar via{' '}
