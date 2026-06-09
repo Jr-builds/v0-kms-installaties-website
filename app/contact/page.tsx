@@ -4,13 +4,38 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import FormFieldError from '@/components/form-field-error'
 import { formatBusinessAddress, getGoogleMapsEmbedUrl, getGoogleMapsUrl } from '@/lib/business'
+import { formInputClassName, validatePhone, validateRequired } from '@/lib/form-validation'
+
+interface ContactFormErrors {
+  naam?: string
+  telefoon?: string
+  vraag?: string
+}
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [naam, setNaam] = useState('')
+  const [telefoon, setTelefoon] = useState('')
+  const [vraag, setVraag] = useState('')
+  const [errors, setErrors] = useState<ContactFormErrors>({})
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    const nextErrors: ContactFormErrors = {
+      naam: validateRequired(naam, 'Naam') ?? undefined,
+      telefoon: validatePhone(telefoon) ?? undefined,
+      vraag: validateRequired(vraag, 'Vraag of storingsmelding') ?? undefined,
+    }
+
+    if (nextErrors.naam || nextErrors.telefoon || nextErrors.vraag) {
+      setErrors(nextErrors)
+      return
+    }
+
+    setErrors({})
     setSubmitted(true)
   }
 
@@ -64,7 +89,7 @@ export default function ContactPage() {
                       </p>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                       <div>
                         <label htmlFor="naam" className="block text-sm font-semibold text-gray-700 mb-1.5">
                           Naam <span className="text-red-500">*</span>
@@ -72,10 +97,14 @@ export default function ContactPage() {
                         <input
                           id="naam"
                           type="text"
-                          required
+                          value={naam}
+                          onChange={(event) => setNaam(event.target.value)}
                           placeholder="Naam voor terugbelcontact"
-                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light"
+                          aria-invalid={errors.naam ? true : undefined}
+                          aria-describedby={errors.naam ? 'naam-error' : undefined}
+                          className={formInputClassName(Boolean(errors.naam))}
                         />
+                        {errors.naam ? <FormFieldError id="naam-error" message={errors.naam} /> : null}
                       </div>
                       <div>
                         <label htmlFor="telefoon" className="block text-sm font-semibold text-gray-700 mb-1.5">
@@ -84,10 +113,17 @@ export default function ContactPage() {
                         <input
                           id="telefoon"
                           type="tel"
-                          required
+                          value={telefoon}
+                          onChange={(event) => setTelefoon(event.target.value)}
                           placeholder="Telefoonnummer (ook bereikbaar bij spoed)"
-                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light"
+                          autoComplete="tel"
+                          aria-invalid={errors.telefoon ? true : undefined}
+                          aria-describedby={errors.telefoon ? 'telefoon-error' : undefined}
+                          className={formInputClassName(Boolean(errors.telefoon))}
                         />
+                        {errors.telefoon ? (
+                          <FormFieldError id="telefoon-error" message={errors.telefoon} />
+                        ) : null}
                       </div>
                       <div>
                         <label htmlFor="vraag" className="block text-sm font-semibold text-gray-700 mb-1.5">
@@ -96,15 +132,16 @@ export default function ContactPage() {
                         <textarea
                           id="vraag"
                           rows={5}
-                          required
+                          value={vraag}
+                          onChange={(event) => setVraag(event.target.value)}
                           placeholder="Beschrijf uw vraag, storing of situatie — bijv. geen stroom, defecte airco, kapotte schakelaar..."
-                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light resize-none"
+                          aria-invalid={errors.vraag ? true : undefined}
+                          aria-describedby={errors.vraag ? 'vraag-error' : undefined}
+                          className={`${formInputClassName(Boolean(errors.vraag))} resize-none`}
                         />
+                        {errors.vraag ? <FormFieldError id="vraag-error" message={errors.vraag} /> : null}
                       </div>
-                      <button
-                        type="submit"
-                        className="w-full py-3.5 rounded-lg font-bold text-white text-base bg-kms-yellow transition-opacity hover:opacity-90"
-                      >
+                      <button type="submit" className="btn-primary w-full py-3.5 text-base">
                         Verstuur melding
                       </button>
                     </form>

@@ -6,23 +6,30 @@ import { useSearchParams } from 'next/navigation'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import TrustBar from '@/components/trust-bar'
+import FormFieldError from '@/components/form-field-error'
 import {
   formatDutchPostcode,
   getOfferteDienstLabel,
   isValidDutchPostcode,
   offerteDiensten,
 } from '@/lib/offerte'
+import { formInputClassName, validatePhone, validateRequired } from '@/lib/form-validation'
 
-const inputClassName =
-  'w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light'
+interface OfferteFormErrors {
+  naam?: string
+  telefoon?: string
+  postcode?: string
+}
 
 function OfferteForm() {
   const searchParams = useSearchParams()
   const [submitted, setSubmitted] = useState(false)
+  const [naam, setNaam] = useState('')
+  const [telefoon, setTelefoon] = useState('')
   const [dienst, setDienst] = useState('')
   const [plaats, setPlaats] = useState('')
   const [postcode, setPostcode] = useState('')
-  const [postcodeError, setPostcodeError] = useState('')
+  const [errors, setErrors] = useState<OfferteFormErrors>({})
 
   useEffect(() => {
     const dienstParam = searchParams.get('dienst')
@@ -35,31 +42,37 @@ function OfferteForm() {
     if (plaatsParam) setPlaats(plaatsParam)
   }, [searchParams])
 
-  function validatePostcode(value: string): boolean {
-    if (!value.trim()) {
-      setPostcodeError('')
-      return true
-    }
-
+  function validatePostcode(value: string): string | null {
+    if (!value.trim()) return null
     if (!isValidDutchPostcode(value)) {
-      setPostcodeError('Voer een geldige postcode in (bijv. 3335 KK)')
-      return false
+      return 'Voer een geldige postcode in (bijv. 3335 KK)'
     }
-
-    setPostcodeError('')
-    return true
+    return null
   }
 
   function handlePostcodeBlur() {
     if (postcode.trim()) {
       setPostcode(formatDutchPostcode(postcode))
     }
-    validatePostcode(postcode)
+    const postcodeError = validatePostcode(postcode)
+    setErrors((current) => ({ ...current, postcode: postcodeError ?? undefined }))
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (!validatePostcode(postcode)) return
+
+    const nextErrors: OfferteFormErrors = {
+      naam: validateRequired(naam, 'Naam') ?? undefined,
+      telefoon: validatePhone(telefoon) ?? undefined,
+      postcode: validatePostcode(postcode) ?? undefined,
+    }
+
+    if (nextErrors.naam || nextErrors.telefoon || nextErrors.postcode) {
+      setErrors(nextErrors)
+      return
+    }
+
+    setErrors({})
     setSubmitted(true)
   }
 
@@ -82,7 +95,7 @@ function OfferteForm() {
           </p>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5" noValidate>
           <div>
             <label htmlFor="naam" className="block text-sm font-semibold text-gray-700 mb-1.5">
               Naam <span className="text-red-500">*</span>
@@ -90,10 +103,14 @@ function OfferteForm() {
             <input
               id="naam"
               type="text"
-              required
+              value={naam}
+              onChange={(event) => setNaam(event.target.value)}
               placeholder="Naam contactpersoon"
-              className={inputClassName}
+              aria-invalid={errors.naam ? true : undefined}
+              aria-describedby={errors.naam ? 'naam-error' : undefined}
+              className={formInputClassName(Boolean(errors.naam))}
             />
+            {errors.naam ? <FormFieldError id="naam-error" message={errors.naam} /> : null}
           </div>
           <div>
             <label htmlFor="telefoon" className="block text-sm font-semibold text-gray-700 mb-1.5">
@@ -102,10 +119,15 @@ function OfferteForm() {
             <input
               id="telefoon"
               type="tel"
-              required
+              value={telefoon}
+              onChange={(event) => setTelefoon(event.target.value)}
               placeholder="Telefoonnummer voor terugbelafspraak"
-              className={inputClassName}
+              autoComplete="tel"
+              aria-invalid={errors.telefoon ? true : undefined}
+              aria-describedby={errors.telefoon ? 'telefoon-error' : undefined}
+              className={formInputClassName(Boolean(errors.telefoon))}
             />
+            {errors.telefoon ? <FormFieldError id="telefoon-error" message={errors.telefoon} /> : null}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
@@ -122,15 +144,11 @@ function OfferteForm() {
                 value={postcode}
                 onChange={(event) => setPostcode(event.target.value)}
                 onBlur={handlePostcodeBlur}
-                aria-invalid={postcodeError ? true : undefined}
-                aria-describedby={postcodeError ? 'postcode-error' : undefined}
-                className={`${inputClassName}${postcodeError ? ' border-red-400 focus:ring-red-400' : ''}`}
+                aria-invalid={errors.postcode ? true : undefined}
+                aria-describedby={errors.postcode ? 'postcode-error' : undefined}
+                className={formInputClassName(Boolean(errors.postcode))}
               />
-              {postcodeError ? (
-                <p id="postcode-error" className="mt-1.5 text-xs text-red-600">
-                  {postcodeError}
-                </p>
-              ) : null}
+              {errors.postcode ? <FormFieldError id="postcode-error" message={errors.postcode} /> : null}
             </div>
             <div>
               <label htmlFor="plaats" className="block text-sm font-semibold text-gray-700 mb-1.5">
@@ -142,7 +160,7 @@ function OfferteForm() {
                 placeholder="Bijv. Zwijndrecht"
                 value={plaats}
                 onChange={(event) => setPlaats(event.target.value)}
-                className={inputClassName}
+                className={formInputClassName()}
               />
             </div>
           </div>
@@ -154,7 +172,7 @@ function OfferteForm() {
               id="dienst"
               value={dienst}
               onChange={(event) => setDienst(event.target.value)}
-              className={`${inputClassName} text-gray-700`}
+              className={`${formInputClassName()} text-gray-700`}
             >
               <option value="">Kies de dienst voor uw offerte</option>
               {offerteDiensten.map((option) => (
@@ -172,7 +190,7 @@ function OfferteForm() {
               id="omschrijving"
               rows={5}
               placeholder="Beschrijf uw project: type pand, gewenste werkzaamheden, planning en eventuele bijzonderheden voor een gerichte offerte."
-              className={`${inputClassName} resize-none`}
+              className={`${formInputClassName()} resize-none`}
             />
           </div>
           <div>
@@ -198,10 +216,7 @@ function OfferteForm() {
             </div>
           </div>
           <div>
-            <button
-              type="submit"
-              className="w-full py-3.5 rounded-lg font-bold text-white text-base bg-kms-yellow transition-opacity hover:opacity-90"
-            >
+            <button type="submit" className="btn-primary w-full py-3.5 text-base">
               Offerte aanvragen
             </button>
             <p className="text-xs text-gray-500 mt-3 text-center">
