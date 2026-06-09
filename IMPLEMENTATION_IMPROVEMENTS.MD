@@ -214,10 +214,10 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 4.2 Form focus & error states
 
-- [ ] Standardize `focus:ring-2 focus:ring-kms-navy focus:border-transparent` on all inputs
-- [ ] Add visible `:focus-visible` styles on all interactive elements
-- [ ] Add client-side validation messages (required fields, phone format) — UI only, no API
-- [ ] Associate errors with inputs via `aria-describedby`
+- [x] Standardize `focus:ring-2 focus:ring-kms-navy focus:border-transparent` on all inputs
+- [x] Add visible `:focus-visible` styles on all interactive elements
+- [x] Add client-side validation messages (required fields, phone format) — UI only, no API
+- [x] Associate errors with inputs via `aria-describedby`
 
 ### 4.3 FAQ accordion
 

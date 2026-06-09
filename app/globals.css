@@ -94,6 +94,15 @@
   h2 {
     @apply font-heading text-balance;
   }
+
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-none ring-2 ring-kms-navy ring-offset-2;
+  }
 }
 
 @layer components {
@@ -170,17 +179,6 @@
   .btn-primary {
     @apply rounded-lg font-bold text-white bg-kms-yellow transition-opacity hover:opacity-90;
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kms-navy focus-visible:ring-offset-2;
-  }
-}
-
-@layer base {
-  a:focus-visible,
-  button:focus-visible,
-  summary:focus-visible,
-  input:focus-visible,
-  textarea:focus-visible,
-  select:focus-visible {
-    @apply outline-none ring-2 ring-kms-navy ring-offset-2;
   }
 }
 
