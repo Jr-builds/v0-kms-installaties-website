@@ -178,10 +178,10 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 3.5 Contact map embed
 
-- [ ] Replace map placeholder in `app/contact/page.tsx` with Google Maps iframe embed
-- [ ] Or: static map screenshot with pin + "Open in Google Maps" link (already partially there)
-- [ ] Set iframe `title` for accessibility
-- [ ] Lazy-load iframe (`loading="lazy"`)
+- [x] Replace map placeholder in `app/contact/page.tsx` with Google Maps iframe embed
+- [x] Or: static map screenshot with pin + "Open in Google Maps" link (already partially there)
+- [x] Set iframe `title` for accessibility
+- [x] Lazy-load iframe (`loading="lazy"`)
 
 ### 3.6 Offerte form UX (UI only)
 
