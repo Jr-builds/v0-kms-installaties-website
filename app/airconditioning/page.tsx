@@ -10,12 +10,12 @@ import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
 
 const dienstenCards = [
-  { imageLabel: 'Foto: kantoor klimaatbeheersing', title: 'Klimaatbeheersing kantoor & bedrijven', description: 'Installatie klimaatbeheersingssystemen, preventief onderhoud' },
-  { imageLabel: 'Foto: wandunit airco installatie', title: 'Professionele installatie', description: 'Wandunits, plafondunits, multisplit-systemen' },
-  { imageLabel: 'Foto: airco onderhoud service', title: 'Service & onderhoud', description: 'Periodiek onderhoud, reiniging, bijvullen' },
-  { imageLabel: 'Foto: airco storing reparatie', title: 'Storingen & reparaties', description: 'Snelle diagnose, vervangen defecte onderdelen' },
-  { imageLabel: 'Foto: airco unit showroom', title: 'Levering van airco-units', description: 'Complete A-merk systemen, een aanspreekpunt voor advies en plaatsing' },
-  { imageLabel: 'Foto: slimme app bediening airco', title: 'Wifi-modules & slimme bediening', description: 'App-koppeling, bediening op afstand' },
+  { imageKey: 'airco.binnenunit' as const, imageLabel: 'Foto: kantoor klimaatbeheersing', title: 'Klimaatbeheersing kantoor & bedrijven', description: 'Installatie klimaatbeheersingssystemen, preventief onderhoud' },
+  { imageKey: 'airco.binnenunit' as const, imageLabel: 'Foto: wandunit airco installatie', title: 'Professionele installatie', description: 'Wandunits, plafondunits, multisplit-systemen' },
+  { imageKey: 'airco.binnenunit' as const, imageLabel: 'Foto: airco onderhoud service', title: 'Service & onderhoud', description: 'Periodiek onderhoud, reiniging, bijvullen' },
+  { imageKey: 'airco.buitenunit' as const, imageLabel: 'Foto: airco storing reparatie', title: 'Storingen & reparaties', description: 'Snelle diagnose, vervangen defecte onderdelen' },
+  { imageKey: 'airco.binnenunit' as const, imageLabel: 'Foto: airco unit showroom', title: 'Levering van airco-units', description: 'Complete A-merk systemen, een aanspreekpunt voor advies en plaatsing' },
+  { imageKey: 'airco.binnenunit' as const, imageLabel: 'Foto: slimme app bediening airco', title: 'Wifi-modules & slimme bediening', description: 'App-koppeling, bediening op afstand' },
 ]
 
 const waaromItems = [
@@ -44,7 +44,7 @@ export default function AirconditioningPage() {
         <ServiceHero
           title="Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geinstalleerd"
           subtitle="Levering, installatie en onderhoud van A-merk airconditioning."
-          imageLabel="Foto: airco unit woonkamer"
+          imageKey="hero.airconditioning"
         />
         <TrustBar />
 

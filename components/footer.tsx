@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import SiteLogo from '@/components/site-logo'
 
 export default function Footer() {
   return (
@@ -8,9 +9,7 @@ export default function Footer() {
           {/* Col 1: Over ons */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: '#1e52a0' }}>
-                <span className="text-white font-bold text-lg">K</span>
-              </div>
+              <SiteLogo size={40} />
               <div>
                 <div className="font-bold text-base text-white">KMS Installaties</div>
                 <div className="text-xs font-semibold tracking-widest" style={{ color: '#F5A623' }}>

@@ -71,3 +71,21 @@
     @apply bg-background scroll-smooth;
   }
 }
+
+@layer utilities {
+  /* Hide v0 "Built with v0" badge on preview/deploy */
+  [data-v0-badge] {
+    display: none !important;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Reserve space for fixed mobile CTA bar (hidden on lg+) */
+  .mobile-cta-spacing {
+    @media (max-width: 1023px) {
+      padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+    }
+  }
+}

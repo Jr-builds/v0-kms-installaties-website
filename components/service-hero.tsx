@@ -1,20 +1,23 @@
 import Link from 'next/link'
-import ImagePlaceholder from './image-placeholder'
+import SiteImage from './site-image'
+import { getImage, type SiteImageKey } from '@/lib/images'
 
 interface ServiceHeroProps {
   title: string
   titleAccent?: string
   subtitle: string
-  imageLabel: string
+  imageKey: SiteImageKey
   primaryLabel?: string
 }
 
 export default function ServiceHero({
   title,
   subtitle,
-  imageLabel,
+  imageKey,
   primaryLabel = 'Vraag een offerte aan',
 }: ServiceHeroProps) {
+  const { src, alt } = getImage(imageKey)
+
   return (
     <section style={{ background: '#1e52a0' }} className="py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +44,14 @@ export default function ServiceHero({
             </div>
           </div>
           <div>
-            <ImagePlaceholder label={imageLabel} aspectRatio="aspect-[4/3]" className="w-full" />
+            <SiteImage
+              src={src}
+              alt={alt}
+              aspectRatio="aspect-[4/3]"
+              className="w-full rounded-xl shadow-2xl"
+              priority
+              sizePreset="hero"
+            />
           </div>
         </div>
       </div>

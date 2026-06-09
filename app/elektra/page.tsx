@@ -10,14 +10,14 @@ import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
 
 const dienstenCards = [
-  { imageLabel: 'Foto: huisinstallatie nieuwbouw', title: 'Huisinstallaties (Nieuwbouw & Bestaande Bouw)', description: 'Complete elektrische aanleg, stopcontacten, veiligheidscheck NEN' },
+  { imageKey: 'elektra.huisinstallatie' as const, imageLabel: 'Foto: huisinstallatie nieuwbouw', title: 'Huisinstallaties (Nieuwbouw & Bestaande Bouw)', description: 'Complete elektrische aanleg, stopcontacten, veiligheidscheck NEN' },
   { imageLabel: 'Foto: renovatie bedrading', title: 'Renovatie & Verbouwingen', description: 'Aanpassen bestaande installaties, leidingen frezen, oude bedrading vervangen' },
-  { imageLabel: 'Foto: groepenkast modern', title: 'Groepen- & Meterkasten', description: 'Vervangen oude groepenkast, automaat en aardlekbeveiliging, groepenverklaring' },
+  { imageKey: 'elektra.groepenkast' as const, imageLabel: 'Foto: groepenkast modern', title: 'Groepen- & Meterkasten', description: 'Vervangen oude groepenkast, automaat en aardlekbeveiliging, groepenverklaring' },
   { imageLabel: 'Foto: LED verlichting interieur', title: 'Binnen- & Buitenverlichting', description: 'LED-verlichting, tuin- en gevelverlichting, slimme verlichting' },
   { imageLabel: 'Foto: laadpaal elektrisch voertuig', title: 'Laadpalen voor Elektrische Voertuigen', description: 'Advies, installatie thuis of bedrijf, dynamic loadbalancing' },
   { imageLabel: 'Foto: elektra keuken badkamer', title: 'Elektra in Keuken & Badkamer', description: 'Voorbereidend elektrawerk, aansluitpunten kookplaat en oven' },
-  { imageLabel: 'Foto: camera bewaking systeem', title: 'Camerasystemen', description: 'Binnen- en buitencameras, Wifi/POE/NVR-systemen' },
-  { imageLabel: 'Foto: storingsmelding elektricien', title: 'Storingen & Onderhoud', description: 'Spoedstoringen, kortsluitingen opsporen, preventief onderhoud' },
+  { imageKey: 'elektra.cameras' as const, imageLabel: 'Foto: camera bewaking systeem', title: 'Camerasystemen', description: 'Binnen- en buitencameras, Wifi/POE/NVR-systemen' },
+  { imageKey: 'elektra.huisinstallatie' as const, imageLabel: 'Foto: storingsmelding elektricien', title: 'Storingen & Onderhoud', description: 'Spoedstoringen, kortsluitingen opsporen, preventief onderhoud' },
 ]
 
 const waaromItems = [
@@ -46,7 +46,7 @@ export default function ElektraPage() {
         <ServiceHero
           title="Elektra die de eerste keer goed zit, voor particulier en bedrijf"
           subtitle="NEN 3140 gecertificeerd. Bereikbaar van maandag tot zondag."
-          imageLabel="Foto: elektra werkzaamheden"
+          imageKey="hero.elektra"
         />
         <TrustBar />
 

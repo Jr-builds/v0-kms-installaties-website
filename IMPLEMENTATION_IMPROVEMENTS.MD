@@ -70,12 +70,12 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 1.4 Clickable trust signals
 
-- [ ] **TrustBar (`components/trust-bar.tsx`)**
-  - [ ] Link Google rating to Google Business review URL (get URL from client)
-  - [ ] Link Werkspot rating to Werkspot profile URL (get URL from client)
-  - [ ] Add `target="_blank"` + `rel="noopener noreferrer"` on external links
-- [ ] **Certification badges** — add hover tooltip or small info link explaining NEN 3140, STEK, VCA (modal or expandable on click)
-- [ ] Home certificeringen section — same treatment
+- [x] **TrustBar (`components/trust-bar.tsx`)**
+  - [x] Link Google rating to Google Business review URL (get URL from client)
+  - [x] Link Werkspot rating to Werkspot profile URL (get URL from client)
+  - [x] Add `target="_blank"` + `rel="noopener noreferrer"` on external links
+- [x] **Certification badges** — add hover tooltip or small info link explaining NEN 3140, STEK, VCA (modal or expandable on click)
+- [x] Home certificeringen section — same treatment
 
 ### 1.5 Per-page SEO metadata
 
@@ -388,8 +388,8 @@ Phase 7 items as time allows
 
 ## Blockers / client input needed
 
-- [ ] Google Business Profile review URL
-- [ ] Werkspot profile URL
+- [x] Google Business Profile review URL
+- [x] Werkspot profile URL
 - [ ] WhatsApp business number (if adding WhatsApp CTA)
 - [ ] Team photos for Kerem Sen & Mevlut Sumer (Over ons)
 - [ ] Additional project photos for categories without a matching asset

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import SiteLogo from '@/components/site-logo'
 
 const dienstenItems = [
   { label: 'Elektra', href: '/elektra' },
@@ -34,9 +35,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-18 py-3">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-12 h-12 rounded-lg flex items-center justify-center overflow-hidden" style={{ background: '#1e52a0' }}>
-              <span className="text-white font-bold text-xl leading-none">K</span>
-            </div>
+            <SiteLogo size={48} priority />
             <div className="flex flex-col leading-tight">
               <span className="font-bold text-lg" style={{ color: '#1e52a0' }}>
                 KMS Installaties

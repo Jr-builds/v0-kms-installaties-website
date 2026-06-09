@@ -1,6 +1,8 @@
-import ImagePlaceholder from './image-placeholder'
+import SiteImageOrPlaceholder from './site-image-or-placeholder'
+import type { SiteImageKey } from '@/lib/images'
 
 interface DienstCard {
+  imageKey?: SiteImageKey
   imageLabel: string
   title: string
   description: string
@@ -23,7 +25,11 @@ export default function DienstenGrid({ title = 'Onze diensten', cards }: Dienste
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {cards.map((card, i) => (
             <article key={i} className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <ImagePlaceholder label={card.imageLabel} aspectRatio="aspect-video" />
+              <SiteImageOrPlaceholder
+                imageKey={card.imageKey}
+                placeholderLabel={card.imageLabel}
+                aspectRatio="aspect-video"
+              />
               <div className="p-5">
                 <h3 className="font-bold text-base mb-2" style={{ color: '#1e52a0' }}>{card.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{card.description}</p>

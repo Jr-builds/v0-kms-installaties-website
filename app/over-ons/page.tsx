@@ -2,18 +2,13 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import ImagePlaceholder from '@/components/image-placeholder'
 import ClosingCTA from '@/components/closing-cta'
+import { certifications } from '@/lib/certifications'
 
 const reviews = [
   { quote: 'Snel gereageerd en netjes geinstalleerd. Airco werkt perfect en de afwerking was keurig. Zeker een aanrader!', name: 'Mohammed A.', platform: 'Google' },
   { quote: 'Vakkundige monteurs, duidelijke communicatie en op tijd. Groepenkast is perfect vervangen.', name: 'Sandra V.', platform: 'Werkspot' },
   { quote: 'Ook op zaterdagavond nog bereikbaar voor een storingsmelding. Binnen 2 uur was het opgelost.', name: 'Peter K.', platform: 'Google' },
   { quote: 'KMS verzorgt het technisch beheer van ons pand al twee jaar. Altijd professioneel en op tijd.', name: 'R. Bakker', platform: 'Google' },
-]
-
-const certificeringen = [
-  { name: 'NEN 3140', description: 'Wettelijk vereist voor elektrische installaties. Elke installatie wordt gekeurd en geleverd met een groepenverklaring.' },
-  { name: 'STEK', description: 'Verplichte certificering voor werken met koelmiddelen. Niet elk installatiebedrijf heeft dit certificaat.' },
-  { name: 'VCA', description: 'Veiligheidscertificering voor technische werkzaamheden. Garandeert veilig werken op locatie.' },
 ]
 
 export default function OverOnsPage() {
@@ -81,8 +76,8 @@ export default function OverOnsPage() {
               Onze certificeringen
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {certificeringen.map((cert, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border-t-4 border border-gray-100 shadow-sm" style={{ borderTopColor: '#F5A623' }}>
+              {certifications.map((cert) => (
+                <div key={cert.id} className="bg-white rounded-xl p-6 border-t-4 border border-gray-100 shadow-sm" style={{ borderTopColor: '#F5A623' }}>
                   <div className="text-2xl font-black mb-3" style={{ color: '#1e52a0' }}>{cert.name}</div>
                   <p className="text-sm text-gray-600 leading-relaxed">{cert.description}</p>
                 </div>

@@ -10,11 +10,11 @@ import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
 
 const dienstenCards = [
-  { imageLabel: 'Foto: luchtbehandelingskast utiliteit', title: 'Luchtbehandelingskasten (LBK) voor utiliteit', description: 'Preventief onderhoud, filters vervangen, GBS-controle' },
-  { imageLabel: 'Foto: WTW systeem woning', title: 'WTW-systemen', description: 'Ontwerp, aanleg en vervanging voor woning en utiliteit' },
-  { imageLabel: 'Foto: mechanische ventilatie installatie', title: 'Mechanische ventilatie', description: 'Ontwerp, aanleg en vervanging' },
-  { imageLabel: 'Foto: dakventilator plat dak', title: 'Dakventilatoren', description: 'Ontwerp, aanleg en vervanging' },
-  { imageLabel: 'Foto: ventilatie onderhoud filter', title: 'Onderhoud & storingen', description: 'Snelle diagnose, regelmatig onderhoud, rapportage' },
+  { imageKey: 'ventilatie.wtw' as const, imageLabel: 'Foto: luchtbehandelingskast utiliteit', title: 'Luchtbehandelingskasten (LBK) voor utiliteit', description: 'Preventief onderhoud, filters vervangen, GBS-controle' },
+  { imageKey: 'ventilatie.wtw' as const, imageLabel: 'Foto: WTW systeem woning', title: 'WTW-systemen', description: 'Ontwerp, aanleg en vervanging voor woning en utiliteit' },
+  { imageKey: 'ventilatie.wtw' as const, imageLabel: 'Foto: mechanische ventilatie installatie', title: 'Mechanische ventilatie', description: 'Ontwerp, aanleg en vervanging' },
+  { imageKey: 'ventilatie.wtw' as const, imageLabel: 'Foto: dakventilator plat dak', title: 'Dakventilatoren', description: 'Ontwerp, aanleg en vervanging' },
+  { imageKey: 'ventilatie.wtw' as const, imageLabel: 'Foto: ventilatie onderhoud filter', title: 'Onderhoud & storingen', description: 'Snelle diagnose, regelmatig onderhoud, rapportage' },
 ]
 
 const waaromItems = [
@@ -44,7 +44,7 @@ export default function VentilatiePage() {
         <ServiceHero
           title="Gezonde lucht in elke ruimte, inclusief advies over ISDE-subsidie"
           subtitle="WTW-systemen, mechanische ventilatie en onderhoud voor particulier en bedrijf."
-          imageLabel="Foto: WTW ventilatie installatie"
+          imageKey="hero.ventilatie"
         />
         <TrustBar />
 

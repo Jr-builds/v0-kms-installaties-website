@@ -1,3 +1,4 @@
+/** Fallback when no asset exists in `public/` — prefer `SiteImage` / `SiteImageOrPlaceholder` with keys from `lib/images.ts`. */
 interface ImagePlaceholderProps {
   label: string
   className?: string
