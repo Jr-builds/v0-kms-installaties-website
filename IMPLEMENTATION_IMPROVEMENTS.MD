@@ -206,11 +206,11 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 4.1 Navbar refinements
 
-- [ ] Show phone number prominently at top of mobile menu (before nav links)
-- [ ] Fix desktop dropdown gap: add invisible bridge padding so menu doesn't close on mouse travel
-- [ ] Add `aria-haspopup`, `aria-expanded` on Diensten dropdown button
-- [ ] Trap focus in mobile menu when open (optional enhancement)
-- [ ] Close mobile menu on route change (`useEffect` on `pathname`)
+- [x] Show phone number prominently at top of mobile menu (before nav links)
+- [x] Fix desktop dropdown gap: add invisible bridge padding so menu doesn't close on mouse travel
+- [x] Add `aria-haspopup`, `aria-expanded` on Diensten dropdown button
+- [x] Trap focus in mobile menu when open (optional enhancement)
+- [x] Close mobile menu on route change (`useEffect` on `pathname`)
 
 ### 4.2 Form focus & error states
 
