@@ -125,9 +125,9 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 2.3 Hero visual depth
 
-- [ ] Add subtle gradient overlay on navy hero sections (`bg-gradient-to-br from-kms-navy to-kms-navy-dark`)
-- [ ] Add soft overlay on hero photos (`bg-kms-navy/20` gradient) for text contrast if needed
-- [ ] Optional: faint geometric/grid pattern on navy backgrounds (CSS only)
+- [x] Add subtle gradient overlay on navy hero sections (`bg-gradient-to-br from-kms-navy to-kms-navy-dark`)
+- [x] Add soft overlay on hero photos (`bg-kms-navy/20` gradient) for text contrast if needed
+- [x] Optional: faint geometric/grid pattern on navy backgrounds (CSS only)
 
 ### 2.4 Brand logos (MerkLogos)
 

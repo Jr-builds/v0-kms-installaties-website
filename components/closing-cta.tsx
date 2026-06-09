@@ -14,8 +14,8 @@ export default function ClosingCTA({
   primaryHref = '/offerte',
 }: ClosingCTAProps) {
   return (
-    <section className="bg-kms-navy py-16 sm:py-20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="hero-navy py-16 sm:py-20">
+      <div className="hero-navy-content max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="heading-section text-white mb-3">{title}</h2>
         <p className="text-blue-200 mb-8 text-lg">{subtitle}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
