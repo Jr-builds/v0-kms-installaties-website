@@ -40,7 +40,7 @@ function BrandLogoImage({ brand }: { brand: string }) {
         height={40}
         loading="eager"
         decoding="async"
-        className="h-10 w-auto max-w-[6.5rem] object-contain grayscale transition-[filter] duration-300 group-hover:grayscale-0"
+        className="h-10 w-auto max-w-[6.5rem] object-contain grayscale motion-safe:transition-[filter] motion-safe:duration-300 group-hover:grayscale-0"
       />
     </div>
   )

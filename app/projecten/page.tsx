@@ -13,8 +13,11 @@ import {
   type Project,
   type ProjectCategory,
 } from '@/lib/projects'
+import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion'
+import { cn } from '@/lib/utils'
 
 export default function ProjectenPage() {
+  const prefersReducedMotion = usePrefersReducedMotion()
   const [active, setActive] = useState<ProjectCategory>('Alle')
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [gridKey, setGridKey] = useState(0)
@@ -24,7 +27,9 @@ export default function ProjectenPage() {
   function handleFilter(category: ProjectCategory) {
     if (category === active) return
     setActive(category)
-    setGridKey((key) => key + 1)
+    if (!prefersReducedMotion) {
+      setGridKey((key) => key + 1)
+    }
   }
 
   function handleCloseModal() {
@@ -52,7 +57,7 @@ export default function ProjectenPage() {
                   key={cat}
                   type="button"
                   onClick={() => handleFilter(cat)}
-                  className={`px-5 py-2 rounded-full text-sm font-semibold border-2 transition-all ${
+                  className={`px-5 py-2 rounded-full text-sm font-semibold border-2 motion-safe:transition-colors ${
                     active === cat
                       ? 'text-white border-kms-navy bg-kms-navy'
                       : 'text-gray-600 border-gray-300 bg-white hover:border-kms-navy hover:text-kms-navy'
@@ -64,7 +69,7 @@ export default function ProjectenPage() {
             </div>
 
             {filtered.length === 0 ? (
-              <div className="project-grid-fade rounded-2xl border border-dashed border-gray-300 bg-white px-6 py-16 text-center">
+              <div className={cn('project-grid-fade rounded-2xl border border-dashed border-gray-300 bg-white px-6 py-16 text-center', prefersReducedMotion && 'motion-disable')}>
                 <p className="text-lg font-semibold text-kms-navy mb-2">
                   Geen projecten in deze categorie
                 </p>
@@ -80,11 +85,17 @@ export default function ProjectenPage() {
                 </button>
               </div>
             ) : (
-              <div key={gridKey} className="project-grid-fade grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                key={prefersReducedMotion ? active : gridKey}
+                className={cn(
+                  'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6',
+                  !prefersReducedMotion && 'project-grid-fade',
+                )}
+              >
                 {filtered.map((project) => (
                   <article
                     key={project.id}
-                    className="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm transition-all hover:shadow-lg hover:-translate-y-0.5"
+                    className="group rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm motion-safe:transition-shadow motion-safe:hover:shadow-lg motion-safe:hover:-translate-y-0.5"
                   >
                     <button
                       type="button"
@@ -97,7 +108,7 @@ export default function ProjectenPage() {
                           imageKey={getProjectImageKeyForProject(project)}
                           placeholderLabel=""
                           aspectRatio="aspect-video"
-                          className="transition-transform duration-300 group-hover:scale-[1.02]"
+                          className="motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-[1.02]"
                         />
                       </div>
                       <div className="p-5">
@@ -114,7 +125,7 @@ export default function ProjectenPage() {
                         </p>
                         <span className="inline-flex items-center text-sm font-semibold text-kms-navy group-hover:underline">
                           Bekijk project
-                          <span aria-hidden="true" className="ml-1 transition-transform group-hover:translate-x-0.5">
+                          <span aria-hidden="true" className="ml-1 motion-safe:transition-transform motion-safe:group-hover:translate-x-0.5">
                             →
                           </span>
                         </span>

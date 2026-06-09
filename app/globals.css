@@ -88,7 +88,13 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
   html {
-    @apply bg-background scroll-smooth;
+    @apply bg-background;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
   h1,
   h2 {
@@ -199,24 +205,28 @@
     }
   }
 
-  .project-grid-fade {
-    animation: project-grid-fade 0.3s ease-out;
-  }
-
-  @keyframes project-grid-fade {
-    from {
-      opacity: 0;
-      transform: translateY(6px);
+  @media (prefers-reduced-motion: no-preference) {
+    .project-grid-fade {
+      animation: project-grid-fade 0.3s ease-out;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+
+    @keyframes project-grid-fade {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .project-grid-fade {
-      animation: none;
+    .motion-disable {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
     }
   }
 }

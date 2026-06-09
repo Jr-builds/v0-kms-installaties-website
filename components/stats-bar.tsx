@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
+import { getPrefersReducedMotion } from '@/lib/use-prefers-reduced-motion'
 
 export interface StatItem {
   value: string
@@ -43,7 +44,9 @@ function easeOutQuart(progress: number): number {
 
 function CountUpValue({ end, suffix }: { end: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null)
-  const [display, setDisplay] = useState(0)
+  const [display, setDisplay] = useState(() =>
+    getPrefersReducedMotion() ? end : 0,
+  )
   const hasAnimated = useRef(false)
 
   useEffect(() => {
@@ -52,9 +55,8 @@ function CountUpValue({ end, suffix }: { end: number; suffix: string }) {
 
     const runAnimation = () => {
       hasAnimated.current = true
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-      if (prefersReduced) {
+      if (getPrefersReducedMotion()) {
         setDisplay(end)
         return
       }
