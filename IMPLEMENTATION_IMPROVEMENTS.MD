@@ -197,8 +197,8 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 3.8 Projecten filter — Vastgoed category
 
-- [ ] Add "Vastgoed" filter tab or rename to match service naming
-- [ ] Add at least 1–2 vastgoed project entries (or note as coming soon)
+- [x] Add "Vastgoed" filter tab or rename to match service naming
+- [x] Add at least 1–2 vastgoed project entries (or note as coming soon)
 
 ---
 

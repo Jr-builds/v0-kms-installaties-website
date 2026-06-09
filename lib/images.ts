@@ -74,6 +74,10 @@ export const siteImages = {
     src: '/cameras-buiten.jpg',
     alt: 'Camerabeveiliging aan de buitengevel',
   },
+  'project.vastgoedbeheer': {
+    src: '/vastgoed-pand.jpg',
+    alt: 'Technisch onderhoud aan een bedrijfspand',
+  },
 
   // — Elektra sub-diensten (closest matching assets) —
   'elektra.huisinstallatie': {
@@ -129,6 +133,7 @@ const projectCategoryMap: Record<string, SiteImageKey> = {
   Airconditioning: 'project.airconditioning',
   Ventilatie: 'project.ventilatie',
   "Camera's": 'project.cameras',
+  Vastgoed: 'project.vastgoedbeheer',
 }
 
 export function getProjectImageKey(category: string): SiteImageKey {
