@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { businessInfo } from '@/lib/business'
+import { buildOfferteHref } from '@/lib/offerte'
 
 function MapPinIcon({ className = 'h-4 w-4' }: { className?: string }) {
   return (
@@ -66,7 +67,7 @@ export default function Werkgebied() {
               {businessInfo.areaServedCities.map((city) => (
                 <li key={city}>
                   <Link
-                    href={`/offerte?plaats=${encodeURIComponent(city)}`}
+                    href={buildOfferteHref(undefined, city)}
                     className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3.5 py-2 text-sm font-medium text-kms-navy shadow-sm transition-colors hover:border-kms-navy hover:bg-white"
                   >
                     <MapPinIcon className="h-3.5 w-3.5 text-kms-yellow flex-shrink-0" />

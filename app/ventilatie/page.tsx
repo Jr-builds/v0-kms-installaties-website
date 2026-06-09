@@ -51,6 +51,7 @@ export default function VentilatiePage() {
           imageKey="hero.ventilatie"
           breadcrumbLabel="Ventilatie"
           breadcrumbPath="/ventilatie"
+          offerteDienst="ventilatie"
         />
         <TrustBar />
 
@@ -67,7 +68,7 @@ export default function VentilatiePage() {
         <MerkLogos brands={['Itho Daalderop', 'DUCO']} />
         <Reviews reviews={reviews} title="Klanten over onze ventilatie installaties" />
         <FAQ items={faqItems} />
-        <ClosingCTA />
+        <ClosingCTA primaryHref="/offerte?dienst=ventilatie" />
       </main>
       <Footer />
     </>

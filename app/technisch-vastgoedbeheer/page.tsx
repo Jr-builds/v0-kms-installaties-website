@@ -51,6 +51,7 @@ export default function TechnischVastgoedbeheerPage() {
           primaryLabel="Vraag een onderhoudscontract aan"
           breadcrumbLabel="Technisch Vastgoedbeheer"
           breadcrumbPath="/technisch-vastgoedbeheer"
+          offerteDienst="vastgoedbeheer"
         />
         <TrustBar />
 
@@ -66,7 +67,10 @@ export default function TechnischVastgoedbeheerPage() {
         <WaaromKMS items={waaromItems} />
         <Reviews reviews={reviews} title="Klanten over ons vastgoedbeheer" />
         <FAQ items={faqItems} />
-        <ClosingCTA primaryLabel="Vraag een onderhoudscontract aan" />
+        <ClosingCTA
+          primaryHref="/offerte?dienst=vastgoedbeheer"
+          primaryLabel="Vraag een onderhoudscontract aan"
+        />
       </main>
       <Footer />
     </>

@@ -185,10 +185,10 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 3.6 Offerte form UX (UI only)
 
-- [ ] Read `?dienst=` query param on `/offerte` and pre-select dropdown
-- [ ] Add postcode field with front-end-only validation (format check)
-- [ ] Add file upload UI for situatiefoto's (disabled state + "Binnenkort beschikbaar" or visual-only mock)
-- [ ] Link service page CTA buttons to `/offerte?dienst=elektra` (etc.)
+- [x] Read `?dienst=` query param on `/offerte` and pre-select dropdown
+- [x] Add postcode field with front-end-only validation (format check)
+- [x] Add file upload UI for situatiefoto's (disabled state + "Binnenkort beschikbaar" or visual-only mock)
+- [x] Link service page CTA buttons to `/offerte?dienst=elektra` (etc.)
 
 ### 3.7 Homepage diensten layout
 

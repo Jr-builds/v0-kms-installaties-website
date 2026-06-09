@@ -51,6 +51,7 @@ export default function AirconditioningPage() {
           imageKey="hero.airconditioning"
           breadcrumbLabel="Airconditioning"
           breadcrumbPath="/airconditioning"
+          offerteDienst="airconditioning"
         />
         <TrustBar />
 
@@ -67,7 +68,7 @@ export default function AirconditioningPage() {
         <MerkLogos brands={['Mitsubishi Heavy', 'Daikin', 'LG', 'Mitsubishi Electric']} />
         <Reviews reviews={reviews} title="Klanten over onze airco installaties" />
         <FAQ items={faqItems} />
-        <ClosingCTA />
+        <ClosingCTA primaryHref="/offerte?dienst=airconditioning" />
       </main>
       <Footer />
     </>

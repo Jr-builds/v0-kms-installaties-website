@@ -49,6 +49,7 @@ export default function CamerasSystemenPage() {
           imageKey="hero.cameras"
           breadcrumbLabel="Camera's & Systemen"
           breadcrumbPath="/cameras-systemen"
+          offerteDienst="cameras"
         />
         <TrustBar />
 
@@ -64,7 +65,7 @@ export default function CamerasSystemenPage() {
         <WaaromKMS items={waaromItems} />
         <Reviews reviews={reviews} title="Klanten over onze camerasystemen" />
         <FAQ items={faqItems} />
-        <ClosingCTA />
+        <ClosingCTA primaryHref="/offerte?dienst=cameras" />
       </main>
       <Footer />
     </>
