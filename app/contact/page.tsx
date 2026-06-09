@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import { formatBusinessAddress, getGoogleMapsEmbedUrl, getGoogleMapsUrl } from '@/lib/business'
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -167,22 +168,20 @@ export default function ContactPage() {
 
                 {/* Map placeholder */}
                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-                  <div className="bg-gray-100 h-48 flex flex-col items-center justify-center relative">
-                    <div className="absolute inset-0 opacity-10" style={{
-                      backgroundImage: `repeating-linear-gradient(0deg, #9ca3af 0, #9ca3af 1px, transparent 0, transparent 20px), repeating-linear-gradient(90deg, #9ca3af 0, #9ca3af 1px, transparent 0, transparent 20px)`,
-                    }} />
-                    <svg className="w-8 h-8 text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    </svg>
-                    <span className="text-xs text-gray-500">Kaart: Voltastraat 6A, Zwijndrecht</span>
-                  </div>
+                  <iframe
+                    src={getGoogleMapsEmbedUrl()}
+                    title={`Kaart: KMS Installaties, ${formatBusinessAddress()}`}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                    className="h-52 w-full border-0"
+                  />
                   <div className="p-4">
                     <a
-                      href="https://maps.google.com/?q=Voltastraat+6A+Zwijndrecht"
+                      href={getGoogleMapsUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold hover:underline"
-                      
+                      className="text-xs font-semibold text-kms-navy hover:underline"
                     >
                       Open in Google Maps &rarr;
                     </a>

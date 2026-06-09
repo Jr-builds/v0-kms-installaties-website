@@ -46,3 +46,16 @@ export const businessInfo = {
     url: trustLinks.googleReviews.href,
   },
 } as const
+
+export function formatBusinessAddress(): string {
+  const { streetAddress, postalCode, addressLocality } = businessInfo.address
+  return `${streetAddress}, ${postalCode} ${addressLocality}`
+}
+
+export function getGoogleMapsUrl(): string {
+  return `https://maps.google.com/?q=${encodeURIComponent(formatBusinessAddress())}`
+}
+
+export function getGoogleMapsEmbedUrl(): string {
+  return `https://www.google.com/maps?q=${encodeURIComponent(formatBusinessAddress())}&output=embed`
+}
