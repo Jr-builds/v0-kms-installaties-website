@@ -3,6 +3,7 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import ImagePlaceholder from '@/components/image-placeholder'
 import ClosingCTA from '@/components/closing-cta'
+import StatsBar from '@/components/stats-bar'
 import { certifications } from '@/lib/certifications'
 import { getReviewPlatformBadgeClass } from '@/lib/review-badge'
 import { pageMetadata } from '@/lib/metadata'
@@ -54,25 +55,16 @@ export default function OverOnsPage() {
           </div>
         </section>
 
-        {/* Feiten balk */}
-        <section className="bg-kms-navy py-14">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-              {[
-                { number: '10+', label: 'Jaar', sub: 'Vakmanschap' },
-                { number: '200+', label: 'Afgeronde', sub: 'projecten' },
-                { number: '56', label: 'Vijfsterren', sub: 'reviews' },
-                { number: 'Zuid', label: '-Holland', sub: 'Werkgebied' },
-              ].map((item, i) => (
-                <div key={i}>
-                  <div className="text-4xl font-bold text-kms-yellow">{item.number}</div>
-                  <div className="text-white font-medium text-sm mt-1">{item.label}</div>
-                  <div className="text-blue-300 text-xs">{item.sub}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <StatsBar
+          columns={4}
+          size="md"
+          items={[
+            { value: '10+', label: 'Jaar', sub: 'Vakmanschap' },
+            { value: '200+', label: 'Afgeronde', sub: 'projecten' },
+            { value: '56', label: 'Vijfsterren', sub: 'reviews' },
+            { value: 'Zuid', label: '-Holland', sub: 'Werkgebied' },
+          ]}
+        />
 
         {/* Certificeringen */}
         <section className="bg-kms-light py-16 sm:py-20">
