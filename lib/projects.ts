@@ -3,7 +3,7 @@ import { getProjectImageKey } from '@/lib/images'
 
 export interface Project {
   id: string
-  category: 'Elektra' | 'Airconditioning' | 'Ventilatie' | "Camera's"
+  category: 'Elektra' | 'Airconditioning' | 'Ventilatie' | "Camera's" | 'Vastgoed'
   city: string
   title: string
   description: string
@@ -11,7 +11,7 @@ export interface Project {
   resultaat: string
 }
 
-export const projectCategories = ['Alle', 'Elektra', 'Airconditioning', 'Ventilatie', "Camera's"] as const
+export const projectCategories = ['Alle', 'Elektra', 'Airconditioning', 'Ventilatie', "Camera's", 'Vastgoed'] as const
 export type ProjectCategory = (typeof projectCategories)[number]
 
 export const allProjects: Project[] = [
@@ -134,6 +134,26 @@ export const allProjects: Project[] = [
     details:
       'Zes camera\'s geïnstalleerd op een parkeerterrein met nachtzicht en bediening via app. Strategische plaatsing voor volledige dekking van in- en uitgangen, met opname en meldingen bij ongewenst gedrag.',
     resultaat: 'Incidenten op parkeerterrein significant afgenomen.',
+  },
+  {
+    id: 'vastgoed-rotterdam-onderhoudscontract',
+    category: 'Vastgoed',
+    city: 'Rotterdam',
+    title: 'Onderhoudscontract kantoorpand',
+    description: 'Vaste storingsdienst en periodiek technisch onderhoud.',
+    details:
+      'Voor een kantoorpand in Rotterdam hebben wij een onderhoudscontract opgesteld met vaste storingsdienst, periodieke inspecties van elektra en klimaatinstallaties en een duidelijke rapportage voor de facility manager. Storingen worden binnen afgesproken responstijden opgepakt.',
+    resultaat: 'Pand technisch betrouwbaar, eigenaar volledig ontzorgd.',
+  },
+  {
+    id: 'vastgoed-dordrecht-vve',
+    category: 'Vastgoed',
+    city: 'Dordrecht',
+    title: 'Technisch beheer appartementencomplex',
+    description: 'Onderhoud lift, ventilatie en gemeenschappelijke installaties.',
+    details:
+      'Technisch beheer voor een appartementencomplex: coördinatie van onderhoud aan liftinstallatie, mechanische ventilatie in trappenhuizen en periodieke keuringen van gemeenschappelijke elektra. VvE ontvangt overzichtelijke planning en rapportages.',
+    resultaat: 'VvE heeft één aanspreekpunt voor alle technische zaken.',
   },
 ]
 
