@@ -17,9 +17,9 @@ export default function ContactPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section style={{ background: '#1e52a0' }} className="py-14 sm:py-20">
+        <section className="bg-kms-navy py-14 sm:py-20">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3 text-balance">
+            <h1 className="heading-page text-white mb-3">
               Heeft u een vraag of storingsmelding?
             </h1>
             <p className="text-blue-200 text-lg">
@@ -29,24 +29,24 @@ export default function ContactPage() {
         </section>
 
         {/* Form + Contact */}
-        <section className="bg-[#F8F9FA] py-14 sm:py-20">
+        <section className="bg-kms-light py-14 sm:py-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
               {/* Form */}
               <div className="lg:col-span-3">
                 <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
-                  <h2 className="text-xl font-bold mb-6" style={{ color: '#1e52a0' }}>Stuur ons een bericht</h2>
+                  <h2 className="heading-subsection mb-6 text-kms-navy">Stuur ons een bericht</h2>
                   {submitted ? (
                     <div className="text-center py-10">
-                      <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: '#e6f7ee' }}>
-                        <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="#22a757" strokeWidth={2}>
+                      <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 bg-green-50 text-kms-green">
+                        <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
                       <h3 className="text-lg font-bold text-gray-800 mb-2">Bericht ontvangen!</h3>
                       <p className="text-gray-600 text-sm">
                         Wij nemen dezelfde dag contact met u op. Voor spoed kunt u bellen via{' '}
-                        <a href="tel:0782032858" className="font-semibold" style={{ color: '#1e52a0' }}>078 203 28 58</a>.
+                        <a href="tel:0782032858" className="font-semibold text-kms-navy">078 203 28 58</a>.
                       </p>
                     </div>
                   ) : (
@@ -60,7 +60,7 @@ export default function ContactPage() {
                           type="text"
                           required
                           placeholder="Uw volledige naam"
-                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:border-transparent bg-[#F8F9FA]"
+                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light"
                         />
                       </div>
                       <div>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                           type="tel"
                           required
                           placeholder="Uw telefoonnummer"
-                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:border-transparent bg-[#F8F9FA]"
+                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light"
                         />
                       </div>
                       <div>
@@ -83,13 +83,12 @@ export default function ContactPage() {
                           id="vraag"
                           rows={5}
                           placeholder="Stel uw vraag of omschrijf uw storing..."
-                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:border-transparent bg-[#F8F9FA] resize-none"
+                          className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-kms-navy focus:border-transparent bg-kms-light resize-none"
                         />
                       </div>
                       <button
                         type="submit"
-                        className="w-full py-3.5 rounded-lg font-bold text-white text-base transition-opacity hover:opacity-90"
-                        style={{ background: '#F5A623' }}
+                        className="w-full py-3.5 rounded-lg font-bold text-white text-base bg-kms-yellow transition-opacity hover:opacity-90"
                       >
                         Verstuur bericht
                       </button>
@@ -101,11 +100,11 @@ export default function ContactPage() {
               {/* Contact info + kaart */}
               <div className="lg:col-span-2 flex flex-col gap-6">
                 <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
-                  <h2 className="text-xl font-bold mb-6" style={{ color: '#1e52a0' }}>Contactgegevens</h2>
+                  <h2 className="heading-subsection mb-6 text-kms-navy">Contactgegevens</h2>
                   <ul className="space-y-4">
                     <li className="flex gap-3">
-                      <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style={{ background: '#e8f0fe' }}>
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#1e52a0" strokeWidth={2}>
+                      <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center bg-blue-50 text-kms-navy">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
@@ -116,30 +115,30 @@ export default function ContactPage() {
                       </div>
                     </li>
                     <li className="flex gap-3">
-                      <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style={{ background: '#e8f0fe' }}>
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#1e52a0" strokeWidth={2}>
+                      <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center bg-blue-50 text-kms-navy">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                       </div>
                       <div>
                         <div className="text-sm font-semibold text-gray-800">Telefoon</div>
-                        <a href="tel:0782032858" className="text-sm" style={{ color: '#1e52a0' }}>078 203 28 58</a>
+                        <a href="tel:0782032858" className="text-sm text-kms-navy">078 203 28 58</a>
                       </div>
                     </li>
                     <li className="flex gap-3">
-                      <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style={{ background: '#e8f0fe' }}>
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#1e52a0" strokeWidth={2}>
+                      <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center bg-blue-50 text-kms-navy">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
                       <div>
                         <div className="text-sm font-semibold text-gray-800">E-mail</div>
-                        <a href="mailto:info@kmsinstallaties.nl" className="text-sm" style={{ color: '#1e52a0' }}>info@kmsinstallaties.nl</a>
+                        <a href="mailto:info@kmsinstallaties.nl" className="text-sm text-kms-navy">info@kmsinstallaties.nl</a>
                       </div>
                     </li>
                     <li className="flex gap-3">
-                      <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style={{ background: '#e8f0fe' }}>
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#1e52a0" strokeWidth={2}>
+                      <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center bg-blue-50 text-kms-navy">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
@@ -169,7 +168,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs font-semibold hover:underline"
-                      style={{ color: '#1e52a0' }}
+                      
                     >
                       Open in Google Maps &rarr;
                     </a>

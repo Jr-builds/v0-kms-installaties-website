@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { pageMetadata } from '@/lib/metadata'
-
-export const metadata: Metadata = pageMetadata.home
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import TrustBar from '@/components/trust-bar'
@@ -12,6 +9,10 @@ import ClosingCTA from '@/components/closing-cta'
 import CertificationBadge from '@/components/certification-badge'
 import { certifications } from '@/lib/certifications'
 import { getImage, type SiteImageKey } from '@/lib/images'
+import { getReviewPlatformBadgeClass } from '@/lib/review-badge'
+import { pageMetadata } from '@/lib/metadata'
+
+export const metadata: Metadata = pageMetadata.home
 
 const dienstenCards: { imageKey: SiteImageKey; title: string; description: string; href: string }[] = [
   { imageKey: 'dienst.elektra', title: 'Elektra', description: 'Complete elektrische installaties voor particulier en bedrijf', href: '/elektra' },
@@ -43,26 +44,26 @@ export default function HomePage() {
       <Navbar />
       <main>
         {/* HERO */}
-        <section style={{ background: '#1e52a0' }} className="py-16 sm:py-24">
+        <section className="bg-kms-navy py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold mb-6" style={{ background: 'rgba(245,166,35,0.15)', color: '#F5A623', border: '1px solid rgba(245,166,35,0.3)' }}>
-                  <span className="w-2 h-2 rounded-full inline-block" style={{ background: '#F5A623' }} />
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold mb-6 bg-kms-yellow/15 text-kms-yellow border border-kms-yellow/30">
+                  <span className="w-2 h-2 rounded-full inline-block bg-kms-yellow" />
                   BEREIKBAAR MA-ZO 08:00-22:00
                 </div>
-                <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight text-balance mb-5">
+                <h1 className="heading-hero-home text-white mb-5">
                   Vakkundige installaties in Zuid-Holland{' '}
-                  <span style={{ color: '#F5A623' }}>altijd bereikbaar</span>
+                  <span className="text-kms-yellow">altijd bereikbaar</span>
                 </h1>
                 <p className="text-blue-200 text-lg mb-8 leading-relaxed">
                   Elektra, airconditioning, ventilatie en camerasystemen. Bereikbaar van maandag tot zondag, 08:00 tot 22:00.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Link href="/offerte" className="inline-block px-7 py-3.5 rounded-lg font-bold text-white text-base text-center transition-opacity hover:opacity-90" style={{ background: '#F5A623' }}>
+                  <Link href="/offerte" className="inline-block px-7 py-3.5 rounded-lg font-bold text-white text-base text-center bg-kms-yellow transition-opacity hover:opacity-90">
                     Vraag een offerte aan
                   </Link>
-                  <a href="tel:0782032858" className="inline-block px-7 py-3.5 rounded-lg font-bold text-base text-center text-white border-2 border-white hover:bg-white hover:text-[#1e52a0] transition-colors">
+                  <a href="tel:0782032858" className="inline-block px-7 py-3.5 rounded-lg font-bold text-base text-center text-white border-2 border-white hover:bg-white hover:text-kms-navy transition-colors">
                     078 203 28 58
                   </a>
                 </div>
@@ -87,29 +88,29 @@ export default function HomePage() {
         {/* DIENSTEN GRID */}
         <section className="bg-white py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10 text-balance" style={{ color: '#1e52a0' }}>
+            <h2 className="heading-section text-center mb-10 text-kms-navy">
               Onze diensten
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {dienstenCards.slice(0, 3).map((card, i) => (
-                <Link key={i} href={card.href} className="group block bg-[#F8F9FA] rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
+                <Link key={i} href={card.href} className="group block bg-kms-light rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
                   <SiteImageOrPlaceholder imageKey={card.imageKey} placeholderLabel="" aspectRatio="aspect-video" />
                   <div className="p-5">
-                    <h3 className="font-bold text-base mb-1.5 group-hover:text-[#F5A623] transition-colors" style={{ color: '#1e52a0' }}>{card.title}</h3>
+                    <h3 className="font-bold text-base mb-1.5 text-kms-navy group-hover:text-kms-yellow transition-colors">{card.title}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed mb-3">{card.description}</p>
-                    <span className="text-sm font-semibold" style={{ color: '#F5A623' }}>Meer informatie &rarr;</span>
+                    <span className="text-sm font-semibold text-kms-yellow">Meer informatie &rarr;</span>
                   </div>
                 </Link>
               ))}
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 sm:max-w-2xl sm:mx-auto">
               {dienstenCards.slice(3).map((card, i) => (
-                <Link key={i} href={card.href} className="group block bg-[#F8F9FA] rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
+                <Link key={i} href={card.href} className="group block bg-kms-light rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
                   <SiteImageOrPlaceholder imageKey={card.imageKey} placeholderLabel="" aspectRatio="aspect-video" />
                   <div className="p-5">
-                    <h3 className="font-bold text-base mb-1.5 group-hover:text-[#F5A623] transition-colors" style={{ color: '#1e52a0' }}>{card.title}</h3>
+                    <h3 className="font-bold text-base mb-1.5 text-kms-navy group-hover:text-kms-yellow transition-colors">{card.title}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed mb-3">{card.description}</p>
-                    <span className="text-sm font-semibold" style={{ color: '#F5A623' }}>Meer informatie &rarr;</span>
+                    <span className="text-sm font-semibold text-kms-yellow">Meer informatie &rarr;</span>
                   </div>
                 </Link>
               ))}
@@ -118,7 +119,7 @@ export default function HomePage() {
         </section>
 
         {/* STATS */}
-        <section style={{ background: '#1e52a0' }} className="py-14">
+        <section className="bg-kms-navy py-14">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
               {[
@@ -127,7 +128,7 @@ export default function HomePage() {
                 { number: '56', label: 'Vijfsterrenreviews' },
               ].map((stat, i) => (
                 <div key={i}>
-                  <div className="text-5xl font-bold mb-1" style={{ color: '#F5A623' }}>{stat.number}</div>
+                  <div className="text-5xl font-bold mb-1 text-kms-yellow">{stat.number}</div>
                   <div className="text-blue-200 font-medium">{stat.label}</div>
                 </div>
               ))}
@@ -136,9 +137,9 @@ export default function HomePage() {
         </section>
 
         {/* RECENTE PROJECTEN */}
-        <section className="bg-[#F8F9FA] py-16 sm:py-20">
+        <section className="bg-kms-light py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10 text-balance" style={{ color: '#1e52a0' }}>
+            <h2 className="heading-section text-center mb-10 text-kms-navy">
               Recente projecten
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -147,18 +148,18 @@ export default function HomePage() {
                   <SiteImageOrPlaceholder imageKey={project.imageKey} placeholderLabel="" aspectRatio="aspect-video" />
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="px-2.5 py-0.5 rounded-full text-xs font-bold text-white" style={{ background: '#F5A623' }}>{project.category}</span>
+                      <span className="px-2.5 py-0.5 rounded-full text-xs font-bold text-white bg-kms-yellow">{project.category}</span>
                       <span className="text-xs text-gray-500">{project.city}</span>
                     </div>
-                    <h3 className="font-bold text-base mb-1.5" style={{ color: '#1e52a0' }}>{project.title}</h3>
+                    <h3 className="font-bold text-base mb-1.5 text-kms-navy">{project.title}</h3>
                     <p className="text-sm text-gray-600 mb-3 leading-relaxed">{project.description}</p>
-                    <p className="text-sm font-semibold" style={{ color: '#F5A623' }}>Resultaat: {project.resultaat}</p>
+                    <p className="text-sm font-semibold text-kms-yellow">Resultaat: {project.resultaat}</p>
                   </div>
                 </article>
               ))}
             </div>
             <div className="text-center mt-8">
-              <Link href="/projecten" className="inline-block px-6 py-3 rounded-lg text-sm font-bold border-2 transition-colors hover:text-white hover:bg-[#1e52a0]" style={{ borderColor: '#1e52a0', color: '#1e52a0' }}>
+              <Link href="/projecten" className="inline-block px-6 py-3 rounded-lg text-sm font-bold border-2 border-kms-navy text-kms-navy transition-colors hover:text-white hover:bg-kms-navy">
                 Bekijk alle projecten
               </Link>
             </div>
@@ -168,21 +169,21 @@ export default function HomePage() {
         {/* REVIEWS */}
         <section className="bg-white py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10 text-balance" style={{ color: '#1e52a0' }}>
+            <h2 className="heading-section text-center mb-10 text-kms-navy">
               Wat klanten zeggen
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {reviews.map((review, i) => (
-                <article key={i} className="bg-[#F8F9FA] rounded-xl p-6 border border-gray-100">
+                <article key={i} className="bg-kms-light rounded-xl p-6 border border-gray-100">
                   <div className="flex gap-0.5 mb-3" aria-label="5 sterren">
                     {[...Array(5)].map((_, j) => (
-                      <span key={j} style={{ color: '#F5A623' }} className="text-xl">&#9733;</span>
+                      <span key={j} className="text-xl text-kms-yellow">&#9733;</span>
                     ))}
                   </div>
                   <blockquote className="text-gray-700 text-sm leading-relaxed mb-4">&ldquo;{review.quote}&rdquo;</blockquote>
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-gray-800 text-sm">{review.name}</span>
-                    <span className="text-xs px-2 py-1 rounded-full font-medium" style={{ background: review.platform === 'Google' ? '#e8f0fe' : '#e6f7ee', color: review.platform === 'Google' ? '#1e52a0' : '#166534' }}>
+                    <span className={`text-xs px-2 py-1 rounded-full font-medium ${getReviewPlatformBadgeClass(review.platform)}`}>
                       {review.platform}
                     </span>
                   </div>
@@ -193,7 +194,7 @@ export default function HomePage() {
         </section>
 
         {/* CERTIFICERINGEN + MERKEN */}
-        <section className="bg-[#F8F9FA] py-12 sm:py-16">
+        <section className="bg-kms-light py-12 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-5">Onze certificeringen</p>
             <div className="flex flex-wrap justify-center gap-4 mb-10">

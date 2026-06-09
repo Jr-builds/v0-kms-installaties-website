@@ -3,7 +3,7 @@ import SiteLogo from '@/components/site-logo'
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#0a2040' }} className="text-white">
+    <footer className="bg-kms-navy-dark text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1: Over ons */}
@@ -12,7 +12,7 @@ export default function Footer() {
               <SiteLogo size={40} />
               <div>
                 <div className="font-bold text-base text-white">KMS Installaties</div>
-                <div className="text-xs font-semibold tracking-widest" style={{ color: '#F5A623' }}>
+                <div className="text-xs font-semibold tracking-widest text-kms-yellow">
                   ELEKTRA &amp; AIRCONDITIONING
                 </div>
               </div>
@@ -79,7 +79,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="mt-2">
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white" style={{ background: '#1e52a0' }}>
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white bg-kms-navy">
                   Ma-Zo 08:00-22:00
                 </span>
               </li>
@@ -89,14 +89,14 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t" style={{ borderColor: '#1e3560' }}>
+      <div className="border-t border-kms-navy-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             {['NEN 3140', 'STEK', 'VCA'].map((cert) => (
               <span
                 key={cert}
                 className="px-2.5 py-1 rounded text-xs font-bold"
-                style={{ background: '#1e52a0', color: '#F5A623' }}
+                className="bg-kms-navy text-kms-yellow"
               >
                 {cert}
               </span>

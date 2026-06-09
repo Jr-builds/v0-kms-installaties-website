@@ -6,7 +6,7 @@ const certNames = ['NEN 3140', 'STEK', 'VCA'] as const
 
 export default function TrustBar() {
   return (
-    <section className="bg-[#F8F9FA] border-y border-gray-200">
+    <section className="bg-kms-light border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex flex-wrap items-center justify-center gap-0 divide-x divide-gray-300">
           {/* Review links */}
