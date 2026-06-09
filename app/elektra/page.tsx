@@ -1,4 +1,8 @@
+import type { Metadata } from 'next'
 import Navbar from '@/components/navbar'
+import { pageMetadata } from '@/lib/metadata'
+
+export const metadata: Metadata = pageMetadata.elektra
 import Footer from '@/components/footer'
 import TrustBar from '@/components/trust-bar'
 import ServiceHero from '@/components/service-hero'

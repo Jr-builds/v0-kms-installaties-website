@@ -1,4 +1,8 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+import { pageMetadata } from '@/lib/metadata'
+
+export const metadata: Metadata = pageMetadata.home
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import TrustBar from '@/components/trust-bar'
