@@ -1,4 +1,8 @@
+import type { Metadata } from 'next'
 import Navbar from '@/components/navbar'
+import { pageMetadata } from '@/lib/metadata'
+
+export const metadata: Metadata = pageMetadata.overOns
 import Footer from '@/components/footer'
 import ImagePlaceholder from '@/components/image-placeholder'
 import ClosingCTA from '@/components/closing-cta'

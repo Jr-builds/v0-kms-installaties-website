@@ -79,21 +79,21 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 1.5 Per-page SEO metadata
 
-- [ ] Add `metadata` export to each page:
-  - [ ] `app/page.tsx` (home — may override layout defaults)
-  - [ ] `app/elektra/page.tsx`
-  - [ ] `app/airconditioning/page.tsx`
-  - [ ] `app/ventilatie/page.tsx`
-  - [ ] `app/technisch-vastgoedbeheer/page.tsx`
-  - [ ] `app/cameras-systemen/page.tsx`
-  - [ ] `app/projecten/page.tsx`
-  - [ ] `app/over-ons/page.tsx`
-  - [ ] `app/contact/page.tsx`
-  - [ ] `app/offerte/page.tsx`
-- [ ] Each page: unique `title`, `description`, `openGraph.title`, `openGraph.description`
-- [ ] Add `openGraph.images` per service page (use relevant hero image)
-- [ ] Add `twitter.card` metadata
-- [ ] Confirm `lang="nl"` on `<html>` (already set in layout)
+- [x] Add `metadata` export to each page:
+  - [x] `app/page.tsx` (home — may override layout defaults)
+  - [x] `app/elektra/page.tsx`
+  - [x] `app/airconditioning/page.tsx`
+  - [x] `app/ventilatie/page.tsx`
+  - [x] `app/technisch-vastgoedbeheer/page.tsx`
+  - [x] `app/cameras-systemen/page.tsx`
+  - [x] `app/projecten/page.tsx`
+  - [x] `app/over-ons/page.tsx`
+  - [x] `app/contact/page.tsx`
+  - [x] `app/offerte/page.tsx`
+- [x] Each page: unique `title`, `description`, `openGraph.title`, `openGraph.description`
+- [x] Add `openGraph.images` per service page (use relevant hero image)
+- [x] Add `twitter.card` metadata
+- [x] Confirm `lang="nl"` on `<html>` (already set in layout)
 
 ### 1.6 LocalBusiness structured data
 

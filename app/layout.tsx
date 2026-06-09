@@ -1,8 +1,11 @@
 import { Analytics } from '@vercel/analytics/next'
-import type { Metadata, Viewport } from 'next'
+import type { Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import MobileCtaBar from '@/components/mobile-cta-bar'
+import { defaultMetadata } from '@/lib/metadata'
 import './globals.css'
+
+export const metadata = defaultMetadata
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -15,21 +18,6 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
 })
-
-export const metadata: Metadata = {
-  title: 'KMS Installaties | Elektra & Airconditioning Zwijndrecht',
-  description:
-    'KMS Installaties: vakkundige elektra, airconditioning, ventilatie, vastgoedbeheer en camerasystemen in Zuid-Holland. Bereikbaar ma-zo 08:00-22:00. NEN 3140, STEK en VCA gecertificeerd.',
-  keywords:
-    'elektra installatie, airconditioning, ventilatie, camerasystemen, technisch vastgoedbeheer, Zwijndrecht, Rotterdam, Zuid-Holland, NEN 3140, STEK',
-  openGraph: {
-    title: 'KMS Installaties | Elektra & Airconditioning',
-    description:
-      'Vakkundige installaties in Zuid-Holland. Bereikbaar ma-zo 08:00-22:00.',
-    locale: 'nl_NL',
-    type: 'website',
-  },
-}
 
 export default function RootLayout({
   children,
