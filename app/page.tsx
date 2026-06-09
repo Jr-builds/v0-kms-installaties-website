@@ -44,8 +44,8 @@ export default function HomePage() {
       <Navbar />
       <main>
         {/* HERO */}
-        <section className="bg-kms-navy py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="hero-navy py-16 sm:py-24">
+          <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold mb-6 bg-kms-yellow/15 text-kms-yellow border border-kms-yellow/30">
@@ -68,12 +68,12 @@ export default function HomePage() {
                   </a>
                 </div>
               </div>
-              <div>
+              <div className="hero-photo">
                 <SiteImage
                   src={heroImage.src}
                   alt={heroImage.alt}
                   aspectRatio="aspect-[4/3]"
-                  className="w-full rounded-xl shadow-2xl"
+                  className="w-full"
                   priority
                   sizePreset="hero"
                 />

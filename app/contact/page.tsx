@@ -17,8 +17,8 @@ export default function ContactPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-kms-navy py-14 sm:py-20">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="hero-navy py-14 sm:py-20">
+          <div className="hero-navy-content max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="heading-page text-white mb-3">
               Heeft u een vraag of storingsmelding?
             </h1>

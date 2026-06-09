@@ -22,8 +22,8 @@ export default function OverOnsPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-kms-navy py-16 sm:py-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="hero-navy py-16 sm:py-24">
+          <div className="hero-navy-content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="heading-hero-home text-white mb-5">
               Vakmanschap met een persoonlijk verhaal
             </h1>

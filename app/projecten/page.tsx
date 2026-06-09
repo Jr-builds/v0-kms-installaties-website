@@ -40,8 +40,8 @@ export default function ProjectenPage() {
       <Navbar />
       <main>
         {/* Header */}
-        <section className="bg-kms-navy py-14">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="hero-navy py-14">
+          <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="heading-page text-white mb-3">Onze projecten</h1>
             <p className="text-blue-200 text-lg">Een greep uit het werk dat wij hebben mogen uitvoeren in Zuid-Holland.</p>
           </div>
@@ -94,8 +94,8 @@ export default function ProjectenPage() {
         </section>
 
         {/* Closing CTA */}
-        <section className="bg-kms-navy py-14">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="hero-navy py-14">
+          <div className="hero-navy-content max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="heading-section text-white mb-3">Wilt u ook zo&apos;n resultaat?</h2>
             <p className="text-blue-200 mb-8">Vraag een vrijblijvende offerte aan.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
