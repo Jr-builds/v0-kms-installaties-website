@@ -157,11 +157,11 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 3.2 Project cards interactivity
 
-- [ ] Decide pattern: modal detail view vs dedicated `/projecten/[slug]` pages (static)
-- [ ] Add click/hover affordance on project cards (cursor, shadow, "Bekijk project" link)
-- [ ] If modal: create `components/project-modal.tsx` with extended description + larger image
-- [ ] Add smooth fade when filtering on `app/projecten/page.tsx`
-- [ ] Add empty state when filter returns no results
+- [x] Decide pattern: modal detail view (chosen over static `/projecten/[slug]` pages for prototype scope)
+- [x] Add click/hover affordance on project cards (cursor, shadow, "Bekijk project" link)
+- [x] If modal: create `components/project-modal.tsx` with extended description + larger image
+- [x] Add smooth fade when filtering on `app/projecten/page.tsx`
+- [x] Add empty state when filter returns no results
 
 ### 3.3 Breadcrumbs on service pages
 
