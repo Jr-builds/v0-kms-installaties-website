@@ -45,8 +45,6 @@ export default function CamerasSystemenPage() {
           title="Altijd zicht op uw pand, AVG-compliant geïnstalleerd"
           subtitle="Camerasystemen voor woning en bedrijf, inclusief app-koppeling en jaarlijks onderhoud."
           imageKey="hero.cameras"
-          breadcrumbLabel="Camera's & Systemen"
-          breadcrumbPath="/cameras-systemen"
           offerteDienst="cameras"
         />
         <TrustBar variant="slim" />

@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import SiteImage from './site-image'
-import Breadcrumbs, { buildServiceBreadcrumbs } from './breadcrumbs'
 import { Button } from '@/components/ui/button'
 import { getImage, type SiteImageKey } from '@/lib/images'
 import { buildOfferteHref } from '@/lib/offerte'
@@ -12,8 +11,6 @@ interface ServiceHeroProps {
   subtitle: string
   imageKey: SiteImageKey
   primaryLabel?: string
-  breadcrumbLabel?: string
-  breadcrumbPath?: string
   offerteDienst?: string
 }
 
@@ -22,8 +19,6 @@ export default function ServiceHero({
   subtitle,
   imageKey,
   primaryLabel = 'Vraag een offerte aan',
-  breadcrumbLabel,
-  breadcrumbPath,
   offerteDienst,
 }: ServiceHeroProps) {
   const { src, alt } = getImage(imageKey)
@@ -32,12 +27,6 @@ export default function ServiceHero({
   return (
     <section className="hero-navy py-16 sm:py-24">
       <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {breadcrumbLabel && breadcrumbPath && (
-          <Breadcrumbs
-            items={buildServiceBreadcrumbs(breadcrumbLabel, breadcrumbPath)}
-            className="mb-8"
-          />
-        )}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="heading-hero text-white mb-4">
