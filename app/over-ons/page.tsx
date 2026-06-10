@@ -5,9 +5,7 @@ import ImagePlaceholder from '@/components/image-placeholder'
 import ClosingCTA from '@/components/closing-cta'
 import StatsBar from '@/components/stats-bar'
 import Reviews from '@/components/reviews'
-import CertificationBadge from '@/components/certification-badge'
 import Werkgebied from '@/components/werkgebied'
-import { certifications } from '@/lib/certifications'
 import { pageReviews } from '@/lib/reviews'
 import { pageMetadata } from '@/lib/metadata'
 
@@ -25,14 +23,9 @@ export default function OverOnsPage() {
             <h1 className="heading-hero-home text-white mb-5">
               Vakmanschap met een persoonlijk verhaal
             </h1>
-            <p className="text-blue-200 text-lg leading-relaxed max-w-2xl mx-auto mb-6">
+            <p className="text-blue-200 text-lg leading-relaxed max-w-2xl mx-auto">
               KMS Installaties is opgericht door Kerem Sen en Mevlut Sumer, twee vakmannen met een gedeelde passie voor techniek en kwaliteit. Vanuit Zwijndrecht bedienen wij particulieren en bedrijven door heel Zuid-Holland.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              {certifications.map((cert) => (
-                <CertificationBadge key={cert.id} certification={cert} variant="compact" />
-              ))}
-            </div>
           </div>
         </section>
 
