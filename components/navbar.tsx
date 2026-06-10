@@ -4,6 +4,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import SiteLogo from '@/components/site-logo'
+import { Button } from '@/components/ui/button'
+import AvailabilityPill from '@/components/availability-pill'
+import { phoneDisplay, phoneTelHref } from '@/lib/business'
 
 const dienstenItems = [
   { label: 'Elektra', href: '/elektra' },
@@ -153,13 +156,11 @@ export default function Navbar() {
             )}
           </nav>
 
-          <div className="hidden lg:flex items-center">
-            <Link
-              href="/offerte"
-              className="cta-yellow px-5 py-2.5 text-sm font-semibold"
-            >
+          <div className="hidden lg:flex items-center gap-3">
+            <AvailabilityPill size="sm" />
+            <Button render={<Link href="/offerte" />} nativeButton={false} variant="primary" size="sm">
               Offerte aanvragen
-            </Link>
+            </Button>
           </div>
 
           <button
@@ -190,7 +191,7 @@ export default function Navbar() {
           className="lg:hidden border-t border-gray-100 bg-white px-4 pb-4"
         >
           <a
-            href="tel:0782032858"
+            href={phoneTelHref}
             className="mt-3 flex items-center gap-3 rounded-xl bg-kms-green px-4 py-3.5 text-white shadow-sm transition-opacity hover:opacity-90"
           >
             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/15">
@@ -203,10 +204,12 @@ export default function Navbar() {
               </svg>
             </div>
             <div>
-              <div className="text-base font-bold leading-tight">078 203 28 58</div>
+              <div className="text-base font-bold leading-tight">{phoneDisplay}</div>
               <div className="text-xs text-white/90">Bel direct — ook voor spoed</div>
             </div>
           </a>
+
+          <AvailabilityPill size="sm" className="mt-3" />
 
           <nav className="mt-3 flex flex-col gap-1" aria-label="Mobiele navigatie">
             {navLinks.map((link) =>
@@ -261,13 +264,15 @@ export default function Navbar() {
                 </Link>
               ),
             )}
-            <Link
-              href="/offerte"
-              className="cta-yellow mt-2 px-5 py-2.5 text-center text-sm font-semibold"
-              onClick={() => setMobileOpen(false)}
+            <Button
+              render={<Link href="/offerte" onClick={() => setMobileOpen(false)} />}
+              nativeButton={false}
+              variant="primary"
+              size="sm"
+              className="mt-2 w-full"
             >
               Offerte aanvragen
-            </Link>
+            </Button>
           </nav>
         </div>
       )}

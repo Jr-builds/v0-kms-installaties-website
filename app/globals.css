@@ -186,16 +186,6 @@
     @apply mt-1.5 text-xs text-red-600;
   }
 
-  .btn-primary {
-    @apply rounded-lg font-bold bg-kms-yellow text-kms-navy-dark transition-opacity hover:opacity-90;
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kms-navy focus-visible:ring-offset-2;
-  }
-
-  .cta-yellow {
-    @apply rounded-lg font-bold bg-kms-yellow text-kms-navy-dark transition-opacity hover:opacity-90;
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kms-navy focus-visible:ring-offset-2;
-  }
-
   .badge-yellow {
     @apply rounded-full bg-kms-yellow text-kms-navy-dark;
   }

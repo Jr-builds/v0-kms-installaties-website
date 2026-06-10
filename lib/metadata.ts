@@ -4,6 +4,11 @@ import { getImage, type SiteImageKey } from '@/lib/images'
 export const SITE_NAME = 'KMS Installaties'
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kms-installaties.nl'
 
+export const OG_IMAGE = '/og-image.jpg'
+export const OG_IMAGE_ALT = 'KMS Installaties — Elektra & Airconditioning in Zuid-Holland'
+export const OG_IMAGE_WIDTH = 1200
+export const OG_IMAGE_HEIGHT = 630
+
 interface PageMetadataOptions {
   title: string
   description: string
@@ -74,9 +79,18 @@ export const defaultMetadata: Metadata = {
     locale: 'nl_NL',
     type: 'website',
     siteName: SITE_NAME,
+    images: [
+      {
+        url: OG_IMAGE,
+        width: OG_IMAGE_WIDTH,
+        height: OG_IMAGE_HEIGHT,
+        alt: OG_IMAGE_ALT,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
+    images: [OG_IMAGE],
   },
 }
 

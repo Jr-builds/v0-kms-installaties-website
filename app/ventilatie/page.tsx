@@ -12,6 +12,7 @@ import MerkLogos from '@/components/merklogos'
 import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
+import IsdeCallout from '@/components/isde-callout'
 import { pageReviews } from '@/lib/reviews'
 
 const dienstenCards = [
@@ -52,6 +53,12 @@ export default function VentilatiePage() {
           offerteDienst="ventilatie"
         />
         <TrustBar variant="slim" />
+
+        <section className="bg-white py-8">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <IsdeCallout variant="ventilatie" />
+          </div>
+        </section>
 
         <section className="bg-white py-12">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

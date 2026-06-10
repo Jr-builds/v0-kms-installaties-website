@@ -1,5 +1,7 @@
 import Link from 'next/link'
-import { Phone } from 'lucide-react'
+import { MessageCircle, Phone } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { phoneTelHref, whatsAppHref } from '@/lib/business'
 
 export default function MobileCtaBar() {
   return (
@@ -8,20 +10,34 @@ export default function MobileCtaBar() {
       role="region"
       aria-label="Snel contact"
     >
-      <div className="flex gap-2 p-3">
-        <a
-          href="tel:0782032858"
-          className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-kms-navy py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+      <div className="grid grid-cols-3 gap-2 p-3">
+        <Button
+          render={<a href={phoneTelHref} />}
+          nativeButton={false}
+          variant="default"
+          className="flex flex-col gap-1 bg-kms-navy px-2 py-2.5 text-xs font-bold text-white hover:opacity-90"
         >
           <Phone className="size-4 shrink-0" aria-hidden />
-          Bel nu
-        </a>
-        <Link
-          href="/offerte"
-          className="cta-yellow flex flex-1 items-center justify-center py-3 text-sm"
+          Bel
+        </Button>
+        <Button
+          render={<a href={whatsAppHref} target="_blank" rel="noopener noreferrer" />}
+          nativeButton={false}
+          variant="spoed"
+          className="flex flex-col gap-1 px-2 py-2.5 text-xs font-bold"
+          aria-label="WhatsApp KMS Installaties"
+        >
+          <MessageCircle className="size-4 shrink-0" aria-hidden />
+          WhatsApp
+        </Button>
+        <Button
+          render={<Link href="/offerte" />}
+          nativeButton={false}
+          variant="primary"
+          className="flex flex-col gap-1 px-2 py-2.5 text-xs font-bold"
         >
           Offerte
-        </Link>
+        </Button>
       </div>
     </div>
   )

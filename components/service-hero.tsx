@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import SiteImage from './site-image'
 import Breadcrumbs, { buildServiceBreadcrumbs } from './breadcrumbs'
+import { Button } from '@/components/ui/button'
 import { getImage, type SiteImageKey } from '@/lib/images'
 import { buildOfferteHref } from '@/lib/offerte'
+import { phoneDisplay, phoneTelHref } from '@/lib/business'
 
 interface ServiceHeroProps {
   title: string
@@ -43,18 +45,24 @@ export default function ServiceHero({
             </h1>
             <p className="text-blue-200 text-lg mb-8 leading-relaxed">{subtitle}</p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                href={offerteHref}
-                className="cta-yellow inline-block px-7 py-3.5 text-base text-center"
+              <Button
+                render={<Link href={offerteHref} />}
+                nativeButton={false}
+                variant="primary"
+                size="cta-sm"
+                className="text-center"
               >
                 {primaryLabel}
-              </Link>
-              <a
-                href="tel:0782032858"
-                className="inline-block px-7 py-3.5 rounded-lg font-bold text-base text-white border-2 border-white hover:bg-white hover:text-kms-navy transition-colors text-center"
+              </Button>
+              <Button
+                render={<a href={phoneTelHref} />}
+                nativeButton={false}
+                variant="hero-outline"
+                size="cta-sm"
+                className="text-center"
               >
-                078 203 28 58
-              </a>
+                {phoneDisplay}
+              </Button>
             </div>
           </div>
           <div className="hero-photo">

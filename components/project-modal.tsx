@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
+import { Button } from '@/components/ui/button'
 import { getProjectImageKeyForProject, type Project } from '@/lib/projects'
 
 interface ProjectModalProps {
@@ -54,8 +55,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           imageKey={imageKey}
           placeholderLabel=""
           aspectRatio="aspect-video"
-          sizePreset="hero"
-          priority
+          sizePreset="modal"
         />
 
         <div className="p-6 sm:p-8">
@@ -85,13 +85,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <p className="text-gray-600 leading-relaxed mb-4">{project.details}</p>
           <p className="text-sm font-semibold text-kms-yellow-dark mb-6">Resultaat: {project.resultaat}</p>
 
-          <Link
-            href="/offerte"
-            className="cta-yellow inline-block px-6 py-3 text-sm"
-            onClick={onClose}
+          <Button
+            render={<Link href="/offerte" onClick={onClose} />}
+            nativeButton={false}
+            variant="primary"
+            size="default"
           >
             Vergelijkbaar project? Vraag offerte aan
-          </Link>
+          </Button>
         </div>
       </div>
     </div>

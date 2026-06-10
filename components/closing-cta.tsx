@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { phoneDisplay, phoneTelHref } from '@/lib/business'
 
 interface ClosingCTAProps {
   title?: string
@@ -19,18 +21,12 @@ export default function ClosingCTA({
         <h2 className="heading-section text-white mb-3">{title}</h2>
         <p className="text-blue-200 mb-8 text-lg">{subtitle}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href={primaryHref}
-            className="cta-yellow inline-block px-8 py-3.5 text-base"
-          >
+          <Button render={<Link href={primaryHref} />} nativeButton={false} variant="primary" size="cta">
             {primaryLabel}
-          </Link>
-          <a
-            href="tel:0782032858"
-            className="inline-block px-8 py-3.5 rounded-lg text-base font-bold text-white border-2 border-white hover:bg-white hover:text-kms-navy transition-colors"
-          >
-            078 203 28 58
-          </a>
+          </Button>
+          <Button render={<a href={phoneTelHref} />} nativeButton={false} variant="hero-outline" size="cta">
+            {phoneDisplay}
+          </Button>
         </div>
       </div>
     </section>

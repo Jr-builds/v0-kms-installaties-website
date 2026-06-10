@@ -8,7 +8,7 @@ interface SiteImageOrPlaceholderProps {
   aspectRatio?: string
   className?: string
   priority?: boolean
-  sizePreset?: 'hero' | 'card' | 'square'
+  sizePreset?: 'hero' | 'card' | 'square' | 'modal'
 }
 
 export default function SiteImageOrPlaceholder({

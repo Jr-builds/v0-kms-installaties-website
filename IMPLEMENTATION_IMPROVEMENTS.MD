@@ -266,29 +266,30 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 6.1 Image optimization
 
-- [ ] Run all JPGs through compression (Squoosh, ImageOptim, or `sharp` script)
-- [ ] Use `next/image` `sizes` prop correctly per layout breakpoint
-- [ ] Set `priority` only on above-the-fold hero images
-- [ ] Consider WebP/AVIF output via Next.js image optimizer (default)
+- [x] Run all JPGs through compression — `npm run compress-images` (sharp script; skips files that would grow)
+- [x] Use `next/image` `sizes` prop correctly per layout breakpoint (`hero`, `card`, `square`, `modal` presets in `SiteImage`)
+- [x] Set `priority` only on above-the-fold hero images (home + service heroes; removed from project modal)
+- [x] WebP/AVIF output via Next.js image optimizer (default — no config needed)
 
 ### 6.2 Component deduplication
 
-- [ ] Extract shared `ContactSidebar` from `app/contact/page.tsx` and `app/offerte/page.tsx`
-- [ ] Extract shared contact info list (address, phone, email, hours) into `components/contact-info.tsx`
-- [ ] Replace inline ClosingCTA duplicate on `app/projecten/page.tsx`
-- [ ] Consolidate repeated review card markup into `components/reviews.tsx` (already exists — ensure all pages use it)
+- [x] Extract shared `ContactSidebar` from contact + offerte pages
+- [x] Extract shared contact info list into `components/contact-info.tsx`
+- [x] Replace inline ClosingCTA duplicate on projecten page (done in Phase 5.2)
+- [x] Consolidate review card markup — all pages use `components/reviews.tsx`
 
 ### 6.3 Adopt shadcn Button component
 
-- [ ] Define variants in `components/ui/button.tsx`: `primary` (yellow), `secondary` (navy outline), `spoed` (green), `ghost`
-- [ ] Replace raw `<Link className="...">` CTA patterns with `<Button asChild>` where appropriate
-- [ ] Unify hover/focus/disabled states across all CTAs
+- [x] Define variants in `components/ui/button.tsx`: `primary`, `secondary`, `hero-outline`, `spoed`, `ghost`
+- [x] Replace raw `<Link className="...">` CTA patterns with `<Button render={<Link … />}>` on heroes, closing CTA, navbar, mobile bar, forms
+- [x] Unified hover/focus/disabled states via Button variants
 
 ### 6.4 Remove dead code
 
-- [ ] Remove unused `placeholder-*` assets from `public/` after migration (keep `icon.svg`, app icons)
-- [ ] Remove `ImagePlaceholder` component if fully replaced (or keep as explicit fallback)
-- [ ] Audit unused imports after refactors
+- [x] Remove unused `placeholder-*` assets from `public/`
+- [x] Keep `ImagePlaceholder` as explicit fallback (team photos, diensten cards without assets)
+- [x] Centralized phone/hours/WhatsApp/ISDE URLs in `lib/business.ts`
+- [x] Audit unused imports and hardcoded `tel:` links (footer, navbar use shared helpers)
 
 ---
 
@@ -296,34 +297,34 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 7.1 Live availability indicator
 
-- [ ] Client-side check: if current time is Ma–Zo 08:00–22:00, show green "Nu bereikbaar" pill in navbar or hero
-- [ ] Outside hours: show "Morgen vanaf 08:00 bereikbaar" or similar
+- [x] Client-side check: if current time is Ma–Zo 08:00–22:00, show green "Nu bereikbaar" pill in navbar + home hero (`components/availability-pill.tsx`, `lib/availability.ts`)
+- [x] Outside hours: "Vandaag vanaf 08:00 bereikbaar" or "Morgen vanaf 08:00 bereikbaar"
 
 ### 7.2 WhatsApp button
 
-- [ ] Add WhatsApp link (`wa.me/...`) — get number from client
-- [ ] Include in mobile CTA bar or contact sidebar
+- [x] WhatsApp link via `whatsAppHref` (`wa.me/31782032858`) in `lib/business.ts`
+- [x] Mobile CTA bar (3-column: Bel / WhatsApp / Offerte) + contact/offerte sidebars
 
 ### 7.3 Before/after slider
 
-- [ ] Create `components/before-after.tsx` for select project cards (elektra renovatie)
-- [ ] Requires paired before/after images from client
+- [x] `components/before-after.tsx` with drag slider on elektra page (groepenkast renovatie)
+- [x] Demo uses single asset with grayscale "voor" treatment until client provides paired photos
 
 ### 7.4 ISDE / subsidie callout
 
-- [ ] Add highlighted banner on ventilatie + airconditioning pages
-- [ ] Link to government ISDE info (external)
+- [x] `components/isde-callout.tsx` on ventilatie + airconditioning pages
+- [x] Links to RVO ISDE info (`https://www.rvo.nl/subsidies-financiering/isde`)
 
 ### 7.5 Seasonal hero messaging
 
-- [ ] Optional client-side seasonal variant on home hero subtitle (summer: airco, winter: storingen)
-- [ ] Keep subtle — don't confuse core messaging
+- [x] `components/seasonal-hero-subtitle.tsx` — summer (Jun–Aug) airco, winter (Dec–Feb) storingen, default otherwise
+- [x] Client-only swap after mount to avoid hydration mismatch
 
 ### 7.6 Open Graph & social sharing
 
-- [ ] Create `public/og-image.jpg` (1200×630) with logo + tagline
-- [ ] Set as default `openGraph.images` in root layout
-- [ ] Per-service OG images (optional)
+- [x] `public/og-image.jpg` (1200×630) via `npm run generate-og-image`
+- [x] Default `openGraph.images` + Twitter card in `lib/metadata.ts` (`defaultMetadata`)
+- [x] Per-service OG images via `createPageMetadata` + `imageKey` (existing)
 
 ---
 
@@ -366,7 +367,7 @@ This document tracks all front-end improvements identified during the site revie
 5.2 Repetition reduction + 6.2 Deduplication + 6.3 Button component + 6.4 Dead code
 
 ### Sprint 7 — Optional extras
-Phase 7 items as time allows
+Phase 7 complete (availability pill, WhatsApp, before/after demo, ISDE callouts, seasonal hero, OG image)
 
 ---
 
@@ -379,8 +380,8 @@ Phase 7 items as time allows
 | 3 — UX & conversion | — | — | — |
 | 4 — Mobile & a11y | — | — | — |
 | 5 — Content polish | — | — | — |
-| 6 — Performance & code | — | — | — |
-| 7 — Nice-to-have | — | — | — |
+| 6 — Performance & code | 14 | 14 | 100% |
+| 7 — Nice-to-have | 12 | 12 | 100% |
 
 > Update this table manually as phases complete.
 
@@ -390,10 +391,10 @@ Phase 7 items as time allows
 
 - [x] Google Business Profile review URL
 - [x] Werkspot profile URL
-- [ ] WhatsApp business number (if adding WhatsApp CTA)
+- [x] WhatsApp link via main business number (`wa.me/31782032858`)
 - [ ] Team photos for Kerem Sen & Mevlut Sumer (Over ons)
 - [ ] Additional project photos for categories without a matching asset
-- [ ] Before/after photo pairs (if doing slider)
+- [ ] Dedicated before/after photo pairs (slider uses demo grayscale on elektra page until provided)
 - [x] Brand logo files for MerkLogos section (12 logos in `public/brands/`, all brands on elektra/airconditioning/ventilatie pages)
 - [ ] Confirm opening hours and address for structured data
 

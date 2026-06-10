@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import SiteLogo from '@/components/site-logo'
+import { phoneDisplay, phoneTelHref } from '@/lib/business'
 
 export default function Footer() {
   return (
@@ -69,8 +70,8 @@ export default function Footer() {
               <li>Voltastraat 6A</li>
               <li>3335 KK Zwijndrecht</li>
               <li>
-                <a href="tel:0782032858" className="hover:text-white transition-colors">
-                  078 203 28 58
+                <a href={phoneTelHref} className="hover:text-white transition-colors">
+                  {phoneDisplay}
                 </a>
               </li>
               <li>

@@ -8,11 +8,15 @@ import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
 import ClosingCTA from '@/components/closing-cta'
 import StatsBar from '@/components/stats-bar'
 import Reviews from '@/components/reviews'
+import AvailabilityPill from '@/components/availability-pill'
+import SeasonalHeroSubtitle from '@/components/seasonal-hero-subtitle'
 import CertificationBadge from '@/components/certification-badge'
+import { Button } from '@/components/ui/button'
 import { certifications } from '@/lib/certifications'
 import { getImage, type SiteImageKey } from '@/lib/images'
 import { pageReviews } from '@/lib/reviews'
 import { pageMetadata } from '@/lib/metadata'
+import { phoneDisplay, phoneTelHref } from '@/lib/business'
 
 export const metadata: Metadata = pageMetadata.home
 
@@ -46,24 +50,24 @@ export default function HomePage() {
           <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold mb-6 bg-kms-yellow/15 text-kms-yellow-dark border border-kms-yellow/30">
-                  <span className="w-2 h-2 rounded-full inline-block bg-kms-yellow" />
-                  BEREIKBAAR MA-ZO 08:00-22:00
+                <div className="mb-6 flex flex-wrap items-center gap-3">
+                  <AvailabilityPill size="md" />
+                  <span className="inline-flex items-center gap-2 rounded-full border border-kms-yellow/30 bg-kms-yellow/15 px-4 py-1.5 text-xs font-bold text-kms-yellow-dark">
+                    MA-ZO 08:00-22:00
+                  </span>
                 </div>
                 <h1 className="heading-hero-home text-white mb-5">
                   Vakkundige installaties in Zuid-Holland{' '}
                   <span className="text-kms-yellow-dark">altijd bereikbaar</span>
                 </h1>
-                <p className="text-blue-200 text-lg mb-8 leading-relaxed">
-                  Elektra, airconditioning, ventilatie en camerasystemen. Bereikbaar van maandag tot zondag, 08:00 tot 22:00.
-                </p>
+                <SeasonalHeroSubtitle />
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Link href="/offerte" className="cta-yellow inline-block px-7 py-3.5 text-base text-center">
+                  <Button render={<Link href="/offerte" />} nativeButton={false} variant="primary" size="cta-sm" className="text-center">
                     Vraag een offerte aan
-                  </Link>
-                  <a href="tel:0782032858" className="inline-block px-7 py-3.5 rounded-lg font-bold text-base text-center text-white border-2 border-white hover:bg-white hover:text-kms-navy transition-colors">
-                    078 203 28 58
-                  </a>
+                  </Button>
+                  <Button render={<a href={phoneTelHref} />} nativeButton={false} variant="hero-outline" size="cta-sm" className="text-center">
+                    {phoneDisplay}
+                  </Button>
                 </div>
               </div>
               <div className="hero-photo">
@@ -146,9 +150,9 @@ export default function HomePage() {
               ))}
             </div>
             <div className="text-center mt-8">
-              <Link href="/projecten" className="inline-block px-6 py-3 rounded-lg text-sm font-bold border-2 border-kms-navy text-kms-navy transition-colors hover:text-white hover:bg-kms-navy">
+              <Button render={<Link href="/projecten" />} nativeButton={false} variant="secondary">
                 Bekijk alle projecten
-              </Link>
+              </Button>
             </div>
           </div>
         </section>
