@@ -46,7 +46,7 @@ export default function ElektraPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <ServiceHero
           title="Elektra die de eerste keer goed zit, voor particulier en bedrijf"
           subtitle="NEN 3140 gecertificeerd. Bereikbaar van maandag tot zondag."

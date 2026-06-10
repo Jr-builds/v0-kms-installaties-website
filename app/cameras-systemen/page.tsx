@@ -42,7 +42,7 @@ export default function CamerasSystemenPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <ServiceHero
           title="Altijd zicht op uw pand, AVG-compliant geinstalleerd"
           subtitle="Camerasystemen voor woning en bedrijf, inclusief app-koppeling en jaarlijks onderhoud."

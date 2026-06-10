@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import MobileCtaBar from '@/components/mobile-cta-bar'
+import SkipLink from '@/components/skip-link'
 import StructuredData from '@/components/structured-data'
 import { defaultMetadata } from '@/lib/metadata'
 import './globals.css'
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="nl" className={`${inter.variable} bg-background`}>
       <body className="font-sans antialiased mobile-cta-spacing">
+        <SkipLink />
         <StructuredData />
         {children}
         <MobileCtaBar />

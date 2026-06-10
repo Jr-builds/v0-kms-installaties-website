@@ -7,6 +7,8 @@
  * bg/text/border-kms-navy       → #1e52a0 (primary brand)
  * bg-kms-navy-dark              → #0a2040 (footer, dark sections)
  * bg/text/border-kms-yellow     → #F5A623 (CTAs, accents)
+ * text-kms-yellow-dark          → #9a6800 (yellow text on light backgrounds)
+ * text-kms-yellow-light         → #FFC857 (yellow text on navy backgrounds)
  * bg/text-kms-green             → #22a757 (call / success)
  * bg-kms-light                  → #F8F9FA (section backgrounds)
  * border-kms-navy-muted         → #1e3560 (footer divider)
@@ -33,6 +35,8 @@
   --color-kms-navy-dark: #0a2040;
   --color-kms-navy-muted: #1e3560;
   --color-kms-yellow: #F5A623;
+  --color-kms-yellow-dark: #9a6800;
+  --color-kms-yellow-light: #FFC857;
   --color-kms-green: #22a757;
   --color-kms-light: #F8F9FA;
 
@@ -183,8 +187,23 @@
   }
 
   .btn-primary {
-    @apply rounded-lg font-bold text-white bg-kms-yellow transition-opacity hover:opacity-90;
+    @apply rounded-lg font-bold bg-kms-yellow text-kms-navy-dark transition-opacity hover:opacity-90;
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kms-navy focus-visible:ring-offset-2;
+  }
+
+  .cta-yellow {
+    @apply rounded-lg font-bold bg-kms-yellow text-kms-navy-dark transition-opacity hover:opacity-90;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kms-navy focus-visible:ring-offset-2;
+  }
+
+  .badge-yellow {
+    @apply rounded-full bg-kms-yellow text-kms-navy-dark;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100];
+    @apply rounded-lg bg-kms-navy px-4 py-2.5 text-sm font-semibold text-white;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kms-yellow focus-visible:ring-offset-2;
   }
 }
 

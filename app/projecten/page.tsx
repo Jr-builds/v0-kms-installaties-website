@@ -39,7 +39,7 @@ export default function ProjectenPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <section className="hero-navy py-14">
           <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="heading-page text-white mb-3">Onze projecten</h1>
@@ -113,14 +113,14 @@ export default function ProjectenPage() {
                       </div>
                       <div className="p-5">
                         <div className="flex items-center gap-2 mb-3">
-                          <span className="px-2.5 py-0.5 rounded-full text-xs font-bold text-white bg-kms-yellow">
+                          <span className="badge-yellow px-2.5 py-0.5 text-xs font-bold">
                             {project.category}
                           </span>
                           <span className="text-xs text-gray-500">{project.city}</span>
                         </div>
                         <h3 className="font-bold text-base mb-1.5 text-kms-navy">{project.title}</h3>
                         <p className="text-sm text-gray-600 mb-3 leading-relaxed">{project.description}</p>
-                        <p className="text-sm font-semibold text-kms-yellow mb-3">
+                        <p className="text-sm font-semibold text-kms-yellow-dark mb-3">
                           Resultaat: {project.resultaat}
                         </p>
                         <span className="inline-flex items-center text-sm font-semibold text-kms-navy group-hover:underline">
@@ -145,7 +145,7 @@ export default function ProjectenPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/offerte"
-                className="inline-block px-8 py-3.5 rounded-lg text-base font-bold text-white bg-kms-yellow transition-opacity hover:opacity-90"
+                className="cta-yellow inline-block px-8 py-3.5 text-base"
               >
                 Vraag een offerte aan
               </Link>

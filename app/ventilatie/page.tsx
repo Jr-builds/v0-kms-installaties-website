@@ -44,7 +44,7 @@ export default function VentilatiePage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <ServiceHero
           title="Gezonde lucht in elke ruimte, inclusief advies over ISDE-subsidie"
           subtitle="WTW-systemen, mechanische ventilatie en onderhoud voor particulier en bedrijf."

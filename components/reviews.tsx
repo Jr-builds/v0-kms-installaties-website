@@ -15,7 +15,7 @@ function StarRating() {
   return (
     <div className="flex gap-0.5 mb-3" aria-label="5 sterren">
       {[...Array(5)].map((_, i) => (
-        <span key={i} className="text-lg text-kms-yellow">&#9733;</span>
+        <span key={i} className="text-lg text-kms-yellow-dark">&#9733;</span>
       ))}
     </div>
   )

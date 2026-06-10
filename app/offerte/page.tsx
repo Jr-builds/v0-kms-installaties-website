@@ -250,7 +250,7 @@ export default function OffertePage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <section className="hero-navy py-14 sm:py-20">
           <div className="hero-navy-content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="heading-page text-white mb-3">Offerte voor uw nieuwe project</h1>
@@ -260,7 +260,7 @@ export default function OffertePage() {
             </p>
             <p className="text-sm text-blue-200 mt-5">
               Spoed of storing?{' '}
-              <Link href="/contact" className="font-semibold text-kms-yellow hover:underline">
+              <Link href="/contact" className="font-semibold text-kms-yellow-dark hover:underline">
                 Neem contact op →
               </Link>
             </p>

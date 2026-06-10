@@ -22,7 +22,7 @@ export default function OverOnsPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         {/* Hero */}
         <section className="hero-navy py-16 sm:py-24">
           <div className="hero-navy-content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -95,7 +95,7 @@ export default function OverOnsPage() {
                 <article key={i} className="bg-kms-light rounded-xl p-5 border border-gray-100">
                   <div className="flex gap-0.5 mb-3" aria-label="5 sterren">
                     {[...Array(5)].map((_, j) => (
-                      <span key={j} className="text-lg text-kms-yellow">&#9733;</span>
+                      <span key={j} className="text-lg text-kms-yellow-dark">&#9733;</span>
                     ))}
                   </div>
                   <blockquote className="text-gray-700 text-sm leading-relaxed mb-3">&ldquo;{review.quote}&rdquo;</blockquote>

@@ -12,7 +12,7 @@ export default function Footer() {
               <SiteLogo size={40} />
               <div>
                 <div className="font-bold text-base text-white">KMS Installaties</div>
-                <div className="text-xs font-semibold tracking-widest text-kms-yellow">
+                <div className="text-xs font-semibold tracking-widest text-kms-yellow-light">
                   ELEKTRA &amp; AIRCONDITIONING
                 </div>
               </div>
@@ -95,14 +95,13 @@ export default function Footer() {
             {['NEN 3140', 'STEK', 'VCA'].map((cert) => (
               <span
                 key={cert}
-                className="px-2.5 py-1 rounded text-xs font-bold"
-                className="bg-kms-navy text-kms-yellow"
+                className="rounded bg-kms-navy px-2.5 py-1 text-xs font-bold text-kms-yellow-light"
               >
                 {cert}
               </span>
             ))}
           </div>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-gray-400">
             &copy; 2026 KMS Installaties. Alle rechten voorbehouden.
           </p>
         </div>

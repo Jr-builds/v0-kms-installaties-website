@@ -44,7 +44,7 @@ export default function AirconditioningPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <ServiceHero
           title="Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geinstalleerd"
           subtitle="Levering, installatie en onderhoud van A-merk airconditioning."

@@ -232,10 +232,10 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 4.5 General accessibility pass
 
-- [ ] Run Lighthouse accessibility audit on home + one service page + contact
-- [ ] Verify color contrast on yellow CTA buttons (white text on `#F5A623`)
-- [ ] Ensure all icon-only buttons have `aria-label`
-- [ ] Skip-to-main-content link in `app/layout.tsx`
+- [x] Run Lighthouse accessibility audit on home + one service page + contact (100 / 100 / 100 after contrast fixes)
+- [x] Verify color contrast on yellow CTA buttons — switched to `text-kms-navy-dark` on `#F5A623` (8:1); added `kms-yellow-dark` / `kms-yellow-light` tokens for accent text
+- [x] Ensure all icon-only buttons have `aria-label` (certification info buttons, modal close, mobile menu)
+- [x] Skip-to-main-content link in `app/layout.tsx` + `id="main-content"` on all pages
 
 ---
 

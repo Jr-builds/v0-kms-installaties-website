@@ -42,7 +42,7 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         {/* Hero */}
         <section className="hero-navy py-14 sm:py-20">
           <div className="hero-navy-content max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -54,7 +54,7 @@ export default function ContactPage() {
             </p>
             <p className="text-sm text-blue-200 mt-5">
               Wilt u een offerte voor een nieuw project?{' '}
-              <Link href="/offerte" className="font-semibold text-kms-yellow hover:underline">
+              <Link href="/offerte" className="font-semibold text-kms-yellow-dark hover:underline">
                 Offerte aanvragen →
               </Link>
             </p>
@@ -197,7 +197,7 @@ export default function ContactPage() {
                       <div>
                         <div className="text-sm font-semibold text-gray-800">Bereikbaar</div>
                         <div className="text-sm text-gray-500">Ma-Zo 08:00-22:00</div>
-                        <div className="text-xs text-gray-400 mt-0.5">Ook voor spoedmeldingen</div>
+                        <div className="text-xs text-gray-500 mt-0.5">Ook voor spoedmeldingen</div>
                       </div>
                     </li>
                   </ul>

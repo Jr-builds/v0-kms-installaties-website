@@ -40,7 +40,7 @@ export default function Breadcrumbs({
   const linkClass =
     variant === 'dark'
       ? 'text-blue-200 transition-colors hover:text-white'
-      : 'text-kms-navy transition-colors hover:text-kms-yellow'
+      : 'text-kms-navy transition-colors hover:text-kms-yellow-dark'
 
   const currentClass =
     variant === 'dark' ? 'font-medium text-blue-100' : 'font-medium text-gray-700'
