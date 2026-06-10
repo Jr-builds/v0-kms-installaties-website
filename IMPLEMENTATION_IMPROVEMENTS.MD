@@ -260,6 +260,12 @@ This document tracks all front-end improvements identified during the site revie
 - [x] Improve wrapping on small screens — 2-column grid on mobile, flex + divide-x from `sm` up
 - [x] Cert badges grouped in a full-width row on mobile; availability on its own row (full variant only)
 
+### 5.4 Em-dash copy polish
+
+- [x] Replaced em-dashes (`—`) in user-facing page copy and components with natural Dutch punctuation (commas, periods, or sentence rewrites)
+- [x] Preserved hyphens in times (`08:00-22:00`) and compound words (e.g. `elektra-`, `NEN-conforme`)
+- [x] Updated files: `lib/metadata.ts`, `lib/seasonal.ts`, `app/contact/page.tsx`, `app/offerte/page.tsx`, `app/elektra/page.tsx`, `components/navbar.tsx`, `components/werkgebied.tsx`
+
 ---
 
 ## Phase 6 — Performance & code quality

@@ -205,7 +205,7 @@ export default function Navbar() {
             </div>
             <div>
               <div className="text-base font-bold leading-tight">{phoneDisplay}</div>
-              <div className="text-xs text-white/90">Bel direct — ook voor spoed</div>
+              <div className="text-xs text-white/90">Bel direct, ook voor spoed</div>
             </div>
           </a>
 

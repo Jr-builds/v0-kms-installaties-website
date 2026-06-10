@@ -83,7 +83,7 @@ function OfferteForm() {
     <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
       <h2 className="heading-subsection mb-2 text-kms-navy">Prijsindicatie aanvragen</h2>
       <p className="text-sm text-gray-500 mb-6">
-        Vertel ons over uw project — wij sturen een offerte op maat.
+        Vertel ons over uw project. Wij sturen een offerte op maat.
       </p>
       {submitted ? (
         <div className="text-center py-10">
