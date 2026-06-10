@@ -8,7 +8,7 @@ import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
 import ClosingCTA from '@/components/closing-cta'
 import StatsBar from '@/components/stats-bar'
 import Reviews from '@/components/reviews'
-import AvailabilityPill from '@/components/availability-pill'
+import AvailabilityPill, { OpeningHoursPill } from '@/components/availability-pill'
 import SeasonalHeroSubtitle from '@/components/seasonal-hero-subtitle'
 import CertificationBadge from '@/components/certification-badge'
 import { Button } from '@/components/ui/button'
@@ -51,14 +51,12 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="mb-6 flex flex-wrap items-center gap-3">
-                  <AvailabilityPill size="md" />
-                  <span className="inline-flex items-center gap-2 rounded-full border border-kms-yellow/30 bg-kms-yellow/15 px-4 py-1.5 text-xs font-bold text-kms-yellow-dark">
-                    MA-ZO 08:00-22:00
-                  </span>
+                  <AvailabilityPill size="md" variant="hero" />
+                  <OpeningHoursPill size="md" />
                 </div>
                 <h1 className="heading-hero-home text-white mb-5">
                   Vakkundige installaties in Zuid-Holland{' '}
-                  <span className="text-kms-yellow-dark">altijd bereikbaar</span>
+                  <span className="text-kms-yellow">altijd bereikbaar</span>
                 </h1>
                 <SeasonalHeroSubtitle />
                 <div className="flex flex-col sm:flex-row gap-3">

@@ -64,7 +64,17 @@ export const phoneDisplay = '078 203 28 58'
 export const phoneTelHref = 'tel:0782032858'
 export const whatsAppHref = 'https://wa.me/31782032858'
 
-export const openingHoursDisplay = 'Ma-Zo 08:00-22:00'
+export const openingHoursDisplay = 'Ma-zo 08:00-22:00'
 export const openingHoursLongDisplay = 'Maandag t/m zondag, 08:00-22:00'
+
+/** KvK-inschrijving (publiek register) */
+export const kvkNumber = '90317718'
+export const kvkLookupUrl = `https://www.kvk.nl/zoeken/#!/zoeken?kvknummer=${kvkNumber}`
+
+/**
+ * BTW-identificatienummer — invullen wanneer bekend (staat op facturen).
+ * Optioneel via `NEXT_PUBLIC_BTW_ID` in `.env.local`.
+ */
+export const btwId = process.env.NEXT_PUBLIC_BTW_ID?.trim() ?? ''
 
 export const ISDE_INFO_URL = 'https://www.rvo.nl/subsidies-financiering/isde'
