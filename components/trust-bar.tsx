@@ -5,13 +5,11 @@ import { trustLinks } from '@/lib/trust-links'
 const certNames = ['NEN 3140', 'STEK', 'VCA'] as const
 
 interface TrustBarProps {
-  /** Full bar on home/offerte; slim on service pages (reviews + certs only). */
+  /** @deprecated No longer affects layout; kept so existing pages compile unchanged. */
   variant?: 'full' | 'slim'
 }
 
-export default function TrustBar({ variant = 'full' }: TrustBarProps) {
-  const showAvailability = variant === 'full'
-
+export default function TrustBar({ variant: _variant = 'full' }: TrustBarProps = {}) {
   return (
     <section className="bg-kms-light border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -49,15 +47,6 @@ export default function TrustBar({ variant = 'full' }: TrustBarProps) {
               )
             })}
           </div>
-
-          {showAvailability && (
-            <div className="col-span-2 flex items-center justify-center gap-2 px-3 py-2 sm:col-span-1 sm:px-5">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-1">
-                <span className="text-sm font-semibold text-gray-800">Ma-Zo</span>
-                <span className="text-xs text-gray-500">08:00-22:00</span>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </section>
