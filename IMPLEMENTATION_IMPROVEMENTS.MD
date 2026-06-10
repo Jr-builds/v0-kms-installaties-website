@@ -243,22 +243,22 @@ This document tracks all front-end improvements identified during the site revie
 
 ### 5.1 Dutch diacritics pass
 
-- [ ] Find/replace `geinstalleerd` → `geïnstalleerd` across all files
-- [ ] Audit other common misses: `geintegreerd`, `geinformeerd`, etc.
-- [ ] Review FAQ and service descriptions for consistent tone
+- [x] Find/replace `geinstalleerd` → `geïnstalleerd` across all files
+- [x] Audit other common misses: `coordineren` → `coördineren`, `Coordinatie` → `Coördinatie`
+- [x] Review FAQ and service descriptions for consistent tone (unchanged — already consistent formal Dutch)
 
 ### 5.2 Reduce repetition across pages
 
-- [ ] **Home:** keep full TrustBar + certs + reviews + stats
-- [ ] **Service pages:** slim TrustBar (reviews + certs only) or inline cert mention in hero
-- [ ] **Over ons / Projecten:** lighter trust treatment
-- [ ] Rotate review quotes — avoid same 3 quotes on home, elektra, and over-ons
-- [ ] Deduplicate `ClosingCTA` on projecten page — use `components/closing-cta.tsx` instead of inline copy
+- [x] **Home:** keep full TrustBar + certs + reviews + stats
+- [x] **Service pages:** slim TrustBar (`variant="slim"` — reviews + certs only)
+- [x] **Over ons / Projecten:** lighter trust treatment (compact cert badges in hero; shared `Reviews` / `ClosingCTA`)
+- [x] Rotate review quotes via `lib/reviews.ts` — no overlap between home, elektra, and over-ons
+- [x] Deduplicate `ClosingCTA` on projecten page
 
 ### 5.3 TrustBar mobile layout
 
-- [ ] Improve wrapping on small screens (currently `divide-x` may look cramped)
-- [ ] Consider horizontal scroll or 2-row grid on mobile
+- [x] Improve wrapping on small screens — 2-column grid on mobile, flex + divide-x from `sm` up
+- [x] Cert badges grouped in a full-width row on mobile; availability on its own row (full variant only)
 
 ---
 

@@ -11,6 +11,7 @@ import WaaromKMS from '@/components/waarom-kms'
 import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
+import { pageReviews } from '@/lib/reviews'
 
 const dienstenCards = [
   { imageKey: 'camera.buiten' as const, imageLabel: 'Foto: camera bekabeling installatie', title: 'Installatie & montage', description: 'Bekabeling via Wifi/PoE/NVR, optimale zichtlijnen, recorders en monitoren' },
@@ -26,10 +27,7 @@ const waaromItems = [
   { title: 'Woning en bedrijf', description: "Van 2 camera's bij een voordeur tot een volledig beveiligingssysteem voor een bedrijfspand." },
 ]
 
-const reviews = [
-  { quote: 'Camerasysteem netjes geinstalleerd met app-koppeling. Kan nu altijd live meekijken. Aanrader!', name: 'Familie W.', platform: 'Google' },
-  { quote: 'Acht buitencameras geplaatst voor ons bedrijfspand. AVG-conform, professioneel en vlot uitgevoerd.', name: 'Bedrijf Rotterdam', platform: 'Werkspot' },
-]
+const reviews = pageReviews.cameras
 
 const faqItems = [
   { question: 'Installeren jullie AVG-conform?', answer: 'Ja, inclusief advies over meldplicht en cameraregistratie. Wij zorgen dat uw camerasysteem volledig voldoet aan de AVG-wetgeving.' },
@@ -44,14 +42,14 @@ export default function CamerasSystemenPage() {
       <Navbar />
       <main id="main-content">
         <ServiceHero
-          title="Altijd zicht op uw pand, AVG-compliant geinstalleerd"
+          title="Altijd zicht op uw pand, AVG-compliant geïnstalleerd"
           subtitle="Camerasystemen voor woning en bedrijf, inclusief app-koppeling en jaarlijks onderhoud."
           imageKey="hero.cameras"
           breadcrumbLabel="Camera's & Systemen"
           breadcrumbPath="/cameras-systemen"
           offerteDienst="cameras"
         />
-        <TrustBar />
+        <TrustBar variant="slim" />
 
         <section className="bg-white py-12">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
