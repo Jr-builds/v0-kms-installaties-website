@@ -12,6 +12,7 @@ import MerkLogos from '@/components/merklogos'
 import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
+import { pageReviews } from '@/lib/reviews'
 
 const dienstenCards = [
   { imageKey: 'airco.binnenunit' as const, imageLabel: 'Foto: kantoor klimaatbeheersing', title: 'Klimaatbeheersing kantoor & bedrijven', description: 'Installatie klimaatbeheersingssystemen, preventief onderhoud' },
@@ -28,10 +29,7 @@ const waaromItems = [
   { title: 'Zomer en winter klaar', description: 'Airco koelt in de zomer en verwarmt in de winter. Wij adviseren de juiste unit voor uw situatie.' },
 ]
 
-const reviews = [
-  { quote: 'Snel gereageerd en netjes geinstalleerd. Airco werkt perfect en de afwerking was keurig. Zeker een aanrader!', name: 'Mohammed A.', platform: 'Google' },
-  { quote: 'Drie airco-units geplaatst in ons kantoor. Vakkundig werk, nette afwerking en alles snel in bedrijf gesteld.', name: 'Rachid K.', platform: 'Werkspot' },
-]
+const reviews = pageReviews.airconditioning
 
 const faqItems = [
   { question: 'Zijn jullie STEK-gecertificeerd?', answer: 'Ja, wettelijk verplicht voor koelmiddelen en wij voldoen hieraan. Dit garandeert dat het werk veilig en conform de regelgeving wordt uitgevoerd.' },
@@ -46,14 +44,14 @@ export default function AirconditioningPage() {
       <Navbar />
       <main id="main-content">
         <ServiceHero
-          title="Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geinstalleerd"
+          title="Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geïnstalleerd"
           subtitle="Levering, installatie en onderhoud van A-merk airconditioning."
           imageKey="hero.airconditioning"
           breadcrumbLabel="Airconditioning"
           breadcrumbPath="/airconditioning"
           offerteDienst="airconditioning"
         />
-        <TrustBar />
+        <TrustBar variant="slim" />
 
         <section className="bg-white py-12">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

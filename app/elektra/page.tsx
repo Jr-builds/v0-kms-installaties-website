@@ -12,6 +12,7 @@ import MerkLogos from '@/components/merklogos'
 import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
+import { pageReviews } from '@/lib/reviews'
 
 const dienstenCards = [
   { imageKey: 'elektra.huisinstallatie' as const, imageLabel: 'Foto: huisinstallatie nieuwbouw', title: 'Huisinstallaties (Nieuwbouw & Bestaande Bouw)', description: 'Complete elektrische aanleg, stopcontacten, veiligheidscheck NEN' },
@@ -30,10 +31,7 @@ const waaromItems = [
   { title: '200+ afgeronde elektraprojecten', description: 'Van nieuwbouw tot renovatie, particulier en zakelijk in heel Zuid-Holland.' },
 ]
 
-const reviews = [
-  { quote: 'Vakkundige monteurs, duidelijke communicatie en op tijd. Groepenkast is perfect vervangen.', name: 'Sandra V.', platform: 'Werkspot' },
-  { quote: 'Snel geholpen bij een storing. Binnen een uur ter plaatse en het probleem was opgelost. Zeer tevreden!', name: 'Jan de B.', platform: 'Google' },
-]
+const reviews = pageReviews.elektra
 
 const faqItems = [
   { question: 'Hebben jullie een NEN-certificering?', answer: 'Ja, wij zijn NEN 3140 gecertificeerd. Dit is wettelijk vereist voor elektrische installaties en biedt u de zekerheid dat het werk veilig en correct wordt uitgevoerd.' },
@@ -55,13 +53,13 @@ export default function ElektraPage() {
           breadcrumbPath="/elektra"
           offerteDienst="elektra"
         />
-        <TrustBar />
+        <TrustBar variant="slim" />
 
         {/* Intro quote */}
         <section className="bg-white py-12">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <blockquote className="text-xl font-semibold italic text-gray-700 border-l-4 border-l-kms-yellow pl-6 text-left">
-              &ldquo;Elektrotechnisch maatwerk, veilig geinstalleerd door gecertificeerd vakmanschap.&rdquo;
+              &ldquo;Elektrotechnisch maatwerk, veilig geïnstalleerd door gecertificeerd vakmanschap.&rdquo;
             </blockquote>
           </div>
         </section>

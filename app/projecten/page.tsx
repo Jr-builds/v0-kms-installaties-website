@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import ClosingCTA from '@/components/closing-cta'
 import ProjectModal from '@/components/project-modal'
 import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
 import {
@@ -138,26 +138,10 @@ export default function ProjectenPage() {
           </div>
         </section>
 
-        <section className="hero-navy py-14">
-          <div className="hero-navy-content max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="heading-section text-white mb-3">Wilt u ook zo&apos;n resultaat?</h2>
-            <p className="text-blue-200 mb-8">Vraag een vrijblijvende offerte aan.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/offerte"
-                className="cta-yellow inline-block px-8 py-3.5 text-base"
-              >
-                Vraag een offerte aan
-              </Link>
-              <a
-                href="tel:0782032858"
-                className="inline-block px-8 py-3.5 rounded-lg text-base font-bold text-white border-2 border-white hover:bg-white hover:text-kms-navy transition-colors"
-              >
-                078 203 28 58
-              </a>
-            </div>
-          </div>
-        </section>
+        <ClosingCTA
+          title="Wilt u ook zo'n resultaat?"
+          subtitle="Vraag een vrijblijvende offerte aan."
+        />
       </main>
 
       <ProjectModal project={selectedProject} onClose={handleCloseModal} />

@@ -7,33 +7,30 @@ import SiteImage from '@/components/site-image'
 import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
 import ClosingCTA from '@/components/closing-cta'
 import StatsBar from '@/components/stats-bar'
+import Reviews from '@/components/reviews'
 import CertificationBadge from '@/components/certification-badge'
 import { certifications } from '@/lib/certifications'
 import { getImage, type SiteImageKey } from '@/lib/images'
-import { getReviewPlatformBadgeClass } from '@/lib/review-badge'
+import { pageReviews } from '@/lib/reviews'
 import { pageMetadata } from '@/lib/metadata'
 
 export const metadata: Metadata = pageMetadata.home
 
 const dienstenCards: { imageKey: SiteImageKey; title: string; description: string; href: string }[] = [
   { imageKey: 'dienst.elektra', title: 'Elektra', description: 'Complete elektrische installaties voor particulier en bedrijf', href: '/elektra' },
-  { imageKey: 'dienst.airconditioning', title: 'Airconditioning', description: 'Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geinstalleerd', href: '/airconditioning' },
+  { imageKey: 'dienst.airconditioning', title: 'Airconditioning', description: 'Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geïnstalleerd', href: '/airconditioning' },
   { imageKey: 'dienst.ventilatie', title: 'Ventilatie', description: 'Gezonde lucht in elke ruimte, inclusief advies over ISDE-subsidie', href: '/ventilatie' },
   { imageKey: 'dienst.vastgoedbeheer', title: 'Technisch Vastgoedbeheer', description: 'Zorgeloos technisch beheer van uw pand met vaste onderhoudscontracten', href: '/technisch-vastgoedbeheer' },
-  { imageKey: 'dienst.cameras', title: "Camera's en Systemen", description: 'Altijd zicht op uw pand, AVG-compliant geinstalleerd', href: '/cameras-systemen' },
+  { imageKey: 'dienst.cameras', title: "Camera's en Systemen", description: 'Altijd zicht op uw pand, AVG-compliant geïnstalleerd', href: '/cameras-systemen' },
 ]
 
 const recenteProjecten: { imageKey: SiteImageKey; category: string; city: string; title: string; description: string; resultaat: string }[] = [
   { imageKey: 'project.elektra', category: 'Elektra', city: 'Zwijndrecht', title: 'Volledige herinstallatie meterkast', description: 'Groepenkast vervangen na waterschade, NEN-gecertificeerde keuring uitgevoerd.', resultaat: 'Veilige installatie die voldoet aan alle huidige NEN-normen.' },
   { imageKey: 'project.airconditioning', category: 'Airconditioning', city: 'Rotterdam', title: '3x Mitsubishi Heavy airco-units', description: 'Drie units geplaatst inclusief buitenunits op plat dak, samenwerking met dakdekker.', resultaat: 'Comfortabel binnenklimaat op alle verdiepingen, app-gestuurd.' },
-  { imageKey: 'project.cameras', category: "Camera's", city: 'Almere', title: 'Camerabeveiliging woning', description: 'Volledig camerasysteem met app-koppeling en bewegingsdetectie geinstalleerd.', resultaat: 'Klant heeft 24/7 live zicht op het pand via smartphone.' },
+  { imageKey: 'project.cameras', category: "Camera's", city: 'Almere', title: 'Camerabeveiliging woning', description: 'Volledig camerasysteem met app-koppeling en bewegingsdetectie geïnstalleerd.', resultaat: 'Klant heeft 24/7 live zicht op het pand via smartphone.' },
 ]
 
-const reviews = [
-  { quote: 'Snel gereageerd en netjes geinstalleerd. Airco werkt perfect en de afwerking was keurig. Zeker een aanrader!', name: 'Mohammed A.', platform: 'Google' },
-  { quote: 'Vakkundige monteurs, duidelijke communicatie en op tijd. Groepenkast is perfect vervangen.', name: 'Sandra V.', platform: 'Werkspot' },
-  { quote: 'Ook op zaterdagavond nog bereikbaar voor een storingsmelding. Binnen 2 uur was het opgelost.', name: 'Peter K.', platform: 'Google' },
-]
+const reviews = pageReviews.home
 
 const merken = ['ABB', 'Hager', 'Alfen', 'Gira', 'Jung', 'Zaptec', 'Mitsubishi Heavy', 'Daikin', 'LG', 'Mitsubishi Electric', 'Itho Daalderop', 'DUCO']
 
@@ -156,32 +153,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* REVIEWS */}
-        <section className="bg-white py-16 sm:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="heading-section text-center mb-10 text-kms-navy">
-              Wat klanten zeggen
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {reviews.map((review, i) => (
-                <article key={i} className="bg-kms-light rounded-xl p-6 border border-gray-100">
-                  <div className="flex gap-0.5 mb-3" aria-label="5 sterren">
-                    {[...Array(5)].map((_, j) => (
-                      <span key={j} className="text-xl text-kms-yellow-dark">&#9733;</span>
-                    ))}
-                  </div>
-                  <blockquote className="text-gray-700 text-sm leading-relaxed mb-4">&ldquo;{review.quote}&rdquo;</blockquote>
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold text-gray-800 text-sm">{review.name}</span>
-                    <span className={`text-xs px-2 py-1 rounded-full font-medium ${getReviewPlatformBadgeClass(review.platform)}`}>
-                      {review.platform}
-                    </span>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Reviews reviews={reviews} />
 
         {/* CERTIFICERINGEN + MERKEN */}
         <section className="bg-kms-light py-12 sm:py-16">

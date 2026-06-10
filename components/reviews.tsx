@@ -9,6 +9,7 @@ interface Review {
 interface ReviewsProps {
   reviews: Review[]
   title?: string
+  columns?: 3 | 4
 }
 
 function StarRating() {
@@ -21,14 +22,19 @@ function StarRating() {
   )
 }
 
-export default function Reviews({ reviews, title = 'Wat klanten zeggen' }: ReviewsProps) {
+export default function Reviews({ reviews, title = 'Wat klanten zeggen', columns = 3 }: ReviewsProps) {
+  const gridClass =
+    columns === 4
+      ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5'
+      : 'grid grid-cols-1 md:grid-cols-3 gap-6'
+
   return (
     <section className="bg-white py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="heading-section text-center mb-10 text-kms-navy">
           {title}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className={gridClass}>
           {reviews.map((review, i) => (
             <article key={i} className="bg-kms-light rounded-xl p-6 border border-gray-100">
               <StarRating />

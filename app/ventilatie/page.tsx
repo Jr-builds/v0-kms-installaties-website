@@ -12,6 +12,7 @@ import MerkLogos from '@/components/merklogos'
 import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
+import { pageReviews } from '@/lib/reviews'
 
 const dienstenCards = [
   { imageKey: 'ventilatie.wtw' as const, imageLabel: 'Foto: luchtbehandelingskast utiliteit', title: 'Luchtbehandelingskasten (LBK) voor utiliteit', description: 'Preventief onderhoud, filters vervangen, GBS-controle' },
@@ -27,10 +28,7 @@ const waaromItems = [
   { title: 'Particulier en zakelijk', description: 'Van woning tot utiliteitsgebouw, wij installeren en onderhouden alle typen systemen.' },
 ]
 
-const reviews = [
-  { quote: 'WTW-systeem perfect geinstalleerd. Merkbaar betere luchtkwaliteit in huis en de energierekening is gedaald.', name: 'Karin M.', platform: 'Google' },
-  { quote: 'Professioneel advies over ventilatie in ons kantoor. Nette installatie en goede uitleg over gebruik.', name: 'Thomas V.', platform: 'Werkspot' },
-]
+const reviews = pageReviews.ventilatie
 
 const faqItems = [
   { question: 'Wat is een WTW-systeem?', answer: 'WTW staat voor warmteterugwinning. Het systeem ventileert verse lucht naar binnen terwijl het de warmte uit de afgevoerde lucht hergebruikt. Dit bespaart energie en verbetert de luchtkwaliteit.' },
@@ -53,7 +51,7 @@ export default function VentilatiePage() {
           breadcrumbPath="/ventilatie"
           offerteDienst="ventilatie"
         />
-        <TrustBar />
+        <TrustBar variant="slim" />
 
         <section className="bg-white py-12">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

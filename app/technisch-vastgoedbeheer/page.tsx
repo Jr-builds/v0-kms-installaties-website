@@ -11,6 +11,7 @@ import WaaromKMS from '@/components/waarom-kms'
 import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
+import { pageReviews } from '@/lib/reviews'
 
 const dienstenCards = [
   { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: technisch onderhoud gebouw', title: 'Algemeen technisch onderhoud', description: 'Dagelijks klein onderhoud, vaste controlerondes' },
@@ -18,24 +19,21 @@ const dienstenCards = [
   { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: storingsmelding snelle respons', title: 'Storingen & spoed', description: 'Snelle respons, tijdelijke noodoplossingen' },
   { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: technische inspectie rapport', title: 'Inspectie & rapportage', description: 'Technische inspecties, onderhoudsrapporten, actiepuntenlijst' },
   { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: periodiek onderhoud installaties', title: 'Periodiek onderhoud', description: 'Terugkerende beurten, controle kritieke installaties' },
-  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: coordinatie kleine projecten', title: 'Coordinatie van kleine projecten', description: 'Aansturing werkzaamheden namens eigenaar, communicatie bewoners' },
+  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: coördinatie kleine projecten', title: 'Coördinatie van kleine projecten', description: 'Aansturing werkzaamheden namens eigenaar, communicatie bewoners' },
 ]
 
 const waaromItems = [
   { title: 'Storingen zelfde dag opgelost', description: 'Storingsmelding voor 14:00? Wij zijn dezelfde dag ter plaatse.' },
   { title: 'Vaste onderhoudscontracten', description: 'Maandelijkse abonnementen beschikbaar voor ontzorging op de lange termijn.' },
-  { title: 'Een aanspreekpunt', description: 'Wij coordineren alle technische werkzaamheden aan uw pand, ook richting bewoners en huurders.' },
+  { title: 'Een aanspreekpunt', description: 'Wij coördineren alle technische werkzaamheden aan uw pand, ook richting bewoners en huurders.' },
 ]
 
-const reviews = [
-  { quote: 'KMS beheert al onze technische installaties. Altijd snel gereageerd op meldingen en netjes werk geleverd.', name: 'R. Bakker', platform: 'Google' },
-  { quote: 'Betrouwbare partner voor ons vastgoedbeheer. Vaste contactpersoon, duidelijke rapportage en altijd op tijd.', name: 'VvE De Hoek', platform: 'Werkspot' },
-]
+const reviews = pageReviews.vastgoedbeheer
 
 const faqItems = [
   { question: 'Werken jullie op contractbasis?', answer: 'Ja, wij bieden vaste maandelijkse onderhoudsabonnementen aan. Dit biedt u zekerheid over kosten en beschikbaarheid.' },
   { question: 'Hoe snel reageren jullie op storingen?', answer: 'Bij melding voor 14:00 zijn wij dezelfde dag ter plaatse. Buiten kantooruren zijn wij bereikbaar via 078 203 28 58.' },
-  { question: "Werken jullie ook voor VvE's?", answer: "Ja, wij beheren technische installaties voor VvE's en vastgoedbeheerders. Wij coordineren ook de communicatie richting bewoners." },
+  { question: "Werken jullie ook voor VvE's?", answer: "Ja, wij beheren technische installaties voor VvE's en vastgoedbeheerders. Wij coördineren ook de communicatie richting bewoners." },
   { question: 'Wat valt onder technisch vastgoedbeheer?', answer: 'Elektra, ventilatie, airconditioning, camerasystemen en algemeen onderhoud. Wij zijn uw totaaloplosser voor technisch beheer.' },
 ]
 
@@ -53,7 +51,7 @@ export default function TechnischVastgoedbeheerPage() {
           breadcrumbPath="/technisch-vastgoedbeheer"
           offerteDienst="vastgoedbeheer"
         />
-        <TrustBar />
+        <TrustBar variant="slim" />
 
         <section className="bg-white py-12">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
