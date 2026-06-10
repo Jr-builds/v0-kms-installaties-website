@@ -74,7 +74,7 @@ export default function ElektraPage() {
               Voor &amp; na: groepenkast renovatie
             </h2>
             <p className="text-center text-sm text-gray-600 mb-8 max-w-2xl mx-auto">
-              Een verouderde meterkast vervangen door een moderne, NEN-conforme installatie — het verschil in veiligheid en overzicht is direct zichtbaar.
+              Een verouderde meterkast vervangen door een moderne, NEN-conforme installatie. Het verschil in veiligheid en overzicht is direct zichtbaar.
             </p>
             <BeforeAfter
               beforeSrc={groepenkast.src}

@@ -52,7 +52,7 @@ export default function ContactPage() {
               Vragen, storing of spoed?
             </h1>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              Gebruik dit formulier voor vragen en storingsmeldingen. Bij spoed belt u ons direct — wij zijn 7 dagen per week bereikbaar.
+              Gebruik dit formulier voor vragen en storingsmeldingen. Bij spoed belt u ons direct. Wij zijn 7 dagen per week bereikbaar.
             </p>
             <p className="text-sm text-blue-200 mt-5">
               Wilt u een offerte voor een nieuw project?{' '}
@@ -136,7 +136,7 @@ export default function ContactPage() {
                           rows={5}
                           value={vraag}
                           onChange={(event) => setVraag(event.target.value)}
-                          placeholder="Beschrijf uw vraag, storing of situatie — bijv. geen stroom, defecte airco, kapotte schakelaar..."
+                          placeholder="Beschrijf uw vraag, storing of situatie, bijv. geen stroom, defecte airco, kapotte schakelaar..."
                           aria-invalid={errors.vraag ? true : undefined}
                           aria-describedby={errors.vraag ? 'vraag-error' : undefined}
                           className={`${formInputClassName(Boolean(errors.vraag))} resize-none`}

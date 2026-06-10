@@ -81,7 +81,7 @@ export default function Werkgebied() {
               <Link href="/offerte" className="font-semibold text-kms-navy hover:underline">
                 Vraag toch een offerte aan
               </Link>{' '}
-              — wij kijken graag wat mogelijk is.
+              , wij kijken graag wat mogelijk is.
             </p>
           </div>
         </div>

@@ -5,7 +5,7 @@ export const SITE_NAME = 'KMS Installaties'
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kms-installaties.nl'
 
 export const OG_IMAGE = '/og-image.jpg'
-export const OG_IMAGE_ALT = 'KMS Installaties — Elektra & Airconditioning in Zuid-Holland'
+export const OG_IMAGE_ALT = 'KMS Installaties, Elektra & Airconditioning in Zuid-Holland'
 export const OG_IMAGE_WIDTH = 1200
 export const OG_IMAGE_HEIGHT = 630
 
