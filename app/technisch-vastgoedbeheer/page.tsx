@@ -47,8 +47,6 @@ export default function TechnischVastgoedbeheerPage() {
           subtitle="Voor gebouweigenaren en VvE-beheerders in Zuid-Holland."
           imageKey="hero.vastgoedbeheer"
           primaryLabel="Vraag een onderhoudscontract aan"
-          breadcrumbLabel="Technisch Vastgoedbeheer"
-          breadcrumbPath="/technisch-vastgoedbeheer"
           offerteDienst="vastgoedbeheer"
         />
         <TrustBar variant="slim" />
