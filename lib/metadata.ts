@@ -165,4 +165,25 @@ export const pageMetadata = {
     path: '/offerte',
     imageKey: 'hero.home',
   }),
+  privacy: createPageMetadata({
+    title: 'Privacyverklaring',
+    description:
+      'Lees hoe KMS Installaties omgaat met uw persoonsgegevens bij contact, offertes en storingsmeldingen.',
+    path: '/privacyverklaring',
+    imageKey: 'hero.home',
+  }),
+  cookies: createPageMetadata({
+    title: 'Cookiebeleid',
+    description:
+      'Welke cookies KMS Installaties gebruikt, waarom, en hoe u cookies kunt beheren of verwijderen.',
+    path: '/cookies',
+    imageKey: 'hero.home',
+  }),
+  terms: createPageMetadata({
+    title: 'Algemene Voorwaarden',
+    description:
+      'Algemene voorwaarden voor offertes en opdrachten van KMS Installaties in Zuid-Holland.',
+    path: '/algemene-voorwaarden',
+    imageKey: 'hero.home',
+  }),
 } as const

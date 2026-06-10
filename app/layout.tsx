@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import MobileCtaBar from '@/components/mobile-cta-bar'
+import CookieNotice from '@/components/cookie-notice'
 import SkipLink from '@/components/skip-link'
 import StructuredData from '@/components/structured-data'
 import { defaultMetadata } from '@/lib/metadata'
@@ -32,6 +33,7 @@ export default function RootLayout({
         <SkipLink />
         <StructuredData />
         {children}
+        <CookieNotice />
         <MobileCtaBar />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

@@ -2,7 +2,7 @@
 
 > **Scope:** Front-end only. No backend, form submission APIs, or database work in this plan.  
 > **Status key:** Use checkboxes below — `- [ ]` todo, `- [x]` done.  
-> **Last updated:** June 2026
+> **Last updated:** June 2026 (full-site review)
 
 ---
 
@@ -334,6 +334,96 @@ This document tracks all front-end improvements identified during the site revie
 
 ---
 
+## Phase 8 — Full-site review (June 2026)
+
+### 8.1 Hero contrast fixes (done)
+
+- [x] Home hero opening-hours badge: `border-white/40 bg-white/20 text-white` (was low-contrast `text-kms-yellow-dark` on translucent yellow)
+- [x] Home hero “altijd bereikbaar”: `text-kms-yellow` (#F5A623) instead of `text-kms-yellow-dark` on navy
+- [x] Badge text sourced from `openingHoursDisplay` in `lib/business.ts`
+
+### 8.2 Duplicate / redundant content (report — fix next)
+
+| Priority | Issue | Where |
+|----------|--------|--------|
+| **P1** | Certifications shown twice on home: full `TrustBar` (compact badges) **and** logo card row | `app/page.tsx` |
+| **P1** | Brand list duplicated: home uses **text pills**; service pages use **`MerkLogos`** with real logos | `app/page.tsx` vs `components/merklogos.tsx` |
+| **P1** | Home “Recente projecten” repeats entries from `/projecten` without modal/filter interactivity | `app/page.tsx`, `lib/projects.ts` |
+| **P2** | Dienst card copy on home = service hero titles/descriptions (near-verbatim) | `app/page.tsx` ↔ service pages |
+| **P2** | `Thomas V.` review on **both** elektra and ventilatie pages | `lib/reviews.ts` |
+| **P2** | NEN 3140 cert description repeated in `lib/certifications.ts`, elektra WaaromKMS, and elektra FAQ | Multiple files |
+| **P2** | Opening hours (`Ma-Zo 08:00-22:00`) in TrustBar, footer, hero, FAQs, WaaromKMS, metadata — acceptable for local SEO but copy could be shortened on inner pages | Site-wide |
+| **P3** | Identical `ClosingCTA` block on 8+ pages | `components/closing-cta.tsx` |
+| **P3** | Service page skeleton identical: TrustBar → blockquote → grid → WaaromKMS → reviews → FAQ → CTA | All 5 service pages |
+
+### 8.3 Placeholder images & unfinished assets (report)
+
+| Priority | Issue | Where |
+|----------|--------|--------|
+| **P1** | Team portraits: `ImagePlaceholder` for Kerem Sen & Mevlut Sumer | `app/over-ons/page.tsx` |
+| **P1** | Elektra diensten grid: **5 of 8** cards have no `imageKey` → gray placeholder | `app/elektra/page.tsx` |
+| **P2** | Before/after slider uses **same image** for voor/na (grayscale demo only) | `app/elektra/page.tsx` |
+| **P2** | Ventilatie, vastgoed, cameras diensten grids reuse **one image** for all cards | Service pages |
+| **P2** | Airconditioning grid reuses `airco.binnenunit` on 5 of 6 cards | `app/airconditioning/page.tsx` |
+| **P3** | Offerte form file upload UI with “Binnenkort beschikbaar” | `app/offerte/page.tsx` |
+| **P3** | `hero.home` and `hero.elektra` share the same JPG | `lib/images.ts` |
+
+### 8.4 Styling & spacing inconsistencies (report)
+
+| Priority | Issue |
+|----------|--------|
+| **P2** | Service blockquotes: elektra has `text-left`, others centered/default |
+| **P2** | ISDE callout section: `py-8` on airco/ventilatie; blockquote sections use `py-12` |
+| **P3** | Yellow accent token misuse: `text-kms-yellow-dark` on **navy heroes** (contact/offerte cross-links) — same class of contrast bug as fixed home hero |
+| **P3** | Navbar tagline uses `text-kms-yellow-dark` on white (OK); footer uses `text-kms-yellow-light` on navy (correct pattern — align hero accents to this rule) |
+
+### 8.5 AI-sounding copy (report — rewrite candidates)
+
+| Priority | Copy |
+|----------|------|
+| **P1** | Elektra blockquote: “Elektrotechnisch maatwerk, veilig geïnstalleerd door gecertificeerd vakmanschap.” |
+| **P1** | Airco blockquote: “Altijd een comfortabel binnenklimaat, vakkundig geregeld via A-merk airconditioning.” |
+| **P2** | Over ons hero: “gedeelde passie voor techniek en kwaliteit” |
+| **P2** | Cameras blockquote: long “Van bedrijfspand tot woning…” sentence |
+| **P2** | Vastgoed blockquote: “betrouwbaar technisch onderhoud essentieel… ontzorgt… bedrijfszeker” |
+| **P3** | Default `ClosingCTA`: “Klaar om uw project te starten?” / “Wij reageren dezelfde dag…” |
+| **P3** | Ventilatie blockquote: “van A tot Z” |
+
+### 8.6 Mobile layout (report)
+
+| Priority | Issue |
+|----------|--------|
+| **P2** | Home “Waarmee wij werken” text pills wrap awkwardly on narrow screens — replace with `MerkLogos` horizontal scroll |
+| **P2** | Mobile CTA bar 3-column grid may feel cramped on 320px devices |
+| **P3** | TrustBar cert row wraps to multiple lines on small phones (acceptable but busy next to duplicate home cert section) |
+| **P3** | Service hero + breadcrumb stack height on small viewports — verify tap targets below fold |
+
+### 8.7 Gaps vs. professional installatiebedrijf site (report)
+
+| Priority | Missing / incomplete | Status |
+|----------|---------------------|--------|
+| **P1** | No real team photos or founder story depth beyond one paragraph | Open |
+| **P1** | Contact/offerte forms are **UI-only** (no submission backend or e-mail integration) | Open |
+| **P2** | No privacyverklaring / cookie notice / algemene voorwaarden pages | **Done** — see Phase 8.8 |
+| **P2** | Footer lacks KvK/BTW-nummer (common trust signal in NL) | **Done** — KvK in footer; BTW via env |
+| **P2** | No dedicated spoed/storingen landing page (phone CTAs exist, but no content page) | Open |
+| **P3** | Google Rich Results Test not run post-deploy (Phase 1.6) | Open |
+| **P3** | Lighthouse performance targets not re-verified after latest image work | Open |
+| **P3** | No vacatures or “werken bij” (optional for small installer) | Open |
+
+### 8.8 Legal pages & footer registration (done)
+
+- [x] `/privacyverklaring` — AVG privacyverklaring (contact/offerte, rechten, bewaartermijn)
+- [x] `/cookies` — cookiebeleid (functioneel + Vercel Analytics)
+- [x] `/algemene-voorwaarden` — algemene voorwaarden voor offertes/opdrachten
+- [x] `components/cookie-notice.tsx` — cookiemelding met localStorage + link naar cookiebeleid
+- [x] `components/legal-page-layout.tsx` + `lib/legal.ts` — gedeelde layout en footer-links
+- [x] Footer: kolom **Juridisch**, bottom-bar links, **KvK 90317718** (link naar KvK-register)
+- [x] BTW-id via `NEXT_PUBLIC_BTW_ID` in `.env.local` (footer toont regel wanneer ingevuld)
+- [x] SEO metadata voor alle drie juridische pagina's
+
+---
+
 ## File reference — what to touch
 
 | Area | Primary files |
@@ -388,6 +478,7 @@ Phase 7 complete (availability pill, WhatsApp, before/after demo, ISDE callouts,
 | 5 — Content polish | — | — | — |
 | 6 — Performance & code | 14 | 14 | 100% |
 | 7 — Nice-to-have | 12 | 12 | 100% |
+| 8 — Full-site review | 3 fixes | 3 | Hero contrast done; legal pages added |
 
 > Update this table manually as phases complete.
 
@@ -403,6 +494,7 @@ Phase 7 complete (availability pill, WhatsApp, before/after demo, ISDE callouts,
 - [ ] Dedicated before/after photo pairs (slider uses demo grayscale on elektra page until provided)
 - [x] Brand logo files for MerkLogos section (12 logos in `public/brands/`, all brands on elektra/airconditioning/ventilatie pages)
 - [ ] Confirm opening hours and address for structured data
+- [ ] BTW-identificatienummer invullen (`NEXT_PUBLIC_BTW_ID` in `.env.local`, bijv. `NL123456789B01`)
 
 ---
 
