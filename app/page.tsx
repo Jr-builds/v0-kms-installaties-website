@@ -43,25 +43,25 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         {/* HERO */}
         <section className="hero-navy py-16 sm:py-24">
           <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold mb-6 bg-kms-yellow/15 text-kms-yellow border border-kms-yellow/30">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold mb-6 bg-kms-yellow/15 text-kms-yellow-dark border border-kms-yellow/30">
                   <span className="w-2 h-2 rounded-full inline-block bg-kms-yellow" />
                   BEREIKBAAR MA-ZO 08:00-22:00
                 </div>
                 <h1 className="heading-hero-home text-white mb-5">
                   Vakkundige installaties in Zuid-Holland{' '}
-                  <span className="text-kms-yellow">altijd bereikbaar</span>
+                  <span className="text-kms-yellow-dark">altijd bereikbaar</span>
                 </h1>
                 <p className="text-blue-200 text-lg mb-8 leading-relaxed">
                   Elektra, airconditioning, ventilatie en camerasystemen. Bereikbaar van maandag tot zondag, 08:00 tot 22:00.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Link href="/offerte" className="inline-block px-7 py-3.5 rounded-lg font-bold text-white text-base text-center bg-kms-yellow transition-opacity hover:opacity-90">
+                  <Link href="/offerte" className="cta-yellow inline-block px-7 py-3.5 text-base text-center">
                     Vraag een offerte aan
                   </Link>
                   <a href="tel:0782032858" className="inline-block px-7 py-3.5 rounded-lg font-bold text-base text-center text-white border-2 border-white hover:bg-white hover:text-kms-navy transition-colors">
@@ -106,11 +106,11 @@ export default function HomePage() {
                     className="w-full shrink-0"
                   />
                   <div className="flex flex-1 flex-col p-5">
-                    <h3 className="font-bold text-base mb-1.5 text-kms-navy group-hover:text-kms-yellow transition-colors">
+                    <h3 className="font-bold text-base mb-1.5 text-kms-navy group-hover:text-kms-yellow-dark transition-colors">
                       {card.title}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed mb-3 flex-1">{card.description}</p>
-                    <span className="text-sm font-semibold text-kms-yellow mt-auto">Meer informatie &rarr;</span>
+                    <span className="text-sm font-semibold text-kms-yellow-dark mt-auto">Meer informatie &rarr;</span>
                   </div>
                 </Link>
               ))}
@@ -138,12 +138,12 @@ export default function HomePage() {
                   <SiteImageOrPlaceholder imageKey={project.imageKey} placeholderLabel="" aspectRatio="aspect-video" />
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="px-2.5 py-0.5 rounded-full text-xs font-bold text-white bg-kms-yellow">{project.category}</span>
+                      <span className="badge-yellow px-2.5 py-0.5 text-xs font-bold">{project.category}</span>
                       <span className="text-xs text-gray-500">{project.city}</span>
                     </div>
                     <h3 className="font-bold text-base mb-1.5 text-kms-navy">{project.title}</h3>
                     <p className="text-sm text-gray-600 mb-3 leading-relaxed">{project.description}</p>
-                    <p className="text-sm font-semibold text-kms-yellow">Resultaat: {project.resultaat}</p>
+                    <p className="text-sm font-semibold text-kms-yellow-dark">Resultaat: {project.resultaat}</p>
                   </div>
                 </article>
               ))}
@@ -167,7 +167,7 @@ export default function HomePage() {
                 <article key={i} className="bg-kms-light rounded-xl p-6 border border-gray-100">
                   <div className="flex gap-0.5 mb-3" aria-label="5 sterren">
                     {[...Array(5)].map((_, j) => (
-                      <span key={j} className="text-xl text-kms-yellow">&#9733;</span>
+                      <span key={j} className="text-xl text-kms-yellow-dark">&#9733;</span>
                     ))}
                   </div>
                   <blockquote className="text-gray-700 text-sm leading-relaxed mb-4">&ldquo;{review.quote}&rdquo;</blockquote>
@@ -186,13 +186,13 @@ export default function HomePage() {
         {/* CERTIFICERINGEN + MERKEN */}
         <section className="bg-kms-light py-12 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-5">Onze certificeringen</p>
+            <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-500 mb-5">Onze certificeringen</p>
             <div className="flex flex-wrap justify-center gap-4 mb-10">
               {certifications.map((cert) => (
                 <CertificationBadge key={cert.id} certification={cert} />
               ))}
             </div>
-            <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-5">Waarmee wij werken</p>
+            <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-500 mb-5">Waarmee wij werken</p>
             <div className="flex flex-wrap justify-center gap-3">
               {merken.map((merk) => (
                 <div key={merk} className="px-4 py-2 rounded-lg bg-white border border-gray-200 text-sm font-semibold text-gray-600 shadow-sm">

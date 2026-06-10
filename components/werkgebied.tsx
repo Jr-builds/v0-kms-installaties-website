@@ -53,7 +53,7 @@ export default function Werkgebied() {
               </span>
               <span className="text-2xl sm:text-3xl font-bold text-kms-navy">Zuid-Holland</span>
               <div className="mt-6 flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm border border-gray-100">
-                <MapPinIcon className="h-4 w-4 text-kms-yellow" />
+                <MapPinIcon className="h-4 w-4 text-kms-yellow-dark" />
                 <span className="text-sm font-semibold text-kms-navy">
                   Vestiging: {businessInfo.address.addressLocality}
                 </span>
@@ -70,7 +70,7 @@ export default function Werkgebied() {
                     href={buildOfferteHref(undefined, city)}
                     className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3.5 py-2 text-sm font-medium text-kms-navy shadow-sm transition-colors hover:border-kms-navy hover:bg-white"
                   >
-                    <MapPinIcon className="h-3.5 w-3.5 text-kms-yellow flex-shrink-0" />
+                    <MapPinIcon className="h-3.5 w-3.5 text-kms-yellow-dark flex-shrink-0" />
                     {city}
                   </Link>
                 </li>

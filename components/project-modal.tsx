@@ -61,7 +61,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <div className="p-6 sm:p-8">
           <div className="flex items-start justify-between gap-4 mb-4">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-bold text-white bg-kms-yellow">
+              <span className="badge-yellow px-2.5 py-0.5 text-xs font-bold">
                 {project.category}
               </span>
               <span className="text-xs text-gray-500">{project.city}</span>
@@ -73,7 +73,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               className="flex-shrink-0 rounded-lg p-2 text-gray-500 transition-colors hover:bg-kms-light hover:text-kms-navy"
               aria-label="Sluit projectdetails"
             >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -83,11 +83,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             {project.title}
           </h2>
           <p className="text-gray-600 leading-relaxed mb-4">{project.details}</p>
-          <p className="text-sm font-semibold text-kms-yellow mb-6">Resultaat: {project.resultaat}</p>
+          <p className="text-sm font-semibold text-kms-yellow-dark mb-6">Resultaat: {project.resultaat}</p>
 
           <Link
             href="/offerte"
-            className="inline-block rounded-lg bg-kms-yellow px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+            className="cta-yellow inline-block px-6 py-3 text-sm"
             onClick={onClose}
           >
             Vergelijkbaar project? Vraag offerte aan

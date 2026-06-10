@@ -45,7 +45,7 @@ export default function ServiceHero({
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={offerteHref}
-                className="inline-block px-7 py-3.5 rounded-lg font-bold text-white text-base bg-kms-yellow transition-opacity hover:opacity-90 text-center"
+                className="cta-yellow inline-block px-7 py-3.5 text-base text-center"
               >
                 {primaryLabel}
               </Link>

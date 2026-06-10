@@ -26,7 +26,7 @@ export default function CertificationBadge({
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
         aria-controls={`cert-info-${certification.id}`}
-        title={certification.description}
+        aria-label={`Meer informatie over ${certification.name}`}
         className={cn(
           'group inline-flex items-center gap-1.5 rounded-lg border-2 font-bold transition-colors hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kms-navy focus-visible:ring-offset-2',
           isCompact
@@ -47,9 +47,8 @@ export default function CertificationBadge({
             'shrink-0 text-kms-navy/60 group-hover:text-kms-navy',
             isCompact ? 'size-3.5' : 'size-4',
           )}
-          aria-hidden
+          aria-hidden="true"
         />
-        <span className="sr-only">Meer informatie over {certification.name}</span>
       </button>
 
       {open && (

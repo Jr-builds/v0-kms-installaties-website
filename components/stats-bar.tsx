@@ -127,7 +127,7 @@ export default function StatsBar({
         <div className={cn(gridClass, 'text-center')}>
           {items.map((item) => (
             <div key={`${item.value}-${item.label}-${item.sub ?? ''}`}>
-              <div className={cn(valueClass, 'text-kms-yellow')}>
+              <div className={cn(valueClass, 'text-kms-yellow-light')}>
                 <StatValue value={item.value} />
               </div>
               {item.sub ? (

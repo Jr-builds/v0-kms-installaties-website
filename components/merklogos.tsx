@@ -50,7 +50,7 @@ export default function MerkLogos({ brands, title = 'Waarmee wij werken' }: Merk
   return (
     <section className="bg-kms-light py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">
+        <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-500 mb-6">
           {title}
         </p>
         <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0">

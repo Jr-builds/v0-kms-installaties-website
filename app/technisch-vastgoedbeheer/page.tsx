@@ -43,7 +43,7 @@ export default function TechnischVastgoedbeheerPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <ServiceHero
           title="Zorgeloos technisch beheer van uw vastgoed, met vaste onderhoudscontracten"
           subtitle="Voor gebouweigenaren en VvE-beheerders in Zuid-Holland."

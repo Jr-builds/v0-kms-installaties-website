@@ -18,7 +18,7 @@ export default function MobileCtaBar() {
         </a>
         <Link
           href="/offerte"
-          className="flex flex-1 items-center justify-center rounded-lg bg-kms-yellow py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+          className="cta-yellow flex flex-1 items-center justify-center py-3 text-sm"
         >
           Offerte
         </Link>

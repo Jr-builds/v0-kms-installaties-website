@@ -21,7 +21,7 @@ export default function ClosingCTA({
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href={primaryHref}
-            className="inline-block px-8 py-3.5 rounded-lg text-base font-bold text-white bg-kms-yellow transition-opacity hover:opacity-90"
+            className="cta-yellow inline-block px-8 py-3.5 text-base"
           >
             {primaryLabel}
           </Link>

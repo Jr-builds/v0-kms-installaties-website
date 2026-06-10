@@ -80,7 +80,7 @@ export default function Navbar() {
             <SiteLogo size={48} priority />
             <div className="flex flex-col leading-tight">
               <span className="font-bold text-lg text-kms-navy">KMS Installaties</span>
-              <span className="text-xs font-semibold tracking-widest text-kms-yellow">
+              <span className="text-xs font-semibold tracking-widest text-kms-yellow-dark">
                 ELEKTRA &amp; AIRCONDITIONING
               </span>
             </div>
@@ -156,7 +156,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center">
             <Link
               href="/offerte"
-              className="px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-kms-yellow transition-opacity hover:opacity-90"
+              className="cta-yellow px-5 py-2.5 text-sm font-semibold"
             >
               Offerte aanvragen
             </Link>
@@ -263,7 +263,7 @@ export default function Navbar() {
             )}
             <Link
               href="/offerte"
-              className="mt-2 rounded-lg bg-kms-yellow px-5 py-2.5 text-center text-sm font-semibold text-white"
+              className="cta-yellow mt-2 px-5 py-2.5 text-center text-sm font-semibold"
               onClick={() => setMobileOpen(false)}
             >
               Offerte aanvragen
