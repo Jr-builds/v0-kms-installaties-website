@@ -59,3 +59,12 @@ export function getGoogleMapsUrl(): string {
 export function getGoogleMapsEmbedUrl(): string {
   return `https://www.google.com/maps?q=${encodeURIComponent(formatBusinessAddress())}&output=embed`
 }
+
+export const phoneDisplay = '078 203 28 58'
+export const phoneTelHref = 'tel:0782032858'
+export const whatsAppHref = 'https://wa.me/31782032858'
+
+export const openingHoursDisplay = 'Ma-Zo 08:00-22:00'
+export const openingHoursLongDisplay = 'Maandag t/m zondag, 08:00-22:00'
+
+export const ISDE_INFO_URL = 'https://www.rvo.nl/subsidies-financiering/isde'
