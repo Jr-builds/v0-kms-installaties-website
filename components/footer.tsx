@@ -91,17 +91,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-kms-navy-muted">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            {['NEN 3140', 'STEK', 'VCA'].map((cert) => (
-              <span
-                key={cert}
-                className="rounded bg-kms-navy px-2.5 py-1 text-xs font-bold text-kms-yellow-light"
-              >
-                {cert}
-              </span>
-            ))}
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-center">
           <p className="text-xs text-gray-400">
             &copy; 2026 KMS Installaties. Alle rechten voorbehouden.
           </p>
