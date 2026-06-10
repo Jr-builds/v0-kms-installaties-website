@@ -162,8 +162,10 @@ export default function HomePage() {
         {/* CERTIFICERINGEN + MERKEN */}
         <section className="bg-kms-light py-12 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-500 mb-5">Onze certificeringen</p>
-            <div className="flex flex-wrap justify-center gap-4 mb-10">
+            <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-500 mb-8">
+              Onze certificeringen
+            </p>
+            <div className="flex flex-wrap justify-center gap-5 sm:gap-6 mb-10">
               {certifications.map((cert) => (
                 <CertificationBadge key={cert.id} certification={cert} />
               ))}
