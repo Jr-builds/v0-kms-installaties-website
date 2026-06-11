@@ -19,7 +19,7 @@ export default function Footer() {
           {/* Col 1: Over ons */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <SiteLogo size={40} />
+              <SiteLogo size={48} />
               <div>
                 <div className="font-bold text-base text-white">KMS Installaties</div>
                 <div className="text-xs font-semibold tracking-widest text-kms-yellow-light">
