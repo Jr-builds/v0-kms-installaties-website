@@ -12,9 +12,7 @@ import MerkLogos from '@/components/merklogos'
 import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
-import BeforeAfter from '@/components/before-after'
 import { pageReviews } from '@/lib/reviews'
-import { getImage } from '@/lib/images'
 
 const dienstenCards = [
   { imageKey: 'elektra.huisinstallatie' as const, imageLabel: 'Foto: huisinstallatie nieuwbouw', title: 'Huisinstallaties (Nieuwbouw & Bestaande Bouw)', description: 'Complete elektrische aanleg, stopcontacten, veiligheidscheck NEN' },
@@ -43,8 +41,6 @@ const faqItems = [
 ]
 
 export default function ElektraPage() {
-  const groepenkast = getImage('elektra.groepenkast')
-
   return (
     <>
       <Navbar />
@@ -63,23 +59,6 @@ export default function ElektraPage() {
             <blockquote className="text-xl font-semibold italic text-gray-700 border-l-4 border-l-kms-yellow pl-6 text-left">
               &ldquo;Elektrotechnisch maatwerk, veilig geïnstalleerd door gecertificeerd vakmanschap.&rdquo;
             </blockquote>
-          </div>
-        </section>
-
-        <section className="bg-kms-light py-12 sm:py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="heading-section text-center mb-3 text-kms-navy">
-              Voor &amp; na: groepenkast renovatie
-            </h2>
-            <p className="text-center text-sm text-gray-600 mb-8 max-w-2xl mx-auto">
-              Een verouderde meterkast vervangen door een moderne, NEN-conforme installatie. Het verschil in veiligheid en overzicht is direct zichtbaar.
-            </p>
-            <BeforeAfter
-              beforeSrc={groepenkast.src}
-              afterSrc={groepenkast.src}
-              beforeAlt="Verouderde groepenkast vóór renovatie"
-              afterAlt={groepenkast.alt}
-            />
           </div>
         </section>
 
