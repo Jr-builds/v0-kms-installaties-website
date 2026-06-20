@@ -61,6 +61,7 @@ function OfferteForm() {
   const [errors, setErrors] = useState<OfferteFormErrors>({})
   const [questionAnswers, setQuestionAnswers] = useState<Record<string, string>>({})
   const [questionErrors, setQuestionErrors] = useState<Record<string, string>>({})
+  const [fotoFiles, setFotoFiles] = useState<File[]>([])
 
   useEffect(() => {
     const dienstParam = searchParams.get('dienst')
@@ -115,6 +116,7 @@ function OfferteForm() {
     setCategoryId(id)
     setQuestionAnswers({})
     setQuestionErrors({})
+    setFotoFiles([])
     if (id === 'technisch-vastgoedbeheer') {
       setAudienceId('zakelijk')
     }
@@ -203,10 +205,16 @@ function OfferteForm() {
             onContinue={() => setStep(5)}
           />
         </div>
-      ) : step === 5 ? (
+      ) : step === 5 && categoryId ? (
         <div>
           <OfferteFormProgress currentStep={progressStep} />
-          <OfferteFotosStep onBack={() => setStep(4)} onContinue={() => setStep(6)} />
+          <OfferteFotosStep
+            categoryId={categoryId}
+            files={fotoFiles}
+            onFilesChange={setFotoFiles}
+            onBack={() => setStep(4)}
+            onContinue={() => setStep(6)}
+          />
         </div>
       ) : step === 6 ? (
         <div>
