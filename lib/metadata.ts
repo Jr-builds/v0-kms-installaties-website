@@ -3,6 +3,7 @@ import { getImage, type SiteImageKey } from '@/lib/images'
 
 export const SITE_NAME = 'KMS Installaties'
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kms-installaties.nl'
+export const SITE_LOGO = '/KMS-Logo.png'
 
 export const OG_IMAGE = '/og-image.jpg'
 export const OG_IMAGE_ALT = 'KMS Installaties, Elektra & Airconditioning in Zuid-Holland'
@@ -57,6 +58,17 @@ export function createPageMetadata({
 
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: '/favicon-32x32.png',
+  },
+  other: {
+    'msapplication-TileImage': '/mstile-270x270.png',
+  },
   title: {
     default: 'KMS Installaties | Elektra & Airconditioning Zwijndrecht',
     template: '%s | KMS Installaties',
