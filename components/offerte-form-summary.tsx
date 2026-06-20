@@ -25,13 +25,13 @@ export default function OfferteFormSummary({
       <p>
         <span className="text-gray-500">Categorie: </span>
         <span className="font-semibold text-kms-navy">
-          {categoryId ? getOfferteCategoryLabel(categoryId) : '—'}
+          {categoryId ? getOfferteCategoryLabel(categoryId) : '-'}
         </span>
       </p>
       <p>
         <span className="text-gray-500">Aanvrager: </span>
         <span className="font-semibold text-kms-navy">
-          {audienceId ? getOfferteAudienceLabel(audienceId) : '—'}
+          {audienceId ? getOfferteAudienceLabel(audienceId) : '-'}
         </span>
       </p>
       {categoryId

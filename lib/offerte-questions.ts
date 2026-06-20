@@ -37,8 +37,8 @@ export const offerteQuestionsByCategory: Record<OfferteCategoryId, OfferteQuesti
       type: 'select',
       required: true,
       options: [
-        { value: '1-4', label: '1–4 groepen' },
-        { value: '5-8', label: '5–8 groepen' },
+        { value: '1-4', label: '1-4 groepen' },
+        { value: '5-8', label: '5-8 groepen' },
         { value: '9+', label: '9 of meer' },
         { value: 'onbekend', label: 'Weet ik niet' },
       ],
@@ -152,7 +152,7 @@ export const offerteQuestionsByCategory: Record<OfferteCategoryId, OfferteQuesti
       required: true,
       options: [
         { value: '1', label: '1 ruimte' },
-        { value: '2-3', label: '2–3 ruimtes' },
+        { value: '2-3', label: '2-3 ruimtes' },
         { value: '4+', label: '4 of meer' },
       ],
     },
@@ -206,7 +206,7 @@ export const offerteQuestionsByCategory: Record<OfferteCategoryId, OfferteQuesti
       required: true,
       options: [
         { value: '<1jaar', label: 'Minder dan 1 jaar geleden' },
-        { value: '1-2jaar', label: '1–2 jaar geleden' },
+        { value: '1-2jaar', label: '1-2 jaar geleden' },
         { value: '>2jaar', label: 'Langer dan 2 jaar geleden' },
         { value: 'onbekend', label: 'Weet ik niet / nooit' },
       ],
@@ -270,8 +270,8 @@ export const offerteQuestionsByCategory: Record<OfferteCategoryId, OfferteQuesti
       type: 'select',
       required: true,
       options: [
-        { value: '1-2', label: '1–2 camera\'s' },
-        { value: '3-4', label: '3–4 camera\'s' },
+        { value: '1-2', label: '1-2 camera\'s' },
+        { value: '3-4', label: '3-4 camera\'s' },
         { value: '5+', label: '5 of meer' },
         { value: 'onbekend', label: 'Advies gewenst' },
       ],

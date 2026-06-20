@@ -28,7 +28,7 @@ export default function OfferteVerhaalStep({
       <div>
         <h3 className="mb-2 text-xl font-bold text-kms-navy sm:text-2xl">Vertel ons uw verhaal</h3>
         <p className="text-sm leading-relaxed text-gray-500">
-          Optioneel — beschrijf wat er aan de hand is of wat u wilt laten doen. Hoe meer context,
+          Optioneel: beschrijf wat er aan de hand is of wat u wilt laten doen. Hoe meer context,
           hoe beter wij u kunnen helpen.
         </p>
       </div>

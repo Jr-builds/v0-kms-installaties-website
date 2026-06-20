@@ -17,7 +17,7 @@ export default function OfferteFotosStep({ onBack, onContinue }: OfferteFotosSte
           Situatiefoto&apos;s toevoegen
         </h3>
         <p className="text-sm leading-relaxed text-gray-500">
-          Optioneel — foto&apos;s van de situatie helpen ons sneller een gerichte offerte op te stellen.
+          Optioneel: foto&apos;s van de situatie helpen ons sneller een gerichte offerte op te stellen.
           Uploaden komt binnenkort beschikbaar.
         </p>
       </div>
