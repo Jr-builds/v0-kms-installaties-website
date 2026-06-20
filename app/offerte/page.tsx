@@ -7,17 +7,14 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import TrustBar from '@/components/trust-bar'
 import ContactSidebar from '@/components/contact-sidebar'
-import FormFieldError from '@/components/form-field-error'
 import OfferteAudienceStep from '@/components/offerte-audience-step'
 import OfferteCategoryStep from '@/components/offerte-category-step'
+import OfferteContactStep from '@/components/offerte-contact-step'
 import OfferteFotosStep from '@/components/offerte-fotos-step'
 import OfferteFormBackLink from '@/components/offerte-form-back-link'
 import OfferteFormProgress from '@/components/offerte-form-progress'
-import OfferteFormSummary from '@/components/offerte-form-summary'
 import OfferteQuestionsStep from '@/components/offerte-questions-step'
 import OfferteVerhaalStep from '@/components/offerte-verhaal-step'
-import { Button } from '@/components/ui/button'
-import { phoneDisplay, phoneTelHref } from '@/lib/business'
 import {
   getOfferteProgressStep,
   type OfferteAudienceId,
@@ -33,7 +30,7 @@ import {
   isOfferteStoringEmergency,
   validateOfferteQuestionAnswers,
 } from '@/lib/offerte-questions'
-import { formInputClassName, validatePhone, validateRequired } from '@/lib/form-validation'
+import { validatePhone, validateRequired } from '@/lib/form-validation'
 
 interface OfferteFormErrors {
   naam?: string
@@ -157,14 +154,6 @@ function OfferteForm() {
 
   return (
     <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm">
-      {step >= 4 ? (
-        <>
-          <h2 className="heading-subsection mb-2 text-kms-navy">Prijsindicatie aanvragen</h2>
-          <p className="text-sm text-gray-500 mb-6">
-            Vertel ons over uw project. Wij sturen een offerte op maat.
-          </p>
-        </>
-      ) : null}
       {submitted ? (
         <div className="text-center py-10">
           <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 bg-green-50 text-kms-green">
@@ -207,137 +196,37 @@ function OfferteForm() {
       ) : step === 4 ? (
         <div>
           <OfferteFormProgress currentStep={progressStep} />
-          <OfferteFormSummary
-            categoryId={categoryId}
-            audienceId={audienceId}
-            questionAnswers={questionAnswers}
+          <OfferteVerhaalStep
+            value={omschrijving}
+            onChange={setOmschrijving}
+            onBack={() => setStep(3)}
+            onContinue={() => setStep(5)}
           />
-          <div className="mt-6">
-            <OfferteVerhaalStep
-              value={omschrijving}
-              onChange={setOmschrijving}
-              onContinue={() => setStep(5)}
-            />
-          </div>
-          <div className="mt-8">
-            <OfferteFormBackLink onClick={() => setStep(3)} />
-          </div>
         </div>
       ) : step === 5 ? (
         <div>
           <OfferteFormProgress currentStep={progressStep} />
-          <OfferteFormSummary
-            categoryId={categoryId}
-            audienceId={audienceId}
-            questionAnswers={questionAnswers}
-          />
-          <div className="mt-6">
-            <OfferteFotosStep onContinue={() => setStep(6)} />
-          </div>
-          <div className="mt-8">
-            <OfferteFormBackLink onClick={() => setStep(4)} />
-          </div>
+          <OfferteFotosStep onBack={() => setStep(4)} onContinue={() => setStep(6)} />
         </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+      ) : step === 6 ? (
+        <div>
           <OfferteFormProgress currentStep={progressStep} />
-          <OfferteFormSummary
-            categoryId={categoryId}
-            audienceId={audienceId}
-            questionAnswers={questionAnswers}
+          <OfferteContactStep
+            naam={naam}
+            telefoon={telefoon}
+            postcode={postcode}
+            plaats={plaats}
+            errors={errors}
+            onNaamChange={setNaam}
+            onTelefoonChange={setTelefoon}
+            onPostcodeChange={setPostcode}
+            onPlaatsChange={setPlaats}
+            onPostcodeBlur={handlePostcodeBlur}
+            onBack={() => setStep(5)}
+            onSubmit={handleSubmit}
           />
-          {omschrijving.trim() ? (
-            <div className="rounded-lg border border-gray-200 bg-kms-light/60 px-4 py-3 text-sm">
-              <p className="text-gray-500">Projectomschrijving:</p>
-              <p className="mt-1 font-medium text-kms-navy whitespace-pre-wrap">{omschrijving}</p>
-            </div>
-          ) : null}
-          <div>
-            <h3 className="mb-4 text-xl font-bold text-kms-navy sm:text-2xl">Uw contactgegevens</h3>
-          </div>
-          <div>
-            <label htmlFor="naam" className="block text-sm font-semibold text-gray-700 mb-1.5">
-              Naam <span className="text-red-500">*</span>
-            </label>
-            <input
-              id="naam"
-              type="text"
-              value={naam}
-              onChange={(event) => setNaam(event.target.value)}
-              placeholder="Naam contactpersoon"
-              aria-invalid={errors.naam ? true : undefined}
-              aria-describedby={errors.naam ? 'naam-error' : undefined}
-              className={formInputClassName(Boolean(errors.naam))}
-            />
-            {errors.naam ? <FormFieldError id="naam-error" message={errors.naam} /> : null}
-          </div>
-          <div>
-            <label htmlFor="telefoon" className="block text-sm font-semibold text-gray-700 mb-1.5">
-              Telefoon <span className="text-red-500">*</span>
-            </label>
-            <input
-              id="telefoon"
-              type="tel"
-              value={telefoon}
-              onChange={(event) => setTelefoon(event.target.value)}
-              placeholder="Telefoonnummer voor terugbelafspraak"
-              autoComplete="tel"
-              aria-invalid={errors.telefoon ? true : undefined}
-              aria-describedby={errors.telefoon ? 'telefoon-error' : undefined}
-              className={formInputClassName(Boolean(errors.telefoon))}
-            />
-            {errors.telefoon ? <FormFieldError id="telefoon-error" message={errors.telefoon} /> : null}
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div>
-              <label htmlFor="postcode" className="block text-sm font-semibold text-gray-700 mb-1.5">
-                Postcode
-              </label>
-              <input
-                id="postcode"
-                name="postcode"
-                type="text"
-                inputMode="text"
-                autoComplete="postal-code"
-                placeholder="3335 KK"
-                value={postcode}
-                onChange={(event) => setPostcode(event.target.value)}
-                onBlur={handlePostcodeBlur}
-                aria-invalid={errors.postcode ? true : undefined}
-                aria-describedby={errors.postcode ? 'postcode-error' : undefined}
-                className={formInputClassName(Boolean(errors.postcode))}
-              />
-              {errors.postcode ? <FormFieldError id="postcode-error" message={errors.postcode} /> : null}
-            </div>
-            <div>
-              <label htmlFor="plaats" className="block text-sm font-semibold text-gray-700 mb-1.5">
-                Plaats
-              </label>
-              <input
-                id="plaats"
-                type="text"
-                placeholder="Bijv. Zwijndrecht"
-                value={plaats}
-                onChange={(event) => setPlaats(event.target.value)}
-                className={formInputClassName()}
-              />
-            </div>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <OfferteFormBackLink onClick={() => setStep(5)} />
-            <Button type="submit" variant="primary" size="cta" className="w-full sm:w-auto sm:min-w-[12rem]">
-              Offerte aanvragen
-            </Button>
-          </div>
-          <p className="text-xs text-gray-500 text-center">
-            Wij reageren binnen 1 werkdag, meestal dezelfde dag. Ook bereikbaar via{' '}
-            <a href={phoneTelHref} className="font-semibold text-kms-navy">
-              {phoneDisplay}
-            </a>
-            .
-          </p>
-        </form>
-      )}
+        </div>
+      ) : null}
     </div>
   )
 }

@@ -25,6 +25,9 @@ export const offerteFormSteps = [
 /** Totaal aantal stappen in het offerteformulier (issue #6–#9). */
 export const OFFERTE_FORM_STEP_COUNT = offerteFormSteps.length
 
+/** Max. tekens voor situatiebeschrijving (stap Verhaal). */
+export const OFFERTE_VERHAAL_MAX_LENGTH = 1000
+
 export type OfferteAudienceId = 'particulier' | 'zakelijk'
 
 export interface OfferteAudienceOption {
