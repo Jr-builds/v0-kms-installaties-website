@@ -9,9 +9,8 @@ import ClosingCTA from '@/components/closing-cta'
 import StatsBar from '@/components/stats-bar'
 import Reviews from '@/components/reviews'
 import AvailabilityPill, { OpeningHoursPill } from '@/components/availability-pill'
-import CertificationBadge from '@/components/certification-badge'
+import TrustHighlightGrid from '@/components/trust-highlight-grid'
 import { Button } from '@/components/ui/button'
-import { certifications } from '@/lib/certifications'
 import { getImage, type SiteImageKey } from '@/lib/images'
 import { pageReviews } from '@/lib/reviews'
 import { pageMetadata } from '@/lib/metadata'
@@ -164,14 +163,10 @@ export default function HomePage() {
         {/* CERTIFICERINGEN + MERKEN */}
         <section className="bg-kms-light py-12 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-500 mb-8">
-              Onze certificeringen
-            </p>
-            <div className="flex flex-wrap justify-center gap-5 sm:gap-6 mb-10">
-              {certifications.map((cert) => (
-                <CertificationBadge key={cert.id} certification={cert} />
-              ))}
-            </div>
+            <h2 className="heading-subsection text-center mb-8 text-kms-navy">
+              Certificeringen
+            </h2>
+            <TrustHighlightGrid className="mb-10" />
             <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-500 mb-5">Waarmee wij werken</p>
             <div className="flex flex-wrap justify-center gap-3">
               {merken.map((merk) => (
