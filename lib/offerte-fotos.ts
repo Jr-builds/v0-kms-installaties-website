@@ -11,23 +11,23 @@ export const OFFERTE_FOTO_FORMAT_LABEL =
 
 export const offerteFotoTipsByCategory: Record<OfferteCategoryId, string> = {
   meterkast:
-    'Voor een meterkast-aanvraag helpen foto\'s van: uw groepenkast (van dichtbij en op afstand), de meter en eventuele labels of beschadigingen.',
+    'Een overzichtsfoto van uw groepenkast en een close-up van de automaten helpen ons bepalen of uitbreiding of 3-fase haalbaar is. Voeg de meter toe als die los van de kast hangt.',
   laadpaal:
-    'Handig zijn foto\'s van: de meterkast, de beoogde locatie van de laadpaal (binnen of buiten) en de route naar de meterkast.',
+    'Wij beoordelen laadpaal-werkzaamheden aan de meterkast en de plek waar u wilt laden. Fotografeer beide locaties; een beeld van het kabeltraject ertussen is extra waardevol.',
   'elektra-renovatie':
-    'Upload foto\'s van: de ruimtes waar gewerkt wordt, de bestaande groepenkast en eventuele oude bedrading of stopcontacten.',
+    'Laat ons de huidige situatie zien: de ruimtes die mee moeten in de verbouwing, de groepenkast en opvallende oude bedrading of stopcontacten die vervangen moeten worden.',
   storing:
-    'Maak foto\'s van: het defecte onderdeel, de meterkast bij stroomuitval, en eventuele schade of verbranding.',
+    'Begin met een duidelijke foto van waar het misgaat. Bij stroomuitval in de hele woning is een shot van de meterkast vaak net zo nuttig als close-ups van schade of verbranding.',
   'airco-installatie':
-    'Foto\'s van: de binnenruimte, de buitenmuur waar de buitenunit kan komen, en de huidige meterkast.',
+    'Wij willen de binnenruimte zien waar de unit komt en de buitenmuur voor de buitenunit. Een foto van de meterkast laat zien of de elektra voorbereid is.',
   'airco-onderhoud':
-    'Upload foto\'s van: het merkplaatje of type airco, de binnenunit en buitenunit indien zichtbaar.',
+    'Het merkplaatje op de unit vertelt ons veel over type en onderhoud. Stuur ook een foto van binnen- en buitenunit mee als u die veilig kunt bereiken.',
   ventilatie:
-    'Handig zijn foto\'s van: het bestaande ventilatiesysteem, filters, roosters en eventuele lekkage of condens.',
+    'Filters, ventielen en het centrale unit geven ons snel inzicht. Ziet u condens, vreemde geuren of lekkage? Fotografeer dan ook precies die plek.',
   camerabeveiliging:
-    'Upload foto\'s van: de locaties waar camera\'s moeten komen (binnen en buiten), en de gewenste bekabelingsroute indien bekend.',
+    'Loop de plekken na die u wilt bewaken en maak per hoekpunt een foto. Houd binnen en buiten apart; zo stellen wij een passend camerasysteem voor.',
   'technisch-vastgoedbeheer':
-    'Foto\'s van: het pand of complex, technische ruimtes en eventuele bestaande installaties helpen bij een eerste inschatting.',
+    'Een overzichtsfoto van het pand plus de technische ruimte volstaat vaak voor een eerste inschatting. Meerdere locaties? Eén foto per pand is al genoeg.',
 }
 
 export function getOfferteFotoTip(categoryId: OfferteCategoryId): string {
