@@ -33,6 +33,24 @@ export function validatePhone(value: string): string | null {
   return null
 }
 
+export function isValidEmail(value: string): boolean {
+  const trimmed = value.trim()
+  if (!trimmed) return false
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)
+}
+
+/** Valideert e-mail; leeg is oké tenzij `required`. */
+export function validateEmail(value: string, required = false): string | null {
+  const trimmed = value.trim()
+  if (!trimmed) {
+    return required ? 'E-mailadres is verplicht' : null
+  }
+  if (!isValidEmail(trimmed)) {
+    return 'Voer een geldig e-mailadres in (bijv. jan@voorbeeld.nl)'
+  }
+  return null
+}
+
 export function formInputClassName(hasError = false): string {
   return hasError ? 'form-input form-input-error' : 'form-input'
 }

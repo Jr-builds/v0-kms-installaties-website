@@ -30,11 +30,12 @@ import {
   isOfferteStoringEmergency,
   validateOfferteQuestionAnswers,
 } from '@/lib/offerte-questions'
-import { validatePhone, validateRequired } from '@/lib/form-validation'
+import { validateEmail, validatePhone, validateRequired } from '@/lib/form-validation'
 
 interface OfferteFormErrors {
   naam?: string
   telefoon?: string
+  email?: string
   postcode?: string
 }
 
@@ -56,6 +57,7 @@ function OfferteForm() {
   const [omschrijving, setOmschrijving] = useState('')
   const [naam, setNaam] = useState('')
   const [telefoon, setTelefoon] = useState('')
+  const [email, setEmail] = useState('')
   const [plaats, setPlaats] = useState('')
   const [postcode, setPostcode] = useState('')
   const [errors, setErrors] = useState<OfferteFormErrors>({})
@@ -79,7 +81,8 @@ function OfferteForm() {
   }, [searchParams])
 
   function validatePostcode(value: string): string | null {
-    if (!value.trim()) return null
+    const required = validateRequired(value, 'Postcode')
+    if (required) return required
     if (!isValidDutchPostcode(value)) {
       return 'Voer een geldige postcode in (bijv. 3335 KK)'
     }
@@ -100,10 +103,11 @@ function OfferteForm() {
     const nextErrors: OfferteFormErrors = {
       naam: validateRequired(naam, 'Naam') ?? undefined,
       telefoon: validatePhone(telefoon) ?? undefined,
+      email: validateEmail(email) ?? undefined,
       postcode: validatePostcode(postcode) ?? undefined,
     }
 
-    if (nextErrors.naam || nextErrors.telefoon || nextErrors.postcode) {
+    if (nextErrors.naam || nextErrors.telefoon || nextErrors.email || nextErrors.postcode) {
       setErrors(nextErrors)
       return
     }
@@ -222,11 +226,13 @@ function OfferteForm() {
           <OfferteContactStep
             naam={naam}
             telefoon={telefoon}
+            email={email}
             postcode={postcode}
             plaats={plaats}
             errors={errors}
             onNaamChange={setNaam}
             onTelefoonChange={setTelefoon}
+            onEmailChange={setEmail}
             onPostcodeChange={setPostcode}
             onPlaatsChange={setPlaats}
             onPostcodeBlur={handlePostcodeBlur}

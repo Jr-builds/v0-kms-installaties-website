@@ -9,17 +9,20 @@ import { phoneDisplay, phoneTelHref } from '@/lib/business'
 interface OfferteContactStepErrors {
   naam?: string
   telefoon?: string
+  email?: string
   postcode?: string
 }
 
 interface OfferteContactStepProps {
   naam: string
   telefoon: string
+  email: string
   postcode: string
   plaats: string
   errors: OfferteContactStepErrors
   onNaamChange: (value: string) => void
   onTelefoonChange: (value: string) => void
+  onEmailChange: (value: string) => void
   onPostcodeChange: (value: string) => void
   onPlaatsChange: (value: string) => void
   onPostcodeBlur: () => void
@@ -30,11 +33,13 @@ interface OfferteContactStepProps {
 export default function OfferteContactStep({
   naam,
   telefoon,
+  email,
   postcode,
   plaats,
   errors,
   onNaamChange,
   onTelefoonChange,
+  onEmailChange,
   onPostcodeChange,
   onPlaatsChange,
   onPostcodeBlur,
@@ -46,7 +51,7 @@ export default function OfferteContactStep({
       <div>
         <h3 className="mb-2 text-xl font-bold text-kms-navy sm:text-2xl">Uw contactgegevens</h3>
         <p className="text-sm leading-relaxed text-gray-500">
-          Laat uw gegevens achter zodat wij u kunnen bereiken met een prijsindicatie op maat.
+          Vul uw gegevens in. Wij bellen u voor een prijsindicatie op maat, meestal dezelfde dag.
         </p>
       </div>
 
@@ -59,7 +64,7 @@ export default function OfferteContactStep({
           type="text"
           value={naam}
           onChange={(event) => onNaamChange(event.target.value)}
-          placeholder="Naam contactpersoon"
+          placeholder="Uw naam"
           autoComplete="name"
           aria-invalid={errors.naam ? true : undefined}
           aria-describedby={errors.naam ? 'naam-error' : undefined}
@@ -77,19 +82,44 @@ export default function OfferteContactStep({
           type="tel"
           value={telefoon}
           onChange={(event) => onTelefoonChange(event.target.value)}
-          placeholder="Telefoonnummer voor terugbelafspraak"
+          placeholder="Bijv. 06 12345678"
           autoComplete="tel"
           aria-invalid={errors.telefoon ? true : undefined}
-          aria-describedby={errors.telefoon ? 'telefoon-error' : undefined}
+          aria-describedby={errors.telefoon ? 'telefoon-error' : 'telefoon-hint'}
           className={formInputClassName(Boolean(errors.telefoon))}
         />
+        <p id="telefoon-hint" className="mt-1.5 text-xs text-gray-500">
+          Wij bellen u terug. Geen spam, beloofd.
+        </p>
         {errors.telefoon ? <FormFieldError id="telefoon-error" message={errors.telefoon} /> : null}
+      </div>
+
+      <div>
+        <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-gray-700">
+          E-mailadres <span className="font-normal text-gray-400">(optioneel)</span>
+        </label>
+        <input
+          id="email"
+          type="email"
+          value={email}
+          onChange={(event) => onEmailChange(event.target.value)}
+          placeholder="Bijv. jan@voorbeeld.nl"
+          autoComplete="email"
+          inputMode="email"
+          aria-invalid={errors.email ? true : undefined}
+          aria-describedby={errors.email ? 'email-error' : 'email-hint'}
+          className={formInputClassName(Boolean(errors.email))}
+        />
+        <p id="email-hint" className="mt-1.5 text-xs text-gray-500">
+          Handig als u de offerte ook per e-mail wilt ontvangen.
+        </p>
+        {errors.email ? <FormFieldError id="email-error" message={errors.email} /> : null}
       </div>
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="postcode" className="mb-1.5 block text-sm font-semibold text-gray-700">
-            Postcode
+            Postcode <span className="text-red-500">*</span>
           </label>
           <input
             id="postcode"
@@ -125,7 +155,7 @@ export default function OfferteContactStep({
 
       <OfferteStepNav onBack={onBack} primaryLabel="Offerte aanvragen" />
       <p className="text-center text-xs text-gray-500">
-        Wij reageren binnen 1 werkdag, meestal dezelfde dag. Ook bereikbaar via{' '}
+        Reactie binnen 1 werkdag, meestal dezelfde dag. Spoed? Bel{' '}
         <a href={phoneTelHref} className="font-semibold text-kms-navy">
           {phoneDisplay}
         </a>
