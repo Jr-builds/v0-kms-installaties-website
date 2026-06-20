@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer className="bg-kms-navy-dark text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1: Over ons */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
@@ -72,21 +72,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Juridisch */}
-          <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider text-gray-300 mb-4">Juridisch</h3>
-            <ul className="space-y-2">
-              {legalPageLinks.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-gray-400 hover:text-white transition-colors">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Col 5: Contact */}
+          {/* Col 4: Contact */}
           <div>
             <h3 className="font-semibold text-sm uppercase tracking-wider text-gray-300 mb-4">Contact</h3>
             <ul className="space-y-2 text-sm text-gray-400">
@@ -133,15 +119,21 @@ export default function Footer() {
           <p className="text-xs text-gray-400">
             &copy; 2026 KMS Installaties. Alle rechten voorbehouden.
           </p>
-          <nav aria-label="Juridische links" className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
-            {legalPageLinks.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-xs text-gray-400 transition-colors hover:text-white"
-              >
-                {item.label}
-              </Link>
+          <nav aria-label="Juridische links" className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+            {legalPageLinks.map((item, index) => (
+              <span key={item.href} className="inline-flex items-center gap-2">
+                {index > 0 ? (
+                  <span className="text-xs text-gray-500 select-none" aria-hidden="true">
+                    ·
+                  </span>
+                ) : null}
+                <Link
+                  href={item.href}
+                  className="text-xs text-gray-400 transition-colors hover:text-white"
+                >
+                  {item.label}
+                </Link>
+              </span>
             ))}
           </nav>
         </div>
