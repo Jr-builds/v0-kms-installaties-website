@@ -36,32 +36,27 @@ interface TrustHighlightGridProps {
   className?: string
 }
 
-export default function TrustHighlightGrid({ className }: TrustHighlightGridProps) {
-  const lastRowCount = trustHighlights.length % 4
-  const lastRowStartIndex =
-    lastRowCount === 0 ? -1 : trustHighlights.length - lastRowCount
+/** Desktop: 3 certificeringen boven, 2 gecentreerd eronder (6-koloms grid). */
+const DESKTOP_FIRST_ROW_COUNT = 3
 
+export default function TrustHighlightGrid({ className }: TrustHighlightGridProps) {
   return (
     <ul
       className={cn(
-        'grid grid-cols-2 gap-x-3 gap-y-5 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-8',
+        'grid grid-cols-2 gap-x-3 gap-y-5 lg:mx-auto lg:max-w-4xl lg:grid-cols-6 lg:gap-x-8 lg:gap-y-8',
         className,
       )}
     >
       {trustHighlights.map((item, index) => {
         const brand = brandLogos[item.iconKey]
+        const isFirstInLastDesktopRow = index === DESKTOP_FIRST_ROW_COUNT
 
         return (
           <li
             key={item.id}
             className={cn(
-              'flex min-w-0 items-center gap-2 lg:items-start lg:gap-3',
-              lastRowCount === 2 &&
-                index === lastRowStartIndex &&
-                'lg:col-start-2',
-              lastRowCount === 1 &&
-                index === lastRowStartIndex &&
-                'lg:col-start-2',
+              'flex min-w-0 items-center gap-2 lg:col-span-2 lg:items-start lg:gap-3',
+              isFirstInLastDesktopRow && 'lg:col-start-2',
             )}
           >
             <div
