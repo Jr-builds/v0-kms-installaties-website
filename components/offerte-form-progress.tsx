@@ -1,3 +1,4 @@
+import { Check } from 'lucide-react'
 import { offerteFormSteps } from '@/lib/offerte-form'
 import { cn } from '@/lib/utils'
 
@@ -30,18 +31,22 @@ export default function OfferteFormProgress({ currentStep, className }: OfferteF
                     className={cn(
                       'flex size-8 shrink-0 items-center justify-center rounded-full text-sm font-bold transition-colors sm:size-9',
                       isActive && 'bg-kms-yellow text-kms-navy-dark',
-                      isComplete && 'bg-kms-yellow/25 text-kms-navy',
+                      isComplete && 'bg-kms-green text-white',
                       !isActive && !isComplete && 'bg-[#F3EDE4] text-gray-400',
                     )}
                     aria-current={isActive ? 'step' : undefined}
                   >
-                    {stepNumber}
+                    {isComplete ? (
+                      <Check className="size-4 sm:size-5" strokeWidth={2.5} aria-hidden />
+                    ) : (
+                      stepNumber
+                    )}
                   </span>
                   {!isLast ? (
                     <span
                       className={cn(
                         'mx-1 h-0.5 min-w-2 flex-1 rounded-full sm:mx-2',
-                        isComplete ? 'bg-kms-yellow/50' : 'bg-gray-200',
+                        isComplete ? 'bg-kms-green/40' : 'bg-gray-200',
                       )}
                       aria-hidden
                     />
@@ -51,6 +56,7 @@ export default function OfferteFormProgress({ currentStep, className }: OfferteF
                   className={cn(
                     'mt-1.5 hidden text-center text-[11px] leading-tight sm:block',
                     isActive ? 'font-semibold text-kms-navy' : 'text-gray-400',
+                    isComplete && 'text-gray-500',
                   )}
                 >
                   {step.label}

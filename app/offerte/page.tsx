@@ -8,13 +8,17 @@ import Footer from '@/components/footer'
 import TrustBar from '@/components/trust-bar'
 import ContactSidebar from '@/components/contact-sidebar'
 import FormFieldError from '@/components/form-field-error'
+import OfferteAudienceStep from '@/components/offerte-audience-step'
 import OfferteCategoryStep from '@/components/offerte-category-step'
+import OfferteFormBackLink from '@/components/offerte-form-back-link'
 import OfferteFormProgress from '@/components/offerte-form-progress'
 import { Button } from '@/components/ui/button'
 import { phoneDisplay, phoneTelHref } from '@/lib/business'
 import {
+  getOfferteAudienceLabel,
   getOfferteCategoryLabel,
   getOfferteProgressStep,
+  type OfferteAudienceId,
   type OfferteCategoryId,
 } from '@/lib/offerte-form'
 import {
@@ -43,6 +47,7 @@ function OfferteForm() {
   const searchParams = useSearchParams()
   const [step, setStep] = useState(1)
   const [categoryId, setCategoryId] = useState<OfferteCategoryId | null>(null)
+  const [audienceId, setAudienceId] = useState<OfferteAudienceId | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const [naam, setNaam] = useState('')
   const [telefoon, setTelefoon] = useState('')
@@ -101,14 +106,22 @@ function OfferteForm() {
 
   function handleCategorySelect(id: OfferteCategoryId) {
     setCategoryId(id)
+    if (id === 'technisch-vastgoedbeheer') {
+      setAudienceId('zakelijk')
+    }
     setStep(2)
+  }
+
+  function handleAudienceSelect(id: OfferteAudienceId) {
+    setAudienceId(id)
+    setStep(3)
   }
 
   const progressStep = getOfferteProgressStep(step)
 
   return (
     <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm">
-      {step > 1 ? (
+      {step > 2 ? (
         <>
           <h2 className="heading-subsection mb-2 text-kms-navy">Prijsindicatie aanvragen</h2>
           <p className="text-sm text-gray-500 mb-6">
@@ -133,14 +146,30 @@ function OfferteForm() {
           <OfferteFormProgress currentStep={progressStep} />
           <OfferteCategoryStep selectedId={categoryId} onSelect={handleCategorySelect} />
         </div>
+      ) : step === 2 ? (
+        <div>
+          <OfferteFormProgress currentStep={progressStep} />
+          <OfferteAudienceStep selectedId={audienceId} onSelect={handleAudienceSelect} />
+          <div className="mt-8">
+            <OfferteFormBackLink onClick={() => setStep(1)} />
+          </div>
+        </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5" noValidate>
           <OfferteFormProgress currentStep={progressStep} />
-          <div className="rounded-lg border border-gray-200 bg-kms-light/60 px-4 py-3 text-sm">
-            <span className="text-gray-500">Gekozen categorie: </span>
-            <span className="font-semibold text-kms-navy">
-              {categoryId ? getOfferteCategoryLabel(categoryId) : '—'}
-            </span>
+          <div className="rounded-lg border border-gray-200 bg-kms-light/60 px-4 py-3 text-sm space-y-1">
+            <p>
+              <span className="text-gray-500">Categorie: </span>
+              <span className="font-semibold text-kms-navy">
+                {categoryId ? getOfferteCategoryLabel(categoryId) : '—'}
+              </span>
+            </p>
+            <p>
+              <span className="text-gray-500">Aanvrager: </span>
+              <span className="font-semibold text-kms-navy">
+                {audienceId ? getOfferteAudienceLabel(audienceId) : '—'}
+              </span>
+            </p>
           </div>
           <div>
             <label htmlFor="naam" className="block text-sm font-semibold text-gray-700 mb-1.5">
@@ -243,17 +272,9 @@ function OfferteForm() {
               <p className="mt-2 text-xs text-gray-500">Binnenkort beschikbaar</p>
             </div>
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Button
-              type="button"
-              variant="secondary"
-              size="cta"
-              className="w-full sm:w-auto"
-              onClick={() => setStep(1)}
-            >
-              Terug
-            </Button>
-            <Button type="submit" variant="primary" size="cta" className="w-full sm:flex-1">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <OfferteFormBackLink onClick={() => setStep(2)} />
+            <Button type="submit" variant="primary" size="cta" className="w-full sm:w-auto sm:min-w-[12rem]">
               Offerte aanvragen
             </Button>
           </div>

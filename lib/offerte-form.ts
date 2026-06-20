@@ -1,10 +1,12 @@
 import {
   AirVent,
   AlertTriangle,
+  BriefcaseBusiness,
   Building2,
   Cctv,
   HousePlug,
   PlugZap,
+  UserRound,
   Wind,
   Wrench,
   Zap,
@@ -22,6 +24,30 @@ export const offerteFormSteps = [
 
 /** Totaal aantal stappen in het offerteformulier (issue #6–#9). */
 export const OFFERTE_FORM_STEP_COUNT = offerteFormSteps.length
+
+export type OfferteAudienceId = 'particulier' | 'zakelijk'
+
+export interface OfferteAudienceOption {
+  id: OfferteAudienceId
+  label: string
+  description: string
+  icon: LucideIcon
+}
+
+export const offerteAudienceOptions: OfferteAudienceOption[] = [
+  {
+    id: 'particulier',
+    label: 'Particulier',
+    description: 'Voor mijn eigen woning',
+    icon: UserRound,
+  },
+  {
+    id: 'zakelijk',
+    label: 'Zakelijk',
+    description: 'Voor bedrijf, pand of vastgoedbeheer',
+    icon: BriefcaseBusiness,
+  },
+]
 
 export type OfferteCategoryId =
   | 'meterkast'
@@ -135,8 +161,13 @@ export function getOfferteCategoryLabel(id: OfferteCategoryId): string {
   return offerteCategories.find((category) => category.id === id)?.label ?? id
 }
 
-/** Bepaalt welke stap in de stepper actief is (1-based). */
+export function getOfferteAudienceLabel(id: OfferteAudienceId): string {
+  return offerteAudienceOptions.find((option) => option.id === id)?.label ?? id
+}
+
+/** Formstap (1–3) naar stepper-stap (1–6). Stappen 4–6 volgen in #8/#9. */
 export function getOfferteProgressStep(formStep: number): number {
   if (formStep <= 1) return 1
-  return 2
+  if (formStep === 2) return 2
+  return 3
 }
