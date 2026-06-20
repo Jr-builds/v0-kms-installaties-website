@@ -10,14 +10,15 @@ import ContactSidebar from '@/components/contact-sidebar'
 import FormFieldError from '@/components/form-field-error'
 import OfferteAudienceStep from '@/components/offerte-audience-step'
 import OfferteCategoryStep from '@/components/offerte-category-step'
-import OfferteQuestionsStep from '@/components/offerte-questions-step'
+import OfferteFotosStep from '@/components/offerte-fotos-step'
 import OfferteFormBackLink from '@/components/offerte-form-back-link'
 import OfferteFormProgress from '@/components/offerte-form-progress'
+import OfferteFormSummary from '@/components/offerte-form-summary'
+import OfferteQuestionsStep from '@/components/offerte-questions-step'
+import OfferteVerhaalStep from '@/components/offerte-verhaal-step'
 import { Button } from '@/components/ui/button'
 import { phoneDisplay, phoneTelHref } from '@/lib/business'
 import {
-  getOfferteAudienceLabel,
-  getOfferteCategoryLabel,
   getOfferteProgressStep,
   type OfferteAudienceId,
   type OfferteCategoryId,
@@ -28,7 +29,6 @@ import {
   normalizeDienstSlug,
 } from '@/lib/offerte'
 import {
-  getOfferteAnswerLabel,
   getOfferteQuestions,
   isOfferteStoringEmergency,
   validateOfferteQuestionAnswers,
@@ -56,6 +56,7 @@ function OfferteForm() {
   const [categoryId, setCategoryId] = useState<OfferteCategoryId | null>(null)
   const [audienceId, setAudienceId] = useState<OfferteAudienceId | null>(null)
   const [submitted, setSubmitted] = useState(false)
+  const [omschrijving, setOmschrijving] = useState('')
   const [naam, setNaam] = useState('')
   const [telefoon, setTelefoon] = useState('')
   const [plaats, setPlaats] = useState('')
@@ -156,7 +157,7 @@ function OfferteForm() {
 
   return (
     <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm">
-      {step > 3 ? (
+      {step >= 4 ? (
         <>
           <h2 className="heading-subsection mb-2 text-kms-navy">Prijsindicatie aanvragen</h2>
           <p className="text-sm text-gray-500 mb-6">
@@ -203,34 +204,56 @@ function OfferteForm() {
             <OfferteFormBackLink onClick={() => setStep(2)} />
           </div>
         </div>
+      ) : step === 4 ? (
+        <div>
+          <OfferteFormProgress currentStep={progressStep} />
+          <OfferteFormSummary
+            categoryId={categoryId}
+            audienceId={audienceId}
+            questionAnswers={questionAnswers}
+          />
+          <div className="mt-6">
+            <OfferteVerhaalStep
+              value={omschrijving}
+              onChange={setOmschrijving}
+              onContinue={() => setStep(5)}
+            />
+          </div>
+          <div className="mt-8">
+            <OfferteFormBackLink onClick={() => setStep(3)} />
+          </div>
+        </div>
+      ) : step === 5 ? (
+        <div>
+          <OfferteFormProgress currentStep={progressStep} />
+          <OfferteFormSummary
+            categoryId={categoryId}
+            audienceId={audienceId}
+            questionAnswers={questionAnswers}
+          />
+          <div className="mt-6">
+            <OfferteFotosStep onContinue={() => setStep(6)} />
+          </div>
+          <div className="mt-8">
+            <OfferteFormBackLink onClick={() => setStep(4)} />
+          </div>
+        </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5" noValidate>
           <OfferteFormProgress currentStep={progressStep} />
-          <div className="rounded-lg border border-gray-200 bg-kms-light/60 px-4 py-3 text-sm space-y-1">
-            <p>
-              <span className="text-gray-500">Categorie: </span>
-              <span className="font-semibold text-kms-navy">
-                {categoryId ? getOfferteCategoryLabel(categoryId) : '—'}
-              </span>
-            </p>
-            <p>
-              <span className="text-gray-500">Aanvrager: </span>
-              <span className="font-semibold text-kms-navy">
-                {audienceId ? getOfferteAudienceLabel(audienceId) : '—'}
-              </span>
-            </p>
-            {categoryId
-              ? getOfferteQuestions(categoryId)
-                  .filter((question) => questionAnswers[question.id]?.trim())
-                  .map((question) => (
-                    <p key={question.id}>
-                      <span className="text-gray-500">{question.label}: </span>
-                      <span className="font-semibold text-kms-navy">
-                        {getOfferteAnswerLabel(question, questionAnswers[question.id])}
-                      </span>
-                    </p>
-                  ))
-              : null}
+          <OfferteFormSummary
+            categoryId={categoryId}
+            audienceId={audienceId}
+            questionAnswers={questionAnswers}
+          />
+          {omschrijving.trim() ? (
+            <div className="rounded-lg border border-gray-200 bg-kms-light/60 px-4 py-3 text-sm">
+              <p className="text-gray-500">Projectomschrijving:</p>
+              <p className="mt-1 font-medium text-kms-navy whitespace-pre-wrap">{omschrijving}</p>
+            </div>
+          ) : null}
+          <div>
+            <h3 className="mb-4 text-xl font-bold text-kms-navy sm:text-2xl">Uw contactgegevens</h3>
           </div>
           <div>
             <label htmlFor="naam" className="block text-sm font-semibold text-gray-700 mb-1.5">
@@ -300,41 +323,8 @@ function OfferteForm() {
               />
             </div>
           </div>
-          <div>
-            <label htmlFor="omschrijving" className="block text-sm font-semibold text-gray-700 mb-1.5">
-              Projectomschrijving
-            </label>
-            <textarea
-              id="omschrijving"
-              rows={5}
-              placeholder="Beschrijf uw project: type pand, gewenste werkzaamheden, planning en eventuele bijzonderheden voor een gerichte offerte."
-              className={`${formInputClassName()} resize-none`}
-            />
-          </div>
-          <div>
-            <label htmlFor="situatiefotos" className="block text-sm font-semibold text-gray-700 mb-1.5">
-              Situatiefoto&apos;s <span className="font-normal text-gray-400">(optioneel)</span>
-            </label>
-            <div className="rounded-lg border border-dashed border-gray-300 bg-kms-light px-4 py-6 text-center">
-              <input id="situatiefotos" type="file" accept="image/*" multiple disabled className="sr-only" />
-              <label
-                htmlFor="situatiefotos"
-                className="inline-flex cursor-not-allowed items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-400"
-              >
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-                Foto&apos;s uploaden
-              </label>
-              <p className="mt-2 text-xs text-gray-500">Binnenkort beschikbaar</p>
-            </div>
-          </div>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <OfferteFormBackLink onClick={() => setStep(3)} />
+            <OfferteFormBackLink onClick={() => setStep(5)} />
             <Button type="submit" variant="primary" size="cta" className="w-full sm:w-auto sm:min-w-[12rem]">
               Offerte aanvragen
             </Button>
