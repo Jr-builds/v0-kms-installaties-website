@@ -1,0 +1,28 @@
+---
+description: Geen lange streepjes in gebruikersgerichte copy (NL)
+alwaysApply: true
+---
+
+# Geen lange streepjes in copy
+
+Gebruik **nooit** em dashes (`—`) of en dashes (`–`) in gebruikersgerichte teksten.
+
+Gewone koppeltekens (`-`) zijn **wel** toegestaan, bijv. `ma-zo 08:00-22:00` of `Zuid-Holland`.
+
+## Alternatieven voor lange streepjes
+
+| Situatie | Niet | Wel |
+|----------|------|-----|
+| Payoff / accent | `geïnstalleerd — altijd bereikbaar` | `geïnstalleerd - altijd bereikbaar` |
+| Toelichting | `airconditioning — actief in Brabant` | `airconditioning - actief in Brabant` |
+| Tijdspanne | `ma–zo 08:00–22:00` | `ma-zo 08:00-22:00` |
+| Artikelkop | `Artikel 1 — Definities` | `Artikel 1: Definities` |
+
+Gebruik een **spatie rond het koppelteken** (` - `) als scheiding tussen twee zinsnede-delen. Geen spatie bij samenstellingen (`ma-zo`, `Zuid-Holland`).
+
+## Scope
+
+- **Wel:** zichtbare copy in `.tsx`, `lib/*.ts`, GitHub issue-teksten
+- **Niet:** code-comments en interne docs (tenzij expliciet gevraagd)
+
+Controleer bij nieuwe copy op `—` en `–`.

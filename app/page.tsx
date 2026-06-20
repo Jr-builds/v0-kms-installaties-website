@@ -9,13 +9,13 @@ import ClosingCTA from '@/components/closing-cta'
 import StatsBar from '@/components/stats-bar'
 import Reviews from '@/components/reviews'
 import AvailabilityPill, { OpeningHoursPill } from '@/components/availability-pill'
-import SeasonalHeroSubtitle from '@/components/seasonal-hero-subtitle'
 import CertificationBadge from '@/components/certification-badge'
 import { Button } from '@/components/ui/button'
 import { certifications } from '@/lib/certifications'
 import { getImage, type SiteImageKey } from '@/lib/images'
 import { pageReviews } from '@/lib/reviews'
 import { pageMetadata } from '@/lib/metadata'
+import { DEFAULT_HERO_SUBTITLE } from '@/lib/seasonal'
 import { phoneDisplay, phoneTelHref } from '@/lib/business'
 
 export const metadata: Metadata = pageMetadata.home
@@ -55,10 +55,10 @@ export default function HomePage() {
                   <OpeningHoursPill size="md" />
                 </div>
                 <h1 className="heading-hero-home text-white mb-5">
-                  Vakkundige installaties in Zuid-Holland{' '}
+                  Elektra en Airco, vakkundig geïnstalleerd -{' '}
                   <span className="text-kms-yellow">altijd bereikbaar</span>
                 </h1>
-                <SeasonalHeroSubtitle />
+                <p className="text-blue-200 text-lg mb-8 leading-relaxed">{DEFAULT_HERO_SUBTITLE}</p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button render={<Link href="/offerte" />} nativeButton={false} variant="primary" size="cta-sm" className="text-center">
                     Vraag een offerte aan
@@ -88,9 +88,13 @@ export default function HomePage() {
         {/* DIENSTEN GRID */}
         <section id="diensten" className="bg-white py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="heading-section text-center mb-10 text-kms-navy">
+            <h2 className="heading-section text-center mb-4 text-kms-navy">
               Onze diensten
             </h2>
+            <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+              KMS Installaties levert gecertificeerd elektra- en airconditioningwerk in Zuid-Holland, Brabant, Zeeland en regio Utrecht.
+              Daarnaast verzorgen wij ventilatie, technisch vastgoedbeheer en camerabeveiliging.
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {dienstenCards.map((card) => (
                 <Link

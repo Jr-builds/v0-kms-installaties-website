@@ -27,7 +27,7 @@ export default function CookiesPage() {
       </p>
       <ul>
         <li>
-          <strong>Cookievoorkeur</strong> — onthoudt of u onze cookiemelding heeft geaccepteerd
+          <strong>Cookievoorkeur</strong>: onthoudt of u onze cookiemelding heeft geaccepteerd
           (localStorage, geen vervaldatum tot u deze wist).
         </li>
       </ul>
