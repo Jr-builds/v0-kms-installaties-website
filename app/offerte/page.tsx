@@ -8,13 +8,19 @@ import Footer from '@/components/footer'
 import TrustBar from '@/components/trust-bar'
 import ContactSidebar from '@/components/contact-sidebar'
 import FormFieldError from '@/components/form-field-error'
+import OfferteCategoryStep from '@/components/offerte-category-step'
+import OfferteFormProgress from '@/components/offerte-form-progress'
 import { Button } from '@/components/ui/button'
 import { phoneDisplay, phoneTelHref } from '@/lib/business'
 import {
+  getOfferteCategoryLabel,
+  getOfferteProgressStep,
+  type OfferteCategoryId,
+} from '@/lib/offerte-form'
+import {
   formatDutchPostcode,
-  getOfferteDienstLabel,
   isValidDutchPostcode,
-  offerteDiensten,
+  normalizeDienstSlug,
 } from '@/lib/offerte'
 import { formInputClassName, validatePhone, validateRequired } from '@/lib/form-validation'
 
@@ -24,12 +30,22 @@ interface OfferteFormErrors {
   postcode?: string
 }
 
+const dienstSlugToCategory: Partial<Record<string, OfferteCategoryId>> = {
+  elektra: 'elektra-renovatie',
+  airconditioning: 'airco-installatie',
+  ventilatie: 'ventilatie',
+  vastgoedbeheer: 'technisch-vastgoedbeheer',
+  cameras: 'camerabeveiliging',
+  anders: 'elektra-renovatie',
+}
+
 function OfferteForm() {
   const searchParams = useSearchParams()
+  const [step, setStep] = useState(1)
+  const [categoryId, setCategoryId] = useState<OfferteCategoryId | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const [naam, setNaam] = useState('')
   const [telefoon, setTelefoon] = useState('')
-  const [dienst, setDienst] = useState('')
   const [plaats, setPlaats] = useState('')
   const [postcode, setPostcode] = useState('')
   const [errors, setErrors] = useState<OfferteFormErrors>({})
@@ -37,8 +53,12 @@ function OfferteForm() {
   useEffect(() => {
     const dienstParam = searchParams.get('dienst')
     if (dienstParam) {
-      const label = getOfferteDienstLabel(dienstParam)
-      if (label) setDienst(label)
+      const category = dienstSlugToCategory[normalizeDienstSlug(dienstParam)]
+      if (category) {
+        setCategoryId(category)
+        setStep(2)
+        return
+      }
     }
 
     const plaatsParam = searchParams.get('plaats')
@@ -79,12 +99,23 @@ function OfferteForm() {
     setSubmitted(true)
   }
 
+  function handleCategorySelect(id: OfferteCategoryId) {
+    setCategoryId(id)
+    setStep(2)
+  }
+
+  const progressStep = getOfferteProgressStep(step)
+
   return (
-    <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
-      <h2 className="heading-subsection mb-2 text-kms-navy">Prijsindicatie aanvragen</h2>
-      <p className="text-sm text-gray-500 mb-6">
-        Vertel ons over uw project. Wij sturen een offerte op maat.
-      </p>
+    <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm">
+      {step > 1 ? (
+        <>
+          <h2 className="heading-subsection mb-2 text-kms-navy">Prijsindicatie aanvragen</h2>
+          <p className="text-sm text-gray-500 mb-6">
+            Vertel ons over uw project. Wij sturen een offerte op maat.
+          </p>
+        </>
+      ) : null}
       {submitted ? (
         <div className="text-center py-10">
           <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 bg-green-50 text-kms-green">
@@ -97,8 +128,20 @@ function OfferteForm() {
             Wij nemen zo snel mogelijk, uiterlijk binnen 1 werkdag, contact met u op.
           </p>
         </div>
+      ) : step === 1 ? (
+        <div>
+          <OfferteFormProgress currentStep={progressStep} />
+          <OfferteCategoryStep selectedId={categoryId} onSelect={handleCategorySelect} />
+        </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+          <OfferteFormProgress currentStep={progressStep} />
+          <div className="rounded-lg border border-gray-200 bg-kms-light/60 px-4 py-3 text-sm">
+            <span className="text-gray-500">Gekozen categorie: </span>
+            <span className="font-semibold text-kms-navy">
+              {categoryId ? getOfferteCategoryLabel(categoryId) : '—'}
+            </span>
+          </div>
           <div>
             <label htmlFor="naam" className="block text-sm font-semibold text-gray-700 mb-1.5">
               Naam <span className="text-red-500">*</span>
@@ -168,24 +211,6 @@ function OfferteForm() {
             </div>
           </div>
           <div>
-            <label htmlFor="dienst" className="block text-sm font-semibold text-gray-700 mb-1.5">
-              Gewenste dienst
-            </label>
-            <select
-              id="dienst"
-              value={dienst}
-              onChange={(event) => setDienst(event.target.value)}
-              className={`${formInputClassName()} text-gray-700`}
-            >
-              <option value="">Kies de dienst voor uw offerte</option>
-              {offerteDiensten.map((option) => (
-                <option key={option.slug} value={option.label}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
             <label htmlFor="omschrijving" className="block text-sm font-semibold text-gray-700 mb-1.5">
               Projectomschrijving
             </label>
@@ -218,18 +243,27 @@ function OfferteForm() {
               <p className="mt-2 text-xs text-gray-500">Binnenkort beschikbaar</p>
             </div>
           </div>
-          <div>
-            <Button type="submit" variant="primary" size="cta" className="w-full">
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button
+              type="button"
+              variant="secondary"
+              size="cta"
+              className="w-full sm:w-auto"
+              onClick={() => setStep(1)}
+            >
+              Terug
+            </Button>
+            <Button type="submit" variant="primary" size="cta" className="w-full sm:flex-1">
               Offerte aanvragen
             </Button>
-            <p className="text-xs text-gray-500 mt-3 text-center">
-              Wij reageren binnen 1 werkdag, meestal dezelfde dag. Ook bereikbaar via{' '}
-              <a href={phoneTelHref} className="font-semibold text-kms-navy">
-                {phoneDisplay}
-              </a>
-              .
-            </p>
           </div>
+          <p className="text-xs text-gray-500 text-center">
+            Wij reageren binnen 1 werkdag, meestal dezelfde dag. Ook bereikbaar via{' '}
+            <a href={phoneTelHref} className="font-semibold text-kms-navy">
+              {phoneDisplay}
+            </a>
+            .
+          </p>
         </form>
       )}
     </div>
