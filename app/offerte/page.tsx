@@ -10,6 +10,7 @@ import ContactSidebar from '@/components/contact-sidebar'
 import FormFieldError from '@/components/form-field-error'
 import OfferteAudienceStep from '@/components/offerte-audience-step'
 import OfferteCategoryStep from '@/components/offerte-category-step'
+import OfferteQuestionsStep from '@/components/offerte-questions-step'
 import OfferteFormBackLink from '@/components/offerte-form-back-link'
 import OfferteFormProgress from '@/components/offerte-form-progress'
 import { Button } from '@/components/ui/button'
@@ -26,6 +27,12 @@ import {
   isValidDutchPostcode,
   normalizeDienstSlug,
 } from '@/lib/offerte'
+import {
+  getOfferteAnswerLabel,
+  getOfferteQuestions,
+  isOfferteStoringEmergency,
+  validateOfferteQuestionAnswers,
+} from '@/lib/offerte-questions'
 import { formInputClassName, validatePhone, validateRequired } from '@/lib/form-validation'
 
 interface OfferteFormErrors {
@@ -54,6 +61,8 @@ function OfferteForm() {
   const [plaats, setPlaats] = useState('')
   const [postcode, setPostcode] = useState('')
   const [errors, setErrors] = useState<OfferteFormErrors>({})
+  const [questionAnswers, setQuestionAnswers] = useState<Record<string, string>>({})
+  const [questionErrors, setQuestionErrors] = useState<Record<string, string>>({})
 
   useEffect(() => {
     const dienstParam = searchParams.get('dienst')
@@ -106,6 +115,8 @@ function OfferteForm() {
 
   function handleCategorySelect(id: OfferteCategoryId) {
     setCategoryId(id)
+    setQuestionAnswers({})
+    setQuestionErrors({})
     if (id === 'technisch-vastgoedbeheer') {
       setAudienceId('zakelijk')
     }
@@ -117,11 +128,35 @@ function OfferteForm() {
     setStep(3)
   }
 
+  function handleQuestionAnswerChange(questionId: string, value: string) {
+    setQuestionAnswers((current) => ({ ...current, [questionId]: value }))
+    if (questionErrors[questionId]) {
+      setQuestionErrors((current) => {
+        const next = { ...current }
+        delete next[questionId]
+        return next
+      })
+    }
+  }
+
+  function handleQuestionsContinue() {
+    if (!categoryId) return
+    if (categoryId === 'storing' && isOfferteStoringEmergency(questionAnswers)) return
+    const questions = getOfferteQuestions(categoryId)
+    const nextErrors = validateOfferteQuestionAnswers(questions, questionAnswers)
+    if (Object.keys(nextErrors).length > 0) {
+      setQuestionErrors(nextErrors)
+      return
+    }
+    setQuestionErrors({})
+    setStep(4)
+  }
+
   const progressStep = getOfferteProgressStep(step)
 
   return (
     <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm">
-      {step > 2 ? (
+      {step > 3 ? (
         <>
           <h2 className="heading-subsection mb-2 text-kms-navy">Prijsindicatie aanvragen</h2>
           <p className="text-sm text-gray-500 mb-6">
@@ -154,6 +189,20 @@ function OfferteForm() {
             <OfferteFormBackLink onClick={() => setStep(1)} />
           </div>
         </div>
+      ) : step === 3 && categoryId ? (
+        <div>
+          <OfferteFormProgress currentStep={progressStep} />
+          <OfferteQuestionsStep
+            categoryId={categoryId}
+            answers={questionAnswers}
+            errors={questionErrors}
+            onAnswerChange={handleQuestionAnswerChange}
+            onContinue={handleQuestionsContinue}
+          />
+          <div className="mt-8">
+            <OfferteFormBackLink onClick={() => setStep(2)} />
+          </div>
+        </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5" noValidate>
           <OfferteFormProgress currentStep={progressStep} />
@@ -170,6 +219,18 @@ function OfferteForm() {
                 {audienceId ? getOfferteAudienceLabel(audienceId) : '—'}
               </span>
             </p>
+            {categoryId
+              ? getOfferteQuestions(categoryId)
+                  .filter((question) => questionAnswers[question.id]?.trim())
+                  .map((question) => (
+                    <p key={question.id}>
+                      <span className="text-gray-500">{question.label}: </span>
+                      <span className="font-semibold text-kms-navy">
+                        {getOfferteAnswerLabel(question, questionAnswers[question.id])}
+                      </span>
+                    </p>
+                  ))
+              : null}
           </div>
           <div>
             <label htmlFor="naam" className="block text-sm font-semibold text-gray-700 mb-1.5">
@@ -273,7 +334,7 @@ function OfferteForm() {
             </div>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <OfferteFormBackLink onClick={() => setStep(2)} />
+            <OfferteFormBackLink onClick={() => setStep(3)} />
             <Button type="submit" variant="primary" size="cta" className="w-full sm:w-auto sm:min-w-[12rem]">
               Offerte aanvragen
             </Button>

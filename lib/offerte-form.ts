@@ -165,9 +165,10 @@ export function getOfferteAudienceLabel(id: OfferteAudienceId): string {
   return offerteAudienceOptions.find((option) => option.id === id)?.label ?? id
 }
 
-/** Formstap (1–3) naar stepper-stap (1–6). Stappen 4–6 volgen in #8/#9. */
+/** Formstap (1–4) naar stepper-stap (1–6). Stappen 5–6 volgen in #9. */
 export function getOfferteProgressStep(formStep: number): number {
   if (formStep <= 1) return 1
   if (formStep === 2) return 2
-  return 3
+  if (formStep === 3) return 3
+  return 4
 }
