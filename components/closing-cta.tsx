@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { phoneDisplay, phoneTelHref } from '@/lib/business'
+import HeroPhoneButton from '@/components/hero-phone-button'
 
 interface ClosingCTAProps {
   title?: string
@@ -24,9 +24,7 @@ export default function ClosingCTA({
           <Button render={<Link href={primaryHref} />} nativeButton={false} variant="primary" size="cta">
             {primaryLabel}
           </Button>
-          <Button render={<a href={phoneTelHref} />} nativeButton={false} variant="hero-outline" size="cta">
-            {phoneDisplay}
-          </Button>
+          <HeroPhoneButton size="cta" />
         </div>
       </div>
     </section>

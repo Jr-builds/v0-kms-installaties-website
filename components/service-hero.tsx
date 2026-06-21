@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import SiteImage from './site-image'
 import { Button } from '@/components/ui/button'
+import HeroPhoneButton from '@/components/hero-phone-button'
 import { getImage, type SiteImageKey } from '@/lib/images'
 import { buildOfferteHref } from '@/lib/offerte'
-import { phoneDisplay, phoneTelHref } from '@/lib/business'
 
 interface ServiceHeroProps {
   title: string
@@ -43,15 +43,7 @@ export default function ServiceHero({
               >
                 {primaryLabel}
               </Button>
-              <Button
-                render={<a href={phoneTelHref} />}
-                nativeButton={false}
-                variant="hero-outline"
-                size="cta-sm"
-                className="text-center"
-              >
-                {phoneDisplay}
-              </Button>
+              <HeroPhoneButton className="text-center" />
             </div>
           </div>
           <div className="hero-photo">

@@ -15,7 +15,7 @@ import { getImage, type SiteImageKey } from '@/lib/images'
 import { pageReviews } from '@/lib/reviews'
 import { pageMetadata } from '@/lib/metadata'
 import { DEFAULT_HERO_SUBTITLE } from '@/lib/seasonal'
-import { phoneDisplay, phoneTelHref } from '@/lib/business'
+import HeroPhoneButton from '@/components/hero-phone-button'
 import { serviceAreaInPhrase } from '@/lib/service-area'
 
 export const metadata: Metadata = pageMetadata.home
@@ -63,9 +63,7 @@ export default function HomePage() {
                   <Button render={<Link href="/offerte" />} nativeButton={false} variant="primary" size="cta-sm" className="text-center">
                     Vraag een offerte aan
                   </Button>
-                  <Button render={<a href={phoneTelHref} />} nativeButton={false} variant="hero-outline" size="cta-sm" className="text-center">
-                    {phoneDisplay}
-                  </Button>
+                  <HeroPhoneButton className="text-center" />
                 </div>
               </div>
               <div className="hero-photo">
