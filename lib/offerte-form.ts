@@ -164,6 +164,22 @@ export function getOfferteCategoryLabel(id: OfferteCategoryId): string {
   return offerteCategories.find((category) => category.id === id)?.label ?? id
 }
 
+/** Koptekst stap 3; lidwoord waar nodig voor correct Nederlands. */
+export function getOfferteCategoryQuestionsHeading(id: OfferteCategoryId): string {
+  const headings: Record<OfferteCategoryId, string> = {
+    meterkast: 'Een paar vragen over uw meterkast',
+    laadpaal: 'Een paar vragen over uw laadpaal',
+    'elektra-renovatie': 'Een paar vragen over uw elektra renovatie',
+    storing: 'Een paar vragen over de storing',
+    'airco-installatie': 'Een paar vragen over uw airco-installatie',
+    'airco-onderhoud': 'Een paar vragen over uw airco-onderhoud',
+    ventilatie: 'Een paar vragen over uw ventilatie',
+    camerabeveiliging: 'Een paar vragen over uw camerabeveiliging',
+    'technisch-vastgoedbeheer': 'Een paar vragen over technisch vastgoedbeheer',
+  }
+  return headings[id] ?? `Een paar vragen over ${getOfferteCategoryLabel(id).toLowerCase()}`
+}
+
 export function getOfferteAudienceLabel(id: OfferteAudienceId): string {
   return offerteAudienceOptions.find((option) => option.id === id)?.label ?? id
 }

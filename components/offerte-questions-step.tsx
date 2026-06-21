@@ -10,7 +10,7 @@ import {
   type OfferteQuestion,
 } from '@/lib/offerte-questions'
 import type { OfferteCategoryId } from '@/lib/offerte-form'
-import { getOfferteCategoryLabel } from '@/lib/offerte-form'
+import { getOfferteCategoryQuestionsHeading } from '@/lib/offerte-form'
 
 interface OfferteQuestionsStepProps {
   categoryId: OfferteCategoryId
@@ -127,7 +127,7 @@ export default function OfferteQuestionsStep({
   onContinue,
 }: OfferteQuestionsStepProps) {
   const questions = getOfferteQuestions(categoryId)
-  const categoryLabel = getOfferteCategoryLabel(categoryId)
+  const questionsHeading = getOfferteCategoryQuestionsHeading(categoryId)
   const isStoringEmergency =
     categoryId === 'storing' && isOfferteStoringEmergency(answers)
 
@@ -141,7 +141,7 @@ export default function OfferteQuestionsStep({
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div>
         <h3 className="mb-2 text-xl font-bold text-kms-navy sm:text-2xl">
-          Een paar vragen over {categoryLabel.toLowerCase()}
+          {questionsHeading}
         </h3>
         <p className="mb-6 text-sm text-gray-500">
           Zo kunnen wij een gerichte prijsindicatie opstellen.

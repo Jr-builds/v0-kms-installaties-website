@@ -33,14 +33,13 @@ export const offerteQuestionsByCategory: Record<OfferteCategoryId, OfferteQuesti
     },
     {
       id: 'meterkast-groepen',
-      label: 'Hoeveel schakelaars staan er in uw meterkast?',
+      label: 'Hoeveel groepen heeft u in uw groepenkast?',
       type: 'select',
       required: true,
-      helpText: 'Tel de kleine hendels of schakelaars in de kast (ook wel groepen genoemd).',
       options: [
-        { value: '1-4', label: '1-4 stuks' },
-        { value: '5-8', label: '5-8 stuks' },
-        { value: '9+', label: '9 of meer' },
+        { value: '1-4', label: '1-4 groepen' },
+        { value: '5-8', label: '5-8 groepen' },
+        { value: '9+', label: '9 groepen of meer' },
         { value: 'onbekend', label: 'Weet ik niet' },
       ],
     },
