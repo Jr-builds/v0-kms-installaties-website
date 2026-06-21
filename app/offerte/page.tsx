@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import TrustBar from '@/components/trust-bar'
 import ContactSidebar from '@/components/contact-sidebar'
 import OfferteAudienceStep from '@/components/offerte-audience-step'
 import OfferteCategoryStep from '@/components/offerte-category-step'
@@ -303,18 +302,39 @@ function OfferteFormFallback() {
 }
 
 export default function OffertePage() {
+  useEffect(() => {
+    const isMobile = window.matchMedia('(max-width: 1023px)').matches
+    if (!isMobile) return
+
+    const formSection = document.getElementById('offerte-form')
+    if (!formSection) return
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const scroll = () =>
+      formSection.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' })
+
+    const timer = window.setTimeout(scroll, 150)
+    return () => window.clearTimeout(timer)
+  }, [])
+
   return (
     <>
       <Navbar />
       <main id="main-content">
-        <section className="hero-navy py-14 sm:py-20">
+        <section className="hero-navy py-6 sm:py-12 lg:py-16">
           <div className="hero-navy-content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="heading-page text-white mb-3">Offerte voor uw nieuwe project</h1>
-            <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              Beschrijf uw situatie en ontvang een vrijblijvende prijsindicatie. Reactie binnen 1 werkdag,
-              meestal dezelfde dag.
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white mb-2 sm:mb-3">
+              <span className="sm:hidden">Offerte aanvragen</span>
+              <span className="hidden sm:inline">Offerte voor uw nieuwe project</span>
+            </h1>
+            <p className="text-blue-200 text-base sm:text-lg max-w-2xl mx-auto">
+              <span className="sm:hidden">Vrijblijvende prijsindicatie. Reactie binnen 1 werkdag.</span>
+              <span className="hidden sm:inline">
+                Beschrijf uw situatie en ontvang een vrijblijvende prijsindicatie. Reactie binnen 1 werkdag,
+                meestal dezelfde dag.
+              </span>
             </p>
-            <p className="text-sm text-blue-200 mt-5">
+            <p className="hidden sm:block text-sm text-blue-200 mt-5">
               Spoed of storing?{' '}
               <Link href="/contact" className="font-semibold text-kms-yellow-dark hover:underline">
                 Neem contact op →
@@ -323,9 +343,7 @@ export default function OffertePage() {
           </div>
         </section>
 
-        <TrustBar />
-
-        <section className="bg-kms-light py-14 sm:py-20">
+        <section id="offerte-form" className="bg-kms-light py-8 sm:py-14 lg:py-20 scroll-mt-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
               <div className="lg:col-span-3">
