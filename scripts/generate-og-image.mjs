@@ -22,7 +22,7 @@ const svgOverlay = `
   <rect width="${width}" height="${height}" fill="url(#bg)"/>
   <text x="600" y="300" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#ffffff" text-anchor="middle">KMS Installaties</text>
   <text x="600" y="365" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600" fill="#F5A623" text-anchor="middle">Elektra &amp; Airconditioning</text>
-  <text x="600" y="410" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#bfdbfe" text-anchor="middle">Zuid-Holland · Bereikbaar ma-zo 08:00-22:00</text>
+  <text x="600" y="410" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#bfdbfe" text-anchor="middle">Zuid-Holland · Brabant · Zeeland · regio Utrecht</text>
 </svg>`
 
 async function main() {

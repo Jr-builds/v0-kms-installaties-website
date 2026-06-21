@@ -15,6 +15,7 @@ import {
 } from '@/lib/projects'
 import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion'
 import { cn } from '@/lib/utils'
+import { serviceAreaInPhrase } from '@/lib/service-area'
 
 export default function ProjectenPage() {
   const prefersReducedMotion = usePrefersReducedMotion()
@@ -44,7 +45,7 @@ export default function ProjectenPage() {
           <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="heading-page text-white mb-3">Onze projecten</h1>
             <p className="text-blue-200 text-lg">
-              Een greep uit het werk dat wij hebben mogen uitvoeren in Zuid-Holland.
+              Een greep uit het werk dat wij hebben mogen uitvoeren {serviceAreaInPhrase}.
             </p>
           </div>
         </section>

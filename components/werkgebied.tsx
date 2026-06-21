@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { businessInfo } from '@/lib/business'
+import { serviceAreaDisplay, serviceAreaFromZwijndrecht } from '@/lib/service-area'
 import { buildOfferteHref } from '@/lib/offerte'
 
 function MapPinIcon({ className = 'h-4 w-4' }: { className?: string }) {
@@ -29,8 +30,7 @@ export default function Werkgebied() {
         <div className="text-center mb-10">
           <h2 className="heading-section text-kms-navy mb-3">Ons werkgebied</h2>
           <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            Vanuit Zwijndrecht bedienen wij particulieren en bedrijven door heel Zuid-Holland.
-            Klik op een plaats voor een offerte in uw regio.
+            {serviceAreaFromZwijndrecht} Klik op een plaats voor een offerte in uw regio.
           </p>
         </div>
 
@@ -49,9 +49,11 @@ export default function Werkgebied() {
             <div className="absolute inset-6 rounded-xl border-2 border-dashed border-kms-navy/20" />
             <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
               <span className="text-xs font-semibold uppercase tracking-widest text-kms-navy/60 mb-2">
-                Regio
+                Werkgebied
               </span>
-              <span className="text-2xl sm:text-3xl font-bold text-kms-navy">Zuid-Holland</span>
+              <span className="text-base sm:text-lg font-bold text-kms-navy leading-snug max-w-[280px]">
+                {serviceAreaDisplay}
+              </span>
               <div className="mt-6 flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm border border-gray-100">
                 <MapPinIcon className="h-4 w-4 text-kms-yellow-dark" />
                 <span className="text-sm font-semibold text-kms-navy">

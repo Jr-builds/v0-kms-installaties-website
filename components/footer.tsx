@@ -10,6 +10,7 @@ import {
   phoneTelHref,
 } from '@/lib/business'
 import { legalPageLinks } from '@/lib/legal'
+import { serviceAreaFooterPhrase } from '@/lib/service-area'
 
 export default function Footer() {
   return (
@@ -28,7 +29,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              10+ jaar vakmanschap in Zuid-Holland. Elektra, airco, ventilatie en beveiliging. Altijd bereikbaar, ook in het weekend.
+              {serviceAreaFooterPhrase} Elektra, airco, ventilatie en beveiliging. Altijd bereikbaar, ook in het weekend.
             </p>
           </div>
 

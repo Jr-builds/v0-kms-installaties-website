@@ -13,6 +13,7 @@ import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
 import { pageReviews } from '@/lib/reviews'
+import { serviceAreaInPhrase } from '@/lib/service-area'
 
 const dienstenCards = [
   { imageKey: 'elektra.huisinstallatie' as const, imageLabel: 'Foto: huisinstallatie nieuwbouw', title: 'Huisinstallaties (Nieuwbouw & Bestaande Bouw)', description: 'Complete elektrische aanleg, stopcontacten, veiligheidscheck NEN' },
@@ -28,7 +29,7 @@ const dienstenCards = [
 const waaromItems = [
   { title: 'NEN 3140 gecertificeerd', description: 'Wettelijk vereist voor elektrische installaties. Elke installatie wordt gekeurd en geleverd met een groepenverklaring.' },
   { title: 'Ma-Zo 08:00-22:00 bereikbaar', description: 'Ook voor spoedmeldingen en storingen buiten kantooruren.' },
-  { title: '200+ afgeronde elektraprojecten', description: 'Van nieuwbouw tot renovatie, particulier en zakelijk in heel Zuid-Holland.' },
+  { title: '200+ afgeronde elektraprojecten', description: `Van nieuwbouw tot renovatie, particulier en zakelijk ${serviceAreaInPhrase}.` },
 ]
 
 const reviews = pageReviews.elektra

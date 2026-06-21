@@ -12,6 +12,7 @@ import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
 import { pageReviews } from '@/lib/reviews'
+import { serviceAreaInPhrase } from '@/lib/service-area'
 
 const dienstenCards = [
   { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: technisch onderhoud gebouw', title: 'Algemeen technisch onderhoud', description: 'Dagelijks klein onderhoud, vaste controlerondes' },
@@ -44,7 +45,7 @@ export default function TechnischVastgoedbeheerPage() {
       <main id="main-content">
         <ServiceHero
           title="Zorgeloos technisch beheer van uw vastgoed, met vaste onderhoudscontracten"
-          subtitle="Voor gebouweigenaren en VvE-beheerders in Zuid-Holland."
+          subtitle={`Voor gebouweigenaren en VvE-beheerders ${serviceAreaInPhrase}.`}
           imageKey="hero.vastgoedbeheer"
           primaryLabel="Vraag een onderhoudscontract aan"
           offerteDienst="vastgoedbeheer"

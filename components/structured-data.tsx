@@ -1,4 +1,5 @@
 import { businessInfo } from '@/lib/business'
+import { serviceAreaProvinces } from '@/lib/service-area'
 import { trustLinks } from '@/lib/trust-links'
 
 export default function StructuredData() {
@@ -28,17 +29,13 @@ export default function StructuredData() {
       },
     ],
     areaServed: [
-      {
-        '@type': 'AdministrativeArea',
-        name: 'Zuid-Holland',
-      },
+      ...serviceAreaProvinces.map((name) => ({
+        '@type': 'AdministrativeArea' as const,
+        name,
+      })),
       ...businessInfo.areaServedCities.map((city) => ({
-        '@type': 'City',
+        '@type': 'City' as const,
         name: city,
-        containedInPlace: {
-          '@type': 'AdministrativeArea',
-          name: 'Zuid-Holland',
-        },
       })),
     ],
     aggregateRating: {

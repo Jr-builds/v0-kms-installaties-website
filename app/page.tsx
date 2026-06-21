@@ -16,6 +16,7 @@ import { pageReviews } from '@/lib/reviews'
 import { pageMetadata } from '@/lib/metadata'
 import { DEFAULT_HERO_SUBTITLE } from '@/lib/seasonal'
 import { phoneDisplay, phoneTelHref } from '@/lib/business'
+import { serviceAreaInPhrase } from '@/lib/service-area'
 
 export const metadata: Metadata = pageMetadata.home
 
@@ -91,7 +92,7 @@ export default function HomePage() {
               Onze diensten
             </h2>
             <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-              KMS Installaties levert gecertificeerd elektra- en airconditioningwerk in Zuid-Holland, Brabant, Zeeland en regio Utrecht.
+              KMS Installaties levert gecertificeerd elektra- en airconditioningwerk {serviceAreaInPhrase}.
               Daarnaast verzorgen wij ventilatie, technisch vastgoedbeheer en camerabeveiliging.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

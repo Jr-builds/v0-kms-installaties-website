@@ -8,6 +8,7 @@ import Reviews from '@/components/reviews'
 import Werkgebied from '@/components/werkgebied'
 import { pageReviews } from '@/lib/reviews'
 import { pageMetadata } from '@/lib/metadata'
+import { serviceAreaFromZwijndrecht } from '@/lib/service-area'
 
 export const metadata: Metadata = pageMetadata.overOns
 
@@ -24,7 +25,7 @@ export default function OverOnsPage() {
               Vakmanschap met een persoonlijk verhaal
             </h1>
             <p className="text-blue-200 text-lg leading-relaxed max-w-2xl mx-auto">
-              KMS Installaties is opgericht door Kerem Sen en Mevlut Sumer, twee vakmannen met een gedeelde passie voor techniek en kwaliteit. Vanuit Zwijndrecht bedienen wij particulieren en bedrijven door heel Zuid-Holland.
+              KMS Installaties is opgericht door Kerem Sen en Mevlut Sumer, twee vakmannen met een gedeelde passie voor techniek en kwaliteit. {serviceAreaFromZwijndrecht}
             </p>
           </div>
         </section>
@@ -56,7 +57,7 @@ export default function OverOnsPage() {
             { value: '10+', label: 'Jaar', sub: 'Vakmanschap' },
             { value: '200+', label: 'Afgeronde', sub: 'projecten' },
             { value: '56', label: 'Vijfsterren', sub: 'reviews' },
-            { value: 'Zuid', label: '-Holland', sub: 'Werkgebied' },
+            { value: '4', label: 'Regio\'s', sub: 'Actief' },
           ]}
         />
 
