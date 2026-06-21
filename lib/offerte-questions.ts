@@ -75,6 +75,19 @@ export const offerteQuestionsByCategory: Record<OfferteCategoryId, OfferteQuesti
       ],
     },
     {
+      id: 'laadpaal-kruipruimte',
+      label: 'Is er een kruipruimte, of heeft u al een kabelroute in gedachten?',
+      type: 'select',
+      required: true,
+      helpText: 'Dit bepaalt hoe de kabel van de groepenkast naar de laadpaal loopt.',
+      options: [
+        { value: 'kruipruimte', label: 'Ja, er is een kruipruimte aanwezig' },
+        { value: 'kabelroute', label: 'Ja, ik heb al een kabelroute in gedachten' },
+        { value: 'anders', label: 'Nee, kabelroute moet anders worden bedacht' },
+        { value: 'onbekend', label: 'Weet ik niet' },
+      ],
+    },
+    {
       id: 'laadpaal-meterkast',
       label: 'Weet u of uw meterkast geschikt is voor een laadpaal?',
       type: 'select',
