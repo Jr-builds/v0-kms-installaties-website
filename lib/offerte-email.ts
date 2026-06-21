@@ -53,6 +53,14 @@ function phoneToTelHref(phone: string): string {
   return `tel:${digits}`
 }
 
+function formatReceivedAt(): string {
+  return new Intl.DateTimeFormat('nl-NL', {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+    timeZone: 'Europe/Amsterdam',
+  }).format(new Date())
+}
+
 function renderTextFields(fields: EmailField[]): string[] {
   return fields.flatMap((field) => [field.label, field.value, ''])
 }
@@ -91,12 +99,9 @@ export function buildOfferteEmailContent(payload: OfferteEmailPayload): {
 } {
   const categoryLabel = getOfferteCategoryLabel(payload.categoryId)
   const audienceLabel = getOfferteAudienceLabel(payload.audienceId)
+  const headerSubtitle = `${categoryLabel} · ${audienceLabel}`
+  const receivedAt = formatReceivedAt()
   const questions = getOfferteQuestions(payload.categoryId)
-
-  const summaryFields: EmailField[] = [
-    { label: 'Categorie', value: categoryLabel },
-    { label: 'Aanvrager', value: audienceLabel },
-  ]
 
   const contactFields: EmailField[] = [
     { label: 'Naam', value: payload.naam },
@@ -117,21 +122,21 @@ export function buildOfferteEmailContent(payload: OfferteEmailPayload): {
 
   const textSections = [
     'Nieuwe offerteaanvraag via kmsinstallaties.nl',
+    headerSubtitle,
     '',
-    'Samenvatting',
-    ...renderTextFields(summaryFields),
     'Contact',
     ...renderTextFields(contactFields),
     ...(questionFields.length > 0 ? ['Vragen', ...renderTextFields(questionFields)] : []),
     ...(payload.omschrijving.trim()
       ? ['Verhaal', payload.omschrijving.trim(), '']
       : []),
-    'Bijlagen',
-    payload.attachmentCount > 0 ? `${payload.attachmentCount} bestand(en)` : 'geen',
+    ...(payload.attachmentCount > 0
+      ? ['Bijlagen', `${payload.attachmentCount} bestand(en)`, '']
+      : []),
+    `Ontvangen: ${receivedAt}`,
   ]
 
   const htmlSections = [
-    renderHtmlSection('Samenvatting', summaryFields),
     renderHtmlSection('Contact', contactFields, true),
     ...(questionFields.length > 0 ? [renderHtmlSection('Vragen', questionFields)] : []),
     ...(payload.omschrijving.trim()
@@ -144,19 +149,25 @@ export function buildOfferteEmailContent(payload: OfferteEmailPayload): {
           `.trim(),
         ]
       : []),
-    `
-      <p style="margin: 0; font-size: 13px; color: ${KMS_MUTED};">
-        <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: ${KMS_NAVY_MID}; margin-bottom: 4px;">Bijlagen</span>
-        ${payload.attachmentCount > 0 ? `${payload.attachmentCount} bestand(en)` : 'geen'}
-      </p>
-    `.trim(),
+    ...(payload.attachmentCount > 0
+      ? [
+          `
+            <p style="margin: 0 0 16px; font-size: 13px; color: ${KMS_MUTED};">
+              <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: ${KMS_NAVY_MID}; margin-bottom: 4px;">Bijlagen</span>
+              ${payload.attachmentCount} bestand(en)
+            </p>
+          `.trim(),
+        ]
+      : []),
+    `<p style="margin: 0; font-size: 12px; color: ${KMS_MUTED};">Ontvangen: ${escapeHtml(receivedAt)}</p>`,
   ].join('')
 
   const html = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: ${KMS_NAVY}; line-height: 1.5; max-width: 560px;">
       <div style="background: ${KMS_NAVY}; color: #ffffff; padding: 18px 20px; border-radius: 8px 8px 0 0;">
         <div style="font-size: 12px; opacity: 0.85; margin-bottom: 4px;">KMS Installaties</div>
-        <h2 style="margin: 0; font-size: 20px; font-weight: 700;">Nieuwe offerteaanvraag</h2>
+        <h2 style="margin: 0 0 6px; font-size: 20px; font-weight: 700;">Nieuwe offerteaanvraag</h2>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">${escapeHtml(headerSubtitle)}</p>
       </div>
       <div style="border: 1px solid #e5e7eb; border-top: none; padding: 20px; border-radius: 0 0 8px 8px; background: #ffffff;">
         ${htmlSections}
