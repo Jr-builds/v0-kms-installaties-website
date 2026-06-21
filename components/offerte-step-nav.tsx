@@ -8,6 +8,7 @@ interface OfferteStepNavProps {
   primaryType?: 'submit' | 'button'
   onPrimary?: () => void
   className?: string
+  disabled?: boolean
 }
 
 export default function OfferteStepNav({
@@ -16,6 +17,7 @@ export default function OfferteStepNav({
   primaryType = 'submit',
   onPrimary,
   className,
+  disabled = false,
 }: OfferteStepNavProps) {
   return (
     <div
@@ -29,6 +31,7 @@ export default function OfferteStepNav({
         type={primaryType}
         variant="primary"
         size="cta"
+        disabled={disabled}
         onClick={primaryType === 'button' ? onPrimary : undefined}
         className="w-full sm:w-auto sm:min-w-[12rem]"
       >

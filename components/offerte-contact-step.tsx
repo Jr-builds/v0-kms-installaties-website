@@ -28,6 +28,8 @@ interface OfferteContactStepProps {
   onPostcodeBlur: () => void
   onBack: () => void
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
+  isSubmitting?: boolean
+  submitError?: string | null
 }
 
 export default function OfferteContactStep({
@@ -45,6 +47,8 @@ export default function OfferteContactStep({
   onPostcodeBlur,
   onBack,
   onSubmit,
+  isSubmitting = false,
+  submitError = null,
 }: OfferteContactStepProps) {
   return (
     <form onSubmit={onSubmit} className="space-y-5" noValidate>
@@ -153,7 +157,17 @@ export default function OfferteContactStep({
         </div>
       </div>
 
-      <OfferteStepNav onBack={onBack} primaryLabel="Offerte aanvragen" />
+      {submitError ? (
+        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
+          {submitError}
+        </div>
+      ) : null}
+
+      <OfferteStepNav
+        onBack={onBack}
+        primaryLabel={isSubmitting ? 'Bezig met versturen...' : 'Offerte aanvragen'}
+        disabled={isSubmitting}
+      />
       <p className="text-center text-xs text-gray-500">
         Reactie binnen 1 werkdag, meestal dezelfde dag. Spoed? Bel{' '}
         <a href={phoneTelHref} className="font-semibold text-kms-navy">

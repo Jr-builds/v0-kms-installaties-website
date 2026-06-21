@@ -64,6 +64,8 @@ function OfferteForm() {
   const [questionAnswers, setQuestionAnswers] = useState<Record<string, string>>({})
   const [questionErrors, setQuestionErrors] = useState<Record<string, string>>({})
   const [fotoFiles, setFotoFiles] = useState<File[]>([])
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   useEffect(() => {
     const dienstParam = searchParams.get('dienst')
@@ -97,7 +99,7 @@ function OfferteForm() {
     setErrors((current) => ({ ...current, postcode: postcodeError ?? undefined }))
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     const nextErrors: OfferteFormErrors = {
@@ -112,8 +114,48 @@ function OfferteForm() {
       return
     }
 
+    if (!categoryId || !audienceId) {
+      setSubmitError('Er ontbreekt informatie uit eerdere stappen. Ga terug en controleer uw antwoorden.')
+      return
+    }
+
     setErrors({})
-    setSubmitted(true)
+    setSubmitError(null)
+    setIsSubmitting(true)
+
+    try {
+      const formData = new FormData()
+      formData.append('categoryId', categoryId)
+      formData.append('audienceId', audienceId)
+      formData.append('questionAnswers', JSON.stringify(questionAnswers))
+      formData.append('omschrijving', omschrijving)
+      formData.append('naam', naam.trim())
+      formData.append('telefoon', telefoon.trim())
+      formData.append('email', email.trim())
+      formData.append('postcode', postcode.trim())
+      formData.append('plaats', plaats.trim())
+      for (const file of fotoFiles) {
+        formData.append('fotos', file)
+      }
+
+      const response = await fetch('/api/offerte', {
+        method: 'POST',
+        body: formData,
+      })
+
+      const result: { error?: string } = await response.json().catch(() => ({}))
+
+      if (!response.ok) {
+        setSubmitError(result.error ?? 'Versturen mislukt. Probeer het opnieuw of bel ons direct.')
+        return
+      }
+
+      setSubmitted(true)
+    } catch {
+      setSubmitError('Versturen mislukt. Controleer uw internetverbinding en probeer het opnieuw.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   function handleCategorySelect(id: OfferteCategoryId) {
@@ -238,6 +280,8 @@ function OfferteForm() {
             onPostcodeBlur={handlePostcodeBlur}
             onBack={() => setStep(5)}
             onSubmit={handleSubmit}
+            isSubmitting={isSubmitting}
+            submitError={submitError}
           />
         </div>
       ) : null}

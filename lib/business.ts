@@ -64,7 +64,7 @@ export const phoneDisplay = '078 203 28 58'
 export const phoneTelHref = 'tel:0782032858'
 export const whatsAppHref = 'https://wa.me/31782032858'
 
-/** Ontvanger voor offerteaanvragen via het formulier (issue #9). */
+/** Productie-ontvanger; live verzending gebruikt OFFERTE_RECIPIENT_EMAIL (issue #9). */
 export const offerteRecipientEmail = businessInfo.email
 
 export const openingHoursDisplay = 'Ma-zo 08:00-22:00'
