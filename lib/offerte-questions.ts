@@ -54,7 +54,7 @@ export const offerteQuestionsByCategory: Record<OfferteCategoryId, OfferteQuesti
   laadpaal: [
     {
       id: 'laadpaal-auto',
-      label: 'Wat voor auto heeft u (of plant u)?',
+      label: 'Welk type auto gaat u laden?',
       type: 'select',
       required: true,
       options: [
