@@ -112,7 +112,7 @@ export const defaultMetadata: Metadata = {
 
 export const pageMetadata = {
   home: createPageMetadata({
-    title: 'KMS Installaties | Elektra & Airconditioning in Zuid-Holland',
+    title: `KMS Installaties | Elektra & Airconditioning ${serviceAreaInPhrase}`,
     description:
       `Vakkundige elektra, airconditioning, ventilatie, vastgoedbeheer en camerasystemen ${serviceAreaInPhrase}. Bereikbaar ma-zo 08:00-22:00. NEN 3140, STEK en VCA gecertificeerd.`,
     path: '/',

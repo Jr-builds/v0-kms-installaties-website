@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
@@ -22,6 +22,16 @@ export default function ContactPage() {
   const [telefoon, setTelefoon] = useState('')
   const [vraag, setVraag] = useState('')
   const [errors, setErrors] = useState<ContactFormErrors>({})
+
+  useEffect(() => {
+    if (window.location.hash !== '#contactgegevens') return
+
+    const target = document.getElementById('contactgegevens')
+    if (!target) return
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' })
+  }, [])
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -151,7 +161,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="lg:col-span-2">
+              <div id="contactgegevens" className="scroll-mt-24 lg:col-span-2">
                 <ContactSidebar showSpoedNote showMap showWhatsApp />
               </div>
             </div>

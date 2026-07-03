@@ -1,4 +1,5 @@
 import { SITE_NAME, SITE_URL } from '@/lib/metadata'
+import { getStadNames } from '@/lib/steden'
 import { trustLinks } from '@/lib/trust-links'
 
 export const businessInfo = {
@@ -26,18 +27,7 @@ export const businessInfo = {
     opens: '08:00',
     closes: '22:00',
   },
-  areaServedCities: [
-    'Rotterdam',
-    'Dordrecht',
-    'Zwijndrecht',
-    'Ridderkerk',
-    'Barendrecht',
-    'Papendrecht',
-    'Capelle aan den IJssel',
-    'Schiedam',
-    'Vlaardingen',
-    'Spijkenisse',
-  ],
+  areaServedCities: getStadNames(),
   logo: '/KMS-Logo.png',
   image: '/electrician-professional-work.jpg',
   googleRating: {

@@ -6,6 +6,7 @@ import TrustBar from '@/components/trust-bar'
 import SiteImage from '@/components/site-image'
 import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
 import ClosingCTA from '@/components/closing-cta'
+import Werkgebied from '@/components/werkgebied'
 import StatsBar from '@/components/stats-bar'
 import Reviews from '@/components/reviews'
 import AvailabilityPill, { OpeningHoursPill } from '@/components/availability-pill'
@@ -176,6 +177,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <Werkgebied />
 
         <ClosingCTA />
       </main>
