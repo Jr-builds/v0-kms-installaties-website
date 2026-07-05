@@ -78,12 +78,12 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18 py-3">
-          <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <SiteLogo size={60} priority />
+        <div className="flex items-center justify-between py-1.5 lg:h-18 lg:py-3">
+          <Link href="/" className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
+            <SiteLogo size={60} priority className="size-10 lg:size-[60px]" />
             <div className="flex flex-col leading-tight">
-              <span className="font-bold text-lg text-kms-navy">KMS Installaties</span>
-              <span className="text-xs font-semibold tracking-widest text-kms-yellow-dark">
+              <span className="font-bold text-base lg:text-lg text-kms-navy">KMS Installaties</span>
+              <span className="hidden text-xs font-semibold tracking-widest text-kms-yellow-dark lg:block">
                 ELEKTRA &amp; AIRCONDITIONING
               </span>
             </div>
@@ -165,18 +165,18 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="lg:hidden rounded-md p-2 text-gray-700"
+            className="lg:hidden rounded-md p-1.5 text-gray-700"
             onClick={() => setMobileOpen((open) => !open)}
             aria-label={mobileOpen ? 'Menu sluiten' : 'Menu openen'}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav-menu"
           >
             {mobileOpen ? (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}

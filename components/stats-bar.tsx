@@ -51,9 +51,10 @@ function CountUpValue({ end, suffix }: { end: number; suffix: string }) {
 
   useEffect(() => {
     const element = ref.current
-    if (!element || hasAnimated.current) return
+    if (!element) return
 
     const runAnimation = () => {
+      if (hasAnimated.current) return
       hasAnimated.current = true
 
       if (getPrefersReducedMotion()) {
@@ -76,6 +77,16 @@ function CountUpValue({ end, suffix }: { end: number; suffix: string }) {
       requestAnimationFrame(tick)
     }
 
+    const isVisible = () => {
+      const rect = element.getBoundingClientRect()
+      return rect.top < window.innerHeight && rect.bottom > 0
+    }
+
+    if (isVisible()) {
+      runAnimation()
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -83,15 +94,27 @@ function CountUpValue({ end, suffix }: { end: number; suffix: string }) {
           observer.disconnect()
         }
       },
-      { threshold: 0.3 },
+      { threshold: 0, rootMargin: '0px 0px -5% 0px' },
     )
 
     observer.observe(element)
-    return () => observer.disconnect()
+
+    // Fallback: iOS Safari can miss IntersectionObserver on inline targets
+    const fallback = window.setTimeout(() => {
+      if (!hasAnimated.current) {
+        hasAnimated.current = true
+        setDisplay(end)
+      }
+    }, 2500)
+
+    return () => {
+      observer.disconnect()
+      window.clearTimeout(fallback)
+    }
   }, [end])
 
   return (
-    <span ref={ref}>
+    <span ref={ref} className="inline-block">
       {display}
       {suffix}
     </span>

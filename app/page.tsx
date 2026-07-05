@@ -47,11 +47,11 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content">
         {/* HERO */}
-        <section className="hero-navy py-16 sm:py-24">
+        <section className="hero-navy pt-8 pb-12 sm:py-24">
           <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="mb-6 flex flex-wrap items-center gap-3">
+                <div className="mb-4 flex flex-wrap items-center gap-3 sm:mb-6">
                   <AvailabilityPill size="md" variant="hero" />
                   <OpeningHoursPill size="md" />
                 </div>
