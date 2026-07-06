@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import ImagePlaceholder from '@/components/image-placeholder'
+import SpecialistCard from '@/components/specialist-card'
 import ClosingCTA from '@/components/closing-cta'
 import StatsBar from '@/components/stats-bar'
 import Reviews from '@/components/reviews'
@@ -13,6 +13,11 @@ import { serviceAreaFromZwijndrecht } from '@/lib/service-area'
 export const metadata: Metadata = pageMetadata.overOns
 
 const reviews = pageReviews.overOns
+
+const specialists = [
+  { name: 'Kerem Sen', role: 'Eigenaar & Elektrotechnicus' },
+  { name: 'Mevlut Sumer', role: 'Eigenaar & Installatiespecialist' },
+] as const
 
 export default function OverOnsPage() {
   return (
@@ -35,16 +40,9 @@ export default function OverOnsPage() {
             <h2 className="heading-section text-center mb-10 text-kms-navy">
               Onze specialisten
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
-              {[
-                { imageLabel: 'Foto: Kerem Sen', name: 'Kerem Sen', role: 'Eigenaar & Elektrotechnicus' },
-                { imageLabel: 'Foto: Mevlut Sumer', name: 'Mevlut Sumer', role: 'Eigenaar & Installatiespecialist' },
-              ].map((person, i) => (
-                <div key={i} className="text-center">
-                  <ImagePlaceholder label={person.imageLabel} aspectRatio="aspect-square" className="w-full max-w-xs mx-auto rounded-2xl mb-4" />
-                  <h3 className="font-bold text-lg text-kms-navy">{person.name}</h3>
-                  <p className="text-gray-500 text-sm">{person.role}</p>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              {specialists.map((person) => (
+                <SpecialistCard key={person.name} name={person.name} role={person.role} />
               ))}
             </div>
           </div>
