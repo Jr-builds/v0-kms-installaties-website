@@ -61,8 +61,8 @@ export const siteImages = {
     alt: 'Buitencamera voor beveiliging van een pand',
   },
   'dienst.laadpaal': {
-    src: '/elektra-groepenkast.jpg',
-    alt: 'Laadpaal installatie thuis met veilige aansluiting op de meterkast',
+    src: '/hero-laadpaal.png',
+    alt: 'Zaptec laadpaal gemonteerd aan de buitenmuur van een woning',
   },
 
   // — Project images by category —
