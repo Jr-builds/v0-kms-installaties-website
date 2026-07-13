@@ -34,6 +34,10 @@ export const siteImages = {
     src: '/cameras-buiten.jpg',
     alt: 'Beveiligingscamera gemonteerd aan de buitengevel van een pand',
   },
+  'hero.laadpaal': {
+    src: '/hero-laadpaal.png',
+    alt: 'Zaptec laadpaal gemonteerd aan de buitenmuur van een woning',
+  },
 
   // — Home diensten cards —
   'dienst.elektra': {
@@ -55,6 +59,10 @@ export const siteImages = {
   'dienst.cameras': {
     src: '/cameras-buiten.jpg',
     alt: 'Buitencamera voor beveiliging van een pand',
+  },
+  'dienst.laadpaal': {
+    src: '/elektra-groepenkast.jpg',
+    alt: 'Laadpaal installatie thuis met veilige aansluiting op de meterkast',
   },
 
   // — Project images by category —
@@ -91,6 +99,28 @@ export const siteImages = {
   'elektra.cameras': {
     src: '/cameras-buiten.jpg',
     alt: 'Camerasysteem als onderdeel van elektrische installaties',
+  },
+
+  // — Laadpaal sub-diensten (tijdelijk hergebruik groepenkast-asset; dedicated foto volgt) —
+  'laadpaal.meterkast': {
+    src: '/elektra-groepenkast.jpg',
+    alt: 'Inspectie en uitbreiding van de meterkast voor een laadpaal',
+  },
+  'laadpaal.thuis': {
+    src: '/electrician-professional-work.jpg',
+    alt: 'Thuislaadpaal geïnstalleerd door een gecertificeerde monteur',
+  },
+  'laadpaal.zakelijk': {
+    src: '/vastgoed-pand.jpg',
+    alt: 'Zakelijke laadpaal installatie bij een bedrijfspand',
+  },
+  'laadpaal.onderhoud': {
+    src: '/laadpaal-onderhoud.png',
+    alt: 'Laadpaal met aangesloten laadkabel voor onderhoud en storingen',
+  },
+  'laadpaal.slim': {
+    src: '/elektra-groepenkast.jpg',
+    alt: 'Slimme laadpaal met stroomverdeling en energiemeting',
   },
 
   // — Airconditioning sub-diensten —

@@ -10,6 +10,7 @@ import { phoneDisplay, phoneTelHref } from '@/lib/business'
 
 const dienstenItems = [
   { label: 'Elektra', href: '/elektra' },
+  { label: 'Laadpaal Installeren', href: '/laadpaal' },
   { label: 'Airconditioning', href: '/airconditioning' },
   { label: 'Ventilatie', href: '/ventilatie' },
   { label: 'Technisch Vastgoedbeheer', href: '/technisch-vastgoedbeheer' },

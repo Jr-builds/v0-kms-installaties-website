@@ -75,9 +75,11 @@ export const defaultMetadata: Metadata = {
     template: '%s | KMS Installaties',
   },
   description:
-    `KMS Installaties: vakkundige elektra, airconditioning, ventilatie, vastgoedbeheer en camerasystemen ${serviceAreaInPhrase}. Bereikbaar ma-zo 08:00-22:00. NEN 3140, STEK en VCA gecertificeerd.`,
+    `KMS Installaties: vakkundige elektra, laadpalen, airconditioning, ventilatie, vastgoedbeheer en camerasystemen ${serviceAreaInPhrase}. Bereikbaar ma-zo 08:00-22:00. NEN 3140, STEK en VCA gecertificeerd.`,
   keywords: [
     'elektra installatie',
+    'laadpaal installeren',
+    'laadpaal installatie',
     'airconditioning',
     'ventilatie',
     'camerasystemen',
@@ -114,7 +116,7 @@ export const pageMetadata = {
   home: createPageMetadata({
     title: `KMS Installaties | Elektra & Airconditioning ${serviceAreaInPhrase}`,
     description:
-      `Vakkundige elektra, airconditioning, ventilatie, vastgoedbeheer en camerasystemen ${serviceAreaInPhrase}. Bereikbaar ma-zo 08:00-22:00. NEN 3140, STEK en VCA gecertificeerd.`,
+      `Vakkundige elektra, laadpalen, airconditioning, ventilatie, vastgoedbeheer en camerasystemen ${serviceAreaInPhrase}. Bereikbaar ma-zo 08:00-22:00. NEN 3140, STEK en VCA gecertificeerd.`,
     path: '/',
     imageKey: 'hero.home',
   }),
@@ -124,6 +126,13 @@ export const pageMetadata = {
       `Complete elektrische installaties voor particulier en bedrijf ${serviceAreaInPhrase}. Groepenkasten, laadpalen en storingen. NEN-gecertificeerd met groepenverklaring.`,
     path: '/elektra',
     imageKey: 'hero.elektra',
+  }),
+  laadpaal: createPageMetadata({
+    title: 'Laadpaal Installeren | Zaptec Certified',
+    description:
+      `Laadpaal installatie thuis of op kantoor ${serviceAreaInPhrase}. Advies over meterkast, slim laden en installatie van Alfen en Zaptec laadpalen. NEN-gecertificeerd.`,
+    path: '/laadpaal',
+    imageKey: 'hero.laadpaal',
   }),
   airconditioning: createPageMetadata({
     title: 'Airconditioning Installatie & Onderhoud | STEK-gecertificeerd',
@@ -177,7 +186,7 @@ export const pageMetadata = {
   offerte: createPageMetadata({
     title: 'Offerte Aanvragen | Reactie binnen 1 Werkdag',
     description:
-      'Vraag een vrijblijvende offerte aan voor elektra, airco, ventilatie of camerasystemen. Reactie binnen 1 werkdag.',
+      'Vraag een vrijblijvende offerte aan voor elektra, laadpaal, airco, ventilatie of camerasystemen. Reactie binnen 1 werkdag.',
     path: '/offerte',
     imageKey: 'hero.home',
   }),

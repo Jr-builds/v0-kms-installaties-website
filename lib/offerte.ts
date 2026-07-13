@@ -1,5 +1,6 @@
 export const offerteDiensten = [
   { slug: 'elektra', label: 'Elektra' },
+  { slug: 'laadpaal', label: 'Laadpaal Installeren' },
   { slug: 'airconditioning', label: 'Airconditioning' },
   { slug: 'ventilatie', label: 'Ventilatie' },
   { slug: 'vastgoedbeheer', label: 'Technisch Vastgoedbeheer' },

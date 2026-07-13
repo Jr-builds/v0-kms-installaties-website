@@ -40,6 +40,7 @@ interface OfferteFormErrors {
 
 const dienstSlugToCategory: Partial<Record<string, OfferteCategoryId>> = {
   elektra: 'elektra-renovatie',
+  laadpaal: 'laadpaal',
   airconditioning: 'airco-installatie',
   ventilatie: 'ventilatie',
   vastgoedbeheer: 'technisch-vastgoedbeheer',

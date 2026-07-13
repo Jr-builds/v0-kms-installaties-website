@@ -39,6 +39,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { label: 'Elektra', href: '/elektra' },
+                { label: 'Laadpaal Installeren', href: '/laadpaal' },
                 { label: 'Airconditioning', href: '/airconditioning' },
                 { label: 'Ventilatie', href: '/ventilatie' },
                 { label: 'Technisch Vastgoedbeheer', href: '/technisch-vastgoedbeheer' },

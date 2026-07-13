@@ -59,6 +59,18 @@ const reviewCatalog = {
     name: 'Bedrijf Rotterdam',
     platform: 'Werkspot',
   },
+  jrRondhuisLaadpaal: {
+    quote:
+      'Korte tijd tussen aanvraag en installatie laadpaal. Kwamen afspraken keurig na. Gingen pas weg nadat alles was uitgelegd en vastgesteld was dat alles werkt. Alle rommel werd ook opgeruimd. Kortom een aanrader.',
+    name: 'JR Rondhuis',
+    platform: 'Trustoo',
+  },
+  anneMarieLaadpaal: {
+    quote:
+      'Bij ons hebben ze meterkast vernieuwd, laadpunt voor EV aangelegd en stroomvoorziening naar de garage aangelegd. Kundig, netjes en vriendelijk. Heel erg tevreden over het uitgevoerde werk.',
+    name: 'Anne-Marie B.',
+    platform: 'Trustoo',
+  },
   bakkerVastgoed: {
     quote:
       'KMS verzorgt het technisch beheer van ons pand al twee jaar. Altijd professioneel en op tijd.',
@@ -82,6 +94,7 @@ function pickReviews(...keys: ReviewKey[]): Review[] {
 export const pageReviews = {
   home: pickReviews('mohammedAirco', 'sandraElektra', 'peterSpoed'),
   elektra: pickReviews('janElektra', 'thomasVentilatie'),
+  laadpaal: pickReviews('jrRondhuisLaadpaal', 'anneMarieLaadpaal'),
   airconditioning: pickReviews('rachidAirco', 'lisaAirco'),
   ventilatie: pickReviews('karinVentilatie', 'thomasVentilatie'),
   cameras: pickReviews('familieCameras', 'bedrijfCameras'),

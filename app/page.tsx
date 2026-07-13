@@ -23,6 +23,7 @@ export const metadata: Metadata = pageMetadata.home
 
 const dienstenCards: { imageKey: SiteImageKey; title: string; description: string; href: string }[] = [
   { imageKey: 'dienst.elektra', title: 'Elektra', description: 'Complete elektrische installaties voor particulier en bedrijf', href: '/elektra' },
+  { imageKey: 'dienst.laadpaal', title: 'Laadpaal Installeren', description: 'Thuis of op kantoor: vakkundige installatie van uw laadpaal, inclusief advies over meterkast en slim laden', href: '/laadpaal' },
   { imageKey: 'dienst.airconditioning', title: 'Airconditioning', description: 'Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geïnstalleerd', href: '/airconditioning' },
   { imageKey: 'dienst.ventilatie', title: 'Ventilatie', description: 'Gezonde lucht in elke ruimte, inclusief advies over ISDE-subsidie', href: '/ventilatie' },
   { imageKey: 'dienst.vastgoedbeheer', title: 'Technisch Vastgoedbeheer', description: 'Zorgeloos technisch beheer van uw pand met vaste onderhoudscontracten', href: '/technisch-vastgoedbeheer' },
@@ -92,7 +93,7 @@ export default function HomePage() {
             </h2>
             <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
               KMS Installaties levert gecertificeerd elektra- en airconditioningwerk {serviceAreaInPhrase}.
-              Daarnaast verzorgen wij ventilatie, technisch vastgoedbeheer en camerabeveiliging.
+              Daarnaast verzorgen wij laadpalen, ventilatie, technisch vastgoedbeheer en camerabeveiliging.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {dienstenCards.map((card) => (
