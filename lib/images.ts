@@ -11,8 +11,8 @@ export const siteImages = {
 
   // — Home & service heroes —
   'hero.home': {
-    src: '/electrician-professional-work.jpg',
-    alt: 'KMS Installaties monteur aan het werk aan een elektrische installatie',
+    src: '/hero-home-collage.png',
+    alt: 'Collage van KMS-installaties: elektra, airconditioning, laadpaal, warmtepomp en zonnepanelen',
   },
   'hero.elektra': {
     src: '/electrician-professional-work.jpg',
