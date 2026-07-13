@@ -8,6 +8,7 @@ import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
 import ClosingCTA from '@/components/closing-cta'
 import Werkgebied from '@/components/werkgebied'
 import StatsBar from '@/components/stats-bar'
+import Werkwijze from '@/components/werkwijze'
 import Reviews from '@/components/reviews'
 import AvailabilityPill, { OpeningHoursPill } from '@/components/availability-pill'
 import TrustHighlightGrid from '@/components/trust-highlight-grid'
@@ -120,6 +121,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <Werkwijze />
 
         <StatsBar
           items={[
