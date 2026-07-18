@@ -31,6 +31,7 @@ export default function EditableText({
   const { canEdit } = useCmsEdit()
   const router = useRouter()
   const [value, setValue] = useState(defaultValue)
+  const [previousValue, setPreviousValue] = useState<string | null>(null)
   const [open, setOpen] = useState(false)
   const [draft, setDraft] = useState(defaultValue)
   const [error, setError] = useState('')
@@ -49,12 +50,16 @@ export default function EditableText({
         const supabase = createClient()
         const { data } = await supabase
           .from('site_texts')
-          .select('value')
+          .select('value, previous_value')
           .eq('key', textKey)
           .maybeSingle()
-        if (!cancelled && data?.value != null && data.value !== '') {
+        if (cancelled) return
+        if (data?.value != null && data.value !== '') {
           setValue(data.value)
         }
+        setPreviousValue(
+          data?.previous_value != null && data.previous_value !== '' ? data.previous_value : null,
+        )
       } catch {
         // keep default
       }
@@ -71,6 +76,34 @@ export default function EditableText({
     setOpen(true)
   }
 
+  async function persist(next: string, nextPrevious: string | null) {
+    const supabase = createClient()
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+    if (!user) {
+      throw new Error('Je bent niet ingelogd.')
+    }
+
+    const { error: upsertError } = await supabase.from('site_texts').upsert({
+      key: textKey,
+      label,
+      value: next,
+      previous_value: nextPrevious,
+      updated_at: new Date().toISOString(),
+      updated_by: user.id,
+    })
+
+    if (upsertError) {
+      throw new Error(upsertError.message)
+    }
+
+    setValue(next)
+    setPreviousValue(nextPrevious)
+    setOpen(false)
+    router.refresh()
+  }
+
   async function onSave() {
     const next = draft.trim()
     if (!next) {
@@ -78,40 +111,43 @@ export default function EditableText({
       return
     }
 
+    if (next === value) {
+      setOpen(false)
+      return
+    }
+
     setSaving(true)
     setError('')
     try {
-      const supabase = createClient()
-      const {
-        data: { user },
-      } = await supabase.auth.getUser()
-      if (!user) {
-        setError('Je bent niet ingelogd.')
-        return
-      }
-
-      const { error: upsertError } = await supabase.from('site_texts').upsert({
-        key: textKey,
-        label,
-        value: next,
-        updated_at: new Date().toISOString(),
-        updated_by: user.id,
-      })
-
-      if (upsertError) {
-        setError(upsertError.message)
-        return
-      }
-
-      setValue(next)
-      setOpen(false)
-      router.refresh()
+      // Bewaar huidige tekst als vorige versie (of origineel uit code bij eerste wijziging)
+      const nextPrevious = value.trim() || defaultValue.trim() || null
+      await persist(next, nextPrevious)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Opslaan mislukt.')
     } finally {
       setSaving(false)
     }
   }
+
+  async function onRestorePrevious() {
+    if (!previousValue?.trim()) {
+      setError('Er is nog geen vorige versie om te herstellen.')
+      return
+    }
+
+    setSaving(true)
+    setError('')
+    try {
+      // Wissel: huidige tekst wordt de nieuwe "vorige", zodat herstellen ook terug te draaien is
+      await persist(previousValue.trim(), value.trim() || null)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Herstellen mislukt.')
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  const canRestore = Boolean(previousValue?.trim())
 
   return (
     <>
@@ -191,13 +227,27 @@ export default function EditableText({
               </p>
             ) : null}
 
-            <div className="mt-5 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
-              <Button type="button" variant="secondary" onClick={() => setOpen(false)} disabled={saving}>
-                Annuleren
-              </Button>
-              <Button type="button" variant="primary" onClick={() => void onSave()} disabled={saving}>
-                {saving ? 'Bezig met opslaan...' : 'Opslaan'}
-              </Button>
+            <div className="mt-5 flex flex-col gap-2">
+              {canRestore ? (
+                <Button
+                  type="button"
+                  variant="secondary"
+                  className="w-full sm:w-auto sm:self-start"
+                  onClick={() => void onRestorePrevious()}
+                  disabled={saving}
+                >
+                  Vorige versie herstellen
+                </Button>
+              ) : null}
+
+              <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+                <Button type="button" variant="secondary" onClick={() => setOpen(false)} disabled={saving}>
+                  Annuleren
+                </Button>
+                <Button type="button" variant="primary" onClick={() => void onSave()} disabled={saving}>
+                  {saving ? 'Bezig...' : 'Opslaan'}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
