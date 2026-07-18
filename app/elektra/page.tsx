@@ -20,7 +20,6 @@ const dienstenCards = [
   { imageLabel: 'Foto: renovatie bedrading', title: 'Renovatie & Verbouwingen', description: 'Aanpassen bestaande installaties, leidingen frezen, oude bedrading vervangen' },
   { imageKey: 'elektra.groepenkast' as const, imageLabel: 'Foto: groepenkast modern', title: 'Groepen- & Meterkasten', description: 'Vervangen oude groepenkast, automaat en aardlekbeveiliging, groepenverklaring' },
   { imageLabel: 'Foto: LED verlichting interieur', title: 'Binnen- & Buitenverlichting', description: 'LED-verlichting, tuin- en gevelverlichting, slimme verlichting' },
-  { imageKey: 'laadpaal.thuis' as const, imageLabel: 'Foto: laadpaal elektrisch voertuig', title: 'Laadpalen voor Elektrische Voertuigen', description: 'Advies, installatie en slim laden. Zie ook onze aparte laadpaaldienst.' },
   { imageLabel: 'Foto: elektra keuken badkamer', title: 'Elektra in Keuken & Badkamer', description: 'Voorbereidend elektrawerk, aansluitpunten kookplaat en oven' },
   { imageKey: 'elektra.cameras' as const, imageLabel: 'Foto: camera bewaking systeem', title: 'Camerasystemen', description: 'Binnen- en buitencameras, Wifi/POE/NVR-systemen' },
   { imageKey: 'elektra.huisinstallatie' as const, imageLabel: 'Foto: storingsmelding elektricien', title: 'Storingen & Onderhoud', description: 'Spoedstoringen, kortsluitingen opsporen, preventief onderhoud' },
