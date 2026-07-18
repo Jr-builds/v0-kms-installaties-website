@@ -1,14 +1,12 @@
 'use client'
 
 import { FormEvent, useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { createClient } from '@/lib/supabase/client'
 import { isSupabaseConfigured } from '@/lib/supabase/env'
 
 export default function BeheerLoginClient() {
-  const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -28,7 +26,7 @@ export default function BeheerLoginClient() {
         const supabase = createClient()
         const { data } = await supabase.auth.getUser()
         if (!cancelled && data.user) {
-          router.replace('/')
+          window.location.assign('/')
           return
         }
       } catch {
@@ -41,7 +39,7 @@ export default function BeheerLoginClient() {
     return () => {
       cancelled = true
     }
-  }, [configured, router])
+  }, [configured])
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -57,8 +55,9 @@ export default function BeheerLoginClient() {
         setError(signInError.message)
         return
       }
-      router.replace('/')
-      router.refresh()
+      // Volledige reload zodat bewerkmodus meteen actief is (geen hard refresh meer nodig)
+      window.location.assign('/')
+      return
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Inloggen mislukt.')
     } finally {

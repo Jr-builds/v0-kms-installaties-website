@@ -16,6 +16,7 @@ interface EditableTextProps {
   as?: ElementType
   className?: string
   multiline?: boolean
+  id?: string
 }
 
 export default function EditableText({
@@ -25,6 +26,7 @@ export default function EditableText({
   as: Tag = 'span',
   className = '',
   multiline = false,
+  id,
 }: EditableTextProps) {
   const { canEdit } = useCmsEdit()
   const router = useRouter()
@@ -114,6 +116,7 @@ export default function EditableText({
   return (
     <>
       <Tag
+        id={id}
         className={cn(
           className,
           canEdit &&

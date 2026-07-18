@@ -1,7 +1,8 @@
 'use client'
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
+import type { Session } from '@supabase/supabase-js'
 import { createClient } from '@/lib/supabase/client'
 import { isSupabaseConfigured } from '@/lib/supabase/env'
 import CmsEditBar from '@/components/cms/cms-edit-bar'
@@ -25,7 +26,7 @@ export function useCmsEdit() {
 }
 
 export default function CmsEditProvider({ children }: { children: React.ReactNode }) {
-  const router = useRouter()
+  const pathname = usePathname()
   const [canEdit, setCanEdit] = useState(false)
   const [loading, setLoading] = useState(true)
 
@@ -53,12 +54,35 @@ export default function CmsEditProvider({ children }: { children: React.ReactNod
       await supabase.auth.signOut()
     }
     setCanEdit(false)
-    router.refresh()
-  }, [router])
+    window.location.assign('/')
+  }, [])
 
   useEffect(() => {
+    if (!isSupabaseConfigured()) {
+      setLoading(false)
+      return
+    }
+
+    const supabase = createClient()
+
     void refreshSession()
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session: Session | null) => {
+      setCanEdit(Boolean(session?.user))
+      setLoading(false)
+    })
+
+    return () => {
+      subscription.unsubscribe()
+    }
   }, [refreshSession])
+
+  // Na navigatie (bijv. na login) sessie opnieuw checken
+  useEffect(() => {
+    void refreshSession()
+  }, [pathname, refreshSession])
 
   const value = useMemo(
     () => ({ canEdit, loading, refreshSession, logout }),

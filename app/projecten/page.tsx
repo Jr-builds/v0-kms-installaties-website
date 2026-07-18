@@ -6,6 +6,7 @@ import Footer from '@/components/footer'
 import ClosingCTA from '@/components/closing-cta'
 import ProjectModal from '@/components/project-modal'
 import ClientEditableImage from '@/components/cms/client-editable-image'
+import EditableText from '@/components/cms/editable-text'
 import {
   filterProjects,
   getProjectImageKeyForProject,
@@ -117,12 +118,37 @@ export default function ProjectenPage() {
                           <span className="badge-yellow px-2.5 py-0.5 text-xs font-bold">
                             {project.category}
                           </span>
-                          <span className="text-xs text-gray-500">{project.city}</span>
+                          <EditableText
+                            textKey={`project.${project.id}.city`}
+                            label={`${project.title} - plaats`}
+                            defaultValue={project.city}
+                            as="span"
+                            className="text-xs text-gray-500"
+                          />
                         </div>
-                        <h3 className="font-bold text-base mb-1.5 text-kms-navy">{project.title}</h3>
-                        <p className="text-sm text-gray-600 mb-3 leading-relaxed">{project.description}</p>
+                        <EditableText
+                          textKey={`project.${project.id}.title`}
+                          label={`${project.title} - titel`}
+                          defaultValue={project.title}
+                          as="h3"
+                          className="font-bold text-base mb-1.5 text-kms-navy"
+                        />
+                        <EditableText
+                          textKey={`project.${project.id}.description`}
+                          label={`${project.title} - korte beschrijving`}
+                          defaultValue={project.description}
+                          as="p"
+                          className="text-sm text-gray-600 mb-3 leading-relaxed"
+                          multiline
+                        />
                         <p className="text-sm font-semibold text-kms-yellow-dark mb-3">
-                          Resultaat: {project.resultaat}
+                          Resultaat:{' '}
+                          <EditableText
+                            textKey={`project.${project.id}.resultaat`}
+                            label={`${project.title} - resultaat`}
+                            defaultValue={project.resultaat}
+                            as="span"
+                          />
                         </p>
                         <span className="inline-flex items-center text-sm font-semibold text-kms-navy group-hover:underline">
                           Bekijk project

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import ClientEditableImage from '@/components/cms/client-editable-image'
+import EditableText from '@/components/cms/editable-text'
 import { Button } from '@/components/ui/button'
 import { getProjectImageKeyForProject, type Project } from '@/lib/projects'
 
@@ -64,7 +65,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               <span className="badge-yellow px-2.5 py-0.5 text-xs font-bold">
                 {project.category}
               </span>
-              <span className="text-xs text-gray-500">{project.city}</span>
+              <EditableText
+                textKey={`project.${project.id}.city`}
+                label={`${project.title} - plaats`}
+                defaultValue={project.city}
+                as="span"
+                className="text-xs text-gray-500"
+              />
             </div>
             <button
               ref={closeButtonRef}
@@ -79,11 +86,31 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </button>
           </div>
 
-          <h2 id="project-modal-title" className="heading-subsection text-kms-navy mb-3">
-            {project.title}
-          </h2>
-          <p className="text-gray-600 leading-relaxed mb-4">{project.details}</p>
-          <p className="text-sm font-semibold text-kms-yellow-dark mb-6">Resultaat: {project.resultaat}</p>
+          <EditableText
+            id="project-modal-title"
+            textKey={`project.${project.id}.title`}
+            label={`${project.title} - titel`}
+            defaultValue={project.title}
+            as="h2"
+            className="heading-subsection text-kms-navy mb-3"
+          />
+          <EditableText
+            textKey={`project.${project.id}.details`}
+            label={`${project.title} - details`}
+            defaultValue={project.details}
+            as="p"
+            className="text-gray-600 leading-relaxed mb-4"
+            multiline
+          />
+          <p className="text-sm font-semibold text-kms-yellow-dark mb-6">
+            Resultaat:{' '}
+            <EditableText
+              textKey={`project.${project.id}.resultaat`}
+              label={`${project.title} - resultaat`}
+              defaultValue={project.resultaat}
+              as="span"
+            />
+          </p>
 
           <Button
             render={<Link href="/offerte" onClick={onClose} />}
