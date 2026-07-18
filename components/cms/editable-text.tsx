@@ -130,8 +130,9 @@ export default function EditableText({
   }
 
   async function onRestorePrevious() {
-    if (!previousValue?.trim()) {
-      setError('Er is nog geen vorige versie om te herstellen.')
+    const restoreTo = previousValue?.trim() || (value.trim() !== defaultValue.trim() ? defaultValue.trim() : '')
+    if (!restoreTo) {
+      setError('Er is nog geen vorige versie om te herstellen. Sla eerst een wijziging op.')
       return
     }
 
@@ -139,7 +140,7 @@ export default function EditableText({
     setError('')
     try {
       // Wissel: huidige tekst wordt de nieuwe "vorige", zodat herstellen ook terug te draaien is
-      await persist(previousValue.trim(), value.trim() || null)
+      await persist(restoreTo, value.trim() || null)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Herstellen mislukt.')
     } finally {
@@ -147,7 +148,9 @@ export default function EditableText({
     }
   }
 
-  const canRestore = Boolean(previousValue?.trim())
+  const canRestore = Boolean(
+    previousValue?.trim() || (value.trim() !== defaultValue.trim() && defaultValue.trim()),
+  )
 
   return (
     <>
@@ -228,17 +231,22 @@ export default function EditableText({
             ) : null}
 
             <div className="mt-5 flex flex-col gap-2">
-              {canRestore ? (
+              <div>
                 <Button
                   type="button"
                   variant="secondary"
-                  className="w-full sm:w-auto sm:self-start"
+                  className="w-full sm:w-auto"
                   onClick={() => void onRestorePrevious()}
-                  disabled={saving}
+                  disabled={saving || !canRestore}
                 >
                   Vorige versie herstellen
                 </Button>
-              ) : null}
+                {!canRestore ? (
+                  <p className="mt-1.5 text-xs text-gray-500">
+                    Beschikbaar nadat je een wijziging hebt opgeslagen.
+                  </p>
+                ) : null}
+              </div>
 
               <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
                 <Button type="button" variant="secondary" onClick={() => setOpen(false)} disabled={saving}>
