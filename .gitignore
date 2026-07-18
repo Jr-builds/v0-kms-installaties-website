@@ -7,11 +7,13 @@ __v0_jsx-dev-runtime.ts
 .vercel/
 
 # Environment variables
+.env
+.env.*
+!.env.example
 .env*.local
+.env.sentry-build-plugin
 
 # Common ignores
 node_modules
 .next/
 .DS_Store
-# Sentry Config File
-.env.sentry-build-plugin

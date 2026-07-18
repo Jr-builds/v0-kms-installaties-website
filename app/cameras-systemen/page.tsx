@@ -14,11 +14,11 @@ import ClosingCTA from '@/components/closing-cta'
 import { pageReviews } from '@/lib/reviews'
 
 const dienstenCards = [
-  { imageKey: 'camera.buiten' as const, imageLabel: 'Foto: camera bekabeling installatie', title: 'Installatie & montage', description: 'Bekabeling via Wifi/PoE/NVR, optimale zichtlijnen, recorders en monitoren' },
-  { imageKey: 'camera.buiten' as const, imageLabel: 'Foto: camera configuratie systeem', title: 'Inbedrijfstelling', description: 'Configuratie, bewegingsdetectie, privacy-masking, beeldkwaliteit testen' },
-  { imageKey: 'camera.buiten' as const, imageLabel: 'Foto: camera assortiment buiten', title: 'Cameralevering', description: 'Binnen en buiten, diverse resoluties, complete beveiligingsoplossingen' },
-  { imageKey: 'camera.buiten' as const, imageLabel: 'Foto: smartphone app camera live', title: 'App-koppeling', description: 'Live meekijken op smartphone, gebruikersaccounts, uitleg gebruik' },
-  { imageKey: 'camera.buiten' as const, imageLabel: 'Foto: camera onderhoud reparatie', title: 'Storingen, reparaties & onderhoud', description: 'Diagnose beeldproblemen, jaarlijks onderhoud, systeemupdates' },
+  { imageKey: 'camera.installatie' as const, imageLabel: 'Foto: camera bekabeling installatie', title: 'Installatie & montage', description: 'Bekabeling via Wifi/PoE/NVR, optimale zichtlijnen, recorders en monitoren' },
+  { imageKey: 'camera.inbedrijfstelling' as const, imageLabel: 'Foto: camera configuratie systeem', title: 'Inbedrijfstelling', description: 'Configuratie, bewegingsdetectie, privacy-masking, beeldkwaliteit testen' },
+  { imageKey: 'camera.levering' as const, imageLabel: 'Foto: camera assortiment buiten', title: 'Cameralevering', description: 'Binnen en buiten, diverse resoluties, complete beveiligingsoplossingen' },
+  { imageKey: 'camera.app' as const, imageLabel: 'Foto: smartphone app camera live', title: 'App-koppeling', description: 'Live meekijken op smartphone, gebruikersaccounts, uitleg gebruik' },
+  { imageKey: 'camera.onderhoud' as const, imageLabel: 'Foto: camera onderhoud reparatie', title: 'Storingen, reparaties & onderhoud', description: 'Diagnose beeldproblemen, jaarlijks onderhoud, systeemupdates' },
 ]
 
 const waaromItems = [

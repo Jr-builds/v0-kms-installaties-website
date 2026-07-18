@@ -16,11 +16,11 @@ import IsdeCallout from '@/components/isde-callout'
 import { pageReviews } from '@/lib/reviews'
 
 const dienstenCards = [
-  { imageKey: 'ventilatie.wtw' as const, imageLabel: 'Foto: luchtbehandelingskast utiliteit', title: 'Luchtbehandelingskasten (LBK) voor utiliteit', description: 'Preventief onderhoud, filters vervangen, GBS-controle' },
+  { imageKey: 'ventilatie.lbk' as const, imageLabel: 'Foto: luchtbehandelingskast utiliteit', title: 'Luchtbehandelingskasten (LBK) voor utiliteit', description: 'Preventief onderhoud, filters vervangen, GBS-controle' },
   { imageKey: 'ventilatie.wtw' as const, imageLabel: 'Foto: WTW systeem woning', title: 'WTW-systemen', description: 'Ontwerp, aanleg en vervanging voor woning en utiliteit' },
-  { imageKey: 'ventilatie.wtw' as const, imageLabel: 'Foto: mechanische ventilatie installatie', title: 'Mechanische ventilatie', description: 'Ontwerp, aanleg en vervanging' },
-  { imageKey: 'ventilatie.wtw' as const, imageLabel: 'Foto: dakventilator plat dak', title: 'Dakventilatoren', description: 'Ontwerp, aanleg en vervanging' },
-  { imageKey: 'ventilatie.wtw' as const, imageLabel: 'Foto: ventilatie onderhoud filter', title: 'Onderhoud & storingen', description: 'Snelle diagnose, regelmatig onderhoud, rapportage' },
+  { imageKey: 'ventilatie.mechanisch' as const, imageLabel: 'Foto: mechanische ventilatie installatie', title: 'Mechanische ventilatie', description: 'Ontwerp, aanleg en vervanging' },
+  { imageKey: 'ventilatie.dakventilator' as const, imageLabel: 'Foto: dakventilator plat dak', title: 'Dakventilatoren', description: 'Ontwerp, aanleg en vervanging' },
+  { imageKey: 'ventilatie.onderhoud' as const, imageLabel: 'Foto: ventilatie onderhoud filter', title: 'Onderhoud & storingen', description: 'Snelle diagnose, regelmatig onderhoud, rapportage' },
 ]
 
 const waaromItems = [

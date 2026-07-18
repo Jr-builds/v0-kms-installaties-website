@@ -16,12 +16,12 @@ import IsdeCallout from '@/components/isde-callout'
 import { pageReviews } from '@/lib/reviews'
 
 const dienstenCards = [
-  { imageKey: 'airco.binnenunit' as const, imageLabel: 'Foto: kantoor klimaatbeheersing', title: 'Klimaatbeheersing kantoor & bedrijven', description: 'Installatie klimaatbeheersingssystemen, preventief onderhoud' },
-  { imageKey: 'airco.binnenunit' as const, imageLabel: 'Foto: wandunit airco installatie', title: 'Professionele installatie', description: 'Wandunits, plafondunits, multisplit-systemen' },
-  { imageKey: 'airco.binnenunit' as const, imageLabel: 'Foto: airco onderhoud service', title: 'Service & onderhoud', description: 'Periodiek onderhoud, reiniging, bijvullen' },
-  { imageKey: 'airco.buitenunit' as const, imageLabel: 'Foto: airco storing reparatie', title: 'Storingen & reparaties', description: 'Snelle diagnose, vervangen defecte onderdelen' },
-  { imageKey: 'airco.binnenunit' as const, imageLabel: 'Foto: airco unit showroom', title: 'Levering van airco-units', description: 'Complete A-merk systemen, een aanspreekpunt voor advies en plaatsing' },
-  { imageKey: 'airco.binnenunit' as const, imageLabel: 'Foto: slimme app bediening airco', title: 'Wifi-modules & slimme bediening', description: 'App-koppeling, bediening op afstand' },
+  { imageKey: 'airco.klimaatbeheersing' as const, imageLabel: 'Foto: kantoor klimaatbeheersing', title: 'Klimaatbeheersing kantoor & bedrijven', description: 'Installatie klimaatbeheersingssystemen, preventief onderhoud' },
+  { imageKey: 'airco.installatie' as const, imageLabel: 'Foto: wandunit airco installatie', title: 'Professionele installatie', description: 'Wandunits, plafondunits, multisplit-systemen' },
+  { imageKey: 'airco.onderhoud' as const, imageLabel: 'Foto: airco onderhoud service', title: 'Service & onderhoud', description: 'Periodiek onderhoud, reiniging, bijvullen' },
+  { imageKey: 'airco.storingen' as const, imageLabel: 'Foto: airco storing reparatie', title: 'Storingen & reparaties', description: 'Snelle diagnose, vervangen defecte onderdelen' },
+  { imageKey: 'airco.levering' as const, imageLabel: 'Foto: airco unit showroom', title: 'Levering van airco-units', description: 'Complete A-merk systemen, een aanspreekpunt voor advies en plaatsing' },
+  { imageKey: 'airco.wifi' as const, imageLabel: 'Foto: slimme app bediening airco', title: 'Wifi-modules & slimme bediening', description: 'App-koppeling, bediening op afstand' },
 ]
 
 const waaromItems = [

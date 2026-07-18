@@ -1,17 +1,17 @@
-import ImagePlaceholder from './image-placeholder'
-import SiteImage from './site-image'
-import { getImage, type SiteImageKey } from '@/lib/images'
+import EditableImage from '@/components/cms/editable-image'
+import { resolveImage } from '@/lib/supabase/site-images'
+import type { SiteImageKey } from '@/lib/images'
 
 interface SiteImageOrPlaceholderProps {
-  imageKey?: SiteImageKey
-  placeholderLabel: string
+  imageKey: SiteImageKey
+  placeholderLabel?: string
   aspectRatio?: string
   className?: string
   priority?: boolean
   sizePreset?: 'hero' | 'card' | 'square' | 'modal'
 }
 
-export default function SiteImageOrPlaceholder({
+export default async function SiteImageOrPlaceholder({
   imageKey,
   placeholderLabel,
   aspectRatio = 'aspect-video',
@@ -19,25 +19,18 @@ export default function SiteImageOrPlaceholder({
   priority = false,
   sizePreset = 'card',
 }: SiteImageOrPlaceholderProps) {
-  if (imageKey) {
-    const { src, alt } = getImage(imageKey)
-    return (
-      <SiteImage
-        src={src}
-        alt={alt}
-        aspectRatio={aspectRatio}
-        className={className}
-        priority={priority}
-        sizePreset={sizePreset}
-      />
-    )
-  }
+  const image = await resolveImage(imageKey)
 
   return (
-    <ImagePlaceholder
-      label={placeholderLabel}
+    <EditableImage
+      imageKey={imageKey}
+      label={placeholderLabel || image.label}
+      src={image.src}
+      alt={image.alt}
       aspectRatio={aspectRatio}
       className={className}
+      priority={priority}
+      sizePreset={sizePreset}
     />
   )
 }

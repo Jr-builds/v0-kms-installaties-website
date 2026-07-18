@@ -17,12 +17,12 @@ import { serviceAreaInPhrase } from '@/lib/service-area'
 
 const dienstenCards = [
   { imageKey: 'elektra.huisinstallatie' as const, imageLabel: 'Foto: huisinstallatie nieuwbouw', title: 'Huisinstallaties (Nieuwbouw & Bestaande Bouw)', description: 'Complete elektrische aanleg, stopcontacten, veiligheidscheck NEN' },
-  { imageLabel: 'Foto: renovatie bedrading', title: 'Renovatie & Verbouwingen', description: 'Aanpassen bestaande installaties, leidingen frezen, oude bedrading vervangen' },
+  { imageKey: 'elektra.renovatie' as const, imageLabel: 'Foto: renovatie bedrading', title: 'Renovatie & Verbouwingen', description: 'Aanpassen bestaande installaties, leidingen frezen, oude bedrading vervangen' },
   { imageKey: 'elektra.groepenkast' as const, imageLabel: 'Foto: groepenkast modern', title: 'Groepen- & Meterkasten', description: 'Vervangen oude groepenkast, automaat en aardlekbeveiliging, groepenverklaring' },
-  { imageLabel: 'Foto: LED verlichting interieur', title: 'Binnen- & Buitenverlichting', description: 'LED-verlichting, tuin- en gevelverlichting, slimme verlichting' },
-  { imageLabel: 'Foto: elektra keuken badkamer', title: 'Elektra in Keuken & Badkamer', description: 'Voorbereidend elektrawerk, aansluitpunten kookplaat en oven' },
+  { imageKey: 'elektra.verlichting' as const, imageLabel: 'Foto: LED verlichting interieur', title: 'Binnen- & Buitenverlichting', description: 'LED-verlichting, tuin- en gevelverlichting, slimme verlichting' },
+  { imageKey: 'elektra.keukenBadkamer' as const, imageLabel: 'Foto: elektra keuken badkamer', title: 'Elektra in Keuken & Badkamer', description: 'Voorbereidend elektrawerk, aansluitpunten kookplaat en oven' },
   { imageKey: 'elektra.cameras' as const, imageLabel: 'Foto: camera bewaking systeem', title: 'Camerasystemen', description: 'Binnen- en buitencameras, Wifi/POE/NVR-systemen' },
-  { imageKey: 'elektra.huisinstallatie' as const, imageLabel: 'Foto: storingsmelding elektricien', title: 'Storingen & Onderhoud', description: 'Spoedstoringen, kortsluitingen opsporen, preventief onderhoud' },
+  { imageKey: 'elektra.storingen' as const, imageLabel: 'Foto: storingsmelding elektricien', title: 'Storingen & Onderhoud', description: 'Spoedstoringen, kortsluitingen opsporen, preventief onderhoud' },
 ]
 
 const waaromItems = [

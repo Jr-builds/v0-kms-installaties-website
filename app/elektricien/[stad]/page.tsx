@@ -9,11 +9,11 @@ import Reviews from '@/components/reviews'
 import ClosingCTA from '@/components/closing-cta'
 import StadChips from '@/components/stad-chips'
 import StadDienstKeuze from '@/components/stad-dienst-keuze'
-import SiteImage from '@/components/site-image'
+import EditableImage from '@/components/cms/editable-image'
 import { Button } from '@/components/ui/button'
 import HeroPhoneButton from '@/components/hero-phone-button'
 import { pageReviews } from '@/lib/reviews'
-import { getImage } from '@/lib/images'
+import { resolveImage } from '@/lib/supabase/site-images'
 import { createPageMetadata } from '@/lib/metadata'
 import { buildOfferteHref } from '@/lib/offerte'
 import { getAllStadSlugs, getStadBySlug } from '@/lib/steden'
@@ -60,7 +60,7 @@ export default async function ElektricienStadPage({ params }: ElektricienStadPag
   const stad = getStadBySlug(slug)
   if (!stad) notFound()
 
-  const heroImage = getImage('hero.elektra')
+  const heroImage = await resolveImage('hero.elektra')
   const offerteHref = buildOfferteHref('elektra', stad.name)
 
   return (
@@ -97,7 +97,9 @@ export default async function ElektricienStadPage({ params }: ElektricienStadPag
                 </div>
               </div>
               <div className="hero-photo">
-                <SiteImage
+                <EditableImage
+                  imageKey="hero.elektra"
+                  label={heroImage.label}
                   src={heroImage.src}
                   alt={heroImage.alt}
                   aspectRatio="aspect-[4/3]"

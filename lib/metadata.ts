@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getImage, type SiteImageKey } from '@/lib/images'
+import { getImage, requireImageSrc, type SiteImageKey } from '@/lib/images'
 import { serviceAreaDisplay, serviceAreaInPhrase } from '@/lib/service-area'
 
 export const SITE_NAME = 'KMS Installaties'
@@ -25,6 +25,7 @@ export function createPageMetadata({
   imageKey = 'hero.home',
 }: PageMetadataOptions): Metadata {
   const image = getImage(imageKey)
+  const imageUrl = requireImageSrc(image, OG_IMAGE)
 
   return {
     title: {
@@ -43,7 +44,7 @@ export function createPageMetadata({
       siteName: SITE_NAME,
       images: [
         {
-          url: image.src,
+          url: imageUrl,
           alt: image.alt,
         },
       ],
@@ -52,7 +53,7 @@ export function createPageMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: [image.src],
+      images: [imageUrl],
     },
   }
 }

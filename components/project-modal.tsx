@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
+import ClientEditableImage from '@/components/cms/client-editable-image'
 import { Button } from '@/components/ui/button'
 import { getProjectImageKeyForProject, type Project } from '@/lib/projects'
 
@@ -51,9 +51,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white shadow-2xl"
         onClick={(event) => event.stopPropagation()}
       >
-        <SiteImageOrPlaceholder
+        <ClientEditableImage
           imageKey={imageKey}
-          placeholderLabel=""
+          placeholderLabel={`Project: ${project.title}`}
           aspectRatio="aspect-video"
           sizePreset="modal"
         />

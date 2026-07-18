@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import TrustBar from '@/components/trust-bar'
-import SiteImage from '@/components/site-image'
+import EditableImage from '@/components/cms/editable-image'
 import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
 import ClosingCTA from '@/components/closing-cta'
 import Werkgebied from '@/components/werkgebied'
@@ -13,7 +13,8 @@ import Reviews from '@/components/reviews'
 import AvailabilityPill, { OpeningHoursPill } from '@/components/availability-pill'
 import TrustHighlightGrid from '@/components/trust-highlight-grid'
 import { Button } from '@/components/ui/button'
-import { getImage, type SiteImageKey } from '@/lib/images'
+import type { SiteImageKey } from '@/lib/images'
+import { resolveImage } from '@/lib/supabase/site-images'
 import { pageReviews } from '@/lib/reviews'
 import { pageMetadata } from '@/lib/metadata'
 import { DEFAULT_HERO_SUBTITLE } from '@/lib/seasonal'
@@ -41,8 +42,8 @@ const reviews = pageReviews.home
 
 const merken = ['ABB', 'Hager', 'Alfen', 'Gira', 'Jung', 'Zaptec', 'Mitsubishi Heavy', 'Daikin', 'LG', 'Mitsubishi Electric', 'Itho Daalderop', 'DUCO']
 
-export default function HomePage() {
-  const heroImage = getImage('hero.home')
+export default async function HomePage() {
+  const heroImage = await resolveImage('hero.home')
 
   return (
     <>
@@ -70,7 +71,9 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="hero-photo">
-                <SiteImage
+                <EditableImage
+                  imageKey="hero.home"
+                  label={heroImage.label}
                   src={heroImage.src}
                   alt={heroImage.alt}
                   aspectRatio="aspect-[4/3]"
@@ -105,7 +108,7 @@ export default function HomePage() {
                 >
                   <SiteImageOrPlaceholder
                     imageKey={card.imageKey}
-                    placeholderLabel=""
+                    placeholderLabel={`Homepage dienst: ${card.title}`}
                     aspectRatio="aspect-video"
                     className="w-full shrink-0"
                   />
@@ -141,7 +144,11 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {recenteProjecten.map((project, i) => (
                 <article key={i} className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-                  <SiteImageOrPlaceholder imageKey={project.imageKey} placeholderLabel="" aspectRatio="aspect-video" />
+                  <SiteImageOrPlaceholder
+                    imageKey={project.imageKey}
+                    placeholderLabel={`Project: ${project.title}`}
+                    aspectRatio="aspect-video"
+                  />
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="badge-yellow px-2.5 py-0.5 text-xs font-bold">{project.category}</span>

@@ -5,7 +5,7 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import ClosingCTA from '@/components/closing-cta'
 import ProjectModal from '@/components/project-modal'
-import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
+import ClientEditableImage from '@/components/cms/client-editable-image'
 import {
   filterProjects,
   getProjectImageKeyForProject,
@@ -105,9 +105,9 @@ export default function ProjectenPage() {
                       aria-label={`Bekijk project: ${project.title}`}
                     >
                       <div className="overflow-hidden">
-                        <SiteImageOrPlaceholder
+                        <ClientEditableImage
                           imageKey={getProjectImageKeyForProject(project)}
-                          placeholderLabel=""
+                          placeholderLabel={`Project: ${project.title}`}
                           aspectRatio="aspect-video"
                           className="motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-[1.02]"
                         />

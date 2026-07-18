@@ -15,12 +15,12 @@ import { pageReviews } from '@/lib/reviews'
 import { serviceAreaInPhrase } from '@/lib/service-area'
 
 const dienstenCards = [
-  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: technisch onderhoud gebouw', title: 'Algemeen technisch onderhoud', description: 'Dagelijks klein onderhoud, vaste controlerondes' },
-  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: renovatie elektra installatie', title: 'Renovatie & herstel', description: 'Herstel elektrische installaties, reparaties ventilatie' },
-  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: storingsmelding snelle respons', title: 'Storingen & spoed', description: 'Snelle respons, tijdelijke noodoplossingen' },
-  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: technische inspectie rapport', title: 'Inspectie & rapportage', description: 'Technische inspecties, onderhoudsrapporten, actiepuntenlijst' },
-  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: periodiek onderhoud installaties', title: 'Periodiek onderhoud', description: 'Terugkerende beurten, controle kritieke installaties' },
-  { imageKey: 'vastgoed.pand' as const, imageLabel: 'Foto: coördinatie kleine projecten', title: 'Coördinatie van kleine projecten', description: 'Aansturing werkzaamheden namens eigenaar, communicatie bewoners' },
+  { imageKey: 'vastgoed.onderhoud' as const, imageLabel: 'Foto: technisch onderhoud gebouw', title: 'Algemeen technisch onderhoud', description: 'Dagelijks klein onderhoud, vaste controlerondes' },
+  { imageKey: 'vastgoed.renovatie' as const, imageLabel: 'Foto: renovatie elektra installatie', title: 'Renovatie & herstel', description: 'Herstel elektrische installaties, reparaties ventilatie' },
+  { imageKey: 'vastgoed.storingen' as const, imageLabel: 'Foto: storingsmelding snelle respons', title: 'Storingen & spoed', description: 'Snelle respons, tijdelijke noodoplossingen' },
+  { imageKey: 'vastgoed.inspectie' as const, imageLabel: 'Foto: technische inspectie rapport', title: 'Inspectie & rapportage', description: 'Technische inspecties, onderhoudsrapporten, actiepuntenlijst' },
+  { imageKey: 'vastgoed.periodiek' as const, imageLabel: 'Foto: periodiek onderhoud installaties', title: 'Periodiek onderhoud', description: 'Terugkerende beurten, controle kritieke installaties' },
+  { imageKey: 'vastgoed.projecten' as const, imageLabel: 'Foto: coördinatie kleine projecten', title: 'Coördinatie van kleine projecten', description: 'Aansturing werkzaamheden namens eigenaar, communicatie bewoners' },
 ]
 
 const waaromItems = [

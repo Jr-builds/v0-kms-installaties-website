@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Viewport } from 'next'
 import { Inter } from 'next/font/google'
+import CmsEditProvider from '@/components/cms/cms-edit-provider'
 import MobileCtaBar from '@/components/mobile-cta-bar'
 import CookieNotice from '@/components/cookie-notice'
 import SkipLink from '@/components/skip-link'
@@ -30,12 +31,14 @@ export default function RootLayout({
   return (
     <html lang="nl" className={`${inter.variable} bg-background`}>
       <body className="font-sans antialiased mobile-cta-spacing">
-        <SkipLink />
-        <StructuredData />
-        {children}
-        <CookieNotice />
-        <MobileCtaBar />
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <CmsEditProvider>
+          <SkipLink />
+          <StructuredData />
+          {children}
+          <CookieNotice />
+          <MobileCtaBar />
+          {process.env.NODE_ENV === 'production' && <Analytics />}
+        </CmsEditProvider>
       </body>
     </html>
   )

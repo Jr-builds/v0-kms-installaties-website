@@ -2,7 +2,7 @@ import SiteImageOrPlaceholder from './site-image-or-placeholder'
 import type { SiteImageKey } from '@/lib/images'
 
 interface DienstCard {
-  imageKey?: SiteImageKey
+  imageKey: SiteImageKey
   imageLabel: string
   title: string
   description: string

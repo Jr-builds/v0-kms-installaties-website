@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import SiteImage from './site-image'
+import EditableImage from '@/components/cms/editable-image'
 import { Button } from '@/components/ui/button'
 import HeroPhoneButton from '@/components/hero-phone-button'
-import { getImage, type SiteImageKey } from '@/lib/images'
+import { resolveImage } from '@/lib/supabase/site-images'
+import type { SiteImageKey } from '@/lib/images'
 import { buildOfferteHref } from '@/lib/offerte'
 
 interface ServiceHeroProps {
@@ -14,14 +15,14 @@ interface ServiceHeroProps {
   offerteDienst?: string
 }
 
-export default function ServiceHero({
+export default async function ServiceHero({
   title,
   subtitle,
   imageKey,
   primaryLabel = 'Vraag een offerte aan',
   offerteDienst,
 }: ServiceHeroProps) {
-  const { src, alt } = getImage(imageKey)
+  const image = await resolveImage(imageKey)
   const offerteHref = buildOfferteHref(offerteDienst)
 
   return (
@@ -29,9 +30,7 @@ export default function ServiceHero({
       <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="heading-hero text-white mb-4">
-              {title}
-            </h1>
+            <h1 className="heading-hero text-white mb-4">{title}</h1>
             <p className="text-blue-200 text-lg mb-8 leading-relaxed">{subtitle}</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
@@ -47,9 +46,11 @@ export default function ServiceHero({
             </div>
           </div>
           <div className="hero-photo">
-            <SiteImage
-              src={src}
-              alt={alt}
+            <EditableImage
+              imageKey={imageKey}
+              label={image.label}
+              src={image.src}
+              alt={image.alt}
               aspectRatio="aspect-[4/3]"
               className="w-full"
               priority
