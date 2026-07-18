@@ -61,7 +61,7 @@ export default function CamerasSystemenPage() {
         <DienstenGrid title="Onze camera diensten" titleKey="cameras.diensten.title" cards={dienstenCards} />
         <WaaromKMS items={waaromItems} />
         <Reviews reviews={reviews} title="Klanten over onze camerasystemen" />
-        <FAQ items={faqItems} />
+        <FAQ items={faqItems} namespace="cameras.faq" />
         <ClosingCTA primaryHref="/offerte?dienst=cameras" />
       </main>
       <Footer />

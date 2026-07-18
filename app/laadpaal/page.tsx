@@ -120,7 +120,7 @@ export default function LaadpaalPage() {
         <WaaromKMS items={waaromItems} />
         <MerkLogos brands={['Alfen', 'Zaptec', 'ABB', 'Hager']} />
         <Reviews reviews={reviews} title="Klanten over onze laadpaal installaties" />
-        <FAQ items={faqItems} />
+        <FAQ items={faqItems} namespace="laadpaal.faq" />
         <ClosingCTA primaryHref="/offerte?dienst=laadpaal" />
       </main>
       <Footer />

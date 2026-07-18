@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import EditableText from '@/components/cms/editable-text'
 
 interface FAQItem {
   question: string
@@ -10,13 +11,19 @@ interface FAQItem {
 interface FAQProps {
   items: FAQItem[]
   title?: string
+  /** Unieke CMS-namespace, bijv. elektra.faq */
+  namespace: string
 }
 
 function faqId(index: number, part: 'question' | 'answer'): string {
   return `faq-${part}-${index}`
 }
 
-export default function FAQ({ items, title = 'Veelgestelde vragen' }: FAQProps) {
+export default function FAQ({
+  items,
+  title = 'Veelgestelde vragen',
+  namespace,
+}: FAQProps) {
   const [openItems, setOpenItems] = useState<Set<number>>(new Set())
 
   function toggleItem(index: number) {
@@ -35,7 +42,12 @@ export default function FAQ({ items, title = 'Veelgestelde vragen' }: FAQProps) 
     <section className="bg-kms-light py-16 sm:py-20" aria-labelledby="faq-heading">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="faq-heading" className="heading-section text-center mb-10 text-kms-navy">
-          {title}
+          <EditableText
+            textKey={`${namespace}.title`}
+            label="FAQ sectietitel"
+            defaultValue={title}
+            as="span"
+          />
         </h2>
         <div className="space-y-3">
           {items.map((item, index) => {
@@ -53,7 +65,14 @@ export default function FAQ({ items, title = 'Veelgestelde vragen' }: FAQProps) 
                   aria-expanded={isOpen}
                   aria-controls={answerId}
                 >
-                  <span className="text-sm sm:text-base">{item.question}</span>
+                  <span className="text-sm sm:text-base">
+                    <EditableText
+                      textKey={`${namespace}.${index}.question`}
+                      label={`FAQ vraag ${index + 1}`}
+                      defaultValue={item.question}
+                      as="span"
+                    />
+                  </span>
                   <svg
                     className={`h-5 w-5 flex-shrink-0 text-kms-navy motion-safe:transition-transform${isOpen ? ' rotate-180' : ''}`}
                     fill="none"
@@ -71,7 +90,13 @@ export default function FAQ({ items, title = 'Veelgestelde vragen' }: FAQProps) 
                   hidden={!isOpen}
                   className="border-t border-gray-100 px-6 pb-4 pt-3 text-sm leading-relaxed text-gray-600"
                 >
-                  {item.answer}
+                  <EditableText
+                    textKey={`${namespace}.${index}.answer`}
+                    label={`FAQ antwoord ${index + 1}`}
+                    defaultValue={item.answer}
+                    as="span"
+                    multiline
+                  />
                 </div>
               </div>
             )

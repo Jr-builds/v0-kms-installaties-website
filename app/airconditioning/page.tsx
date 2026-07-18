@@ -71,7 +71,7 @@ export default function AirconditioningPage() {
         <WaaromKMS items={waaromItems} />
         <MerkLogos brands={['Mitsubishi Heavy', 'Daikin', 'LG', 'Mitsubishi Electric']} />
         <Reviews reviews={reviews} title="Klanten over onze airco installaties" />
-        <FAQ items={faqItems} />
+        <FAQ items={faqItems} namespace="airconditioning.faq" />
         <ClosingCTA primaryHref="/offerte?dienst=airconditioning" />
       </main>
       <Footer />

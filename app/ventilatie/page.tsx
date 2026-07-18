@@ -71,7 +71,7 @@ export default function VentilatiePage() {
         <WaaromKMS items={waaromItems} />
         <MerkLogos brands={['Itho Daalderop', 'DUCO']} />
         <Reviews reviews={reviews} title="Klanten over onze ventilatie installaties" />
-        <FAQ items={faqItems} />
+        <FAQ items={faqItems} namespace="ventilatie.faq" />
         <ClosingCTA primaryHref="/offerte?dienst=ventilatie" />
       </main>
       <Footer />

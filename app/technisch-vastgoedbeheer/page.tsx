@@ -64,7 +64,7 @@ export default function TechnischVastgoedbeheerPage() {
         <DienstenGrid title="Onze vastgoedbeheer diensten" titleKey="vastgoed.diensten.title" cards={dienstenCards} />
         <WaaromKMS items={waaromItems} />
         <Reviews reviews={reviews} title="Klanten over ons vastgoedbeheer" />
-        <FAQ items={faqItems} />
+        <FAQ items={faqItems} namespace="vastgoed.faq" />
         <ClosingCTA
           primaryHref="/offerte?dienst=vastgoedbeheer"
           primaryLabel="Vraag een onderhoudscontract aan"

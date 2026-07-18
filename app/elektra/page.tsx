@@ -67,7 +67,7 @@ export default function ElektraPage() {
         <WaaromKMS items={waaromItems} />
         <MerkLogos brands={['ABB', 'Hager', 'Alfen', 'Gira', 'Jung', 'Zaptec']} />
         <Reviews reviews={reviews} title="Klanten over ons elektrawerk" />
-        <FAQ items={faqItems} />
+        <FAQ items={faqItems} namespace="elektra.faq" />
         <ClosingCTA primaryHref="/offerte?dienst=elektra" />
       </main>
       <Footer />
