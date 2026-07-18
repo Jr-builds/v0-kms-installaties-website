@@ -49,6 +49,7 @@ export default function ElektraPage() {
           title="Elektra die de eerste keer goed zit, voor particulier en bedrijf"
           subtitle="NEN 3140 gecertificeerd. Bereikbaar van maandag tot zondag."
           imageKey="hero.elektra"
+          textNamespace="elektra.hero"
           offerteDienst="elektra"
         />
         <TrustBar variant="slim" />
@@ -62,7 +63,7 @@ export default function ElektraPage() {
           </div>
         </section>
 
-        <DienstenGrid title="Onze elektradiensten" cards={dienstenCards} />
+        <DienstenGrid title="Onze elektradiensten" titleKey="elektra.diensten.title" cards={dienstenCards} />
         <WaaromKMS items={waaromItems} />
         <MerkLogos brands={['ABB', 'Hager', 'Alfen', 'Gira', 'Jung', 'Zaptec']} />
         <Reviews reviews={reviews} title="Klanten over ons elektrawerk" />

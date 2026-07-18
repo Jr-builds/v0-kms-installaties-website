@@ -4,6 +4,7 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import TrustBar from '@/components/trust-bar'
 import EditableImage from '@/components/cms/editable-image'
+import EditableText from '@/components/cms/editable-text'
 import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
 import ClosingCTA from '@/components/closing-cta'
 import Werkgebied from '@/components/werkgebied'
@@ -59,10 +60,29 @@ export default async function HomePage() {
                   <OpeningHoursPill size="md" />
                 </div>
                 <h1 className="heading-hero-home text-white mb-5">
-                  Elektra en Airco, vakkundig geïnstalleerd -{' '}
-                  <span className="text-kms-yellow">altijd bereikbaar</span>
+                  <EditableText
+                    textKey="home.hero.title"
+                    label="Homepage hero titel"
+                    defaultValue="Elektra en Airco, vakkundig geïnstalleerd - "
+                    as="span"
+                  />
+                  <EditableText
+                    textKey="home.hero.titleAccent"
+                    label="Homepage hero accent"
+                    defaultValue="altijd bereikbaar"
+                    as="span"
+                    className="text-kms-yellow"
+                  />
                 </h1>
-                <p className="text-blue-200 text-lg mb-8 leading-relaxed">{DEFAULT_HERO_SUBTITLE}</p>
+                <p className="text-blue-200 text-lg mb-8 leading-relaxed">
+                  <EditableText
+                    textKey="home.hero.subtitle"
+                    label="Homepage hero ondertitel"
+                    defaultValue={DEFAULT_HERO_SUBTITLE}
+                    as="span"
+                    multiline
+                  />
+                </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button render={<Link href="/offerte" />} nativeButton={false} variant="primary" size="cta-sm" className="text-center">
                     Vraag een offerte aan
@@ -93,11 +113,21 @@ export default async function HomePage() {
         <section id="diensten" className="bg-white py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="heading-section text-center mb-4 text-kms-navy">
-              Onze diensten
+              <EditableText
+                textKey="home.diensten.title"
+                label="Homepage diensten titel"
+                defaultValue="Onze diensten"
+                as="span"
+              />
             </h2>
             <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-              KMS Installaties levert gecertificeerd elektra- en airconditioningwerk {serviceAreaInPhrase}.
-              Daarnaast verzorgen wij laadpalen, ventilatie, technisch vastgoedbeheer en camerabeveiliging.
+              <EditableText
+                textKey="home.diensten.intro"
+                label="Homepage diensten intro"
+                defaultValue={`KMS Installaties levert gecertificeerd elektra- en airconditioningwerk ${serviceAreaInPhrase}. Daarnaast verzorgen wij laadpalen, ventilatie, technisch vastgoedbeheer en camerabeveiliging.`}
+                as="span"
+                multiline
+              />
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {dienstenCards.map((card) => (
@@ -114,9 +144,22 @@ export default async function HomePage() {
                   />
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="font-bold text-base mb-1.5 text-kms-navy group-hover:text-kms-yellow-dark transition-colors">
-                      {card.title}
+                      <EditableText
+                        textKey={`${card.imageKey}.title`}
+                        label={`${card.title} - titel`}
+                        defaultValue={card.title}
+                        as="span"
+                      />
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3 flex-1">{card.description}</p>
+                    <p className="text-sm text-gray-600 leading-relaxed mb-3 flex-1">
+                      <EditableText
+                        textKey={`${card.imageKey}.description`}
+                        label={`${card.title} - beschrijving`}
+                        defaultValue={card.description}
+                        as="span"
+                        multiline
+                      />
+                    </p>
                     <span className="text-sm font-semibold text-kms-yellow-dark mt-auto">Meer informatie &rarr;</span>
                   </div>
                 </Link>

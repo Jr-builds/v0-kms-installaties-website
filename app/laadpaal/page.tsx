@@ -103,6 +103,7 @@ export default function LaadpaalPage() {
           title="Laadpaal thuis of op kantoor, Zaptec Certified geïnstalleerd"
           subtitle={`Advies, meterkast en installatie van Alfen en Zaptec laadpalen. Particulier en zakelijk ${serviceAreaInPhrase}.`}
           imageKey="hero.laadpaal"
+          textNamespace="laadpaal.hero"
           offerteDienst="laadpaal"
         />
         <TrustBar variant="slim" />
@@ -115,7 +116,7 @@ export default function LaadpaalPage() {
           </div>
         </section>
 
-        <DienstenGrid title="Onze laadpaal diensten" cards={dienstenCards} />
+        <DienstenGrid title="Onze laadpaal diensten" titleKey="laadpaal.diensten.title" cards={dienstenCards} />
         <WaaromKMS items={waaromItems} />
         <MerkLogos brands={['Alfen', 'Zaptec', 'ABB', 'Hager']} />
         <Reviews reviews={reviews} title="Klanten over onze laadpaal installaties" />

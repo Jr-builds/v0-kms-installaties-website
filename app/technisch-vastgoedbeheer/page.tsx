@@ -47,6 +47,7 @@ export default function TechnischVastgoedbeheerPage() {
           title="Zorgeloos technisch beheer van uw vastgoed, met vaste onderhoudscontracten"
           subtitle={`Voor gebouweigenaren en VvE-beheerders ${serviceAreaInPhrase}.`}
           imageKey="hero.vastgoedbeheer"
+          textNamespace="vastgoed.hero"
           primaryLabel="Vraag een onderhoudscontract aan"
           offerteDienst="vastgoedbeheer"
         />
@@ -60,7 +61,7 @@ export default function TechnischVastgoedbeheerPage() {
           </div>
         </section>
 
-        <DienstenGrid title="Onze vastgoedbeheer diensten" cards={dienstenCards} />
+        <DienstenGrid title="Onze vastgoedbeheer diensten" titleKey="vastgoed.diensten.title" cards={dienstenCards} />
         <WaaromKMS items={waaromItems} />
         <Reviews reviews={reviews} title="Klanten over ons vastgoedbeheer" />
         <FAQ items={faqItems} />

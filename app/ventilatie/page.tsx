@@ -48,6 +48,7 @@ export default function VentilatiePage() {
           title="Gezonde lucht in elke ruimte, inclusief advies over ISDE-subsidie"
           subtitle="WTW-systemen, mechanische ventilatie en onderhoud voor particulier en bedrijf."
           imageKey="hero.ventilatie"
+          textNamespace="ventilatie.hero"
           offerteDienst="ventilatie"
         />
         <TrustBar variant="slim" />
@@ -66,7 +67,7 @@ export default function VentilatiePage() {
           </div>
         </section>
 
-        <DienstenGrid title="Onze ventilatiediensten" cards={dienstenCards} />
+        <DienstenGrid title="Onze ventilatiediensten" titleKey="ventilatie.diensten.title" cards={dienstenCards} />
         <WaaromKMS items={waaromItems} />
         <MerkLogos brands={['Itho Daalderop', 'DUCO']} />
         <Reviews reviews={reviews} title="Klanten over onze ventilatie installaties" />

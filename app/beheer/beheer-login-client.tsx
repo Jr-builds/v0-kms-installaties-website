@@ -80,7 +80,7 @@ export default function BeheerLoginClient() {
         <p className="text-sm font-medium text-kms-navy/70 mb-2">KMS Installaties</p>
         <h1 className="heading-section text-kms-navy mb-2">Website beheer</h1>
         <p className="text-sm text-gray-600 mb-8 leading-relaxed">
-          Log in om foto&apos;s op de website te vervangen. Daarna klik je op een foto om een nieuwe te uploaden.
+          Log in om foto&apos;s en teksten op de website te wijzigen. Klik daarna op een foto of tekst om aan te passen.
         </p>
 
         {!configured ? (

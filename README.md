@@ -8,7 +8,7 @@ Live deploy via Vercel (push naar `main`). Later volgt de site naar hun eigen do
 
 - Dienstpagina’s, lokale landingspagina’s, projecten, offerteformulier
 - Trust/certificeringen, reviews, FAQ, werkgebied
-- **Website beheer** (`/beheer`): inloggen via Supabase Auth, foto’s op de site vervangen (klik-op-foto)
+- **Website beheer** (`/beheer`): inloggen via Supabase Auth, foto’s én korte teksten op de site wijzigen (klik-om-te-bewerken)
 - Offerte-aanvragen via Resend (e-mail)
 - Sentry voor error monitoring (optioneel geconfigureerd)
 
@@ -54,9 +54,9 @@ Zelfde variabelen ook zetten in **Vercel → Settings → Environment Variables*
 
 1. In Supabase: **Authentication → Users → Add user** (e-mail + wachtwoord, bij voorkeur auto-confirm)
 2. Lokaal of live: ga naar `/beheer` en log in
-3. Gele balk = bewerkmodus → klik op een foto → upload → opslaan
+3. Gele balk = bewerkmodus → klik op een foto of tekst → aanpassen → opslaan
 
-Uploads gaan naar Supabase Storage (`site-media`). Code en layout blijven in GitHub.
+Uploads en teksten gaan naar Supabase. Code en layout blijven in GitHub.
 
 ## Projectstructuur (kort)
 

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import EditableImage from '@/components/cms/editable-image'
+import EditableText from '@/components/cms/editable-text'
 import { Button } from '@/components/ui/button'
 import HeroPhoneButton from '@/components/hero-phone-button'
 import { resolveImage } from '@/lib/supabase/site-images'
@@ -11,6 +12,8 @@ interface ServiceHeroProps {
   titleAccent?: string
   subtitle: string
   imageKey: SiteImageKey
+  /** Unieke sleutel voor CMS, bijv. elektra.hero */
+  textNamespace: string
   primaryLabel?: string
   offerteDienst?: string
 }
@@ -19,6 +22,7 @@ export default async function ServiceHero({
   title,
   subtitle,
   imageKey,
+  textNamespace,
   primaryLabel = 'Vraag een offerte aan',
   offerteDienst,
 }: ServiceHeroProps) {
@@ -30,8 +34,23 @@ export default async function ServiceHero({
       <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="heading-hero text-white mb-4">{title}</h1>
-            <p className="text-blue-200 text-lg mb-8 leading-relaxed">{subtitle}</p>
+            <h1 className="heading-hero text-white mb-4">
+              <EditableText
+                textKey={`${textNamespace}.title`}
+                label="Hero titel"
+                defaultValue={title}
+                as="span"
+              />
+            </h1>
+            <p className="text-blue-200 text-lg mb-8 leading-relaxed">
+              <EditableText
+                textKey={`${textNamespace}.subtitle`}
+                label="Hero ondertitel"
+                defaultValue={subtitle}
+                as="span"
+                multiline
+              />
+            </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 render={<Link href={offerteHref} />}

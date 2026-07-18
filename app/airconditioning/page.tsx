@@ -48,6 +48,7 @@ export default function AirconditioningPage() {
           title="Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geïnstalleerd"
           subtitle="Levering, installatie en onderhoud van A-merk airconditioning."
           imageKey="hero.airconditioning"
+          textNamespace="airconditioning.hero"
           offerteDienst="airconditioning"
         />
         <TrustBar variant="slim" />
@@ -66,7 +67,7 @@ export default function AirconditioningPage() {
           </div>
         </section>
 
-        <DienstenGrid title="Onze airconditioning diensten" cards={dienstenCards} />
+        <DienstenGrid title="Onze airconditioning diensten" titleKey="airconditioning.diensten.title" cards={dienstenCards} />
         <WaaromKMS items={waaromItems} />
         <MerkLogos brands={['Mitsubishi Heavy', 'Daikin', 'LG', 'Mitsubishi Electric']} />
         <Reviews reviews={reviews} title="Klanten over onze airco installaties" />

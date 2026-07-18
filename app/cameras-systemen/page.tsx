@@ -45,6 +45,7 @@ export default function CamerasSystemenPage() {
           title="Altijd zicht op uw pand, AVG-compliant geïnstalleerd"
           subtitle="Camerasystemen voor woning en bedrijf, inclusief app-koppeling en jaarlijks onderhoud."
           imageKey="hero.cameras"
+          textNamespace="cameras.hero"
           offerteDienst="cameras"
         />
         <TrustBar variant="slim" />
@@ -57,7 +58,7 @@ export default function CamerasSystemenPage() {
           </div>
         </section>
 
-        <DienstenGrid title="Onze camera diensten" cards={dienstenCards} />
+        <DienstenGrid title="Onze camera diensten" titleKey="cameras.diensten.title" cards={dienstenCards} />
         <WaaromKMS items={waaromItems} />
         <Reviews reviews={reviews} title="Klanten over onze camerasystemen" />
         <FAQ items={faqItems} />
