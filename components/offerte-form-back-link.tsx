@@ -1,3 +1,4 @@
+import EditableText from '@/components/cms/editable-text'
 import { cn } from '@/lib/utils'
 
 interface OfferteFormBackLinkProps {
@@ -17,7 +18,12 @@ export default function OfferteFormBackLink({ onClick, className }: OfferteFormB
       )}
     >
       <span aria-hidden="true">←</span>
-      Terug
+      <EditableText
+        textKey="offerte.nav.back"
+        label="Offerte knop Terug"
+        defaultValue="Terug"
+        as="span"
+      />
     </button>
   )
 }

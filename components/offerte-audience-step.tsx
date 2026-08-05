@@ -1,5 +1,6 @@
 'use client'
 
+import EditableText from '@/components/cms/editable-text'
 import {
   offerteAudienceOptions,
   type OfferteAudienceId,
@@ -33,10 +34,21 @@ export default function OfferteAudienceStep({ selectedId, onSelect }: OfferteAud
   return (
     <div>
       <h3 className="mb-2 text-xl font-bold text-kms-navy sm:text-2xl">
-        Voor wie is deze aanvraag?
+        <EditableText
+          textKey="offerte.audience.title"
+          label="Offerte stap 2 titel"
+          defaultValue="Voor wie is deze aanvraag?"
+          as="span"
+        />
       </h3>
       <p className="mb-6 text-sm text-gray-500">
-        Hiermee stellen wij u de juiste vragen.
+        <EditableText
+          textKey="offerte.audience.subtitle"
+          label="Offerte stap 2 ondertitel"
+          defaultValue="Hiermee stellen wij u de juiste vragen."
+          as="span"
+          multiline
+        />
       </p>
       <div
         role="radiogroup"
@@ -84,17 +96,33 @@ export default function OfferteAudienceStep({ selectedId, onSelect }: OfferteAud
                   isSelected && 'text-kms-yellow-dark',
                 )}
               >
-                {option.label}
+                <EditableText
+                  textKey={`offerte.audience.${option.id}.label`}
+                  label={`Type: ${option.label}`}
+                  defaultValue={option.label}
+                  as="span"
+                />
               </span>
               <span className="mt-1.5 text-sm leading-relaxed text-gray-500">
-                {option.description}
+                <EditableText
+                  textKey={`offerte.audience.${option.id}.description`}
+                  label={`Type: ${option.label} - beschrijving`}
+                  defaultValue={option.description}
+                  as="span"
+                  multiline
+                />
               </span>
             </button>
           )
         })}
       </div>
       <p className="mt-6 text-center text-sm text-gray-400">
-        Klik op een optie om door te gaan
+        <EditableText
+          textKey="offerte.audience.hint"
+          label="Offerte stap 2 hint"
+          defaultValue="Klik op een optie om door te gaan"
+          as="span"
+        />
       </p>
     </div>
   )

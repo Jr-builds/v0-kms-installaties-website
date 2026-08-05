@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import ContactSidebar from '@/components/contact-sidebar'
+import EditableText from '@/components/cms/editable-text'
 import OfferteAudienceStep from '@/components/offerte-audience-step'
 import OfferteCategoryStep from '@/components/offerte-category-step'
 import OfferteContactStep from '@/components/offerte-contact-step'
@@ -209,9 +210,22 @@ function OfferteForm() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-lg font-bold text-gray-800 mb-2">Aanvraag ontvangen!</h3>
+          <h3 className="text-lg font-bold text-gray-800 mb-2">
+            <EditableText
+              textKey="offerte.success.title"
+              label="Offerte bevestigingstitel"
+              defaultValue="Aanvraag ontvangen!"
+              as="span"
+            />
+          </h3>
           <p className="text-gray-600 text-sm">
-            Wij nemen zo snel mogelijk, uiterlijk binnen 1 werkdag, contact met u op.
+            <EditableText
+              textKey="offerte.success.body"
+              label="Offerte bevestigingstekst"
+              defaultValue="Wij nemen zo snel mogelijk, uiterlijk binnen 1 werkdag, contact met u op."
+              as="span"
+              multiline
+            />
           </p>
         </div>
       ) : step === 1 ? (
@@ -325,20 +339,57 @@ export default function OffertePage() {
         <section className="hero-navy py-6 sm:py-12 lg:py-16">
           <div className="hero-navy-content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white mb-2 sm:mb-3">
-              <span className="sm:hidden">Offerte aanvragen</span>
-              <span className="hidden sm:inline">Offerte voor uw nieuwe project</span>
+              <span className="sm:hidden">
+                <EditableText
+                  textKey="offerte.hero.titleMobile"
+                  label="Offerte titel (mobiel)"
+                  defaultValue="Offerte aanvragen"
+                  as="span"
+                />
+              </span>
+              <span className="hidden sm:inline">
+                <EditableText
+                  textKey="offerte.hero.title"
+                  label="Offerte titel"
+                  defaultValue="Offerte voor uw nieuwe project"
+                  as="span"
+                />
+              </span>
             </h1>
             <p className="text-blue-200 text-base sm:text-lg max-w-2xl mx-auto">
-              <span className="sm:hidden">Vrijblijvende prijsindicatie. Reactie binnen 1 werkdag.</span>
+              <span className="sm:hidden">
+                <EditableText
+                  textKey="offerte.hero.subtitleMobile"
+                  label="Offerte ondertitel (mobiel)"
+                  defaultValue="Vrijblijvende prijsindicatie. Reactie binnen 1 werkdag."
+                  as="span"
+                  multiline
+                />
+              </span>
               <span className="hidden sm:inline">
-                Beschrijf uw situatie en ontvang een vrijblijvende prijsindicatie. Reactie binnen 1 werkdag,
-                meestal dezelfde dag.
+                <EditableText
+                  textKey="offerte.hero.subtitle"
+                  label="Offerte ondertitel"
+                  defaultValue="Beschrijf uw situatie en ontvang een vrijblijvende prijsindicatie. Reactie binnen 1 werkdag, meestal dezelfde dag."
+                  as="span"
+                  multiline
+                />
               </span>
             </p>
             <p className="hidden sm:block text-sm text-blue-200 mt-5">
-              Spoed of storing?{' '}
+              <EditableText
+                textKey="offerte.hero.spoedPrefix"
+                label="Offerte spoed-tekst"
+                defaultValue="Spoed of storing?"
+                as="span"
+              />{' '}
               <Link href="/contact" className="font-semibold text-kms-yellow-dark hover:underline">
-                Neem contact op →
+                <EditableText
+                  textKey="offerte.hero.spoedLink"
+                  label="Offerte spoed-link"
+                  defaultValue="Neem contact op →"
+                  as="span"
+                />
               </Link>
             </p>
           </div>
@@ -356,9 +407,11 @@ export default function OffertePage() {
               <div className="lg:col-span-2">
                 <ContactSidebar
                   title="Direct contact"
+                  titleKey="offerte.sidebar.title"
                   hoursVariant="long"
                   showSpoedCta
                   showWhatsApp
+                  textNamespace="offerte.sidebar"
                 />
               </div>
             </div>

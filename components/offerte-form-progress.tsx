@@ -1,4 +1,7 @@
+'use client'
+
 import { Check } from 'lucide-react'
+import EditableText from '@/components/cms/editable-text'
 import { offerteFormSteps } from '@/lib/offerte-form'
 import { cn } from '@/lib/utils'
 
@@ -59,7 +62,12 @@ export default function OfferteFormProgress({ currentStep, className }: OfferteF
                     isComplete && 'text-gray-500',
                   )}
                 >
-                  {step.label}
+                  <EditableText
+                    textKey={`offerte.progress.${step.id}`}
+                    label={`Staplabel: ${step.label}`}
+                    defaultValue={step.label}
+                    as="span"
+                  />
                 </span>
               </div>
             </li>
@@ -67,7 +75,13 @@ export default function OfferteFormProgress({ currentStep, className }: OfferteF
         })}
       </ol>
       <p className="mt-2 text-center text-[11px] font-medium text-kms-navy sm:hidden">
-        Stap {currentStep}: {offerteFormSteps[currentStep - 1]?.label}
+        Stap {currentStep}:{' '}
+        <EditableText
+          textKey={`offerte.progress.${offerteFormSteps[currentStep - 1]?.id}`}
+          label={`Staplabel: ${offerteFormSteps[currentStep - 1]?.label ?? ''}`}
+          defaultValue={offerteFormSteps[currentStep - 1]?.label ?? ''}
+          as="span"
+        />
       </p>
     </nav>
   )

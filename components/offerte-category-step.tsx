@@ -1,5 +1,6 @@
 'use client'
 
+import EditableText from '@/components/cms/editable-text'
 import {
   offerteCategories,
   offerteCategoryIconStyles,
@@ -16,10 +17,21 @@ export default function OfferteCategoryStep({ selectedId, onSelect }: OfferteCat
   return (
     <div>
       <h3 className="mb-2 text-xl font-bold text-kms-navy sm:text-2xl">
-        Wat wilt u laten installeren of oplossen?
+        <EditableText
+          textKey="offerte.category.title"
+          label="Offerte stap 1 titel"
+          defaultValue="Wat wilt u laten installeren of oplossen?"
+          as="span"
+        />
       </h3>
       <p className="mb-6 text-sm text-gray-500">
-        Kies het type dat het beste bij uw situatie past.
+        <EditableText
+          textKey="offerte.category.subtitle"
+          label="Offerte stap 1 ondertitel"
+          defaultValue="Kies het type dat het beste bij uw situatie past."
+          as="span"
+          multiline
+        />
       </p>
       <div
         role="radiogroup"
@@ -67,14 +79,24 @@ export default function OfferteCategoryStep({ selectedId, onSelect }: OfferteCat
                   isSelected && 'text-kms-yellow-dark',
                 )}
               >
-                {category.label}
+                <EditableText
+                  textKey={`offerte.category.${category.id}.label`}
+                  label={`Categorie: ${category.label}`}
+                  defaultValue={category.label}
+                  as="span"
+                />
               </span>
             </button>
           )
         })}
       </div>
       <p className="mt-6 text-center text-sm text-gray-400">
-        Klik op een categorie om door te gaan
+        <EditableText
+          textKey="offerte.category.hint"
+          label="Offerte stap 1 hint"
+          defaultValue="Klik op een categorie om door te gaan"
+          as="span"
+        />
       </p>
     </div>
   )

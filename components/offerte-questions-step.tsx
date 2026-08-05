@@ -1,5 +1,6 @@
 'use client'
 
+import EditableText from '@/components/cms/editable-text'
 import FormFieldError from '@/components/form-field-error'
 import OfferteSpoedCallout from '@/components/offerte-spoed-callout'
 import { Button } from '@/components/ui/button'
@@ -34,16 +35,37 @@ function QuestionField({
   const errorId = `${question.id}-error`
   const hasError = Boolean(error)
 
+  const label = (
+    <label htmlFor={question.id} className="block text-sm font-semibold text-gray-700 mb-1.5">
+      <EditableText
+        textKey={`offerte.question.${question.id}.label`}
+        label={`Vraag: ${question.label}`}
+        defaultValue={question.label}
+        as="span"
+      />
+      {question.required ? <span className="text-red-500"> *</span> : null}
+      {!question.required ? (
+        <span className="font-normal text-gray-400"> (optioneel)</span>
+      ) : null}
+    </label>
+  )
+
+  const help = question.helpText ? (
+    <p className="mt-1.5 text-xs text-gray-500">
+      <EditableText
+        textKey={`offerte.question.${question.id}.help`}
+        label={`Vraag help: ${question.label}`}
+        defaultValue={question.helpText}
+        as="span"
+        multiline
+      />
+    </p>
+  ) : null
+
   if (question.type === 'textarea') {
     return (
       <div>
-        <label htmlFor={question.id} className="block text-sm font-semibold text-gray-700 mb-1.5">
-          {question.label}
-          {question.required ? <span className="text-red-500"> *</span> : null}
-          {!question.required ? (
-            <span className="font-normal text-gray-400"> (optioneel)</span>
-          ) : null}
-        </label>
+        {label}
         <textarea
           id={question.id}
           rows={4}
@@ -54,9 +76,7 @@ function QuestionField({
           aria-describedby={hasError ? errorId : undefined}
           className={`${formInputClassName(hasError)} resize-none`}
         />
-        {question.helpText ? (
-          <p className="mt-1.5 text-xs text-gray-500">{question.helpText}</p>
-        ) : null}
+        {help}
         {error ? <FormFieldError id={errorId} message={error} /> : null}
       </div>
     )
@@ -65,13 +85,7 @@ function QuestionField({
   if (question.type === 'text') {
     return (
       <div>
-        <label htmlFor={question.id} className="block text-sm font-semibold text-gray-700 mb-1.5">
-          {question.label}
-          {question.required ? <span className="text-red-500"> *</span> : null}
-          {!question.required ? (
-            <span className="font-normal text-gray-400"> (optioneel)</span>
-          ) : null}
-        </label>
+        {label}
         <input
           id={question.id}
           type="text"
@@ -82,9 +96,7 @@ function QuestionField({
           aria-describedby={hasError ? errorId : undefined}
           className={formInputClassName(hasError)}
         />
-        {question.helpText ? (
-          <p className="mt-1.5 text-xs text-gray-500">{question.helpText}</p>
-        ) : null}
+        {help}
         {error ? <FormFieldError id={errorId} message={error} /> : null}
       </div>
     )
@@ -93,7 +105,12 @@ function QuestionField({
   return (
     <div>
       <label htmlFor={question.id} className="block text-sm font-semibold text-gray-700 mb-1.5">
-        {question.label}
+        <EditableText
+          textKey={`offerte.question.${question.id}.label`}
+          label={`Vraag: ${question.label}`}
+          defaultValue={question.label}
+          as="span"
+        />
         {question.required ? <span className="text-red-500"> *</span> : null}
       </label>
       <select
@@ -111,9 +128,7 @@ function QuestionField({
           </option>
         ))}
       </select>
-      {question.helpText ? (
-        <p className="mt-1.5 text-xs text-gray-500">{question.helpText}</p>
-      ) : null}
+      {help}
       {error ? <FormFieldError id={errorId} message={error} /> : null}
     </div>
   )
@@ -141,10 +156,21 @@ export default function OfferteQuestionsStep({
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div>
         <h3 className="mb-2 text-xl font-bold text-kms-navy sm:text-2xl">
-          {questionsHeading}
+          <EditableText
+            textKey={`offerte.questions.${categoryId}.heading`}
+            label="Offerte vragen titel"
+            defaultValue={questionsHeading}
+            as="span"
+          />
         </h3>
         <p className="mb-6 text-sm text-gray-500">
-          Zo kunnen wij een gerichte prijsindicatie opstellen.
+          <EditableText
+            textKey="offerte.questions.subtitle"
+            label="Offerte vragen ondertitel"
+            defaultValue="Zo kunnen wij een gerichte prijsindicatie opstellen."
+            as="span"
+            multiline
+          />
         </p>
       </div>
 
@@ -163,7 +189,12 @@ export default function OfferteQuestionsStep({
       {!isStoringEmergency ? (
         <div className="pt-2">
           <Button type="submit" variant="primary" size="cta" className="w-full sm:w-auto sm:min-w-[12rem]">
-            Volgende
+            <EditableText
+              textKey="offerte.nav.next"
+              label="Offerte knop Volgende"
+              defaultValue="Volgende"
+              as="span"
+            />
           </Button>
         </div>
       ) : null}

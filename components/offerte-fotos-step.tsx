@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { Lightbulb, Paperclip, X } from 'lucide-react'
+import EditableText from '@/components/cms/editable-text'
 import FormFieldError from '@/components/form-field-error'
 import OfferteFormBackLink from '@/components/offerte-form-back-link'
 import OfferteFormSecureNote from '@/components/offerte-form-secure-note'
@@ -85,7 +86,12 @@ export default function OfferteFotosStep({
     <div className="space-y-5">
       <div>
         <h3 className="mb-4 text-xl font-bold text-kms-navy sm:text-2xl">
-          Foto&apos;s toevoegen (optioneel)
+          <EditableText
+            textKey="offerte.fotos.title"
+            label="Offerte foto's titel"
+            defaultValue="Foto's toevoegen (optioneel)"
+            as="span"
+          />
         </h3>
 
         <div className="flex gap-3 rounded-lg border border-sky-100 bg-sky-50/80 px-4 py-3.5">
@@ -95,8 +101,21 @@ export default function OfferteFotosStep({
             aria-hidden
           />
           <p className="text-sm leading-relaxed text-gray-700">
-            <span className="font-semibold text-kms-navy">Tip: </span>
-            {tip}
+            <span className="font-semibold text-kms-navy">
+              <EditableText
+                textKey="offerte.fotos.tipLabel"
+                label="Offerte foto tip-label"
+                defaultValue="Tip:"
+                as="span"
+              />{' '}
+            </span>
+            <EditableText
+              textKey={`offerte.fotos.tip.${categoryId}`}
+              label="Offerte foto tip"
+              defaultValue={tip}
+              as="span"
+              multiline
+            />
           </p>
         </div>
       </div>
@@ -149,8 +168,12 @@ export default function OfferteFotosStep({
             aria-hidden
           />
           <p className="text-sm text-gray-600">
-            Sleep bestanden hierheen{' '}
-            <span className="font-semibold text-kms-yellow-dark">of klik om te bladeren</span>
+            <EditableText
+              textKey="offerte.fotos.dropzone"
+              label="Offerte foto upload-tekst"
+              defaultValue="Sleep bestanden hierheen of klik om te bladeren"
+              as="span"
+            />
           </p>
           <p className="mt-2 text-xs text-gray-400">{OFFERTE_FOTO_FORMAT_LABEL}</p>
         </div>
@@ -187,7 +210,12 @@ export default function OfferteFotosStep({
       </div>
 
       <p className="text-center text-sm text-gray-500">
-        Foto&apos;s helpen ons een betere inschatting te maken.
+        <EditableText
+          textKey="offerte.fotos.footer"
+          label="Offerte foto footer"
+          defaultValue="Foto's helpen ons een betere inschatting te maken."
+          as="span"
+        />
       </p>
 
       <div className="flex flex-col-reverse gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
@@ -199,7 +227,12 @@ export default function OfferteFotosStep({
           onClick={handleContinue}
           className="w-full sm:w-auto sm:min-w-[12rem]"
         >
-          Volgende →
+          <EditableText
+            textKey="offerte.nav.nextArrow"
+            label="Offerte knop Volgende"
+            defaultValue="Volgende →"
+            as="span"
+          />
         </Button>
       </div>
 
@@ -209,7 +242,12 @@ export default function OfferteFotosStep({
           onClick={onContinue}
           className="text-sm text-gray-400 transition-colors hover:text-kms-navy"
         >
-          Deze stap kunt u overslaan
+          <EditableText
+            textKey="offerte.fotos.skip"
+            label="Offerte foto overslaan"
+            defaultValue="Deze stap kunt u overslaan"
+            as="span"
+          />
         </button>
       </p>
 

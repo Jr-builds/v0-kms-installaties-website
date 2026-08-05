@@ -1,5 +1,6 @@
 'use client'
 
+import EditableText from '@/components/cms/editable-text'
 import OfferteFormSecureNote from '@/components/offerte-form-secure-note'
 import OfferteStepNav from '@/components/offerte-step-nav'
 import { formInputClassName } from '@/lib/form-validation'
@@ -26,16 +27,33 @@ export default function OfferteVerhaalStep({
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div>
-        <h3 className="mb-2 text-xl font-bold text-kms-navy sm:text-2xl">Vertel ons uw verhaal</h3>
+        <h3 className="mb-2 text-xl font-bold text-kms-navy sm:text-2xl">
+          <EditableText
+            textKey="offerte.verhaal.title"
+            label="Offerte verhaal titel"
+            defaultValue="Vertel ons uw verhaal"
+            as="span"
+          />
+        </h3>
         <p className="text-sm leading-relaxed text-gray-500">
-          Optioneel: beschrijf wat er aan de hand is of wat u wilt laten doen. Hoe meer context,
-          hoe beter wij u kunnen helpen.
+          <EditableText
+            textKey="offerte.verhaal.subtitle"
+            label="Offerte verhaal ondertitel"
+            defaultValue="Optioneel: beschrijf wat er aan de hand is of wat u wilt laten doen. Hoe meer context, hoe beter wij u kunnen helpen."
+            as="span"
+            multiline
+          />
         </p>
       </div>
 
       <div>
         <label htmlFor="omschrijving" className="mb-1.5 block text-sm font-semibold text-gray-700">
-          Situatiebeschrijving
+          <EditableText
+            textKey="offerte.verhaal.label"
+            label="Offerte verhaal veldlabel"
+            defaultValue="Situatiebeschrijving"
+            as="span"
+          />
         </label>
         <div className="relative">
           <textarea

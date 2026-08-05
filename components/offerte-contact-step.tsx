@@ -1,5 +1,6 @@
 'use client'
 
+import EditableText from '@/components/cms/editable-text'
 import OfferteFormSecureNote from '@/components/offerte-form-secure-note'
 import OfferteStepNav from '@/components/offerte-step-nav'
 import FormFieldError from '@/components/form-field-error'
@@ -53,9 +54,22 @@ export default function OfferteContactStep({
   return (
     <form onSubmit={onSubmit} className="space-y-5" noValidate>
       <div>
-        <h3 className="mb-2 text-xl font-bold text-kms-navy sm:text-2xl">Uw contactgegevens</h3>
+        <h3 className="mb-2 text-xl font-bold text-kms-navy sm:text-2xl">
+          <EditableText
+            textKey="offerte.contact.title"
+            label="Offerte contact titel"
+            defaultValue="Uw contactgegevens"
+            as="span"
+          />
+        </h3>
         <p className="text-sm leading-relaxed text-gray-500">
-          Vul uw gegevens in. Wij bellen u voor een prijsindicatie op maat, meestal dezelfde dag.
+          <EditableText
+            textKey="offerte.contact.subtitle"
+            label="Offerte contact ondertitel"
+            defaultValue="Vul uw gegevens in. Wij bellen u voor een prijsindicatie op maat, meestal dezelfde dag."
+            as="span"
+            multiline
+          />
         </p>
       </div>
 
@@ -93,7 +107,12 @@ export default function OfferteContactStep({
           className={formInputClassName(Boolean(errors.telefoon))}
         />
         <p id="telefoon-hint" className="mt-1.5 text-xs text-gray-500">
-          Wij bellen u terug. Geen spam, beloofd.
+          <EditableText
+            textKey="offerte.contact.phoneHint"
+            label="Offerte telefoon hint"
+            defaultValue="Wij bellen u terug. Geen spam, beloofd."
+            as="span"
+          />
         </p>
         {errors.telefoon ? <FormFieldError id="telefoon-error" message={errors.telefoon} /> : null}
       </div>
@@ -115,7 +134,12 @@ export default function OfferteContactStep({
           className={formInputClassName(Boolean(errors.email))}
         />
         <p id="email-hint" className="mt-1.5 text-xs text-gray-500">
-          Handig als u de offerte ook per e-mail wilt ontvangen.
+          <EditableText
+            textKey="offerte.contact.emailHint"
+            label="Offerte e-mail hint"
+            defaultValue="Handig als u de offerte ook per e-mail wilt ontvangen."
+            as="span"
+          />
         </p>
         {errors.email ? <FormFieldError id="email-error" message={errors.email} /> : null}
       </div>
@@ -166,10 +190,16 @@ export default function OfferteContactStep({
       <OfferteStepNav
         onBack={onBack}
         primaryLabel={isSubmitting ? 'Bezig met versturen...' : 'Offerte aanvragen'}
+        primaryLabelKey="offerte.nav.submit"
         disabled={isSubmitting}
       />
       <p className="text-center text-xs text-gray-500">
-        Reactie binnen 1 werkdag, meestal dezelfde dag. Spoed? Bel{' '}
+        <EditableText
+          textKey="offerte.contact.footer"
+          label="Offerte contact footer"
+          defaultValue="Reactie binnen 1 werkdag, meestal dezelfde dag. Spoed? Bel"
+          as="span"
+        />{' '}
         <a href={phoneTelHref} className="font-semibold text-kms-navy">
           {phoneDisplay}
         </a>
