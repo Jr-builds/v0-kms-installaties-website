@@ -26,7 +26,7 @@ export const offerteQuestionsByCategory: Record<OfferteCategoryId, OfferteQuesti
       required: true,
       options: [
         { value: 'uitbreiding', label: 'Extra stopcontacten of schakelingen' },
-        { value: 'vernieuwing', label: 'Hele meterkast vervangen' },
+        { value: 'vernieuwing', label: 'Hele groepenkast vervangen' },
         { value: '3-fase', label: 'Extra stroom voor laadpaal of warmtepomp' },
         { value: 'anders', label: 'Anders / weet ik nog niet' },
       ],

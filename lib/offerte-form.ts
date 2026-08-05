@@ -84,7 +84,7 @@ export interface OfferteCategory {
 
 /** Categorieën afgestemd op KMS-diensten (homepage + dienstenpagina's). */
 export const offerteCategories: OfferteCategory[] = [
-  { id: 'meterkast', label: 'Meterkast', icon: Zap, iconTone: 'elektra' },
+  { id: 'meterkast', label: 'Groepenkast', icon: Zap, iconTone: 'elektra' },
   { id: 'laadpaal', label: 'Laadpaal', icon: PlugZap, iconTone: 'ev' },
   { id: 'elektra-renovatie', label: 'Elektra renovatie', icon: HousePlug, iconTone: 'renovatie' },
   { id: 'storing', label: 'Storing', icon: AlertTriangle, iconTone: 'warn' },
@@ -167,7 +167,7 @@ export function getOfferteCategoryLabel(id: OfferteCategoryId): string {
 /** Koptekst stap 3; lidwoord waar nodig voor correct Nederlands. */
 export function getOfferteCategoryQuestionsHeading(id: OfferteCategoryId): string {
   const headings: Record<OfferteCategoryId, string> = {
-    meterkast: 'Een paar vragen over uw meterkast',
+    meterkast: 'Een paar vragen over uw groepenkast',
     laadpaal: 'Een paar vragen over uw laadpaal',
     'elektra-renovatie': 'Een paar vragen over uw elektra renovatie',
     storing: 'Een paar vragen over de storing',

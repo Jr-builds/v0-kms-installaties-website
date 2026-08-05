@@ -24,13 +24,56 @@ import { serviceAreaInPhrase } from '@/lib/service-area'
 
 export const metadata: Metadata = pageMetadata.home
 
-const dienstenCards: { imageKey: SiteImageKey; title: string; description: string; href: string }[] = [
-  { imageKey: 'dienst.elektra', title: 'Elektra', description: 'Complete elektrische installaties voor particulier en bedrijf', href: '/elektra' },
-  { imageKey: 'dienst.laadpaal', title: 'Laadpaal Installeren', description: 'Thuis of op kantoor: vakkundige installatie van uw laadpaal, inclusief advies over meterkast en slim laden', href: '/laadpaal' },
-  { imageKey: 'dienst.airconditioning', title: 'Airconditioning', description: 'Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geïnstalleerd', href: '/airconditioning' },
-  { imageKey: 'dienst.ventilatie', title: 'Ventilatie', description: 'Gezonde lucht in elke ruimte, inclusief advies over ISDE-subsidie', href: '/ventilatie' },
-  { imageKey: 'dienst.vastgoedbeheer', title: 'Technisch Vastgoedbeheer', description: 'Zorgeloos technisch beheer van uw pand met vaste onderhoudscontracten', href: '/technisch-vastgoedbeheer' },
-  { imageKey: 'dienst.cameras', title: "Camera's en Systemen", description: 'Altijd zicht op uw pand, AVG-compliant geïnstalleerd', href: '/cameras-systemen' },
+const dienstenCards: {
+  imageKey: SiteImageKey
+  textKey: string
+  title: string
+  description: string
+  href: string
+}[] = [
+  {
+    imageKey: 'hero.elektra',
+    textKey: 'dienst.elektra',
+    title: 'Elektra',
+    description: 'Complete elektrische installaties voor particulier en bedrijf',
+    href: '/elektra',
+  },
+  {
+    imageKey: 'hero.laadpaal',
+    textKey: 'dienst.laadpaal',
+    title: 'Laadpaal Installeren',
+    description:
+      'Thuis of op kantoor: vakkundige installatie van uw laadpaal, inclusief advies over meterkast en slim laden',
+    href: '/laadpaal',
+  },
+  {
+    imageKey: 'hero.airconditioning',
+    textKey: 'dienst.airconditioning',
+    title: 'Airconditioning',
+    description: 'Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geïnstalleerd',
+    href: '/airconditioning',
+  },
+  {
+    imageKey: 'hero.ventilatie',
+    textKey: 'dienst.ventilatie',
+    title: 'Ventilatie',
+    description: 'Gezonde lucht in elke ruimte, inclusief advies over ISDE-subsidie',
+    href: '/ventilatie',
+  },
+  {
+    imageKey: 'hero.vastgoedbeheer',
+    textKey: 'dienst.vastgoedbeheer',
+    title: 'Technisch Vastgoedbeheer',
+    description: 'Zorgeloos technisch beheer van uw pand met vaste onderhoudscontracten',
+    href: '/technisch-vastgoedbeheer',
+  },
+  {
+    imageKey: 'hero.cameras',
+    textKey: 'dienst.cameras',
+    title: "Camera's en Systemen",
+    description: 'Altijd zicht op uw pand, AVG-compliant geïnstalleerd',
+    href: '/cameras-systemen',
+  },
 ]
 
 const recenteProjecten: { imageKey: SiteImageKey; category: string; city: string; title: string; description: string; resultaat: string }[] = [
@@ -145,7 +188,7 @@ export default async function HomePage() {
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="font-bold text-base mb-1.5 text-kms-navy group-hover:text-kms-yellow-dark transition-colors">
                       <EditableText
-                        textKey={`${card.imageKey}.title`}
+                        textKey={`${card.textKey}.title`}
                         label={`${card.title} - titel`}
                         defaultValue={card.title}
                         as="span"
@@ -153,7 +196,7 @@ export default async function HomePage() {
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed mb-3 flex-1">
                       <EditableText
-                        textKey={`${card.imageKey}.description`}
+                        textKey={`${card.textKey}.description`}
                         label={`${card.title} - beschrijving`}
                         defaultValue={card.description}
                         as="span"

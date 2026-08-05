@@ -11,7 +11,7 @@ export const OFFERTE_FOTO_FORMAT_LABEL =
 
 export const offerteFotoTipsByCategory: Record<OfferteCategoryId, string> = {
   meterkast:
-    'Maak een foto van uw hele meterkast en eentje van dichtbij van de schakelaars. Zo zien wij snel of uitbreiding of extra stroom mogelijk is. Staat de meter los? Fotografeer die ook.',
+    'Maak een foto van uw hele groepenkast en eentje van dichtbij van de schakelaars. Zo zien wij snel of uitbreiding of extra stroom mogelijk is. Staat de meter los? Fotografeer die ook.',
   laadpaal:
     'Fotografeer uw meterkast en de plek waar u wilt laden, bijvoorbeeld de oprit of garage. Kunt u ook het pad ertussen fotograferen? Dat helpt ons bij de planning.',
   'elektra-renovatie':
