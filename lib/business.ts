@@ -65,9 +65,9 @@ export const kvkNumber = '90317718'
 export const kvkLookupUrl = `https://www.kvk.nl/zoeken/#!/zoeken?kvknummer=${kvkNumber}`
 
 /**
- * BTW-identificatienummer — invullen wanneer bekend (staat op facturen).
- * Optioneel via `NEXT_PUBLIC_BTW_ID` in `.env.local`.
+ * BTW-identificatienummer (publiek, footer).
+ * Optioneel overschrijven via `NEXT_PUBLIC_BTW_ID` in env.
  */
-export const btwId = process.env.NEXT_PUBLIC_BTW_ID?.trim() ?? ''
+export const btwId = process.env.NEXT_PUBLIC_BTW_ID?.trim() || 'NL868887985B01'
 
 export const ISDE_INFO_URL = 'https://www.rvo.nl/subsidies-financiering/isde'

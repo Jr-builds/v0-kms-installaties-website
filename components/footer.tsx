@@ -99,11 +99,11 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  KvK {kvkNumber}
+                  KvK: {kvkNumber}
                 </a>
               </li>
               <li>
-                {btwId ? `BTW-id ${btwId}` : 'BTW-id: wordt aangevuld'}
+                {btwId ? `BTW-id: ${btwId}` : 'BTW-id: wordt aangevuld'}
               </li>
               <li className="mt-2">
                 <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white bg-kms-navy">
