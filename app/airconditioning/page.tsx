@@ -25,9 +25,21 @@ const dienstenCards = [
 ]
 
 const waaromItems = [
-  { title: 'STEK-gecertificeerd', description: 'Wettelijk verplicht voor werken met koelmiddelen. Niet elk installatiebedrijf heeft dit.' },
-  { title: 'A-merk apparatuur', description: 'Wij werken uitsluitend met Mitsubishi, Daikin en LG voor betrouwbare systemen.' },
-  { title: 'Zomer en winter klaar', description: 'Airco koelt in de zomer en verwarmt in de winter. Wij adviseren de juiste unit voor uw situatie.' },
+  {
+    title: 'STEK-gecertificeerd',
+    description:
+      'Wij zijn STEK-gecertificeerd en bevoegd om met koudemiddelen te werken. Zo bent u verzekerd van een veilige en professionele installatie volgens de geldende regelgeving.',
+  },
+  {
+    title: 'A-merk apparatuur',
+    description:
+      'Wij werken uitsluitend met betrouwbare A-merken zoals Mitsubishi Electric, Daikin en LG. Dat betekent kwaliteit, energiezuinigheid en een lange levensduur.',
+  },
+  {
+    title: 'Koelen én verwarmen het hele jaar door',
+    description:
+      'Met een moderne airconditioning geniet u in de zomer van verkoeling en in de winter van comfortabele verwarming. Wij adviseren de juiste oplossing voor uw woning of bedrijf.',
+  },
 ]
 
 const reviews = pageReviews.airconditioning
@@ -68,7 +80,7 @@ export default function AirconditioningPage() {
         </section>
 
         <DienstenGrid title="Onze airconditioning diensten" titleKey="airconditioning.diensten.title" cards={dienstenCards} />
-        <WaaromKMS items={waaromItems} />
+        <WaaromKMS items={waaromItems} namespace="airconditioning.waarom" />
         <MerkLogos brands={['Mitsubishi Heavy', 'Daikin', 'LG', 'Mitsubishi Electric']} />
         <Reviews reviews={reviews} title="Klanten over onze airco installaties" />
         <FAQ items={faqItems} namespace="airconditioning.faq" />

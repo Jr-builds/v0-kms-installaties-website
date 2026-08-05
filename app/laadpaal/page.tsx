@@ -48,15 +48,18 @@ const dienstenCards = [
 const waaromItems = [
   {
     title: 'Zaptec Certified',
-    description: 'Gecertificeerd laadpaalinstallateur. Uw installatie wordt veilig en conform de regelgeving uitgevoerd.',
+    description:
+      'Gecertificeerd installateur van Zaptec-laadpalen. Veilig, professioneel en volgens de fabrieksrichtlijnen geïnstalleerd.',
   },
   {
     title: 'NEN 3140 gecertificeerd',
-    description: 'Elke laadpaal krijgt een eigen groep met aardlekbeveiliging. Inclusief installatieverklaring bij oplevering.',
+    description:
+      'Elke laadpaal wordt veilig aangesloten volgens de geldende normen en opgeleverd met een installatieverklaring.',
   },
   {
-    title: 'Ma-zo 08:00-22:00 bereikbaar',
-    description: `Snel advies en installatie ${serviceAreaInPhrase}, ook buiten kantooruren.`,
+    title: '7 dagen per week bereikbaar',
+    description:
+      'Bereikbaar van 08:00 tot 22:00 uur voor advies, installatie en storingen in Zuid-Holland, Brabant, Zeeland en regio Utrecht.',
   },
 ]
 
@@ -117,7 +120,11 @@ export default function LaadpaalPage() {
         </section>
 
         <DienstenGrid title="Onze laadpaal diensten" titleKey="laadpaal.diensten.title" cards={dienstenCards} />
-        <WaaromKMS items={waaromItems} />
+        <WaaromKMS
+          items={waaromItems}
+          title="Waarom kiezen voor KMS Installaties?"
+          namespace="laadpaal.waarom"
+        />
         <MerkLogos brands={['Alfen', 'Zaptec', 'ABB', 'Hager']} />
         <Reviews reviews={reviews} title="Klanten over onze laadpaal installaties" />
         <FAQ items={faqItems} namespace="laadpaal.faq" />
