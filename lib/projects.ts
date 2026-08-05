@@ -3,7 +3,7 @@ import { getProjectImageKey } from '@/lib/images'
 
 export interface Project {
   id: string
-  category: 'Elektra' | 'Airconditioning' | 'Ventilatie' | "Camera's" | 'Vastgoed'
+  category: 'Elektra' | 'Laadpaal' | 'Airconditioning' | 'Ventilatie' | "Camera's" | 'Vastgoed'
   city: string
   title: string
   description: string
@@ -11,10 +11,20 @@ export interface Project {
   resultaat: string
 }
 
-export const projectCategories = ['Alle', 'Elektra', 'Airconditioning', 'Ventilatie', "Camera's", 'Vastgoed'] as const
+export const projectCategories = [
+  'Alle',
+  'Elektra',
+  'Laadpaal',
+  'Airconditioning',
+  'Ventilatie',
+  "Camera's",
+  'Vastgoed',
+] as const
 export type ProjectCategory = (typeof projectCategories)[number]
 
+/** Doel aantallen per categorie: Elektra 4, Laadpaal 4, Airco 3, overige 1. */
 export const allProjects: Project[] = [
+  // Elektra (4)
   {
     id: 'elektra-zwijndrecht-meterkast',
     category: 'Elektra',
@@ -30,21 +40,75 @@ export const allProjects: Project[] = [
     category: 'Elektra',
     city: 'Rotterdam',
     title: 'Complete elektra nieuwbouwwoning',
-    description: 'Volledige elektrische aanleg inclusief laadpaal.',
+    description: 'Volledige elektrische aanleg inclusief laadpaal-aansluiting.',
     details:
       'Voor deze nieuwbouwwoning hebben wij de complete elektra-installatie verzorgd: groepenkast, bekabeling, stopcontacten, verlichtingspunten en een laadpaal-aansluiting. Alles afgestemd op het bouwplan en opgeleverd binnen de afgesproken opleverdatum.',
     resultaat: 'Gebruiksklare installatie opgeleverd binnen planning.',
   },
   {
-    id: 'elektra-dordrecht-laadpalen',
+    id: 'elektra-ridderkerk-groepenkast',
     category: 'Elektra',
+    city: 'Ridderkerk',
+    title: 'Groepenkast moderniseren',
+    description: 'Oude groepenkast vervangen met aardlekbeveiliging en groepenverklaring.',
+    details:
+      'Verouderde groepenkast vervangen door een moderne installatie met voldoende groepen, aardlekbeveiliging en nette oplevering. Inclusief controle van de bestaande bedrading en oplevering met groepenverklaring.',
+    resultaat: 'Veilige, overzichtelijke meterkast klaar voor de toekomst.',
+  },
+  {
+    id: 'elektra-dordrecht-verlichting',
+    category: 'Elektra',
+    city: 'Dordrecht',
+    title: 'LED-verlichting woning',
+    description: 'Binnen- en buitenverlichting vernieuwd naar energiezuinige LED.',
+    details:
+      'Bestaande verlichting vervangen door LED, inclusief buitenpunten en schakelingen. Afstemming op sfeer in huis en lager energieverbruik, netjes afgewerkt.',
+    resultaat: 'Lagere energiekosten en betere verlichting in en om de woning.',
+  },
+
+  // Laadpaal (4)
+  {
+    id: 'laadpaal-dordrecht-bedrijf',
+    category: 'Laadpaal',
     city: 'Dordrecht',
     title: 'Laadpaal installatie bedrijfspand',
     description: 'Drie laadpalen geplaatst met dynamic loadbalancing.',
     details:
       'Drie laadpalen geïnstalleerd op het parkeerterrein van een bedrijfspand, gekoppeld via dynamic loadbalancing zodat het totale vermogen binnen de capaciteit van de aansluiting blijft. Inclusief bekabeling, groepenkast-uitbreiding en gebruikersinstructie voor medewerkers.',
-    resultaat: 'Medewerkers kunnen elektrische auto\'s opladen tijdens werktijd.',
+    resultaat: "Medewerkers kunnen elektrische auto's opladen tijdens werktijd.",
   },
+  {
+    id: 'laadpaal-zwijndrecht-thuis',
+    category: 'Laadpaal',
+    city: 'Zwijndrecht',
+    title: 'Thuislaadpaal Zaptec',
+    description: 'Zaptec laadpaal aan huis, inclusief meterkastcontrole.',
+    details:
+      'Zaptec thuislaadpaal gemonteerd, bekabeling vanaf de groepenkast aangelegd en veilig opgeleverd. Inclusief uitleg over bediening en laden thuis.',
+    resultaat: 'Klant laadt veilig en comfortabel thuis.',
+  },
+  {
+    id: 'laadpaal-rotterdam-meterkast',
+    category: 'Laadpaal',
+    city: 'Rotterdam',
+    title: 'Laadpaal met meterkast-uitbreiding',
+    description: 'Extra groep en 3-fase voorbereiding voor sneller laden.',
+    details:
+      'Meterkast uitgebreid voor een veilige laadpaalaansluiting, inclusief juiste beveiliging. Daarna laadpaal geïnstalleerd en getest.',
+    resultaat: 'Laadpaal veilig aangesloten met voldoende capaciteit.',
+  },
+  {
+    id: 'laadpaal-barendrecht-zakelijk',
+    category: 'Laadpaal',
+    city: 'Barendrecht',
+    title: 'Zakelijke laadpunten op kantoor',
+    description: 'Twee laadpunten voor medewerkers en bezoekers.',
+    details:
+      'Twee laadpunten geïnstalleerd bij een kantoorlocatie, inclusief planning van kabelroutes en oplevering met korte instructie voor gebruikers.',
+    resultaat: 'Laadvoorziening klaar voor dagelijks zakelijk gebruik.',
+  },
+
+  // Airconditioning (3)
   {
     id: 'airco-rotterdam-schilderij',
     category: 'Airconditioning',
@@ -75,6 +139,8 @@ export const allProjects: Project[] = [
       'Multisplit airconditioningsysteem ontworpen en geïnstalleerd voor een open kantoorruimte van circa 200 m². Zones ingesteld voor efficiënt koelen en verwarmen, met aandacht voor geluidsniveau tijdens kantooruren.',
     resultaat: 'Stabiele temperatuur het hele jaar, lagere energiekosten.',
   },
+
+  // Ventilatie (1)
   {
     id: 'ventilatie-ridderkerk-wtw',
     category: 'Ventilatie',
@@ -85,26 +151,8 @@ export const allProjects: Project[] = [
       'Verouderde WTW-unit vervangen door een modern systeem met hogere rendement. Ventilatiekanalen geïnspecteerd en waar nodig vernieuwd. Afstelling uitgevoerd voor optimale luchtwisseling en comfort.',
     resultaat: 'Betere luchtkwaliteit, lagere stookkosten.',
   },
-  {
-    id: 'ventilatie-dordrecht-nieuwbouw',
-    category: 'Ventilatie',
-    city: 'Dordrecht',
-    title: 'Mechanische ventilatie nieuwbouw',
-    description: 'Volledig ventilatiesysteem aangelegd.',
-    details:
-      'Compleet mechanisch ventilatiesysteem aangelegd in een nieuwbouwwoning, inclusief kanalen, roosters en afstelling per ruimte. Installatie voldoet aan het bouwbesluit en is afgestemd op de indeling van de woning.',
-    resultaat: 'Frisse lucht in elke ruimte, voldoet aan bouwbesluit.',
-  },
-  {
-    id: 'ventilatie-rotterdam-lbk',
-    category: 'Ventilatie',
-    city: 'Rotterdam',
-    title: 'Jaarlijks onderhoud LBK utiliteit',
-    description: 'Filters vervangen, GBS gecontroleerd.',
-    details:
-      'Jaarlijks onderhoud uitgevoerd aan een luchtbehandelingskast (LBK) in een utiliteitsgebouw. Filters vervangen, componenten gecontroleerd en rapportage opgeleverd voor de facility manager.',
-    resultaat: 'Optimale luchtkwaliteit gegarandeerd voor komend jaar.',
-  },
+
+  // Camera's (1)
   {
     id: 'cameras-almere-woning',
     category: "Camera's",
@@ -115,26 +163,8 @@ export const allProjects: Project[] = [
       'Camerasysteem geïnstalleerd rondom de woning met app-koppeling, pushmeldingen bij bewegingsdetectie en opname op lokaal NVR-systeem. Installatie AVG-conform uitgevoerd met duidelijke uitleg aan de bewoners.',
     resultaat: '24/7 live zicht via smartphone.',
   },
-  {
-    id: 'cameras-rotterdam-bedrijf',
-    category: "Camera's",
-    city: 'Rotterdam',
-    title: 'Camerasysteem bedrijfspand',
-    description: '8 cameras buiten, NVR-systeem, bewegingsdetectie.',
-    details:
-      'Acht buitencamera\'s geplaatst met nachtzicht, centraal NVR-systeem en zones ingesteld voor bewegingsdetectie. Bekabeling netjes weggewerkt en afgestemd op de beveiligingswensen van de eigenaar.',
-    resultaat: 'Volledig beveiligd pand, AVG-conform geregistreerd.',
-  },
-  {
-    id: 'cameras-zwijndrecht-parkeer',
-    category: "Camera's",
-    city: 'Zwijndrecht',
-    title: 'Beveiliging parkeerterrein',
-    description: '6 cameras met nachtzicht en app-bediening.',
-    details:
-      'Zes camera\'s geïnstalleerd op een parkeerterrein met nachtzicht en bediening via app. Strategische plaatsing voor volledige dekking van in- en uitgangen, met opname en meldingen bij ongewenst gedrag.',
-    resultaat: 'Incidenten op parkeerterrein significant afgenomen.',
-  },
+
+  // Vastgoed (1)
   {
     id: 'vastgoed-rotterdam-onderhoudscontract',
     category: 'Vastgoed',
@@ -144,16 +174,6 @@ export const allProjects: Project[] = [
     details:
       'Voor een kantoorpand in Rotterdam hebben wij een onderhoudscontract opgesteld met vaste storingsdienst, periodieke inspecties van elektra en klimaatinstallaties en een duidelijke rapportage voor de facility manager. Storingen worden binnen afgesproken responstijden opgepakt.',
     resultaat: 'Pand technisch betrouwbaar, eigenaar volledig ontzorgd.',
-  },
-  {
-    id: 'vastgoed-dordrecht-vve',
-    category: 'Vastgoed',
-    city: 'Dordrecht',
-    title: 'Technisch beheer appartementencomplex',
-    description: 'Onderhoud lift, ventilatie en gemeenschappelijke installaties.',
-    details:
-      'Technisch beheer voor een appartementencomplex: coördinatie van onderhoud aan liftinstallatie, mechanische ventilatie in trappenhuizen en periodieke keuringen van gemeenschappelijke elektra. VvE ontvangt overzichtelijke planning en rapportages.',
-    resultaat: 'VvE heeft één aanspreekpunt voor alle technische zaken.',
   },
 ]
 

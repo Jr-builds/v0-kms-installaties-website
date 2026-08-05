@@ -105,6 +105,11 @@ export const siteImages = {
     alt: 'Technisch onderhoud aan een bedrijfspand',
     label: 'Project Vastgoed',
   },
+  'project.laadpaal': {
+    src: '/hero-laadpaal.png',
+    alt: 'Zaptec laadpaal geïnstalleerd bij een woning',
+    label: 'Project Laadpaal',
+  },
 
   'elektra.huisinstallatie': {
     src: '/electrician-professional-work.jpg',
@@ -295,6 +300,7 @@ export function isSiteImageKey(key: string): key is SiteImageKey {
 
 const projectCategoryMap: Record<string, SiteImageKey> = {
   Elektra: 'project.elektra',
+  Laadpaal: 'project.laadpaal',
   Airconditioning: 'project.airconditioning',
   Ventilatie: 'project.ventilatie',
   "Camera's": 'project.cameras',
