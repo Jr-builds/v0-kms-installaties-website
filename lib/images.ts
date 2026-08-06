@@ -83,12 +83,12 @@ export const siteImages = {
   'project.elektra': {
     src: '/elektra-groepenkast.jpg',
     alt: 'Elektrische meterkast en groepenkast installatie',
-    label: 'Project Elektra',
+    label: 'Project Elektra (homepage)',
   },
   'project.airconditioning': {
     src: '/airco-buitenunit.jpg',
     alt: 'Airconditioning buitenunit op een plat dak',
-    label: 'Project Airconditioning',
+    label: 'Project Airconditioning (homepage)',
   },
   'project.ventilatie': {
     src: '/ventilatie-wtw.jpg',
@@ -98,7 +98,7 @@ export const siteImages = {
   'project.cameras': {
     src: '/cameras-buiten.jpg',
     alt: 'Camerabeveiliging aan de buitengevel',
-    label: 'Project Cameras',
+    label: 'Project Cameras (homepage)',
   },
   'project.vastgoedbeheer': {
     src: '/vastgoed-pand.jpg',
@@ -109,6 +109,78 @@ export const siteImages = {
     src: '/hero-laadpaal.png',
     alt: 'Zaptec laadpaal geïnstalleerd bij een woning',
     label: 'Project Laadpaal',
+  },
+
+  // Unieke foto per projectkaart (projectenpagina)
+  'project.elektra-zwijndrecht-meterkast': {
+    src: '/elektra-groepenkast.jpg',
+    alt: 'Herinstallatie meterkast in Zwijndrecht',
+    label: 'Project: herinstallatie meterkast Zwijndrecht',
+  },
+  'project.elektra-rotterdam-nieuwbouw': {
+    src: '/electrician-professional-work.jpg',
+    alt: 'Elektra nieuwbouwwoning in Rotterdam',
+    label: 'Project: elektra nieuwbouw Rotterdam',
+  },
+  'project.elektra-ridderkerk-groepenkast': {
+    src: '/elektra-groepenkast.jpg',
+    alt: 'Groepenkast moderniseren in Ridderkerk',
+    label: 'Project: groepenkast Ridderkerk',
+  },
+  'project.elektra-dordrecht-verlichting': {
+    src: '/electrician-professional-work.jpg',
+    alt: 'LED-verlichting woning in Dordrecht',
+    label: 'Project: verlichting Dordrecht',
+  },
+  'project.laadpaal-dordrecht-bedrijf': {
+    src: '/hero-laadpaal.png',
+    alt: 'Laadpalen bij bedrijfspand in Dordrecht',
+    label: 'Project: laadpaal bedrijf Dordrecht',
+  },
+  'project.laadpaal-zwijndrecht-thuis': {
+    src: '/hero-laadpaal.png',
+    alt: 'Thuislaadpaal in Zwijndrecht',
+    label: 'Project: thuislaadpaal Zwijndrecht',
+  },
+  'project.laadpaal-rotterdam-meterkast': {
+    src: '/elektra-groepenkast.jpg',
+    alt: 'Laadpaal met meterkast-uitbreiding in Rotterdam',
+    label: 'Project: laadpaal meterkast Rotterdam',
+  },
+  'project.laadpaal-barendrecht-zakelijk': {
+    src: '/hero-laadpaal.png',
+    alt: 'Zakelijke laadpunten in Barendrecht',
+    label: 'Project: laadpaal zakelijk Barendrecht',
+  },
+  'project.airco-rotterdam-schilderij': {
+    src: '/airco-binnenunit.jpg',
+    alt: 'LG Schilderij airco in Rotterdam',
+    label: 'Project: airco schilderij Rotterdam',
+  },
+  'project.airco-rotterdam-mitsubishi': {
+    src: '/airco-buitenunit.jpg',
+    alt: 'Mitsubishi Heavy airco-units in Rotterdam',
+    label: 'Project: airco Mitsubishi Rotterdam',
+  },
+  'project.airco-zwijndrecht-kantoor': {
+    src: '/airco-binnenunit.jpg',
+    alt: 'Klimaatbeheersing kantoor in Zwijndrecht',
+    label: 'Project: airco kantoor Zwijndrecht',
+  },
+  'project.ventilatie-ridderkerk-wtw': {
+    src: '/ventilatie-wtw.jpg',
+    alt: 'WTW-unit vervangen in Ridderkerk',
+    label: 'Project: WTW Ridderkerk',
+  },
+  'project.cameras-almere-woning': {
+    src: '/cameras-buiten.jpg',
+    alt: 'Camerabeveiliging woning in Almere',
+    label: 'Project: cameras Almere',
+  },
+  'project.vastgoed-rotterdam-onderhoudscontract': {
+    src: '/vastgoed-pand.jpg',
+    alt: 'Onderhoudscontract kantoorpand in Rotterdam',
+    label: 'Project: vastgoed Rotterdam',
   },
 
   'elektra.huisinstallatie': {

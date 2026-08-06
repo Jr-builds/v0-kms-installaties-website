@@ -1,5 +1,5 @@
 import type { SiteImageKey } from '@/lib/images'
-import { getProjectImageKey } from '@/lib/images'
+import { getProjectImageKey, isSiteImageKey } from '@/lib/images'
 
 export interface Project {
   id: string
@@ -178,7 +178,8 @@ export const allProjects: Project[] = [
 ]
 
 export function getProjectImageKeyForProject(project: Project): SiteImageKey {
-  return getProjectImageKey(project.category)
+  const key = `project.${project.id}`
+  return isSiteImageKey(key) ? key : getProjectImageKey(project.category)
 }
 
 export function filterProjects(category: ProjectCategory): Project[] {
