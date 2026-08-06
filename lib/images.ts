@@ -142,11 +142,6 @@ export const siteImages = {
     alt: 'Thuislaadpaal in Zwijndrecht',
     label: 'Project: thuislaadpaal Zwijndrecht',
   },
-  'project.laadpaal-rotterdam-meterkast': {
-    src: '/elektra-groepenkast.jpg',
-    alt: 'Laadpaal met meterkast-uitbreiding in Rotterdam',
-    label: 'Project: laadpaal meterkast Rotterdam',
-  },
   'project.laadpaal-barendrecht-zakelijk': {
     src: '/hero-laadpaal.png',
     alt: 'Zakelijke laadpunten in Barendrecht',

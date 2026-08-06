@@ -22,7 +22,7 @@ export const projectCategories = [
 ] as const
 export type ProjectCategory = (typeof projectCategories)[number]
 
-/** Doel aantallen per categorie: Elektra 4, Laadpaal 4, Airco 3, overige 1. */
+/** Doel aantallen per categorie: Elektra 4, Laadpaal 3, Airco 3, overige 1. */
 export const allProjects: Project[] = [
   // Elektra (4)
   {
@@ -86,16 +86,6 @@ export const allProjects: Project[] = [
     details:
       'Zaptec thuislaadpaal gemonteerd, bekabeling vanaf de groepenkast aangelegd en veilig opgeleverd. Inclusief uitleg over bediening en laden thuis.',
     resultaat: 'Klant laadt veilig en comfortabel thuis.',
-  },
-  {
-    id: 'laadpaal-rotterdam-meterkast',
-    category: 'Laadpaal',
-    city: 'Rotterdam',
-    title: 'Laadpaal met meterkast-uitbreiding',
-    description: 'Extra groep en 3-fase voorbereiding voor sneller laden.',
-    details:
-      'Meterkast uitgebreid voor een veilige laadpaalaansluiting, inclusief juiste beveiliging. Daarna laadpaal geïnstalleerd en getest.',
-    resultaat: 'Laadpaal veilig aangesloten met voldoende capaciteit.',
   },
   {
     id: 'laadpaal-barendrecht-zakelijk',
@@ -180,6 +170,11 @@ export const allProjects: Project[] = [
 export function getProjectImageKeyForProject(project: Project): SiteImageKey {
   const key = `project.${project.id}`
   return isSiteImageKey(key) ? key : getProjectImageKey(project.category)
+}
+
+export type ProjectImageSource = {
+  src: string | null
+  alt: string
 }
 
 export function filterProjects(category: ProjectCategory): Project[] {

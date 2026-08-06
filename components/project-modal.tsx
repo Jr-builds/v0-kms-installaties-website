@@ -5,14 +5,16 @@ import Link from 'next/link'
 import ClientEditableImage from '@/components/cms/client-editable-image'
 import EditableText from '@/components/cms/editable-text'
 import { Button } from '@/components/ui/button'
-import { getProjectImageKeyForProject, type Project } from '@/lib/projects'
+import { getImage } from '@/lib/images'
+import { getProjectImageKeyForProject, type Project, type ProjectImageSource } from '@/lib/projects'
 
 interface ProjectModalProps {
   project: Project | null
+  imageSources?: Record<string, ProjectImageSource>
   onClose: () => void
 }
 
-export default function ProjectModal({ project, onClose }: ProjectModalProps) {
+export default function ProjectModal({ project, imageSources = {}, onClose }: ProjectModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
@@ -36,6 +38,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   if (!project) return null
 
   const imageKey = getProjectImageKeyForProject(project)
+  const base = getImage(imageKey)
+  const image = imageSources[imageKey] ?? { src: base.src, alt: base.alt }
 
   return (
     <div
@@ -57,6 +61,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           placeholderLabel={`Project: ${project.title}`}
           aspectRatio="aspect-video"
           sizePreset="modal"
+          serverSrc={image.src}
+          serverAlt={image.alt}
         />
 
         <div className="p-6 sm:p-8">

@@ -13,6 +13,9 @@ interface ClientEditableImageProps {
   className?: string
   priority?: boolean
   sizePreset?: 'hero' | 'card' | 'square' | 'modal'
+  /** Server-side opgehaalde URL; voorkomt flash van de lokale fallback */
+  serverSrc?: string | null
+  serverAlt?: string
 }
 
 export default function ClientEditableImage({
@@ -22,14 +25,27 @@ export default function ClientEditableImage({
   className = '',
   priority = false,
   sizePreset = 'card',
+  serverSrc,
+  serverAlt,
 }: ClientEditableImageProps) {
   const base = getImage(imageKey)
   const label = placeholderLabel || base.label
-  const [src, setSrc] = useState<string | null>(base.src)
-  const [alt, setAlt] = useState(base.alt)
+  const hasServerSrc = serverSrc !== undefined
+  const [src, setSrc] = useState<string | null>(hasServerSrc ? serverSrc : base.src)
+  const [alt, setAlt] = useState(serverAlt || base.alt)
 
   useEffect(() => {
-    if (!isSupabaseConfigured()) return
+    if (hasServerSrc) {
+      setSrc(serverSrc)
+      setAlt(serverAlt || base.alt)
+      return
+    }
+
+    if (!isSupabaseConfigured()) {
+      setSrc(base.src)
+      setAlt(base.alt)
+      return
+    }
 
     let cancelled = false
     async function load() {
@@ -40,18 +56,22 @@ export default function ClientEditableImage({
           .select('public_url, alt')
           .eq('key', imageKey)
           .maybeSingle()
-        if (cancelled || !data) return
-        if (data.public_url) setSrc(data.public_url)
-        if (data.alt) setAlt(data.alt)
+        if (cancelled) return
+        if (data?.public_url) {
+          setSrc(data.public_url)
+          if (data.alt) setAlt(data.alt)
+        } else {
+          setSrc(base.src)
+        }
       } catch {
-        // keep local fallback
+        if (!cancelled) setSrc(base.src)
       }
     }
     void load()
     return () => {
       cancelled = true
     }
-  }, [imageKey])
+  }, [imageKey, hasServerSrc, serverSrc, serverAlt, base.src, base.alt])
 
   return (
     <EditableImage
