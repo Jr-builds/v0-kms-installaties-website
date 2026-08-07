@@ -3,7 +3,7 @@ import { getImage, requireImageSrc, type SiteImageKey } from '@/lib/images'
 import { serviceAreaDisplay, serviceAreaInPhrase } from '@/lib/service-area'
 
 export const SITE_NAME = 'KMS Installaties'
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kms-installaties.nl'
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kmsinstallaties.nl'
 export const SITE_LOGO = '/KMS-Logo.png'
 
 export const OG_IMAGE = '/og-image.jpg'
