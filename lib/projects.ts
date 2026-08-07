@@ -107,11 +107,13 @@ export const allProjects: Project[] = [
     id: 'airco-rotterdam-schilderij',
     category: 'Airconditioning',
     city: 'Rotterdam',
-    title: 'LG Schilderij airco-unit woning',
-    description: 'Nieuwe unit geplaatst op bestaande muur, creatieve oplossing voor beperkte ruimte.',
+    title: 'Grootschalig onderhoud aan airconditioning in een kantoorpand',
+    description:
+      'Voor een zakelijke klant hebben wij het periodieke onderhoud uitgevoerd aan meer dan 30 airconditioninginstallaties in een groot kantoorpand. De werkzaamheden bestonden uit het reinigen van de binnen- en buitenunits, het controleren van de koeltechnische installatie, het vervangen van filters, het uitvoeren van functietesten en het controleren van de algehele werking om een optimaal binnenklimaat te waarborgen.',
     details:
-      'In een woning met beperkte muurruimte hebben wij een LG Schilderij-unit geplaatst als esthetische oplossing. Leidingwerk discreet weggewerkt en buitenunit op het platte dak gemonteerd in samenwerking met de dakdekker.',
-    resultaat: 'Strakke afwerking, klant zeer tevreden.',
+      'Voor een zakelijke klant hebben wij het periodieke onderhoud uitgevoerd aan meer dan 30 airconditioninginstallaties in een groot kantoorpand. De werkzaamheden bestonden uit het reinigen van de binnen- en buitenunits, het controleren van de koeltechnische installatie, het vervangen van filters, het uitvoeren van functietesten en het controleren van de algehele werking om een optimaal binnenklimaat te waarborgen.',
+    resultaat:
+      'Alle installaties functioneren weer optimaal, waardoor het kantoorpand verzekerd is van een betrouwbaar, energiezuinig en comfortabel binnenklimaat.',
   },
   {
     id: 'airco-rotterdam-mitsubishi',

@@ -148,9 +148,9 @@ export const siteImages = {
     label: 'Project: laadpaal zakelijk Barendrecht',
   },
   'project.airco-rotterdam-schilderij': {
-    src: '/airco-binnenunit.jpg',
-    alt: 'LG Schilderij airco in Rotterdam',
-    label: 'Project: airco schilderij Rotterdam',
+    src: '/airco-buitenunit.jpg',
+    alt: 'Grootschalig airco-onderhoud in een kantoorpand in Rotterdam',
+    label: 'Project: airco onderhoud kantoor Rotterdam',
   },
   'project.airco-rotterdam-mitsubishi': {
     src: '/airco-buitenunit.jpg',

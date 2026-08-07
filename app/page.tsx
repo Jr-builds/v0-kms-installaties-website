@@ -103,13 +103,13 @@ const recenteProjecten: {
     resultaat: 'Veilige, slimme laadoplossing die het beschikbare vermogen optimaal benut.',
   },
   {
-    imageKey: 'project.vastgoed-rotterdam-onderhoudscontract',
-    category: 'Vastgoed',
+    imageKey: 'project.airco-rotterdam-schilderij',
+    category: 'Airconditioning',
     city: 'Rotterdam',
-    title: 'Preventief technisch vastgoedonderhoud voor een bedrijfspand',
+    title: 'Grootschalig onderhoud aan airconditioning in een kantoorpand',
     description:
-      'Periodiek technisch onderhoud aan een bedrijfspand: inspectie en onderhoud van de technische installaties.',
-    resultaat: 'Installaties weer in optimale staat; minder kans op onverwachte storingen.',
+      'Periodiek onderhoud aan meer dan 30 airco’s in een kantoorpand: reinigen, filters en controle.',
+    resultaat: 'Alle installaties weer optimaal; comfortabel en energiezuinig binnenklimaat.',
   },
 ]
 
