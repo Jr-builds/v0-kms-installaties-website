@@ -14,8 +14,8 @@ export const siteImages = {
   },
 
   'hero.home': {
-    src: '/hero-home-collage.png',
-    alt: 'Collage van KMS-installaties: elektra, airconditioning, laadpaal, warmtepomp en zonnepanelen',
+    src: '/hero-home.jpg',
+    alt: 'KMS Installaties: elektra, airco, laadpalen, beveiliging en vastgoedbeheer',
     label: 'Homepage hero',
   },
   'hero.elektra': {
