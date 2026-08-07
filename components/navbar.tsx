@@ -48,12 +48,24 @@ export default function Navbar() {
     const menu = mobileMenuRef.current
     if (!menu) return
 
-    const focusable = menu.querySelectorAll<HTMLElement>(
-      'a[href], button:not([disabled]), textarea, input, select',
-    )
+    const focusable = Array.from(
+      menu.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), textarea, input, select'),
+    ).filter((el) => {
+      const href = el.getAttribute('href') ?? ''
+      return !href.startsWith('tel:')
+    })
     const first = focusable[0]
     const last = focusable[focusable.length - 1]
-    first?.focus()
+
+    // Don't autofocus tel: links on iOS (opens dialer / breaks the menu).
+    if (first && !window.matchMedia('(pointer: coarse)').matches) {
+      first.focus()
+    } else {
+      menu.focus()
+    }
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') {
@@ -73,7 +85,10 @@ export default function Navbar() {
     }
 
     document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      document.removeEventListener('keydown', handleKeyDown)
+    }
   }, [mobileOpen])
 
   return (
@@ -166,18 +181,18 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="lg:hidden rounded-md p-1.5 text-gray-700"
+            className="relative z-10 -mr-1 inline-flex size-11 items-center justify-center rounded-md text-gray-700 lg:hidden"
             onClick={() => setMobileOpen((open) => !open)}
             aria-label={mobileOpen ? 'Menu sluiten' : 'Menu openen'}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav-menu"
           >
             {mobileOpen ? (
-              <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
@@ -189,7 +204,8 @@ export default function Navbar() {
         <div
           id="mobile-nav-menu"
           ref={mobileMenuRef}
-          className="lg:hidden border-t border-gray-100 bg-white px-4 pb-4"
+          tabIndex={-1}
+          className="relative z-50 border-t border-gray-100 bg-white px-4 pb-4 outline-none lg:hidden"
         >
           <a
             href={phoneTelHref}

@@ -2,6 +2,8 @@ import { withSentryConfig } from '@sentry/nextjs';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   devIndicators: false,
+  // Allow phone/LAN preview of the Next.js dev server (HMR + client bundles).
+  allowedDevOrigins: ['192.168.1.93', '127.0.0.1', 'localhost'],
   typescript: {
     ignoreBuildErrors: true,
   },
