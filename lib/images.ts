@@ -129,8 +129,8 @@ export const siteImages = {
   },
   'project.elektra-dordrecht-verlichting': {
     src: '/electrician-professional-work.jpg',
-    alt: 'LED-verlichting woning in Dordrecht',
-    label: 'Project: verlichting Dordrecht',
+    alt: 'Vervanging van een groepenkast na waterschade',
+    label: 'Project: groepenkast na waterschade',
   },
   'project.laadpaal-dordrecht-bedrijf': {
     src: '/hero-laadpaal.png',

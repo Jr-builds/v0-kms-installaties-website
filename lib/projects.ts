@@ -58,15 +58,17 @@ export const allProjects: Project[] = [
   {
     id: 'elektra-dordrecht-verlichting',
     category: 'Elektra',
-    city: 'Dordrecht',
-    title: 'LED-verlichting woning',
-    description: 'Binnen- en buitenverlichting vernieuwd naar energiezuinige LED.',
+    city: 'Zwijndrecht',
+    title: 'Vervanging van een groepenkast na waterschade',
+    description:
+      'Na waterschade aan de meterkast hebben wij de beschadigde groepenkast veilig buiten bedrijf gesteld en volledig vervangen. De nieuwe groepenkast is voorzien van moderne beveiligingen, zorgvuldig aangesloten en uitgebreid getest, zodat de elektrische installatie weer veilig en betrouwbaar functioneert.',
     details:
-      'Bestaande verlichting vervangen door LED, inclusief buitenpunten en schakelingen. Afstemming op sfeer in huis en lager energieverbruik, netjes afgewerkt.',
-    resultaat: 'Lagere energiekosten en betere verlichting in en om de woning.',
+      'Na waterschade aan de meterkast hebben wij de beschadigde groepenkast veilig buiten bedrijf gesteld en volledig vervangen. De nieuwe groepenkast is voorzien van moderne beveiligingen, zorgvuldig aangesloten en uitgebreid getest, zodat de elektrische installatie weer veilig en betrouwbaar functioneert.',
+    resultaat:
+      'De woning beschikt weer over een veilige en volledig bedrijfszekere groepenkast, waardoor de stroomvoorziening betrouwbaar is hersteld.',
   },
 
-  // Laadpaal (4)
+  // Laadpaal (3)
   {
     id: 'laadpaal-dordrecht-bedrijf',
     category: 'Laadpaal',
@@ -80,12 +82,14 @@ export const allProjects: Project[] = [
   {
     id: 'laadpaal-zwijndrecht-thuis',
     category: 'Laadpaal',
-    city: 'Zwijndrecht',
-    title: 'Thuislaadpaal Zaptec',
-    description: 'Zaptec laadpaal aan huis, inclusief meterkastcontrole.',
+    city: 'Papendrecht',
+    title: 'Installatie van een zakelijke Alfen-laadpaal met Siemens load balancing',
+    description:
+      'Voor een zakelijke klant hebben wij een Alfen-laadpaal geïnstalleerd voor dagelijks zakelijk gebruik. De installatie is voorzien van Siemens load balancing, waardoor het beschikbare vermogen automatisch wordt verdeeld en overbelasting van de elektrische installatie wordt voorkomen. De laadoplossing is volledig afgestemd op de bestaande elektrische installatie en voorbereid op toekomstig gebruik.',
     details:
-      'Zaptec thuislaadpaal gemonteerd, bekabeling vanaf de groepenkast aangelegd en veilig opgeleverd. Inclusief uitleg over bediening en laden thuis.',
-    resultaat: 'Klant laadt veilig en comfortabel thuis.',
+      'Voor een zakelijke klant hebben wij een Alfen-laadpaal geïnstalleerd voor dagelijks zakelijk gebruik. De installatie is voorzien van Siemens load balancing, waardoor het beschikbare vermogen automatisch wordt verdeeld en overbelasting van de elektrische installatie wordt voorkomen. De laadoplossing is volledig afgestemd op de bestaande elektrische installatie en voorbereid op toekomstig gebruik.',
+    resultaat:
+      'De klant beschikt nu over een veilige, slimme en toekomstbestendige laadoplossing die betrouwbaar functioneert en het beschikbare vermogen optimaal benut.',
   },
   {
     id: 'laadpaal-barendrecht-zakelijk',
@@ -159,11 +163,13 @@ export const allProjects: Project[] = [
     id: 'vastgoed-rotterdam-onderhoudscontract',
     category: 'Vastgoed',
     city: 'Rotterdam',
-    title: 'Onderhoudscontract kantoorpand',
-    description: 'Vaste storingsdienst en periodiek technisch onderhoud.',
+    title: 'Preventief technisch vastgoedonderhoud voor een bedrijfspand',
+    description:
+      'Voor een zakelijke opdrachtgever hebben wij het periodieke technische onderhoud uitgevoerd aan een bedrijfspand. De werkzaamheden bestonden uit het controleren en onderhouden van de elektrotechnische installaties, verlichting, ventilatie en algemene technische voorzieningen. Eventuele gebreken zijn direct verholpen om storingen te voorkomen en de bedrijfscontinuïteit te waarborgen.',
     details:
-      'Voor een kantoorpand in Rotterdam hebben wij een onderhoudscontract opgesteld met vaste storingsdienst, periodieke inspecties van elektra en klimaatinstallaties en een duidelijke rapportage voor de facility manager. Storingen worden binnen afgesproken responstijden opgepakt.',
-    resultaat: 'Pand technisch betrouwbaar, eigenaar volledig ontzorgd.',
+      'Voor een zakelijke opdrachtgever hebben wij het periodieke technische onderhoud uitgevoerd aan een bedrijfspand. De werkzaamheden bestonden uit het controleren en onderhouden van de elektrotechnische installaties, verlichting, ventilatie en algemene technische voorzieningen. Eventuele gebreken zijn direct verholpen om storingen te voorkomen en de bedrijfscontinuïteit te waarborgen.',
+    resultaat:
+      'Dankzij het preventieve onderhoud verkeren de technische installaties weer in optimale staat en is de kans op onverwachte storingen aanzienlijk verminderd.',
   },
 ]
 
