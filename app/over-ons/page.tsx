@@ -54,7 +54,7 @@ export default function OverOnsPage() {
           items={[
             { value: '10+', label: 'Jaar', sub: 'Vakmanschap' },
             { value: '200+', label: 'Afgeronde', sub: 'projecten' },
-            { value: '56', label: 'Vijfsterren', sub: 'reviews' },
+            { value: '88+', label: 'Vijfsterren', sub: 'reviews' },
             { value: '4', label: 'Regio\'s', sub: 'Actief' },
           ]}
         />
