@@ -114,8 +114,8 @@ export const siteImages = {
   // Unieke foto per projectkaart (projectenpagina)
   'project.elektra-zwijndrecht-meterkast': {
     src: '/elektra-groepenkast.jpg',
-    alt: 'Herinstallatie meterkast in Zwijndrecht',
-    label: 'Project: herinstallatie meterkast Zwijndrecht',
+    alt: 'Noodstroomvoorziening met omschakelaar voor zakelijke klant',
+    label: 'Project: noodstroomvoorziening Papendrecht',
   },
   'project.elektra-rotterdam-nieuwbouw': {
     src: '/electrician-professional-work.jpg',
@@ -139,8 +139,8 @@ export const siteImages = {
   },
   'project.laadpaal-zwijndrecht-thuis': {
     src: '/hero-laadpaal.png',
-    alt: 'Thuislaadpaal in Zwijndrecht',
-    label: 'Project: thuislaadpaal Zwijndrecht',
+    alt: 'Zakelijke Alfen-laadpaal met Siemens load balancing',
+    label: 'Project: zakelijke Alfen-laadpaal',
   },
   'project.laadpaal-barendrecht-zakelijk': {
     src: '/hero-laadpaal.png',
@@ -174,8 +174,8 @@ export const siteImages = {
   },
   'project.vastgoed-rotterdam-onderhoudscontract': {
     src: '/vastgoed-pand.jpg',
-    alt: 'Onderhoudscontract kantoorpand in Rotterdam',
-    label: 'Project: vastgoed Rotterdam',
+    alt: 'Technisch onderhoud aan installaties op een bedrijfspand',
+    label: 'Project: vastgoed onderhoud Rotterdam',
   },
 
   'elektra.huisinstallatie': {

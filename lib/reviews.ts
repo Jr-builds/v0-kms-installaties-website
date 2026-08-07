@@ -4,60 +4,49 @@ export interface Review {
   platform: string
 }
 
+/** Alleen echte publieke reviews (Google via Trustoo / Trustoo). Geen verzonnen teksten. */
 const reviewCatalog = {
-  mohammedAirco: {
+  johnOoijenAirco: {
     quote:
-      'Snel gereageerd en netjes geïnstalleerd. Airco werkt perfect en de afwerking was keurig. Zeker een aanrader!',
-    name: 'Mohammed A.',
+      'Geweldige service en ter zake kundig. Airco unit buiten en binnen netjes en goed schoongemaakt. Fijne communicatie en komt afspraken snel na. Gaan we volgende keer zeker weer bellen voor onderhoud!',
+    name: 'John Ooijen',
     platform: 'Google',
   },
-  sandraElektra: {
-    quote: 'Vakkundige monteurs, duidelijke communicatie en op tijd. Groepenkast is perfect vervangen.',
-    name: 'Sandra V.',
-    platform: 'Werkspot',
-  },
-  peterSpoed: {
-    quote: 'Ook op zaterdagavond nog bereikbaar voor een storingsmelding. Binnen 2 uur was het opgelost.',
-    name: 'Peter K.',
-    platform: 'Google',
-  },
-  janElektra: {
-    quote: 'Snel geholpen bij een storing. Binnen een uur ter plaatse en het probleem was opgelost. Zeer tevreden!',
-    name: 'Jan de B.',
-    platform: 'Google',
-  },
-  rachidAirco: {
+  joyceBolandAirco: {
     quote:
-      'Drie airco-units geplaatst in ons kantoor. Vakkundig werk, nette afwerking en alles snel in bedrijf gesteld.',
-    name: 'Rachid K.',
-    platform: 'Werkspot',
-  },
-  lisaAirco: {
-    quote: 'Prachtige installatie van onze airco. Duidelijk advies vooraf en alles netjes afgewerkt.',
-    name: 'Lisa H.',
+      'Snelle hulp bij het verhelpen van de problemen met mijn airco. Vriendelijke en professionele monteur plus goede klantenservice aan de telefoon en via WhatsApp. Zeer tevreden klant.',
+    name: 'Joyce Boland',
     platform: 'Google',
   },
-  karinVentilatie: {
+  aronGorlitzAirco: {
     quote:
-      'WTW-systeem perfect geïnstalleerd. Merkbaar betere luchtkwaliteit in huis en de energierekening is gedaald.',
-    name: 'Karin M.',
+      'Begin van de avond helaas plots een lekkende airco-unit. Via Werkspot een berichtje gepost, KMS Installaties was de eerste die reageerde. Binnen twee uur was er met spoed een monteur, heeft een klein uurtje eraan gewerkt voor een schappelijke prijs. Topservice!',
+    name: 'Aron Gorlitz',
     platform: 'Google',
   },
-  thomasVentilatie: {
-    quote: 'Professioneel advies over ventilatie in ons kantoor. Nette installatie en goede uitleg over gebruik.',
-    name: 'Thomas V.',
-    platform: 'Werkspot',
-  },
-  familieCameras: {
+  raymonVanDissel: {
     quote:
-      'Camerasysteem netjes geïnstalleerd met app-koppeling. Kan nu altijd live meekijken. Aanrader!',
-    name: 'Familie W.',
+      'Wij hebben super snel reactie gekregen op onze aanvraag. Nette medewerkers. Goede service en denken met je mee. Zeker aan te bevelen, Raymon en Mirjam.',
+    name: 'Raymon van Dissel',
     platform: 'Google',
   },
-  bedrijfCameras: {
-    quote: 'Acht buitencameras geplaatst voor ons bedrijfspand. AVG-conform, professioneel en vlot uitgevoerd.',
-    name: 'Bedrijf Rotterdam',
-    platform: 'Werkspot',
+  sereeparpAirco: {
+    quote:
+      'They were willing to come late in the evening to fix the issue with our airco. The mechanic did the job thoroughly and professionally. He was also friendly and took the time to explain the issue to me. Overall I had a very positive experience and would recommend the company.',
+    name: 'Sereeparp',
+    platform: 'Google',
+  },
+  fransBinnenheiElektra: {
+    quote:
+      'Wij hebben een zeer goede ervaring. Op verzoek langs gekomen ondanks de afstand die wij wonen van KMS. Een ronde gemaakt en duidelijke uitleg gekregen van de benodigde werkzaamheden. In dit geval een meterkast vervangen en uitbreiden, plaatsen van extra stopcontacten en airco. Afgezien van heldere afspraken en verwachtingen waren zij op tijd en hebben de werkzaamheden op een goede wijze afgerond. Netjes alles schoon en opgeruimd opgeleverd. Een heldere uitleg van nieuwe apparatuur gekregen. Een van de weinige bedrijven die ook de nazorg belangrijk vindt. Een aanrader!',
+    name: 'Frans Binnenhei',
+    platform: 'Trustoo',
+  },
+  anneMarieBrok: {
+    quote:
+      'Heel erg tevreden over het uitgevoerde werk. Communicatie is snel en efficiënt. Ze zijn kundig, werken netjes en doen wat er afgesproken is. Bij ons hebben ze meterkast vernieuwd, laadpunt voor EV aangelegd, stroomvoorziening naar garage aangelegd en 8 zonnepanelen geplaatst. En tot slot, het zijn erg vriendelijke mensen.',
+    name: 'Anne-Marie Brok',
+    platform: 'Trustoo',
   },
   jrRondhuisLaadpaal: {
     quote:
@@ -65,22 +54,33 @@ const reviewCatalog = {
     name: 'JR Rondhuis',
     platform: 'Trustoo',
   },
-  anneMarieLaadpaal: {
+  bertEvertseLaadpaal: {
     quote:
-      'Bij ons hebben ze meterkast vernieuwd, laadpunt voor EV aangelegd en stroomvoorziening naar de garage aangelegd. Kundig, netjes en vriendelijk. Heel erg tevreden over het uitgevoerde werk.',
-    name: 'Anne-Marie B.',
+      'De mannen van KMS hebben goed werk afgeleverd. Ze hebben bij mij een laadpaal geïnstalleerd. En die doet het prima. Bedankt mannen.',
+    name: 'Bert Evertse',
     platform: 'Trustoo',
   },
-  bakkerVastgoed: {
+  enesTrustoo: {
     quote:
-      'KMS verzorgt het technisch beheer van ons pand al twee jaar. Altijd professioneel en op tijd.',
-    name: 'R. Bakker',
-    platform: 'Google',
+      'Heel tevreden over het resultaat. Werken strak, denken mee en laten alles netjes achter. Echte vakmannen!',
+    name: 'Enes',
+    platform: 'Trustoo',
   },
-  vveVastgoed: {
-    quote: 'Betrouwbare partner voor ons vastgoedbeheer. Vaste contactpersoon, duidelijke rapportage en altijd op tijd.',
-    name: 'VvE De Hoek',
-    platform: 'Werkspot',
+  jacquelineTrustoo: {
+    quote: 'Reageren erg snel, goede communicatie en werken netjes. Zijn erg tevreden.',
+    name: 'Jacqueline',
+    platform: 'Trustoo',
+  },
+  danielVanKampenAirco: {
+    quote:
+      'Topservice van begin tot eind! De airco is vakkundig en snel geïnstalleerd en werkt perfect. Alles werd schoon en netjes achtergelaten. Erg blij met het resultaat!',
+    name: 'Daniel van Kampen',
+    platform: 'Trustoo',
+  },
+  raymonTrustooShort: {
+    quote: 'Komen afspraken na, werken netjes.',
+    name: 'Raymon',
+    platform: 'Trustoo',
   },
 } as const satisfies Record<string, Review>
 
@@ -90,14 +90,18 @@ function pickReviews(...keys: ReviewKey[]): Review[] {
   return keys.map((key) => reviewCatalog[key])
 }
 
-/** Per-page review sets — no overlap between home, elektra, and over-ons. */
+/**
+ * Per-page review sets.
+ * Let op: publiek zijn er (nog) geen specifieke reviews over alleen ventilatie,
+ * camera's of vastgoed. Op die pagina's staan daarom andere echte algemene reviews.
+ */
 export const pageReviews = {
-  home: pickReviews('mohammedAirco', 'sandraElektra', 'peterSpoed'),
-  elektra: pickReviews('janElektra', 'thomasVentilatie'),
-  laadpaal: pickReviews('jrRondhuisLaadpaal', 'anneMarieLaadpaal'),
-  airconditioning: pickReviews('rachidAirco', 'lisaAirco'),
-  ventilatie: pickReviews('karinVentilatie', 'thomasVentilatie'),
-  cameras: pickReviews('familieCameras', 'bedrijfCameras'),
-  vastgoedbeheer: pickReviews('bakkerVastgoed', 'vveVastgoed'),
-  overOns: pickReviews('bakkerVastgoed', 'karinVentilatie', 'janElektra', 'bedrijfCameras'),
+  home: pickReviews('johnOoijenAirco', 'jrRondhuisLaadpaal', 'raymonVanDissel'),
+  elektra: pickReviews('fransBinnenheiElektra', 'anneMarieBrok', 'enesTrustoo'),
+  laadpaal: pickReviews('jrRondhuisLaadpaal', 'anneMarieBrok', 'bertEvertseLaadpaal'),
+  airconditioning: pickReviews('johnOoijenAirco', 'joyceBolandAirco', 'aronGorlitzAirco'),
+  ventilatie: pickReviews('jacquelineTrustoo', 'enesTrustoo', 'raymonTrustooShort'),
+  cameras: pickReviews('jacquelineTrustoo', 'raymonTrustooShort', 'raymonVanDissel'),
+  vastgoedbeheer: pickReviews('enesTrustoo', 'jacquelineTrustoo', 'anneMarieBrok'),
+  overOns: pickReviews('joyceBolandAirco', 'aronGorlitzAirco', 'danielVanKampenAirco', 'sereeparpAirco'),
 } as const

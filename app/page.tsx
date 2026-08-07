@@ -77,9 +77,33 @@ const dienstenCards: {
 ]
 
 const recenteProjecten: { imageKey: SiteImageKey; category: string; city: string; title: string; description: string; resultaat: string }[] = [
-  { imageKey: 'project.elektra', category: 'Elektra', city: 'Zwijndrecht', title: 'Volledige herinstallatie meterkast', description: 'Groepenkast vervangen na waterschade, NEN-gecertificeerde keuring uitgevoerd.', resultaat: 'Veilige installatie die voldoet aan alle huidige NEN-normen.' },
-  { imageKey: 'project.airconditioning', category: 'Airconditioning', city: 'Rotterdam', title: '3x Mitsubishi Heavy airco-units', description: 'Drie units geplaatst inclusief buitenunits op plat dak, samenwerking met dakdekker.', resultaat: 'Comfortabel binnenklimaat op alle verdiepingen, app-gestuurd.' },
-  { imageKey: 'project.cameras', category: "Camera's", city: 'Almere', title: 'Camerabeveiliging woning', description: 'Volledig camerasysteem met app-koppeling en bewegingsdetectie geïnstalleerd.', resultaat: 'Klant heeft 24/7 live zicht op het pand via smartphone.' },
+  {
+    imageKey: 'project.elektra',
+    category: 'Elektra',
+    city: 'Zwijndrecht',
+    title: 'Vervanging van een groepenkast na waterschade',
+    description:
+      'Beschadigde groepenkast veilig buiten bedrijf gesteld en volledig vervangen, inclusief testen van de installatie.',
+    resultaat: 'Veilige, bedrijfszekere groepenkast; stroomvoorziening betrouwbaar hersteld.',
+  },
+  {
+    imageKey: 'project.laadpaal-zwijndrecht-thuis',
+    category: 'Laadpaal',
+    city: 'Papendrecht',
+    title: 'Installatie van een zakelijke Alfen-laadpaal met Siemens load balancing',
+    description:
+      'Alfen-laadpaal voor dagelijks zakelijk gebruik, inclusief Siemens load balancing voor veilig en efficiënt laden.',
+    resultaat: 'Veilige, slimme laadoplossing die het beschikbare vermogen optimaal benut.',
+  },
+  {
+    imageKey: 'project.vastgoed-rotterdam-onderhoudscontract',
+    category: 'Vastgoed',
+    city: 'Rotterdam',
+    title: 'Preventief technisch vastgoedonderhoud voor een bedrijfspand',
+    description:
+      'Periodiek technisch onderhoud aan een bedrijfspand: inspectie en onderhoud van de technische installaties.',
+    resultaat: 'Installaties weer in optimale staat; minder kans op onverwachte storingen.',
+  },
 ]
 
 const reviews = pageReviews.home
@@ -217,7 +241,7 @@ export default async function HomePage() {
           items={[
             { value: '200+', label: 'Afgeronde projecten' },
             { value: '10+', label: 'Jaar vakmanschap' },
-            { value: '56', label: 'Vijfsterrenreviews' },
+            { value: '88+', label: 'Vijfsterrenreviews' },
           ]}
         />
 

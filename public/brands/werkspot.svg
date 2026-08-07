@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+  <circle cx="24" cy="24" r="24" fill="#B4F000"/>
+  <g transform="translate(24 24) rotate(-42) translate(-24 -24)">
+    <!-- hammer head -->
+    <path fill="#2B0A3D" d="M14 10h12c1.5 0 2.5 1.2 2.5 2.6v5.8c0 1.4-1 2.6-2.5 2.6H20v2.2h-4.2V10z"/>
+    <!-- claw notch -->
+    <path fill="#B4F000" d="M22.5 12.2h5.2v3.8H24c-.8 0-1.5-.7-1.5-1.5v-2.3z"/>
+    <!-- handle -->
+    <rect x="20.2" y="21" width="3.8" height="17" rx="1.6" fill="#2B0A3D"/>
+  </g>
+</svg>

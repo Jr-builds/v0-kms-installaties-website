@@ -32,7 +32,7 @@ export const businessInfo = {
   image: '/electrician-professional-work.jpg',
   googleRating: {
     ratingValue: 5.0,
-    reviewCount: 39,
+    reviewCount: 52,
     url: trustLinks.googleReviews.href,
   },
 } as const
