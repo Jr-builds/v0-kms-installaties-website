@@ -21,7 +21,6 @@ import { pageMetadata } from '@/lib/metadata'
 import { DEFAULT_HERO_SUBTITLE } from '@/lib/seasonal'
 import HeroPhoneButton from '@/components/hero-phone-button'
 import { serviceAreaInPhrase } from '@/lib/service-area'
-import { allProjects, getProjectImageKeyForProject } from '@/lib/projects'
 
 export const metadata: Metadata = pageMetadata.home
 
@@ -77,19 +76,42 @@ const dienstenCards: {
   },
 ]
 
-const RECENTE_PROJECT_IDS = [
-  'elektra-dordrecht-verlichting',
-  'laadpaal-zwijndrecht-thuis',
-  'vastgoed-rotterdam-onderhoudscontract',
-] as const
-
-const recenteProjecten = RECENTE_PROJECT_IDS.map((id) => {
-  const project = allProjects.find((item) => item.id === id)
-  if (!project) {
-    throw new Error(`Recente projecten: onbekend project id "${id}"`)
-  }
-  return project
-})
+const recenteProjecten: {
+  imageKey: SiteImageKey
+  category: string
+  city: string
+  title: string
+  description: string
+  resultaat: string
+}[] = [
+  {
+    imageKey: 'project.elektra-dordrecht-verlichting',
+    category: 'Elektra',
+    city: 'Zwijndrecht',
+    title: 'Vervanging van een groepenkast na waterschade',
+    description:
+      'Beschadigde groepenkast veilig buiten bedrijf gesteld en volledig vervangen, inclusief testen van de installatie.',
+    resultaat: 'Veilige, bedrijfszekere groepenkast; stroomvoorziening betrouwbaar hersteld.',
+  },
+  {
+    imageKey: 'project.laadpaal-zwijndrecht-thuis',
+    category: 'Laadpaal',
+    city: 'Papendrecht',
+    title: 'Installatie van een zakelijke Alfen-laadpaal met Siemens load balancing',
+    description:
+      'Alfen-laadpaal voor dagelijks zakelijk gebruik, inclusief Siemens load balancing voor veilig en efficiënt laden.',
+    resultaat: 'Veilige, slimme laadoplossing die het beschikbare vermogen optimaal benut.',
+  },
+  {
+    imageKey: 'project.vastgoed-rotterdam-onderhoudscontract',
+    category: 'Vastgoed',
+    city: 'Rotterdam',
+    title: 'Preventief technisch vastgoedonderhoud voor een bedrijfspand',
+    description:
+      'Periodiek technisch onderhoud aan een bedrijfspand: inspectie en onderhoud van de technische installaties.',
+    resultaat: 'Installaties weer in optimale staat; minder kans op onverwachte storingen.',
+  },
+]
 
 const reviews = pageReviews.home
 
@@ -237,57 +259,27 @@ export default async function HomePage() {
               Recente projecten
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {recenteProjecten.map((project) => {
-                const imageKey = getProjectImageKeyForProject(project)
-                return (
-                  <article
-                    key={project.id}
-                    className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm"
-                  >
-                    <SiteImageOrPlaceholder
-                      imageKey={imageKey}
-                      placeholderLabel={`Project: ${project.title}`}
-                      aspectRatio="aspect-video"
-                    />
-                    <div className="p-5">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="badge-yellow px-2.5 py-0.5 text-xs font-bold">{project.category}</span>
-                        <EditableText
-                          textKey={`project.${project.id}.city`}
-                          label={`${project.title} - plaats`}
-                          defaultValue={project.city}
-                          className="text-xs text-gray-500"
-                        />
-                      </div>
-                      <EditableText
-                        as="h3"
-                        textKey={`project.${project.id}.title`}
-                        label={`${project.title} - titel`}
-                        defaultValue={project.title}
-                        className="font-bold text-base mb-1.5 text-kms-navy"
-                      />
-                      <EditableText
-                        as="p"
-                        textKey={`project.${project.id}.description`}
-                        label={`${project.title} - korte beschrijving`}
-                        defaultValue={project.description}
-                        multiline
-                        className="text-sm text-gray-600 mb-3 leading-relaxed"
-                      />
-                      <p className="text-sm font-semibold text-kms-yellow-dark">
-                        Resultaat:{' '}
-                        <EditableText
-                          textKey={`project.${project.id}.resultaat`}
-                          label={`${project.title} - resultaat`}
-                          defaultValue={project.resultaat}
-                          multiline
-                          className="font-semibold"
-                        />
-                      </p>
+              {recenteProjecten.map((project) => (
+                <article
+                  key={project.imageKey}
+                  className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm"
+                >
+                  <SiteImageOrPlaceholder
+                    imageKey={project.imageKey}
+                    placeholderLabel={`Project: ${project.title}`}
+                    aspectRatio="aspect-video"
+                  />
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="badge-yellow px-2.5 py-0.5 text-xs font-bold">{project.category}</span>
+                      <span className="text-xs text-gray-500">{project.city}</span>
                     </div>
-                  </article>
-                )
-              })}
+                    <h3 className="font-bold text-base mb-1.5 text-kms-navy">{project.title}</h3>
+                    <p className="text-sm text-gray-600 mb-3 leading-relaxed">{project.description}</p>
+                    <p className="text-sm font-semibold text-kms-yellow-dark">Resultaat: {project.resultaat}</p>
+                  </div>
+                </article>
+              ))}
             </div>
             <div className="text-center mt-8">
               <Button render={<Link href="/projecten" />} nativeButton={false} variant="secondary">
