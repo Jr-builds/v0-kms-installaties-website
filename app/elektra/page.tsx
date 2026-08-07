@@ -12,6 +12,7 @@ import MerkLogos from '@/components/merklogos'
 import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
+import { ServiceJsonLd } from '@/components/service-json-ld'
 import { pageReviews } from '@/lib/reviews'
 import { serviceAreaInPhrase } from '@/lib/service-area'
 
@@ -43,6 +44,12 @@ const faqItems = [
 export default function ElektraPage() {
   return (
     <>
+      <ServiceJsonLd
+        name="Elektra Installatie"
+        description={`Complete elektrische installaties voor particulier en bedrijf ${serviceAreaInPhrase}. Groepenkasten, laadpalen en storingen. NEN-gecertificeerd met groepenverklaring.`}
+        path="/elektra"
+        faqItems={faqItems}
+      />
       <Navbar />
       <main id="main-content">
         <ServiceHero

@@ -11,6 +11,7 @@ import WaaromKMS from '@/components/waarom-kms'
 import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
+import { ServiceJsonLd } from '@/components/service-json-ld'
 import { pageReviews } from '@/lib/reviews'
 
 const dienstenCards = [
@@ -39,6 +40,12 @@ const faqItems = [
 export default function CamerasSystemenPage() {
   return (
     <>
+      <ServiceJsonLd
+        name="Camera's & Beveiligingssystemen"
+        description="Camerasystemen voor woning en bedrijf. AVG-compliant geïnstalleerd met app-koppeling, NVR-opslag en jaarlijks onderhoud."
+        path="/cameras-systemen"
+        faqItems={faqItems}
+      />
       <Navbar />
       <main id="main-content">
         <ServiceHero

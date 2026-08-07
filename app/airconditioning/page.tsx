@@ -13,7 +13,9 @@ import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
 import IsdeCallout from '@/components/isde-callout'
+import { ServiceJsonLd } from '@/components/service-json-ld'
 import { pageReviews } from '@/lib/reviews'
+import { serviceAreaInPhrase } from '@/lib/service-area'
 
 const dienstenCards = [
   { imageKey: 'airco.klimaatbeheersing' as const, imageLabel: 'Foto: kantoor klimaatbeheersing', title: 'Klimaatbeheersing kantoor & bedrijven', description: 'Installatie klimaatbeheersingssystemen, preventief onderhoud' },
@@ -54,6 +56,12 @@ const faqItems = [
 export default function AirconditioningPage() {
   return (
     <>
+      <ServiceJsonLd
+        name="Airconditioning Installatie & Onderhoud"
+        description={`STEK-gecertificeerde airco-installatie en onderhoud met A-merken zoals Mitsubishi, Daikin en LG. Particulier en zakelijk ${serviceAreaInPhrase}.`}
+        path="/airconditioning"
+        faqItems={faqItems}
+      />
       <Navbar />
       <main id="main-content">
         <ServiceHero

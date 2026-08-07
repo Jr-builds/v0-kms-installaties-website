@@ -12,6 +12,7 @@ import MerkLogos from '@/components/merklogos'
 import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
+import { ServiceJsonLd } from '@/components/service-json-ld'
 import { pageReviews } from '@/lib/reviews'
 import { serviceAreaInPhrase } from '@/lib/service-area'
 
@@ -100,6 +101,12 @@ const faqItems = [
 export default function LaadpaalPage() {
   return (
     <>
+      <ServiceJsonLd
+        name="Laadpaal Installeren"
+        description={`Laadpaal installatie thuis of op kantoor ${serviceAreaInPhrase}. Advies over meterkast, slim laden en installatie van Alfen en Zaptec laadpalen. NEN-gecertificeerd.`}
+        path="/laadpaal"
+        faqItems={faqItems}
+      />
       <Navbar />
       <main id="main-content">
         <ServiceHero

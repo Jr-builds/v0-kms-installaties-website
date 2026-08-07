@@ -13,7 +13,9 @@ import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
 import IsdeCallout from '@/components/isde-callout'
+import { ServiceJsonLd } from '@/components/service-json-ld'
 import { pageReviews } from '@/lib/reviews'
+import { serviceAreaInPhrase } from '@/lib/service-area'
 
 const dienstenCards = [
   { imageKey: 'ventilatie.lbk' as const, imageLabel: 'Foto: luchtbehandelingskast utiliteit', title: 'Luchtbehandelingskasten (LBK) voor utiliteit', description: 'Preventief onderhoud, filters vervangen, GBS-controle' },
@@ -42,6 +44,12 @@ const faqItems = [
 export default function VentilatiePage() {
   return (
     <>
+      <ServiceJsonLd
+        name="Ventilatie & WTW-systemen"
+        description={`WTW-systemen, mechanische ventilatie en onderhoud voor woning en utiliteit. Gratis advies over ISDE-subsidie ${serviceAreaInPhrase}.`}
+        path="/ventilatie"
+        faqItems={faqItems}
+      />
       <Navbar />
       <main id="main-content">
         <ServiceHero

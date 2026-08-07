@@ -11,6 +11,7 @@ import WaaromKMS from '@/components/waarom-kms'
 import Reviews from '@/components/reviews'
 import FAQ from '@/components/faq'
 import ClosingCTA from '@/components/closing-cta'
+import { ServiceJsonLd } from '@/components/service-json-ld'
 import { pageReviews } from '@/lib/reviews'
 import { serviceAreaInPhrase } from '@/lib/service-area'
 
@@ -41,6 +42,12 @@ const faqItems = [
 export default function TechnischVastgoedbeheerPage() {
   return (
     <>
+      <ServiceJsonLd
+        name="Technisch Vastgoedbeheer"
+        description={`Zorgeloos technisch beheer van uw pand. Storingen, onderhoud en inspectie voor gebouweigenaren en VvE-beheerders ${serviceAreaInPhrase}.`}
+        path="/technisch-vastgoedbeheer"
+        faqItems={faqItems}
+      />
       <Navbar />
       <main id="main-content">
         <ServiceHero
