@@ -127,7 +127,7 @@ export default async function HomePage() {
         {/* HERO */}
         <section className="hero-navy pt-8 pb-12 sm:py-24">
           <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.25fr)] gap-10 lg:gap-12 items-center">
               <div>
                 <div className="mb-4 flex flex-wrap items-center gap-3 sm:mb-6">
                   <AvailabilityPill size="md" variant="hero" />
@@ -164,13 +164,13 @@ export default async function HomePage() {
                   <HeroPhoneButton className="text-center" />
                 </div>
               </div>
-              <div className="hero-photo">
+              <div className="hero-photo hero-photo-collage">
                 <EditableImage
                   imageKey="hero.home"
                   label={heroImage.label}
                   src={heroImage.src}
                   alt={heroImage.alt}
-                  aspectRatio="aspect-[4/3]"
+                  aspectRatio="aspect-[3/2]"
                   className="w-full"
                   priority
                   sizePreset="hero"

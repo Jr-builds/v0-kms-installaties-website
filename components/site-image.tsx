@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
 const SIZE_PRESETS = {
-  hero: '(max-width: 1024px) 100vw, 50vw',
+  hero: '(max-width: 1024px) 100vw, 60vw',
   card: '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw',
   square: '(max-width: 640px) 80vw, 320px',
   modal: '(max-width: 672px) 100vw, 672px',
