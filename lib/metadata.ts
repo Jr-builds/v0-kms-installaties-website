@@ -3,7 +3,18 @@ import { getImage, requireImageSrc, type SiteImageKey } from '@/lib/images'
 import { serviceAreaDisplay, serviceAreaInPhrase } from '@/lib/service-area'
 
 export const SITE_NAME = 'KMS Installaties'
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kmsinstallaties.nl'
+
+/** Normaliseert o.a. per ongeluk `https:/domain` → `https://domain`. */
+function resolveSiteUrl(): string {
+  const raw = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kmsinstallaties.nl').trim()
+  try {
+    return new URL(raw).origin
+  } catch {
+    return 'https://kmsinstallaties.nl'
+  }
+}
+
+export const SITE_URL = resolveSiteUrl()
 export const SITE_LOGO = '/KMS-Logo.png'
 
 export const OG_IMAGE = '/og-image.jpg'
