@@ -1,11 +1,13 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Viewport } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import CmsEditProvider from '@/components/cms/cms-edit-provider'
 import MobileCtaBar from '@/components/mobile-cta-bar'
 import CookieNotice from '@/components/cookie-notice'
 import SkipLink from '@/components/skip-link'
 import StructuredData from '@/components/structured-data'
+import UnregisterLegacySw from '@/components/unregister-legacy-sw'
 import { defaultMetadata } from '@/lib/metadata'
 import './globals.css'
 
@@ -31,9 +33,13 @@ export default function RootLayout({
   return (
     <html lang="nl" className={`${inter.variable} bg-background`}>
       <body className="font-sans antialiased mobile-cta-spacing">
+        <Script id="unregister-legacy-sw" strategy="beforeInteractive">
+          {`(function(){try{if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(function(r){r.forEach(function(x){x.unregister()})})}if(window.caches){caches.keys().then(function(k){k.forEach(function(n){caches.delete(n)})})}}catch(e){}})();`}
+        </Script>
         <CmsEditProvider>
           <SkipLink />
           <StructuredData />
+          <UnregisterLegacySw />
           {children}
           <CookieNotice />
           <MobileCtaBar />
