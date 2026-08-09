@@ -5,6 +5,7 @@ import Script from 'next/script'
 import CmsEditProvider from '@/components/cms/cms-edit-provider'
 import MobileCtaBar from '@/components/mobile-cta-bar'
 import CookieNotice from '@/components/cookie-notice'
+import GoogleAnalytics from '@/components/google-analytics'
 import SkipLink from '@/components/skip-link'
 import StructuredData from '@/components/structured-data'
 import UnregisterLegacySw from '@/components/unregister-legacy-sw'
@@ -42,6 +43,7 @@ export default function RootLayout({
           <UnregisterLegacySw />
           {children}
           <CookieNotice />
+          <GoogleAnalytics />
           <MobileCtaBar />
           {process.env.NODE_ENV === 'production' && <Analytics />}
         </CmsEditProvider>

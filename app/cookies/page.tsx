@@ -34,10 +34,22 @@ export default function CookiesPage() {
 
       <h3>Analytische cookies</h3>
       <p>
-        Wij gebruiken anonieme statistieken om te begrijpen hoe bezoekers onze website gebruiken, zodat
-        wij de inhoud en navigatie kunnen verbeteren. In productie kan Vercel Analytics worden ingezet;
-        daarbij worden geen marketingprofielen opgebouwd.
+        Wij gebruiken statistieken om te begrijpen hoe bezoekers onze website gebruiken, zodat wij de
+        inhoud en navigatie kunnen verbeteren. Deze cookies plaatsen wij alleen nadat u via de
+        cookiemelding akkoord heeft gegeven.
       </p>
+      <ul>
+        <li>
+          <strong>Google Analytics 4</strong>: meet onder meer paginaweergaven, bronnen van verkeer en
+          apparaat-/browserinformatie. Google Analytics plaatst cookies zoals <code>_ga</code> en{' '}
+          <code>_ga_*</code>. Gegevens worden verwerkt door Google Ireland Limited. Wij gebruiken geen
+          Google Analytics-gegevens voor advertentieprofilering op andere websites.
+        </li>
+        <li>
+          <strong>Vercel Analytics</strong>: in productie kunnen anonieme prestatiestatistieken via
+          Vercel worden verzameld; daarbij worden geen marketingprofielen opgebouwd.
+        </li>
+      </ul>
 
       <h2>Marketing- en trackingcookies</h2>
       <p>

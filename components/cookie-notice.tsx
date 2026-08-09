@@ -3,28 +3,18 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { getCookieConsent, setCookieConsentAccepted } from '@/lib/cookie-consent'
 import { legalPages } from '@/lib/legal'
-
-const CONSENT_KEY = 'kms-cookie-consent-v1'
 
 export default function CookieNotice() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    try {
-      const consent = window.localStorage.getItem(CONSENT_KEY)
-      if (!consent) setVisible(true)
-    } catch {
-      setVisible(true)
-    }
+    if (!getCookieConsent()) setVisible(true)
   }, [])
 
   function accept() {
-    try {
-      window.localStorage.setItem(CONSENT_KEY, 'accepted')
-    } catch {
-      // localStorage unavailable — hide for this session
-    }
+    setCookieConsentAccepted()
     setVisible(false)
   }
 

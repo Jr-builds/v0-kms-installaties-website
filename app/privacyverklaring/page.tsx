@@ -44,8 +44,8 @@ export default function PrivacyverklaringPage() {
       <h2>Rechtsgrond</h2>
       <p>
         Wij verwerken uw gegevens op basis van uitvoering van een overeenkomst, uw toestemming (bij
-        formulieren), een gerechtvaardigd belang (websitebeveiliging en verbetering) of een wettelijke
-        verplichting.
+        formulieren en analytische cookies), een gerechtvaardigd belang (websitebeveiliging en
+        verbetering) of een wettelijke verplichting.
       </p>
 
       <h2>Bewaartermijn</h2>
@@ -57,8 +57,14 @@ export default function PrivacyverklaringPage() {
       <h2>Delen met derden</h2>
       <p>
         Wij verkopen uw gegevens niet. Wij delen gegevens alleen met partijen die ons helpen bij onze
-        dienstverlening (bijvoorbeeld hosting of e-mail) of wanneer wij daartoe wettelijk verplicht zijn.
-        Met verwerkers sluiten wij verwerkersovereenkomsten waar dat vereist is.
+        dienstverlening (bijvoorbeeld hosting, e-mail of website-statistieken) of wanneer wij daartoe
+        wettelijk verplicht zijn. Met verwerkers sluiten wij verwerkersovereenkomsten waar dat vereist
+        is.
+      </p>
+      <p>
+        Voor website-statistieken gebruiken wij Google Analytics 4. Dat gebeurt alleen als u cookies
+        accepteert. Google verwerkt daarbij technische gegevens over uw bezoek (zoals pagina&apos;s en
+        apparaatinformatie). Zie ook ons <a href="/cookies">cookiebeleid</a>.
       </p>
 
       <h2>Beveiliging</h2>

@@ -43,6 +43,7 @@ Kopieer `.env.example` naar `.env.local` (nooit committen). Belangrijkste:
 |-----------|----------|
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Publieke (anon) API key |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 Measurement ID (`G-...`) |
 | `RESEND_API_KEY` | Offerteformulier e-mail |
 | `OFFERTE_RECIPIENT_EMAIL` | Ontvanger offerte-mails |
 
