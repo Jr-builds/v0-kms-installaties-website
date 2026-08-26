@@ -1,0 +1,802 @@
+[
+  {
+    "key": "airco.installatie.description",
+    "label": "Professionele installatie - beschrijving",
+    "value": "Vakkundige installatie van single-split, multi-split en plafondunits. Altijd netjes afgewerkt en STEK-gecertificeerd.",
+    "updated_at": "2026-08-04T19:24:36.931+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Wandunits, plafondunits, multisplit-systemen"
+  },
+  {
+    "key": "airco.klimaatbeheersing.description",
+    "label": "Klimaatbeheersing kantoor & bedrijven - beschrijving",
+    "value": "Complete klimaatoplossingen voor kantoren, winkels en bedrijfspanden. Comfortabel koelen, verwarmen en energiezuinig werken.",
+    "updated_at": "2026-08-04T19:17:58.999+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Installatie klimaatbeheersingssystemen, preventief onderhoud"
+  },
+  {
+    "key": "airco.levering.description",
+    "label": "Levering van airco-units - beschrijving",
+    "value": "Levering van A-merk airconditioners voor woningen en bedrijven. Advies op maat en professionele installatie.",
+    "updated_at": "2026-08-04T19:25:46.607+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Complete A-merk systemen, een aanspreekpunt voor advies en plaatsing"
+  },
+  {
+    "key": "airco.onderhoud.description",
+    "label": "Service & onderhoud - beschrijving",
+    "value": "Periodiek onderhoud, reiniging en controle voor optimale prestaties, een langere levensduur en een gezond binnenklimaat.",
+    "updated_at": "2026-08-04T19:25:32.657+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Periodiek onderhoud, reiniging, bijvullen"
+  },
+  {
+    "key": "airco.storingen.description",
+    "label": "Storingen & reparaties - beschrijving",
+    "value": "Snelle diagnose en vakkundige reparatie van airconditioningsystemen. Ook voor storingen en het vervangen van onderdelen.",
+    "updated_at": "2026-08-04T19:25:39.074+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Snelle diagnose, vervangen defecte onderdelen"
+  },
+  {
+    "key": "airco.wifi.description",
+    "label": "Wifi-modules & slimme bediening - beschrijving",
+    "value": "Bedien uw airconditioning eenvoudig via uw smartphone. Slimme wifi-oplossingen voor optimaal comfort en energiebesparing.",
+    "updated_at": "2026-08-04T19:25:56.589+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "App-koppeling, bediening op afstand"
+  },
+  {
+    "key": "airconditioning.hero.subtitle",
+    "label": "Hero ondertitel",
+    "value": "Wij leveren, installeren en onderhouden energiezuinige airconditioningsystemen voor woningen, kantoren en bedrijfspanden. Altijd vakkundig geplaatst door STEK-gecertificeerde monteurs.",
+    "updated_at": "2026-08-04T19:13:16.468+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Levering, installatie en onderhoud van A-merk airconditioning."
+  },
+  {
+    "key": "airconditioning.hero.title",
+    "label": "Hero titel",
+    "value": "Comfortabel koelen én verwarmen met een energiezuinige airco.",
+    "updated_at": "2026-08-04T19:13:05.457+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Comfortabel binnenklimaat het hele jaar, STEK-gecertificeerd geïnstalleerd"
+  },
+  {
+    "key": "camera.app.description",
+    "label": "App-koppeling - beschrijving",
+    "value": "Veilige app-koppeling voor live meekijken, terugkijken van opnames en het beheren van gebruikers en meldingen op afstand.",
+    "updated_at": "2026-08-06T11:58:31.82+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Live meekijken op smartphone, gebruikersaccounts, uitleg gebruik"
+  },
+  {
+    "key": "camera.inbedrijfstelling.description",
+    "label": "Inbedrijfstelling - beschrijving",
+    "value": "Complete configuratie van het camerasysteem, inclusief bewegingsdetectie, privacyzones, beeldkwaliteit en uitgebreide functietesten.",
+    "updated_at": "2026-08-06T11:58:14.93+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Configuratie, bewegingsdetectie, privacy-masking, beeldkwaliteit testen"
+  },
+  {
+    "key": "camera.installatie.description",
+    "label": "Installatie & montage - beschrijving",
+    "value": "Professionele installatie van camerasystemen, inclusief bekabeling, PoE-netwerk, recorder en optimale cameraposities voor maximale beveiliging.",
+    "updated_at": "2026-08-06T11:58:03.202+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Bekabeling via Wifi/PoE/NVR, optimale zichtlijnen, recorders en monitoren"
+  },
+  {
+    "key": "camera.levering.description",
+    "label": "Cameralevering - beschrijving",
+    "value": "Levering van hoogwaardige camerasystemen voor woningen en bedrijven. Keuze uit diverse camera's, recorders en complete beveiligingsoplossingen.",
+    "updated_at": "2026-08-06T11:58:22.132+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Binnen en buiten, diverse resoluties, complete beveiligingsoplossingen"
+  },
+  {
+    "key": "camera.onderhoud.description",
+    "label": "Storingen, reparaties & onderhoud - beschrijving",
+    "value": "Snelle diagnose, reparatie en periodiek onderhoud van camerasystemen. Inclusief software-updates, controles en optimalisatie van de installatie.",
+    "updated_at": "2026-08-06T11:58:41.561+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Diagnose beeldproblemen, jaarlijks onderhoud, systeemupdates"
+  },
+  {
+    "key": "cameras.hero.subtitle",
+    "label": "Hero ondertitel",
+    "value": "Wij leveren en installeren hoogwaardige camerasystemen voor woningen en bedrijven. Inclusief app-bediening, meldingen op afstand en professioneel onderhoud.",
+    "updated_at": "2026-08-06T11:55:43.993+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Camerasystemen voor woning en bedrijf, inclusief app-koppeling en jaarlijks onderhoud."
+  },
+  {
+    "key": "cameras.hero.title",
+    "label": "Hero titel",
+    "value": "Altijd zicht op uw woning of bedrijf met professionele camerabeveiliging",
+    "updated_at": "2026-08-06T11:55:28.229+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Altijd zicht op uw pand, AVG-compliant geïnstalleerd"
+  },
+  {
+    "key": "elektra.cameras.description",
+    "label": "Camerasystemen - beschrijving",
+    "value": "Professionele beveiligingscamera's voor woningen en bedrijven. Altijd zicht op uw eigendommen, waar u ook bent.",
+    "updated_at": "2026-08-04T18:06:12.062+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Binnen- en buitencameras, Wifi/POE/NVR-systemen"
+  },
+  {
+    "key": "elektra.groepenkast.description",
+    "label": "Groepen- & Meterkasten - beschrijving",
+    "value": "Vervanging, uitbreiding en modernisering van groepenkasten. Inclusief aardlekbeveiliging, extra groepen en veilige afwerking.",
+    "updated_at": "2026-08-04T18:05:43.289+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Vervangen oude groepenkast, automaat en aardlekbeveiliging, groepenverklaring"
+  },
+  {
+    "key": "elektra.hero.subtitle",
+    "label": "Hero ondertitel",
+    "value": "Betrouwbare elektra voor woningen, kantoren en bedrijfspanden. Veilig geïnstalleerd, professioneel afgewerkt en snel uitgevoerd.",
+    "updated_at": "2026-08-04T17:57:26.349+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "NEN 3140 gecertificeerd. Bereikbaar van maandag tot zondag."
+  },
+  {
+    "key": "elektra.hero.title",
+    "label": "Hero titel",
+    "value": "Uw specialist in elektrotechnische installaties",
+    "updated_at": "2026-08-04T17:57:12.16+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Elektra die de eerste keer goed zit, voor particulier en bedrijf"
+  },
+  {
+    "key": "elektra.huisinstallatie.description",
+    "label": "Huisinstallaties (Nieuwbouw & Bestaande Bouw) - beschrijving",
+    "value": "Complete elektrotechnische installaties voor nieuwbouw, renovatie en bestaande woningen. Veilig, vakkundig en volgens de nieuwste normen.",
+    "updated_at": "2026-08-04T18:05:18.611+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Complete elektrische aanleg, stopcontacten, veiligheidscheck NEN"
+  },
+  {
+    "key": "elektra.keukenBadkamer.description",
+    "label": "Elektra in Keuken & Badkamer - beschrijving",
+    "value": "Veilige aansluitingen voor keukens en badkamers, inclusief kookgroepen, verlichting, stopcontacten en afzuiging.",
+    "updated_at": "2026-08-04T18:06:02.614+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Voorbereidend elektrawerk, aansluitpunten kookplaat en oven"
+  },
+  {
+    "key": "elektra.renovatie.description",
+    "label": "Renovatie & Verbouwingen - beschrijving",
+    "value": "Wij vernieuwen bestaande installaties, vervangen oude bedrading en breiden uw elektra veilig uit tijdens renovaties en verbouwingen.",
+    "updated_at": "2026-08-04T18:05:27.652+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Aanpassen bestaande installaties, leidingen frezen, oude bedrading vervangen"
+  },
+  {
+    "key": "elektra.storingen.description",
+    "label": "Storingen & Onderhoud - beschrijving",
+    "value": "Snel ter plaatse bij storingen, kortsluiting en stroomuitval. Ook voor periodiek onderhoud en veiligheidscontroles.",
+    "updated_at": "2026-08-04T18:06:22.311+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Spoedstoringen, kortsluitingen opsporen, preventief onderhoud"
+  },
+  {
+    "key": "elektra.verlichting.description",
+    "label": "Binnen- & Buitenverlichting - beschrijving",
+    "value": "Energiezuinige LED-verlichting voor binnen en buiten. Van sfeerverlichting tot functionele verlichting voor woningen en bedrijven.",
+    "updated_at": "2026-08-04T18:05:52.403+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "LED-verlichting, tuin- en gevelverlichting, slimme verlichting"
+  },
+  {
+    "key": "home.diensten.intro",
+    "label": "Homepage diensten intro",
+    "value": "KMS Installaties is uw betrouwbare partner voor elektra, airconditioning, laadpalen, ventilatie, technisch vastgoedbeheer en camerasystemen. Wij leveren vakwerk voor particulieren en bedrijven in Zuid-Holland, Brabant, Zeeland en regio Utrecht.",
+    "updated_at": "2026-08-04T18:16:51.548+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "KMS Installaties levert gecertificeerd elektra- en airconditioningwerk in Zuid-Holland, Brabant, Zeeland en regio Utrecht. Daarnaast verzorgen wij laadpalen, ventilatie, technisch vastgoedbeheer en camerabeveiliging."
+  },
+  {
+    "key": "laadpaal.faq.2.answer",
+    "label": "FAQ antwoord 3",
+    "value": "Bij 1-fase laden gebruikt de laadpaal één fase van uw netaansluiting. Thuis levert dat meestal tot ongeveer 3,7 kW (16A), voldoende voor de meeste particulieren die 's nachts laden. Bij 3-fase laden worden drie fasen gebruikt, waardoor u sneller kunt laden (tot ongeveer 11 kW of meer, afhankelijk van uw aansluiting en auto). Dat vereist een 3-fase aansluiting en is vooral interessant als u sneller wilt laden of meerdere auto's laadt. Wij bekijken welke optie past bij uw meterkast, auto en situatie.",
+    "updated_at": "2026-08-04T18:19:04.949+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Bij 1-fase laden gebruikt de laadpaal één fase van uw netaansluiting. Thuis levert dat meestal tot ongeveer 7,4 kW (32A), voldoende voor de meeste particulieren die 's nachts laden. Bij 3-fase laden worden drie fasen gebruikt, waardoor u sneller kunt laden (tot ongeveer 11 kW of meer, afhankelijk van uw aansluiting en auto). Dat vereist een 3-fase aansluiting en is vooral interessant als u sneller wilt laden of meerdere auto's laadt. Wij bekijken welke optie past bij uw meterkast, auto en situatie."
+  },
+  {
+    "key": "laadpaal.hero.subtitle",
+    "label": "Hero ondertitel",
+    "value": "Wij verzorgen de complete installatie van uw laadpaal, inclusief advies over de meterkast, extra groepen en de beste laadoplossing. Gecertificeerde installatie van Alfen- en Zaptec-laadpalen in Zuid-Holland, Brabant, Zeeland en regio Utrecht.",
+    "updated_at": "2026-08-04T18:20:22.607+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Advies, meterkast en installatie van Alfen en Zaptec laadpalen. Particulier en zakelijk in Zuid-Holland, Brabant, Zeeland en regio Utrecht."
+  },
+  {
+    "key": "laadpaal.hero.title",
+    "label": "Hero titel",
+    "value": "Laadpaal professioneel geïnstalleerd bij u thuis of op kantoor",
+    "updated_at": "2026-08-04T18:37:07.034+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Laadpaal thuis of op kantoor, Zaptec Certified geïnstalleerd"
+  },
+  {
+    "key": "laadpaal.meterkast.description",
+    "label": "Meterkast en aansluiting - beschrijving",
+    "value": "Controle en uitbreiding van uw meterkast voor een veilige laadpaalinstallatie. Inclusief extra groep, aardlekbeveiliging en 1- of 3-fase aansluiting volgens NEN-normen.",
+    "updated_at": "2026-08-04T18:21:43.701+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Controle van uw meterkast, extra groep met aardlekbeveiliging of 3-fase upgrade, NEN-conform uitgevoerd."
+  },
+  {
+    "key": "laadpaal.onderhoud.description",
+    "label": "Onderhoud en storingen - beschrijving",
+    "value": "Onderhoud, software-updates en snelle hulp bij storingen aan uw laadpaal, zodat u altijd zorgeloos kunt laden.",
+    "updated_at": "2026-08-04T18:21:51.543+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Hulp bij storingen, updates en periodieke controle van uw laadinstallatie."
+  },
+  {
+    "key": "laadpaal.thuis.description",
+    "label": "Laadpaal thuis - beschrijving",
+    "value": "Veilige installatie van uw laadpaal aan huis. Inclusief controle van de meterkast, uitleg bij oplevering en koppeling met zonnepanelen indien gewenst.",
+    "updated_at": "2026-08-04T18:21:25.269+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Installatie aan huis met veilige bekabeling, configuratie en uitleg bij oplevering. Ook met slim laden en koppeling aan zonnepanelen."
+  },
+  {
+    "key": "laadpaal.zakelijk.description",
+    "label": "Laadpaal zakelijk - beschrijving",
+    "value": "Complete laadoplossingen voor bedrijven, VvE's en wagenparken. Inclusief meerdere laadpunten, load balancing en slim energiebeheer.",
+    "updated_at": "2026-08-04T18:21:33.658+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Laadpalen voor bedrijf, VvE of parkeergarage, inclusief meerdere laadpunten en slimme stroomverdeling."
+  },
+  {
+    "key": "project.airco-rotterdam-mitsubishi.description",
+    "label": "3x Mitsubishi Heavy airco-units - korte beschrijving",
+    "value": "Voor deze particuliere klant hebben wij drie Mitsubishi Heavy airconditioners geïnstalleerd in de slaapkamers voor optimaal comfort. De werkzaamheden zijn uitgevoerd in samenwerking met een dakdekker en betonboorder, waarbij de leidingdoorvoeren professioneel en waterdicht zijn afgewerkt. De installaties zijn zorgvuldig geplaatst voor een nette afwerking, optimale prestaties en een comfortabel binnenklimaat.",
+    "updated_at": "2026-08-06T14:20:58.743+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Drie units op plat dak, samenwerking met dakdekker."
+  },
+  {
+    "key": "project.airco-rotterdam-mitsubishi.details",
+    "label": "3x Mitsubishi Heavy airco-units - details",
+    "value": "Voor deze particuliere klant hebben wij drie Mitsubishi Heavy airconditioners geïnstalleerd in de slaapkamers voor optimaal comfort. De werkzaamheden zijn uitgevoerd in samenwerking met een dakdekker en betonboorder, waarbij de leidingdoorvoeren professioneel en waterdicht zijn afgewerkt. De installaties zijn zorgvuldig geplaatst voor een nette afwerking, optimale prestaties en een comfortabel binnenklimaat.",
+    "updated_at": "2026-08-06T14:20:28.276+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Drie binnenunits met bijbehorende buitenunits op een plat dak geplaatst. Koelleidingen netjes weggewerkt, condensafvoer aangesloten en systeem gekoppeld aan de app van de klant voor bediening per verdieping."
+  },
+  {
+    "key": "project.airco-rotterdam-mitsubishi.title",
+    "label": "3x Mitsubishi Heavy airco-units - titel",
+    "value": "Installatie van drie Mitsubishi Heavy airconditioners in een woning",
+    "updated_at": "2026-08-06T14:20:11.407+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "3x Mitsubishi Heavy airco-units"
+  },
+  {
+    "key": "project.airco-rotterdam-schilderij.description",
+    "label": "LG Schilderij airco-unit woning - korte beschrijving",
+    "value": "Voor een zakelijke klant hebben wij het periodieke onderhoud uitgevoerd aan meer dan 30 airconditioninginstallaties in een groot kantoorpand. De werkzaamheden bestonden uit het reinigen van de binnen- en buitenunits, het controleren van de koeltechnische installatie, het vervangen van filters, het uitvoeren van functietesten en het controleren van de algehele werking om een optimaal binnenklimaat te waarborgen.",
+    "updated_at": "2026-08-06T14:19:08.419+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Nieuwe unit geplaatst op bestaande muur, creatieve oplossing voor beperkte ruimte."
+  },
+  {
+    "key": "project.airco-rotterdam-schilderij.details",
+    "label": "LG Schilderij airco-unit woning - details",
+    "value": "Voor een zakelijke klant hebben wij het periodieke onderhoud uitgevoerd aan meer dan 30 airconditioninginstallaties in een groot kantoorpand. De werkzaamheden bestonden uit het reinigen van de binnen- en buitenunits, het controleren van de koeltechnische installatie, het vervangen van filters, het uitvoeren van functietesten en het controleren van de algehele werking om een optimaal binnenklimaat te waarborgen.",
+    "updated_at": "2026-08-06T14:17:39.237+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "In een woning met beperkte muurruimte hebben wij een LG Schilderij-unit geplaatst als esthetische oplossing. Leidingwerk discreet weggewerkt en buitenunit op het platte dak gemonteerd in samenwerking met de dakdekker."
+  },
+  {
+    "key": "project.airco-rotterdam-schilderij.resultaat",
+    "label": "LG Schilderij airco-unit woning - resultaat",
+    "value": "Alle installaties functioneren weer optimaal, waardoor het kantoorpand verzekerd is van een betrouwbaar, energiezuinig en comfortabel binnenklimaat.",
+    "updated_at": "2026-08-06T14:17:46.889+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Strakke afwerking, klant zeer tevreden."
+  },
+  {
+    "key": "project.airco-rotterdam-schilderij.title",
+    "label": "LG Schilderij airco-unit woning - titel",
+    "value": "Grootschalig onderhoud aan airconditioning in een kantoorpand",
+    "updated_at": "2026-08-06T14:17:27.216+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "LG Schilderij airco-unit woning"
+  },
+  {
+    "key": "project.airco-zwijndrecht-kantoor.city",
+    "label": "Klimaatbeheersing kantoorruimte - plaats",
+    "value": "Breda",
+    "updated_at": "2026-08-06T14:26:10.703+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Zwijndrecht"
+  },
+  {
+    "key": "project.airco-zwijndrecht-kantoor.description",
+    "label": "Klimaatbeheersing kantoorruimte - korte beschrijving",
+    "value": "Voor deze particuliere klant hebben wij een LG ARTCOOL Gallery airconditioner geïnstalleerd. Ondanks de beperkte beschikbare wandruimte hebben wij door nauwkeurig inmeten en vakmanschap een strakke, symmetrische plaatsing gerealiseerd. De installatie is netjes afgewerkt, waarbij design en comfort perfect samenkomen.",
+    "updated_at": "2026-08-06T14:28:24.965+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Multisplit-systeem voor open kantoor van 200m2."
+  },
+  {
+    "key": "project.airco-zwijndrecht-kantoor.details",
+    "label": "Klimaatbeheersing kantoorruimte - details",
+    "value": "Voor deze particuliere klant hebben wij een LG ARTCOOL Gallery airconditioner geïnstalleerd. Ondanks de beperkte beschikbare wandruimte hebben wij door nauwkeurig inmeten en vakmanschap een strakke, symmetrische plaatsing gerealiseerd. De installatie is netjes afgewerkt, waarbij design en comfort perfect samenkomen.",
+    "updated_at": "2026-08-06T14:26:48.032+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Multisplit airconditioningsysteem ontworpen en geïnstalleerd voor een open kantoorruimte van circa 200 m². Zones ingesteld voor efficiënt koelen en verwarmen, met aandacht voor geluidsniveau tijdens kantooruren."
+  },
+  {
+    "key": "project.airco-zwijndrecht-kantoor.resultaat",
+    "label": "Klimaatbeheersing kantoorruimte - resultaat",
+    "value": "De klant geniet nu van een stijlvolle airconditioner die naadloos in het interieur past, gecombineerd met een comfortabel en energiezuinig binnenklimaat.",
+    "updated_at": "2026-08-06T14:26:56.305+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Stabiele temperatuur het hele jaar, lagere energiekosten."
+  },
+  {
+    "key": "project.airco-zwijndrecht-kantoor.title",
+    "label": "Klimaatbeheersing kantoorruimte - titel",
+    "value": "Installatie van een LG ARTCOOL Gallery (schilderijmodel) airconditioner",
+    "updated_at": "2026-08-06T14:26:40.673+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Klimaatbeheersing kantoorruimte"
+  },
+  {
+    "key": "project.cameras-almere-woning.description",
+    "label": "Camerabeveiliging woning - korte beschrijving",
+    "value": "Voor deze particuliere klant hebben wij een compleet camerabeveiligingssysteem geïnstalleerd rondom de woning. De camera's zijn strategisch geplaatst voor optimale dekking van de entree, oprit en tuin. Het systeem is volledig geconfigureerd, inclusief live meekijken via een smartphone en bewegingsmeldingen.",
+    "updated_at": "2026-08-06T14:33:04.068+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Volledig systeem met app-koppeling."
+  },
+  {
+    "key": "project.cameras-almere-woning.details",
+    "label": "Camerabeveiliging woning - details",
+    "value": "Voor deze particuliere klant hebben wij een compleet camerabeveiligingssysteem geïnstalleerd rondom de woning. De camera's zijn strategisch geplaatst voor optimale dekking van de entree, oprit en tuin. Het systeem is volledig geconfigureerd, inclusief live meekijken via een smartphone en bewegingsmeldingen.",
+    "updated_at": "2026-08-06T14:32:30.894+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Camerasysteem geïnstalleerd rondom de woning met app-koppeling, pushmeldingen bij bewegingsdetectie en opname op lokaal NVR-systeem. Installatie AVG-conform uitgevoerd met duidelijke uitleg aan de bewoners."
+  },
+  {
+    "key": "project.cameras-almere-woning.resultaat",
+    "label": "Camerabeveiliging woning - resultaat",
+    "value": "De woning is nu optimaal beveiligd met een betrouwbaar camerasysteem, waardoor de klant altijd en overal zicht heeft op de eigen woning.",
+    "updated_at": "2026-08-06T14:32:38.006+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "24/7 live zicht via smartphone."
+  },
+  {
+    "key": "project.cameras-almere-woning.title",
+    "label": "Camerabeveiliging woning - titel",
+    "value": "Installatie van camerabeveiliging bij een woning",
+    "updated_at": "2026-08-06T14:32:25.332+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Camerabeveiliging woning"
+  },
+  {
+    "key": "project.elektra-dordrecht-verlichting.city",
+    "label": "LED-verlichting woning - plaats",
+    "value": "Zwijndrecht",
+    "updated_at": "2026-08-06T13:54:04.688+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Dordrecht"
+  },
+  {
+    "key": "project.elektra-dordrecht-verlichting.description",
+    "label": "LED-verlichting woning - korte beschrijving",
+    "value": "Na waterschade aan de meterkast hebben wij de beschadigde groepenkast veilig buiten bedrijf gesteld en volledig vervangen. De nieuwe groepenkast is voorzien van moderne beveiligingen, zorgvuldig aangesloten en uitgebreid getest, zodat de elektrische installatie weer veilig en betrouwbaar functioneert.",
+    "updated_at": "2026-08-06T14:12:10.498+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Binnen- en buitenverlichting vernieuwd naar energiezuinige LED."
+  },
+  {
+    "key": "project.elektra-dordrecht-verlichting.details",
+    "label": "LED-verlichting woning - details",
+    "value": "Na waterschade aan de meterkast hebben wij de beschadigde groepenkast veilig buiten bedrijf gesteld en volledig vervangen. De nieuwe groepenkast is voorzien van moderne beveiligingen, zorgvuldig aangesloten en uitgebreid getest, zodat de elektrische installatie weer veilig en betrouwbaar functioneert.",
+    "updated_at": "2026-08-06T13:45:42.241+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Bestaande verlichting vervangen door LED, inclusief buitenpunten en schakelingen. Afstemming op sfeer in huis en lager energieverbruik, netjes afgewerkt."
+  },
+  {
+    "key": "project.elektra-dordrecht-verlichting.resultaat",
+    "label": "LED-verlichting woning - resultaat",
+    "value": "De woning beschikt weer over een veilige en volledig bedrijfszekere groepenkast, waardoor de stroomvoorziening betrouwbaar is hersteld.",
+    "updated_at": "2026-08-06T13:45:51.139+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Lagere energiekosten en betere verlichting in en om de woning."
+  },
+  {
+    "key": "project.elektra-dordrecht-verlichting.title",
+    "label": "LED-verlichting woning - titel",
+    "value": "Vervanging van een groepenkast na waterschade",
+    "updated_at": "2026-08-06T13:45:17.359+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "LED-verlichting woning"
+  },
+  {
+    "key": "project.elektra-ridderkerk-groepenkast.city",
+    "label": "Groepenkast moderniseren - plaats",
+    "value": "Rotterdam",
+    "updated_at": "2026-08-06T12:24:25.413+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Ridderkerk"
+  },
+  {
+    "key": "project.elektra-ridderkerk-groepenkast.description",
+    "label": "Groepenkast moderniseren - korte beschrijving",
+    "value": "Voor dit project hebben wij de complete elektrische installatie vernieuwd ten behoeve van de woningsplitsing. De bestaande installatie is veilig buiten bedrijf gesteld en volledig vervangen door twee afzonderlijke installaties, elk voorzien van een eigen groepenkast, bekabeling, schakelmateriaal en stopcontacten. De installaties zijn aangelegd volgens de geldende NEN-normen en volledig afgestemd op de nieuwe indeling van beide woningen.",
+    "updated_at": "2026-08-06T12:30:11.789+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Oude groepenkast vervangen met aardlekbeveiliging en groepenverklaring."
+  },
+  {
+    "key": "project.elektra-ridderkerk-groepenkast.details",
+    "label": "Groepenkast moderniseren - details",
+    "value": "Voor dit project hebben wij de complete elektrische installatie vernieuwd ten behoeve van de woningsplitsing. De bestaande installatie is veilig buiten bedrijf gesteld en volledig vervangen door twee afzonderlijke installaties, elk voorzien van een eigen groepenkast, bekabeling, schakelmateriaal en stopcontacten. De installaties zijn aangelegd volgens de geldende NEN-normen en volledig afgestemd op de nieuwe indeling van beide woningen.",
+    "updated_at": "2026-08-06T12:24:42.001+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Verouderde groepenkast vervangen door een moderne installatie met voldoende groepen, aardlekbeveiliging en nette oplevering. Inclusief controle van de bestaande bedrading en oplevering met groepenverklaring."
+  },
+  {
+    "key": "project.elektra-ridderkerk-groepenkast.resultaat",
+    "label": "Groepenkast moderniseren - resultaat",
+    "value": "Beide woningen beschikken nu over een volledig zelfstandige, veilige en toekomstbestendige elektrische installatie, gereed voor zelfstandig gebruik.",
+    "updated_at": "2026-08-06T12:24:57.786+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Veilige, overzichtelijke meterkast klaar voor de toekomst."
+  },
+  {
+    "key": "project.elektra-ridderkerk-groepenkast.title",
+    "label": "Groepenkast moderniseren - titel",
+    "value": "Splitsing van één woning naar twee zelfstandige woningen",
+    "updated_at": "2026-08-06T12:24:17.707+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Groepenkast moderniseren"
+  },
+  {
+    "key": "project.elektra-rotterdam-nieuwbouw.description",
+    "label": "Complete elektra nieuwbouwwoning - korte beschrijving",
+    "value": "Voor deze woning hebben wij de volledige elektrische installatie vernieuwd. De werkzaamheden omvatten het frezen van sleuven, het aanleggen van nieuwe bekabeling met aarding, het plaatsen van stopcontacten, schakelmateriaal en wandverlichting, en het realiseren van een veilige en toekomstbestendige installatie volgens de geldende NEN-normen.",
+    "updated_at": "2026-08-06T12:30:36.418+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Volledige elektrische aanleg inclusief laadpaal-aansluiting."
+  },
+  {
+    "key": "project.elektra-rotterdam-nieuwbouw.details",
+    "label": "Complete elektra nieuwbouwwoning - details",
+    "value": "Voor deze woning hebben wij de volledige elektrische installatie vernieuwd. De werkzaamheden omvatten het frezen van sleuven, het aanleggen van nieuwe bekabeling met aarding, het plaatsen van stopcontacten, schakelmateriaal en wandverlichting, en het realiseren van een veilige en toekomstbestendige installatie volgens de geldende NEN-normen.",
+    "updated_at": "2026-08-06T12:23:10.797+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Voor deze nieuwbouwwoning hebben wij de complete elektra-installatie verzorgd: groepenkast, bekabeling, stopcontacten, verlichtingspunten en een laadpaal-aansluiting. Alles afgestemd op het bouwplan en opgeleverd binnen de afgesproken opleverdatum."
+  },
+  {
+    "key": "project.elektra-rotterdam-nieuwbouw.resultaat",
+    "label": "Complete elektra nieuwbouwwoning - resultaat",
+    "value": "De woning beschikt nu over een volledig vernieuwde, veilige en moderne elektrische installatie die klaar is voor jarenlang betrouwbaar gebruik.",
+    "updated_at": "2026-08-06T12:23:20.891+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Gebruiksklare installatie opgeleverd binnen planning."
+  },
+  {
+    "key": "project.elektra-rotterdam-nieuwbouw.title",
+    "label": "Complete elektra nieuwbouwwoning - titel",
+    "value": "Complete renovatie van de elektrische installatie in een woning",
+    "updated_at": "2026-08-06T12:22:59.043+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Complete elektra nieuwbouwwoning"
+  },
+  {
+    "key": "project.elektra-zwijndrecht-meterkast.city",
+    "label": "Volledige herinstallatie meterkast - plaats",
+    "value": "Papendrecht",
+    "updated_at": "2026-08-06T12:14:34.573+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Zwijndrecht"
+  },
+  {
+    "key": "project.elektra-zwijndrecht-meterkast.description",
+    "label": "Volledige herinstallatie meterkast - korte beschrijving",
+    "value": "Voor een zakelijke klant hebben wij een krachtstekkeraansluiting met een handmatige net-/aggregaatomschakelaar geïnstalleerd. Hierdoor kan bij een stroomuitval eenvoudig worden overgeschakeld van het elektriciteitsnet naar een noodstroomaggregaat. Zo blijven essentiële installaties en bedrijfsprocessen ook tijdens een stroomonderbreking operationeel.",
+    "updated_at": "2026-08-06T12:30:54.455+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Groepenkast vervangen na waterschade."
+  },
+  {
+    "key": "project.elektra-zwijndrecht-meterkast.details",
+    "label": "Volledige herinstallatie meterkast - details",
+    "value": "Voor een zakelijke klant hebben wij een krachtstekkeraansluiting met een handmatige net-/aggregaatomschakelaar geïnstalleerd. Hierdoor kan bij een stroomuitval eenvoudig worden overgeschakeld van het elektriciteitsnet naar een noodstroomaggregaat. Zo blijven essentiële installaties en bedrijfsprocessen ook tijdens een stroomonderbreking operationeel.",
+    "updated_at": "2026-08-06T12:09:52.772+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Na waterschade in de meterkast hebben wij de volledige groepenkast vervangen, inclusief aardlekschakelaars en bekabeling waar nodig. Na afloop is een NEN-gecertificeerde keuring uitgevoerd zodat de installatie weer veilig en conform norm is."
+  },
+  {
+    "key": "project.elektra-zwijndrecht-meterkast.resultaat",
+    "label": "Volledige herinstallatie meterkast - resultaat",
+    "value": "Dankzij de net-/aggregaatomschakelaar is de locatie voorbereid op stroomuitval en blijft de continuïteit van het bedrijf gewaarborgd.",
+    "updated_at": "2026-08-06T12:10:14.929+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Veilige NEN-gecertificeerde installatie."
+  },
+  {
+    "key": "project.elektra-zwijndrecht-meterkast.title",
+    "label": "Volledige herinstallatie meterkast - titel",
+    "value": "Noodstroomvoorziening met omschakelaar voor zakelijke klant",
+    "updated_at": "2026-08-06T12:09:21.939+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Volledige herinstallatie meterkast"
+  },
+  {
+    "key": "project.laadpaal-barendrecht-zakelijk.city",
+    "label": "Zakelijke laadpunten op kantoor - plaats",
+    "value": "Ridderkerk",
+    "updated_at": "2026-08-06T14:03:52.353+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Barendrecht"
+  },
+  {
+    "key": "project.laadpaal-barendrecht-zakelijk.description",
+    "label": "Zakelijke laadpunten op kantoor - korte beschrijving",
+    "value": "Voor deze particuliere klant hebben wij een laadpaal aan huis geïnstalleerd, inclusief aansluiting op de meterkast en volledige configuratie. De laadoplossing is eenvoudig te bedienen en speciaal overzichtelijk ingesteld, zodat ook senioren er veilig en zonder ingewikkelde handelingen gebruik van kunnen maken.",
+    "updated_at": "2026-08-06T14:13:22.464+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Twee laadpunten voor medewerkers en bezoekers."
+  },
+  {
+    "key": "project.laadpaal-barendrecht-zakelijk.details",
+    "label": "Zakelijke laadpunten op kantoor - details",
+    "value": "Voor deze particuliere klant hebben wij een laadpaal aan huis geïnstalleerd, inclusief aansluiting op de meterkast en volledige configuratie. De laadoplossing is eenvoudig te bedienen en speciaal overzichtelijk ingesteld, zodat ook senioren er veilig en zonder ingewikkelde handelingen gebruik van kunnen maken.",
+    "updated_at": "2026-08-06T14:03:58.919+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Twee laadpunten geïnstalleerd bij een kantoorlocatie, inclusief planning van kabelroutes en oplevering met korte instructie voor gebruikers."
+  },
+  {
+    "key": "project.laadpaal-barendrecht-zakelijk.resultaat",
+    "label": "Zakelijke laadpunten op kantoor - resultaat",
+    "value": "De klant beschikt nu over een veilige, gebruiksvriendelijke laadoplossing waarmee de elektrische auto eenvoudig thuis kan worden opgeladen.",
+    "updated_at": "2026-08-06T14:04:05.779+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Laadvoorziening klaar voor dagelijks zakelijk gebruik."
+  },
+  {
+    "key": "project.laadpaal-barendrecht-zakelijk.title",
+    "label": "Zakelijke laadpunten op kantoor - titel",
+    "value": "Installatie van een gebruiksvriendelijke laadpaal aan huis",
+    "updated_at": "2026-08-06T14:03:43.749+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Zakelijke laadpunten op kantoor"
+  },
+  {
+    "key": "project.laadpaal-dordrecht-bedrijf.city",
+    "label": "Laadpaal installatie bedrijfspand - plaats",
+    "value": "Kappelle",
+    "updated_at": "2026-08-06T13:53:33.518+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Dordrecht"
+  },
+  {
+    "key": "project.laadpaal-dordrecht-bedrijf.description",
+    "label": "Laadpaal installatie bedrijfspand - korte beschrijving",
+    "value": "Voor deze klant hebben wij een Zaptec Go 2 laadpaal op een vrijstaande laadzuil geïnstalleerd. De installatie is voorzien van dynamische load balancing en volledig ingeregeld voor zonneladen, zodat de laadpaal automatisch gebruikmaakt van overtollige energie uit de zonnepanelen en het beschikbare vermogen optimaal verdeelt.",
+    "updated_at": "2026-08-06T14:12:42.084+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Drie laadpalen geplaatst met dynamic loadbalancing."
+  },
+  {
+    "key": "project.laadpaal-dordrecht-bedrijf.details",
+    "label": "Laadpaal installatie bedrijfspand - details",
+    "value": "Voor deze klant hebben wij een Zaptec Go 2 laadpaal op een vrijstaande laadzuil geïnstalleerd. De installatie is voorzien van dynamische load balancing en volledig ingeregeld voor zonneladen, zodat de laadpaal automatisch gebruikmaakt van overtollige energie uit de zonnepanelen en het beschikbare vermogen optimaal verdeelt.",
+    "updated_at": "2026-08-06T13:48:42.445+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Drie laadpalen geïnstalleerd op het parkeerterrein van een bedrijfspand, gekoppeld via dynamic loadbalancing zodat het totale vermogen binnen de capaciteit van de aansluiting blijft. Inclusief bekabeling, groepenkast-uitbreiding en gebruikersinstructie voor medewerkers."
+  },
+  {
+    "key": "project.laadpaal-dordrecht-bedrijf.resultaat",
+    "label": "Laadpaal installatie bedrijfspand - resultaat",
+    "value": "De klant beschikt nu over een slimme en toekomstbestendige laadoplossing die veilig laadt, optimaal gebruikmaakt van zonne-energie en overbelasting van de elektrische installatie voorkomt.",
+    "updated_at": "2026-08-06T13:48:48.894+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Medewerkers kunnen elektrische auto's opladen tijdens werktijd."
+  },
+  {
+    "key": "project.laadpaal-dordrecht-bedrijf.title",
+    "label": "Laadpaal installatie bedrijfspand - titel",
+    "value": "Installatie van een Zaptec Go 2 op laadzuil met load balancing en zonneladen",
+    "updated_at": "2026-08-06T13:48:36.231+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Laadpaal installatie bedrijfspand"
+  },
+  {
+    "key": "project.laadpaal-zwijndrecht-thuis.city",
+    "label": "Thuislaadpaal Zaptec - plaats",
+    "value": "Papendrecht",
+    "updated_at": "2026-08-06T14:01:39.026+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Zwijndrecht"
+  },
+  {
+    "key": "project.laadpaal-zwijndrecht-thuis.description",
+    "label": "Thuislaadpaal Zaptec - korte beschrijving",
+    "value": "Voor een zakelijke klant hebben wij een Alfen-laadpaal geïnstalleerd voor dagelijks zakelijk gebruik. De installatie is voorzien van Siemens load balancing, waardoor het beschikbare vermogen automatisch wordt verdeeld en overbelasting van de elektrische installatie wordt voorkomen. De laadoplossing is volledig afgestemd op de bestaande elektrische installatie en voorbereid op toekomstig gebruik.",
+    "updated_at": "2026-08-06T14:13:02.197+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Zaptec laadpaal aan huis, inclusief meterkastcontrole."
+  },
+  {
+    "key": "project.laadpaal-zwijndrecht-thuis.details",
+    "label": "Thuislaadpaal Zaptec - details",
+    "value": "Voor een zakelijke klant hebben wij een Alfen-laadpaal geïnstalleerd voor dagelijks zakelijk gebruik. De installatie is voorzien van Siemens load balancing, waardoor het beschikbare vermogen automatisch wordt verdeeld en overbelasting van de elektrische installatie wordt voorkomen. De laadoplossing is volledig afgestemd op de bestaande elektrische installatie en voorbereid op toekomstig gebruik.",
+    "updated_at": "2026-08-06T13:56:09.25+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Zaptec thuislaadpaal gemonteerd, bekabeling vanaf de groepenkast aangelegd en veilig opgeleverd. Inclusief uitleg over bediening en laden thuis."
+  },
+  {
+    "key": "project.laadpaal-zwijndrecht-thuis.resultaat",
+    "label": "Thuislaadpaal Zaptec - resultaat",
+    "value": "De klant beschikt nu over een veilige, slimme en toekomstbestendige laadoplossing die betrouwbaar functioneert en het beschikbare vermogen optimaal benut.",
+    "updated_at": "2026-08-06T13:56:16.995+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Klant laadt veilig en comfortabel thuis."
+  },
+  {
+    "key": "project.laadpaal-zwijndrecht-thuis.title",
+    "label": "Thuislaadpaal Zaptec - titel",
+    "value": "Installatie van een zakelijke Alfen-laadpaal met Siemens load balancing",
+    "updated_at": "2026-08-06T13:56:02.23+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Thuislaadpaal Zaptec"
+  },
+  {
+    "key": "project.vastgoed-rotterdam-onderhoudscontract.description",
+    "label": "Onderhoudscontract kantoorpand - korte beschrijving",
+    "value": "Voor een zakelijke opdrachtgever hebben wij het periodieke technische onderhoud uitgevoerd aan een bedrijfspand. De werkzaamheden bestonden uit het controleren en onderhouden van de elektrotechnische installaties, verlichting, ventilatie en algemene technische voorzieningen. Eventuele gebreken zijn direct verholpen om storingen te voorkomen en de bedrijfscontinuïteit te waarborgen.",
+    "updated_at": "2026-08-06T14:34:15.543+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Vaste storingsdienst en periodiek technisch onderhoud."
+  },
+  {
+    "key": "project.vastgoed-rotterdam-onderhoudscontract.details",
+    "label": "Onderhoudscontract kantoorpand - details",
+    "value": "Voor een zakelijke opdrachtgever hebben wij het periodieke technische onderhoud uitgevoerd aan een bedrijfspand. De werkzaamheden bestonden uit het controleren en onderhouden van de elektrotechnische installaties, verlichting, ventilatie en algemene technische voorzieningen. Eventuele gebreken zijn direct verholpen om storingen te voorkomen en de bedrijfscontinuïteit te waarborgen.",
+    "updated_at": "2026-08-06T14:33:51.038+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Voor een kantoorpand in Rotterdam hebben wij een onderhoudscontract opgesteld met vaste storingsdienst, periodieke inspecties van elektra en klimaatinstallaties en een duidelijke rapportage voor de facility manager. Storingen worden binnen afgesproken responstijden opgepakt."
+  },
+  {
+    "key": "project.vastgoed-rotterdam-onderhoudscontract.resultaat",
+    "label": "Onderhoudscontract kantoorpand - resultaat",
+    "value": "Dankzij het preventieve onderhoud verkeren de technische installaties weer in optimale staat en is de kans op onverwachte storingen aanzienlijk verminderd.",
+    "updated_at": "2026-08-06T14:33:57.086+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Pand technisch betrouwbaar, eigenaar volledig ontzorgd."
+  },
+  {
+    "key": "project.vastgoed-rotterdam-onderhoudscontract.title",
+    "label": "Onderhoudscontract kantoorpand - titel",
+    "value": "Preventief technisch vastgoedonderhoud voor een bedrijfspand",
+    "updated_at": "2026-08-06T14:33:41.868+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Onderhoudscontract kantoorpand"
+  },
+  {
+    "key": "project.ventilatie-ridderkerk-wtw.city",
+    "label": "Vervangen WTW-unit en leidingen - plaats",
+    "value": "Zwijndrecht",
+    "updated_at": "2026-08-06T14:31:24.185+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Ridderkerk"
+  },
+  {
+    "key": "project.ventilatie-ridderkerk-wtw.description",
+    "label": "Vervangen WTW-unit en leidingen - korte beschrijving",
+    "value": "Voor deze woning hebben wij de bestaande WTW-installatie vervangen door een nieuwe, energiezuinige WTW-unit. Daarnaast is het leidingwerk vernieuwd en geoptimaliseerd voor een betere luchtverdeling, hogere efficiëntie en een gezond binnenklimaat. De complete installatie is zorgvuldig ingeregeld en getest voor optimale prestaties.",
+    "updated_at": "2026-08-06T14:29:33.836+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Oude WTW vervangen, leidingen vernieuwd."
+  },
+  {
+    "key": "project.ventilatie-ridderkerk-wtw.resultaat",
+    "label": "Vervangen WTW-unit en leidingen - resultaat",
+    "value": "De woning beschikt nu over een moderne en energiezuinige WTW-installatie die zorgt voor een comfortabel en gezond binnenklimaat met optimale ventilatie.",
+    "updated_at": "2026-08-06T14:31:45.729+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Betere luchtkwaliteit, lagere stookkosten."
+  },
+  {
+    "key": "project.ventilatie-ridderkerk-wtw.title",
+    "label": "Vervangen WTW-unit en leidingen - titel",
+    "value": "Vervanging van een WTW-unit inclusief leidingwerk",
+    "updated_at": "2026-08-06T14:29:23.801+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Vervangen WTW-unit en leidingen"
+  },
+  {
+    "key": "vastgoed.inspectie.description",
+    "label": "Inspectie & rapportage - beschrijving",
+    "value": "Technische inspecties, rapportages en onderhoudsadviezen voor een veilige en betrouwbare installatie.",
+    "updated_at": "2026-08-06T11:42:37.402+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Technische inspecties, onderhoudsrapporten, actiepuntenlijst"
+  },
+  {
+    "key": "vastgoed.onderhoud.description",
+    "label": "Algemeen technisch onderhoud - beschrijving",
+    "value": "Dagelijks technisch onderhoud aan woningen, VvE's en bedrijfspanden. Preventieve controles en snelle service.",
+    "updated_at": "2026-08-06T11:42:13.049+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Dagelijks klein onderhoud, vaste controlerondes"
+  },
+  {
+    "key": "vastgoed.periodiek.description",
+    "label": "Periodiek onderhoud - beschrijving",
+    "value": "Periodieke controles en preventief onderhoud om storingen te voorkomen en installaties in topconditie te houden.",
+    "updated_at": "2026-08-06T11:42:48.813+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Terugkerende beurten, controle kritieke installaties"
+  },
+  {
+    "key": "vastgoed.projecten.description",
+    "label": "Coördinatie van kleine projecten - beschrijving",
+    "value": "Coördinatie van kleine technische projecten, inclusief planning, communicatie en kwaliteitscontrole.",
+    "updated_at": "2026-08-06T11:43:00.729+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Aansturing werkzaamheden namens eigenaar, communicatie bewoners"
+  },
+  {
+    "key": "vastgoed.renovatie.description",
+    "label": "Renovatie & herstel - beschrijving",
+    "value": "Herstel en renovatie van elektrotechnische en technische installaties. Vakkundig uitgevoerd met minimale overlast.",
+    "updated_at": "2026-08-06T11:42:21.472+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Herstel elektrische installaties, reparaties ventilatie"
+  },
+  {
+    "key": "vastgoed.storingen.description",
+    "label": "Storingen & spoed - beschrijving",
+    "value": "Snelle hulp bij technische storingen en spoedreparaties. Wij zorgen voor een veilige en duurzame oplossing.",
+    "updated_at": "2026-08-06T11:42:28.457+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Snelle respons, tijdelijke noodoplossingen"
+  },
+  {
+    "key": "ventilatie.dakventilator.description",
+    "label": "Dakventilatoren - beschrijving",
+    "value": "Snelle service bij storingen en periodiek onderhoud aan ventilatie- en WTW-systemen. Inclusief inspectie, rapportage en het vervangen van onderdelen indien nodig.",
+    "updated_at": "2026-08-06T11:18:03.805+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Ontwerp, aanleg en vervanging"
+  },
+  {
+    "key": "ventilatie.lbk.description",
+    "label": "Luchtbehandelingskasten (LBK) voor utiliteit - beschrijving",
+    "value": "Levering, installatie en onderhoud van luchtbehandelingskasten voor utiliteitsgebouwen. Inclusief filtervervanging, inspecties en GBS-controles.",
+    "updated_at": "2026-08-06T11:17:40.5+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Preventief onderhoud, filters vervangen, GBS-controle"
+  },
+  {
+    "key": "ventilatie.mechanisch.description",
+    "label": "Mechanische ventilatie - beschrijving",
+    "value": "Professionele aanleg, vervanging en onderhoud van mechanische ventilatiesystemen. Voor een gezonde luchtkwaliteit en optimale ventilatie in iedere ruimte.",
+    "updated_at": "2026-08-06T11:17:55.929+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Ontwerp, aanleg en vervanging"
+  },
+  {
+    "key": "ventilatie.wtw.description",
+    "label": "WTW-systemen - beschrijving",
+    "value": "Ontwerp, levering en installatie van WTW-systemen voor woningen en utiliteitsgebouwen. Energiezuinige ventilatie met warmteterugwinning voor een gezond binnenklimaat.",
+    "updated_at": "2026-08-06T11:17:48.428+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd",
+    "previous_value": "Ontwerp, aanleg en vervanging voor woning en utiliteit"
+  }
+]

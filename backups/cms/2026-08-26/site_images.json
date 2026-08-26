@@ -1,0 +1,569 @@
+[
+  {
+    "key": "airco.installatie",
+    "label": "Foto: wandunit airco installatie",
+    "alt": "Professionele airco-installatie wandunit",
+    "storage_path": "airco.installatie/1785872222186.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/airco.installatie/1785872222186.jpg",
+    "updated_at": "2026-08-04T19:37:02.842+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "airco.klimaatbeheersing",
+    "label": "Foto: kantoor klimaatbeheersing",
+    "alt": "Klimaatbeheersing voor kantoor en bedrijven",
+    "storage_path": "airco.klimaatbeheersing/1785871917550.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/airco.klimaatbeheersing/1785871917550.jpg",
+    "updated_at": "2026-08-04T19:31:57.955+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "airco.levering",
+    "label": "Foto: airco unit showroom",
+    "alt": "Levering van airco-units",
+    "storage_path": "airco.levering/1785874024683.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/airco.levering/1785874024683.jpg",
+    "updated_at": "2026-08-04T20:07:05.242+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "airco.onderhoud",
+    "label": "Foto: airco onderhoud service",
+    "alt": "Service en onderhoud van airconditioning",
+    "storage_path": "airco.onderhoud/1785871598722.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/airco.onderhoud/1785871598722.jpg",
+    "updated_at": "2026-08-04T19:26:39.533+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "airco.storingen",
+    "label": "Foto: airco storing reparatie",
+    "alt": "Airco storingen en reparaties",
+    "storage_path": "airco.storingen/1785872095121.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/airco.storingen/1785872095121.jpg",
+    "updated_at": "2026-08-04T19:34:55.721+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "airco.wifi",
+    "label": "Foto: slimme app bediening airco",
+    "alt": "Slimme app-bediening voor airconditioning",
+    "storage_path": "airco.wifi/1785871667550.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/airco.wifi/1785871667550.jpg",
+    "updated_at": "2026-08-04T19:27:48.473+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "camera.app",
+    "label": "Foto: smartphone app camera live",
+    "alt": "Smartphone app voor live camerabeeld",
+    "storage_path": "camera.app/1786017744849.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/camera.app/1786017744849.jpg",
+    "updated_at": "2026-08-06T12:02:25.115+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "camera.inbedrijfstelling",
+    "label": "Foto: camera configuratie systeem",
+    "alt": "Camera configuratie en inbedrijfstelling",
+    "storage_path": "camera.inbedrijfstelling/1786017621644.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/camera.inbedrijfstelling/1786017621644.jpg",
+    "updated_at": "2026-08-06T12:00:21.915+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "camera.installatie",
+    "label": "Foto: camera bekabeling installatie",
+    "alt": "Camera bekabeling en installatie",
+    "storage_path": "camera.installatie/1786017592973.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/camera.installatie/1786017592973.jpg",
+    "updated_at": "2026-08-06T11:59:53.39+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "camera.levering",
+    "label": "Foto: camera assortiment buiten",
+    "alt": "Cameralevering binnen en buiten",
+    "storage_path": "camera.levering/1786017663432.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/camera.levering/1786017663432.jpg",
+    "updated_at": "2026-08-06T12:01:03.827+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "camera.onderhoud",
+    "label": "Foto: camera onderhoud reparatie",
+    "alt": "Camera onderhoud en reparatie",
+    "storage_path": "camera.onderhoud/1786017770661.jpeg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/camera.onderhoud/1786017770661.jpeg",
+    "updated_at": "2026-08-06T12:02:50.997+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "dienst.airconditioning",
+    "label": "Homepage dienst Airconditioning",
+    "alt": "Airconditioning binnenunit voor comfortabel binnenklimaat",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "dienst.cameras",
+    "label": "Homepage dienst Cameras",
+    "alt": "Buitencamera voor beveiliging van een pand",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "dienst.elektra",
+    "label": "Homepage dienst Elektra",
+    "alt": "Moderne groepenkast en meterkast installatie",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "dienst.laadpaal",
+    "label": "Homepage dienst Laadpaal",
+    "alt": "Zaptec laadpaal gemonteerd aan de buitenmuur van een woning",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "dienst.vastgoedbeheer",
+    "label": "Homepage dienst Vastgoedbeheer",
+    "alt": "Bedrijfspand onder technisch vastgoedbeheer",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "dienst.ventilatie",
+    "label": "Homepage dienst Ventilatie",
+    "alt": "WTW-ventilatiesysteem voor gezonde lucht in huis",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "elektra.cameras",
+    "label": "Elektra: camerasystemen",
+    "alt": "Camerasysteem als onderdeel van elektrische installaties",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "elektra.groepenkast",
+    "label": "Foto: groepenkast modern",
+    "alt": "Vervanging en installatie van een groepenkast",
+    "storage_path": "elektra.groepenkast/1785873340964.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/elektra.groepenkast/1785873340964.jpg",
+    "updated_at": "2026-08-04T19:55:41.525+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "elektra.huisinstallatie",
+    "label": "Foto: huisinstallatie nieuwbouw",
+    "alt": "Elektrische huisinstallatie door een gecertificeerde monteur",
+    "storage_path": "elektra.huisinstallatie/1785872980394.webp",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/elektra.huisinstallatie/1785872980394.webp",
+    "updated_at": "2026-08-04T19:49:40.993+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "elektra.keukenBadkamer",
+    "label": "Foto: elektra keuken badkamer",
+    "alt": "Elektra in keuken en badkamer",
+    "storage_path": "elektra.keukenBadkamer/1785873229595.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/elektra.keukenBadkamer/1785873229595.jpg",
+    "updated_at": "2026-08-04T19:53:50.105+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "elektra.renovatie",
+    "label": "Foto: renovatie bedrading",
+    "alt": "Renovatie en verbouwing van elektrische installaties",
+    "storage_path": "elektra.renovatie/1785873413442.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/elektra.renovatie/1785873413442.jpg",
+    "updated_at": "2026-08-04T19:56:53.927+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "elektra.storingen",
+    "label": "Foto: storingsmelding elektricien",
+    "alt": "Storingsdienst en onderhoud elektra",
+    "storage_path": "elektra.storingen/1785873289717.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/elektra.storingen/1785873289717.jpg",
+    "updated_at": "2026-08-04T19:54:50.317+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "elektra.verlichting",
+    "label": "Foto: LED verlichting interieur",
+    "alt": "Binnen- en buitenverlichting installatie",
+    "storage_path": "elektra.verlichting/1785866695161.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/elektra.verlichting/1785866695161.jpg",
+    "updated_at": "2026-08-04T18:04:55.773+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "hero.airconditioning",
+    "label": "Hero Airconditioning",
+    "alt": "Airconditioning binnenunit geïnstalleerd in een woonkamer",
+    "storage_path": "hero.airconditioning/1785871216415.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/hero.airconditioning/1785871216415.jpg",
+    "updated_at": "2026-08-04T19:20:17.504+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "hero.cameras",
+    "label": "Hero Cameras",
+    "alt": "Beveiligingscamera gemonteerd aan de buitengevel van een pand",
+    "storage_path": "hero.cameras/1786017270554.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/hero.cameras/1786017270554.jpg",
+    "updated_at": "2026-08-06T11:54:30.852+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "hero.elektra",
+    "label": "Hero Elektra",
+    "alt": "Professionele elektricien van KMS Installaties aan het werk",
+    "storage_path": "hero.elektra/1785872409167.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/hero.elektra/1785872409167.jpg",
+    "updated_at": "2026-08-04T19:40:09.891+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "hero.home",
+    "label": "Homepage hero",
+    "alt": "Collage van KMS-installaties: elektra, airconditioning, laadpaal, warmtepomp en zonnepanelen",
+    "storage_path": "hero.home/1786123558072.png",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/hero.home/1786123558072.png",
+    "updated_at": "2026-08-07T17:25:58.972+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "hero.laadpaal",
+    "label": "Hero Laadpaal",
+    "alt": "Zaptec laadpaal gemonteerd aan de buitenmuur van een woning",
+    "storage_path": "hero.laadpaal/1785867772822.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/hero.laadpaal/1785867772822.jpg",
+    "updated_at": "2026-08-04T18:22:53.693+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "hero.vastgoedbeheer",
+    "label": "Hero Vastgoedbeheer",
+    "alt": "Modern bedrijfspand in Zuid-Holland voor technisch vastgoedbeheer",
+    "storage_path": "hero.vastgoedbeheer/1786017803237.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/hero.vastgoedbeheer/1786017803237.jpg",
+    "updated_at": "2026-08-06T12:03:23.776+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "hero.ventilatie",
+    "label": "Hero Ventilatie",
+    "alt": "WTW-ventilatiesysteem geïnstalleerd in een woning",
+    "storage_path": "hero.ventilatie/1786013683771.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/hero.ventilatie/1786013683771.jpg",
+    "updated_at": "2026-08-06T10:54:44.907+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "laadpaal.meterkast",
+    "label": "Foto: meterkast aansluiting laadpaal",
+    "alt": "Inspectie en uitbreiding van de meterkast voor een laadpaal",
+    "storage_path": "laadpaal.meterkast/1785873762892.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/laadpaal.meterkast/1785873762892.jpg",
+    "updated_at": "2026-08-04T20:02:43.407+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "laadpaal.onderhoud",
+    "label": "Laadpaal: onderhoud",
+    "alt": "Laadpaal met aangesloten laadkabel voor onderhoud en storingen",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "laadpaal.thuis",
+    "label": "Foto: thuislaadpaal installatie",
+    "alt": "Thuislaadpaal geïnstalleerd door een gecertificeerde monteur",
+    "storage_path": "laadpaal.thuis/1785873597007.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/laadpaal.thuis/1785873597007.jpg",
+    "updated_at": "2026-08-04T19:59:57.823+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "laadpaal.zakelijk",
+    "label": "Foto: zakelijke laadpaal parkeerplaats",
+    "alt": "Zakelijke laadpaal installatie bij een bedrijfspand",
+    "storage_path": "laadpaal.zakelijk/1785873544840.webp",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/laadpaal.zakelijk/1785873544840.webp",
+    "updated_at": "2026-08-04T19:59:05.298+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "logo.kms",
+    "label": "Logo",
+    "alt": "KMS Installaties logo",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "project.airco-rotterdam-mitsubishi",
+    "label": "Project: 3x Mitsubishi Heavy airco-units",
+    "alt": "Mitsubishi Heavy airco-units in Rotterdam",
+    "storage_path": "project.airco-rotterdam-mitsubishi/1786026248353.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/project.airco-rotterdam-mitsubishi/1786026248353.jpg",
+    "updated_at": "2026-08-06T14:24:10.684+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "project.airco-rotterdam-schilderij",
+    "label": "Project: LG Schilderij airco-unit woning",
+    "alt": "LG Schilderij airco in Rotterdam",
+    "storage_path": "project.airco-rotterdam-schilderij/1786025920168.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/project.airco-rotterdam-schilderij/1786025920168.jpg",
+    "updated_at": "2026-08-06T14:18:40.766+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "project.airco-zwijndrecht-kantoor",
+    "label": "Project: Klimaatbeheersing kantoorruimte",
+    "alt": "Klimaatbeheersing kantoor in Zwijndrecht",
+    "storage_path": "project.airco-zwijndrecht-kantoor/1786026486397.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/project.airco-zwijndrecht-kantoor/1786026486397.jpg",
+    "updated_at": "2026-08-06T14:28:06.812+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "project.airconditioning",
+    "label": "Project Airconditioning",
+    "alt": "Airconditioning buitenunit op een plat dak",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "project.cameras",
+    "label": "Project Cameras",
+    "alt": "Camerabeveiliging aan de buitengevel",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "project.elektra",
+    "label": "Project: Groepenkast moderniseren",
+    "alt": "Elektrische meterkast en groepenkast installatie",
+    "storage_path": "project.elektra/1786019320407.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/project.elektra/1786019320407.jpg",
+    "updated_at": "2026-08-06T12:28:40.886+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "project.elektra-dordrecht-verlichting",
+    "label": "Project: LED-verlichting woning",
+    "alt": "LED-verlichting woning in Dordrecht",
+    "storage_path": "project.elektra-dordrecht-verlichting/1786025322560.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/project.elektra-dordrecht-verlichting/1786025322560.jpg",
+    "updated_at": "2026-08-06T14:08:43.088+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "project.elektra-ridderkerk-groepenkast",
+    "label": "Project: Groepenkast moderniseren",
+    "alt": "Groepenkast moderniseren in Ridderkerk",
+    "storage_path": "project.elektra-ridderkerk-groepenkast/1786019384152.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/project.elektra-ridderkerk-groepenkast/1786019384152.jpg",
+    "updated_at": "2026-08-06T12:29:44.62+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "project.elektra-rotterdam-nieuwbouw",
+    "label": "Project: Complete elektra nieuwbouwwoning",
+    "alt": "Elektra nieuwbouwwoning in Rotterdam",
+    "storage_path": "project.elektra-rotterdam-nieuwbouw/1786019364521.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/project.elektra-rotterdam-nieuwbouw/1786019364521.jpg",
+    "updated_at": "2026-08-06T12:29:24.92+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "project.elektra-zwijndrecht-meterkast",
+    "label": "Project: Volledige herinstallatie meterkast",
+    "alt": "Herinstallatie meterkast in Zwijndrecht",
+    "storage_path": "project.elektra-zwijndrecht-meterkast/1786019354103.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/project.elektra-zwijndrecht-meterkast/1786019354103.jpg",
+    "updated_at": "2026-08-06T12:29:14.435+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "project.laadpaal-barendrecht-zakelijk",
+    "label": "Project: Zakelijke laadpunten op kantoor",
+    "alt": "Zakelijke laadpunten in Barendrecht",
+    "storage_path": "project.laadpaal-barendrecht-zakelijk/1786025076400.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/project.laadpaal-barendrecht-zakelijk/1786025076400.jpg",
+    "updated_at": "2026-08-06T14:04:36.876+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "project.laadpaal-dordrecht-bedrijf",
+    "label": "Project: Laadpaal installatie bedrijfspand",
+    "alt": "Laadpalen bij bedrijfspand in Dordrecht",
+    "storage_path": "project.laadpaal-dordrecht-bedrijf/1786024379275.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/project.laadpaal-dordrecht-bedrijf/1786024379275.jpg",
+    "updated_at": "2026-08-06T13:52:59.984+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "project.laadpaal-zwijndrecht-thuis",
+    "label": "Project: Thuislaadpaal Zaptec",
+    "alt": "Thuislaadpaal in Zwijndrecht",
+    "storage_path": "project.laadpaal-zwijndrecht-thuis/1786024877997.webp",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/project.laadpaal-zwijndrecht-thuis/1786024877997.webp",
+    "updated_at": "2026-08-06T14:01:18.619+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "project.vastgoedbeheer",
+    "label": "Project Vastgoed",
+    "alt": "Technisch onderhoud aan een bedrijfspand",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "project.ventilatie",
+    "label": "Project Ventilatie",
+    "alt": "Ventilatie- en WTW-installatie",
+    "storage_path": null,
+    "public_url": null,
+    "updated_at": "2026-07-18T12:02:03.826068+00:00",
+    "updated_by": null
+  },
+  {
+    "key": "project.ventilatie-ridderkerk-wtw",
+    "label": "Project: Vervangen WTW-unit en leidingen",
+    "alt": "WTW-unit vervangen in Ridderkerk",
+    "storage_path": "project.ventilatie-ridderkerk-wtw/1786026538818.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/project.ventilatie-ridderkerk-wtw/1786026538818.jpg",
+    "updated_at": "2026-08-06T14:28:59.304+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "vastgoed.inspectie",
+    "label": "Foto: technische inspectie rapport",
+    "alt": "Technische inspectie en rapportage",
+    "storage_path": "vastgoed.inspectie/1786017039855.webp",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/vastgoed.inspectie/1786017039855.webp",
+    "updated_at": "2026-08-06T11:50:40.255+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "vastgoed.onderhoud",
+    "label": "Foto: technisch onderhoud gebouw",
+    "alt": "Algemeen technisch onderhoud gebouw",
+    "storage_path": "vastgoed.onderhoud/1786016671682.webp",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/vastgoed.onderhoud/1786016671682.webp",
+    "updated_at": "2026-08-06T11:44:32.151+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "vastgoed.periodiek",
+    "label": "Foto: periodiek onderhoud installaties",
+    "alt": "Periodiek onderhoud installaties",
+    "storage_path": "vastgoed.periodiek/1786017165705.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/vastgoed.periodiek/1786017165705.jpg",
+    "updated_at": "2026-08-06T11:52:46.062+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "vastgoed.projecten",
+    "label": "Foto: coördinatie kleine projecten",
+    "alt": "Coördinatie van kleine projecten",
+    "storage_path": "vastgoed.projecten/1786017210924.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/vastgoed.projecten/1786017210924.jpg",
+    "updated_at": "2026-08-06T11:53:31.393+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "vastgoed.renovatie",
+    "label": "Foto: renovatie elektra installatie",
+    "alt": "Renovatie en herstel installaties",
+    "storage_path": "vastgoed.renovatie/1786016712758.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/vastgoed.renovatie/1786016712758.jpg",
+    "updated_at": "2026-08-06T11:45:13.176+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "vastgoed.storingen",
+    "label": "Foto: storingsmelding snelle respons",
+    "alt": "Storingsmelding en snelle respons",
+    "storage_path": "vastgoed.storingen/1786016965869.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/vastgoed.storingen/1786016965869.jpg",
+    "updated_at": "2026-08-06T11:49:26.121+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "ventilatie.dakventilator",
+    "label": "Foto: dakventilator plat dak",
+    "alt": "Dakventilator op plat dak",
+    "storage_path": "ventilatie.dakventilator/1786015950808.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/ventilatie.dakventilator/1786015950808.jpg",
+    "updated_at": "2026-08-06T11:32:31.279+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "ventilatie.lbk",
+    "label": "Foto: luchtbehandelingskast utiliteit",
+    "alt": "Luchtbehandelingskast voor utiliteit",
+    "storage_path": "ventilatie.lbk/1786015171765.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/ventilatie.lbk/1786015171765.jpg",
+    "updated_at": "2026-08-06T11:19:32.189+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "ventilatie.mechanisch",
+    "label": "Foto: mechanische ventilatie installatie",
+    "alt": "Mechanische ventilatie installatie",
+    "storage_path": "ventilatie.mechanisch/1786015359155.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/ventilatie.mechanisch/1786015359155.jpg",
+    "updated_at": "2026-08-06T11:22:39.553+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "ventilatie.onderhoud",
+    "label": "Foto: ventilatie onderhoud filter",
+    "alt": "Onderhoud en storingen ventilatie",
+    "storage_path": "ventilatie.onderhoud/1786016127017.jpg",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/ventilatie.onderhoud/1786016127017.jpg",
+    "updated_at": "2026-08-06T11:35:27.38+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  },
+  {
+    "key": "ventilatie.wtw",
+    "label": "Foto: WTW systeem woning",
+    "alt": "WTW-unit voor warmteterugwinning en ventilatie",
+    "storage_path": "ventilatie.wtw/1786015258935.png",
+    "public_url": "https://ssdozlkpnstnlixrxvlq.supabase.co/storage/v1/object/public/site-media/ventilatie.wtw/1786015258935.png",
+    "updated_at": "2026-08-06T11:20:59.632+00:00",
+    "updated_by": "8cfdaf0f-0de4-46b2-872d-52ee17fb55cd"
+  }
+]
