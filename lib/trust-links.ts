@@ -3,7 +3,7 @@ export const trustLinks = {
     href: 'https://share.google/7PCZZ2xMMjEvdS7HM',
     label: '5.0',
     platform: 'Google',
-    sub: '52 reviews',
+    sub: '53 reviews',
     logo: '/brands/google.svg',
   },
   werkspot: {
