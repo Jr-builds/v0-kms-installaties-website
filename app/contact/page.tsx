@@ -18,6 +18,8 @@ interface ContactFormErrors {
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
   const [naam, setNaam] = useState('')
   const [telefoon, setTelefoon] = useState('')
   const [vraag, setVraag] = useState('')
@@ -33,7 +35,7 @@ export default function ContactPage() {
     target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' })
   }, [])
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     const nextErrors: ContactFormErrors = {
@@ -48,7 +50,33 @@ export default function ContactPage() {
     }
 
     setErrors({})
-    setSubmitted(true)
+    setSubmitError(null)
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          naam: naam.trim(),
+          telefoon: telefoon.trim(),
+          vraag: vraag.trim(),
+        }),
+      })
+
+      const result: { error?: string } = await response.json().catch(() => ({}))
+
+      if (!response.ok) {
+        setSubmitError(result.error ?? 'Versturen mislukt. Probeer het opnieuw of bel ons direct.')
+        return
+      }
+
+      setSubmitted(true)
+    } catch {
+      setSubmitError('Versturen mislukt. Controleer uw internetverbinding en probeer het opnieuw.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -153,8 +181,19 @@ export default function ContactPage() {
                         />
                         {errors.vraag ? <FormFieldError id="vraag-error" message={errors.vraag} /> : null}
                       </div>
-                      <Button type="submit" variant="primary" size="cta" className="w-full">
-                        Verstuur melding
+                      {submitError ? (
+                        <p className="text-sm text-red-600" role="alert">
+                          {submitError}
+                        </p>
+                      ) : null}
+                      <Button
+                        type="submit"
+                        variant="primary"
+                        size="cta"
+                        className="w-full"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? 'Bezig met versturen…' : 'Verstuur melding'}
                       </Button>
                     </form>
                   )}
