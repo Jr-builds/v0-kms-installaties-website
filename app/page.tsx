@@ -248,7 +248,7 @@ export default async function HomePage() {
           items={[
             { value: '200+', label: 'Afgeronde projecten' },
             { value: '10+', label: 'Jaar vakmanschap' },
-            { value: '88+', label: 'Vijfsterrenreviews' },
+            { value: '95+', label: 'Vijfsterrenreviews' },
           ]}
         />
 
