@@ -19,6 +19,9 @@ const TRUSTOO_SCRIPT_SRC = 'https://chatbot-widget.trustoo.nl/trustoo-chatbot.ii
 const TRUSTOO_SCRIPT_ID = 'trustoo-chatbot-script'
 const TRUSTOO_STYLE_ID = 'trustoo-chatbot-style'
 const TRUSTOO_MOUNT_ID = 'trustoo-chatbot'
+/** Teaserballon ("Hoi! Hulp nodig...") pas na deze delay tonen */
+const TRUSTOO_TEASER_DELAY_MS = 4000
+const TRUSTOO_TEASER_READY_CLASS = 'kms-trustoo-teaser-ready'
 
 const KNOWLEDGE = [
   'Je bent de vriendelijke en professionele digitale assistent van KMS Installaties.',
@@ -127,6 +130,10 @@ export default function TrustooChatbot() {
 
     ensureMountNode()
 
+    const teaserTimer = window.setTimeout(() => {
+      document.body.classList.add(TRUSTOO_TEASER_READY_CLASS)
+    }, TRUSTOO_TEASER_DELAY_MS)
+
     if (!document.getElementById(TRUSTOO_STYLE_ID)) {
       const link = document.createElement('link')
       link.id = TRUSTOO_STYLE_ID
@@ -144,10 +151,15 @@ export default function TrustooChatbot() {
           void startTrustooChatbot()
         }
         existing.addEventListener('load', onLoad)
-        return () => existing.removeEventListener('load', onLoad)
+        return () => {
+          window.clearTimeout(teaserTimer)
+          existing.removeEventListener('load', onLoad)
+        }
       }
       // Geen cleanup die #trustoo-chatbot weghaalt: dat breekt Trustoo in React Strict Mode.
-      return
+      return () => {
+        window.clearTimeout(teaserTimer)
+      }
     }
 
     const script = document.createElement('script')
@@ -161,6 +173,10 @@ export default function TrustooChatbot() {
       console.error('[TrustooChatbot] script kon niet laden')
     })
     document.body.appendChild(script)
+
+    return () => {
+      window.clearTimeout(teaserTimer)
+    }
   }, [])
 
   // Geen React-DOM voor de mount-node: die moet Strict Mode overleven.

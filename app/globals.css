@@ -250,6 +250,22 @@
     }
   }
 
+  /* Teaserballon pas na korte delay (zie TrustooChatbot) */
+  .trustoo-chatbot__teaser {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease !important;
+  }
+
+  body.kms-trustoo-teaser-ready .trustoo-chatbot__teaser {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .project-grid-fade {
       animation: project-grid-fade 0.3s ease-out;
