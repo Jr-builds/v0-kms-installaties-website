@@ -243,6 +243,13 @@
     }
   }
 
+  /* Trustoo chatbot above the mobile CTA bar (Bel / WhatsApp / Offerte) */
+  @media (max-width: 1023px) {
+    .trustoo-chatbot {
+      bottom: calc(5rem + env(safe-area-inset-bottom, 0px)) !important;
+    }
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .project-grid-fade {
       animation: project-grid-fade 0.3s ease-out;

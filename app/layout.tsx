@@ -6,6 +6,7 @@ import CmsEditProvider from '@/components/cms/cms-edit-provider'
 import MobileCtaBar from '@/components/mobile-cta-bar'
 import CookieNotice from '@/components/cookie-notice'
 import GoogleAnalytics from '@/components/google-analytics'
+import TrustooChatbot from '@/components/trustoo-chatbot'
 import SkipLink from '@/components/skip-link'
 import StructuredData from '@/components/structured-data'
 import UnregisterLegacySw from '@/components/unregister-legacy-sw'
@@ -47,6 +48,8 @@ export default function RootLayout({
           <MobileCtaBar />
           {process.env.NODE_ENV === 'production' && <Analytics />}
         </CmsEditProvider>
+        {/* Buiten CmsEditProvider: stabiele mount voor Trustoo (niet door React van body geveegd) */}
+        <TrustooChatbot />
       </body>
     </html>
   )
