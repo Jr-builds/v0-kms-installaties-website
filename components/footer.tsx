@@ -3,7 +3,6 @@ import SiteLogo from '@/components/site-logo'
 import {
   businessInfo,
   btwId,
-  kvkLookupUrl,
   kvkNumber,
   openingHoursDisplay,
   phoneDisplay,
@@ -92,16 +91,7 @@ export default function Footer() {
                   {businessInfo.email}
                 </a>
               </li>
-              <li>
-                <a
-                  href={kvkLookupUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  KvK: {kvkNumber}
-                </a>
-              </li>
+              <li>KvK: {kvkNumber}</li>
               <li>
                 {btwId ? `BTW-id: ${btwId}` : 'BTW-id: wordt aangevuld'}
               </li>

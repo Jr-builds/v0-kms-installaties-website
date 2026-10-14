@@ -62,7 +62,6 @@ export const openingHoursLongDisplay = 'Maandag t/m zondag, 08:00-22:00'
 
 /** KvK-inschrijving (publiek register) */
 export const kvkNumber = '99237075'
-export const kvkLookupUrl = `https://www.kvk.nl/zoeken/#!/zoeken?kvknummer=${kvkNumber}`
 
 /**
  * BTW-identificatienummer (publiek, footer).
