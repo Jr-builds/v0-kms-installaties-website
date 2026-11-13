@@ -1,9 +1,12 @@
+/** Fallback zolang Google geen score teruggeeft. */
+export const googleReviewCount = 63
+
 export const trustLinks = {
   googleReviews: {
     href: 'https://share.google/7PCZZ2xMMjEvdS7HM',
     label: '5.0',
     platform: 'Google',
-    sub: '62 reviews',
+    sub: `${googleReviewCount} reviews`,
     logo: '/brands/google.svg',
   },
   werkspot: {

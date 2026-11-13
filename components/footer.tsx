@@ -9,7 +9,9 @@ import {
   phoneTelHref,
 } from '@/lib/business'
 import { legalPageLinks } from '@/lib/legal'
-import { serviceAreaFooterPhrase } from '@/lib/service-area'
+import { serviceAreaDisplay } from '@/lib/service-area'
+import { siteStats } from '@/lib/site-stats'
+import EditableText from '@/components/cms/editable-text'
 
 export default function Footer() {
   return (
@@ -28,7 +30,13 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              {serviceAreaFooterPhrase} Elektra, airco, ventilatie en beveiliging. Altijd bereikbaar, ook in het weekend.
+              <EditableText
+                textKey={siteStats.jaren.key}
+                label={siteStats.jaren.editorLabel}
+                defaultValue={siteStats.jaren.value}
+                as="span"
+              />{' '}
+              jaar vakmanschap in {serviceAreaDisplay}. Elektra, airco, ventilatie en beveiliging. Altijd bereikbaar, ook in het weekend.
             </p>
           </div>
 
@@ -59,6 +67,8 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { label: 'Home', href: '/' },
+                { label: 'Zakelijk', href: '/zakelijk' },
+                { label: 'Particulier', href: '/particulier' },
                 { label: 'Over ons', href: '/over-ons' },
                 { label: 'Projecten', href: '/projecten' },
                 { label: 'Contact', href: '/contact' },

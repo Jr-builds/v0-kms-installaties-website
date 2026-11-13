@@ -18,6 +18,16 @@ export const siteImages = {
     alt: 'Collage van KMS-installaties: elektra, airconditioning, laadpaal, warmtepomp en zonnepanelen',
     label: 'Homepage hero',
   },
+  'home.tegel.zakelijk': {
+    src: '/vastgoed-pand.jpg',
+    alt: 'Klimaatinstallatie op het dak van een bedrijfspand',
+    label: 'Homepage tegel Zakelijk',
+  },
+  'home.tegel.particulier': {
+    src: '/hero-laadpaal.png',
+    alt: 'Laadpaal aan de gevel van een woning',
+    label: 'Homepage tegel Particulier',
+  },
   'hero.elektra': {
     src: '/electrician-professional-work.jpg',
     alt: 'Professionele elektricien van KMS Installaties aan het werk',
@@ -131,6 +141,11 @@ export const siteImages = {
     src: '/electrician-professional-work.jpg',
     alt: 'Vervanging van een groepenkast na waterschade',
     label: 'Project: groepenkast na waterschade',
+  },
+  'page.zakelijk.papendrecht': {
+    src: null,
+    alt: 'Zakelijke Alfen-laadpaal in Papendrecht',
+    label: 'Zakelijk: Alfen-laadpaal Papendrecht',
   },
   'project.laadpaal-dordrecht-bedrijf': {
     src: '/hero-laadpaal.png',

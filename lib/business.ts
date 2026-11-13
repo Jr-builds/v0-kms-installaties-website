@@ -1,6 +1,6 @@
 import { SITE_NAME, SITE_URL } from '@/lib/metadata'
 import { getStadNames } from '@/lib/steden'
-import { trustLinks } from '@/lib/trust-links'
+import { googleReviewCount, trustLinks } from '@/lib/trust-links'
 
 export const businessInfo = {
   name: SITE_NAME,
@@ -32,7 +32,7 @@ export const businessInfo = {
   image: '/electrician-professional-work.jpg',
   googleRating: {
     ratingValue: 5.0,
-    reviewCount: 62,
+    reviewCount: googleReviewCount,
     url: trustLinks.googleReviews.href,
   },
 } as const

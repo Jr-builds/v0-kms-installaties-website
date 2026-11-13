@@ -104,4 +104,5 @@ export const pageReviews = {
   cameras: pickReviews('jacquelineTrustoo', 'raymonTrustooShort', 'raymonVanDissel'),
   vastgoedbeheer: pickReviews('enesTrustoo', 'jacquelineTrustoo', 'anneMarieBrok'),
   overOns: pickReviews('joyceBolandAirco', 'aronGorlitzAirco', 'danielVanKampenAirco', 'sereeparpAirco'),
+  particulier: pickReviews('fransBinnenheiElektra', 'jrRondhuisLaadpaal', 'anneMarieBrok'),
 } as const

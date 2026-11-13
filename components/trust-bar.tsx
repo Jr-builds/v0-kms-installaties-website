@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { getGoogleRating } from '@/lib/google-rating'
 import { trustLinks } from '@/lib/trust-links'
 
 interface TrustBarProps {
@@ -6,8 +7,16 @@ interface TrustBarProps {
   variant?: 'full' | 'slim'
 }
 
-export default function TrustBar({ variant: _variant = 'full' }: TrustBarProps = {}) {
-  const items = [trustLinks.googleReviews, trustLinks.werkspot]
+export default async function TrustBar({ variant: _variant = 'full' }: TrustBarProps = {}) {
+  const google = await getGoogleRating()
+  const items = [
+    {
+      ...trustLinks.googleReviews,
+      label: google.ratingValue.toFixed(1),
+      sub: `${google.reviewCount} reviews`,
+    },
+    trustLinks.werkspot,
+  ]
 
   return (
     <section className="bg-kms-light border-y border-gray-200">

@@ -126,6 +126,20 @@ export const defaultMetadata: Metadata = {
 }
 
 export const pageMetadata = {
+  zakelijk: createPageMetadata({
+    title: 'Installatiepartner voor bedrijven en aannemers | KMS Installaties',
+    description:
+      'KMS Installaties uit Zwijndrecht voor zakelijke elektra, airco, ventilatie en laadpunten. Ook inzetbaar als elektrotechnisch onderaannemer.',
+    path: '/zakelijk',
+    imageKey: 'home.tegel.zakelijk',
+  }),
+  particulier: createPageMetadata({
+    title: 'Elektricien, airco en laadpaal voor thuis | KMS Installaties',
+    description:
+      'Een groepenkast vervangen, thuislaadpaal of airco installeren? KMS Installaties uit Zwijndrecht adviseert en monteert. Vraag vrijblijvend een offerte aan.',
+    path: '/particulier',
+    imageKey: 'hero.elektra',
+  }),
   home: createPageMetadata({
     title: `KMS Installaties | Elektra & Airconditioning ${serviceAreaInPhrase}`,
     description:

@@ -17,12 +17,14 @@ import OfferteQuestionsStep from '@/components/offerte-questions-step'
 import OfferteVerhaalStep from '@/components/offerte-verhaal-step'
 import {
   getOfferteProgressStep,
+  parseOfferteAudienceParam,
   type OfferteAudienceId,
   type OfferteCategoryId,
 } from '@/lib/offerte-form'
 import {
   formatDutchPostcode,
   isValidDutchPostcode,
+  isValidIsoDate,
   normalizeDienstSlug,
 } from '@/lib/offerte'
 import {
@@ -33,10 +35,12 @@ import {
 import { validateEmail, validatePhone, validateRequired } from '@/lib/form-validation'
 
 interface OfferteFormErrors {
+  bedrijfsnaam?: string
   naam?: string
   telefoon?: string
   email?: string
   postcode?: string
+  startdatum?: string
 }
 
 const dienstSlugToCategory: Partial<Record<string, OfferteCategoryId>> = {
@@ -61,6 +65,8 @@ function OfferteForm() {
   const [email, setEmail] = useState('')
   const [plaats, setPlaats] = useState('')
   const [postcode, setPostcode] = useState('')
+  const [bedrijfsnaam, setBedrijfsnaam] = useState('')
+  const [startdatum, setStartdatum] = useState('')
   const [errors, setErrors] = useState<OfferteFormErrors>({})
   const [questionAnswers, setQuestionAnswers] = useState<Record<string, string>>({})
   const [questionErrors, setQuestionErrors] = useState<Record<string, string>>({})
@@ -69,6 +75,9 @@ function OfferteForm() {
   const [submitError, setSubmitError] = useState<string | null>(null)
 
   useEffect(() => {
+    const voor = parseOfferteAudienceParam(searchParams.get('voor'))
+    if (voor) setAudienceId(voor)
+
     const dienstParam = searchParams.get('dienst')
     if (dienstParam) {
       const category = dienstSlugToCategory[normalizeDienstSlug(dienstParam)]
@@ -108,9 +117,22 @@ function OfferteForm() {
       telefoon: validatePhone(telefoon) ?? undefined,
       email: validateEmail(email) ?? undefined,
       postcode: validatePostcode(postcode) ?? undefined,
+      bedrijfsnaam:
+        audienceId === 'zakelijk' ? validateRequired(bedrijfsnaam, 'Bedrijfsnaam') ?? undefined : undefined,
+      startdatum:
+        audienceId === 'zakelijk' && startdatum && !isValidIsoDate(startdatum)
+          ? 'Voer een geldige startdatum in'
+          : undefined,
     }
 
-    if (nextErrors.naam || nextErrors.telefoon || nextErrors.email || nextErrors.postcode) {
+    if (
+      nextErrors.naam ||
+      nextErrors.telefoon ||
+      nextErrors.email ||
+      nextErrors.postcode ||
+      nextErrors.bedrijfsnaam ||
+      nextErrors.startdatum
+    ) {
       setErrors(nextErrors)
       return
     }
@@ -135,6 +157,10 @@ function OfferteForm() {
       formData.append('email', email.trim())
       formData.append('postcode', postcode.trim())
       formData.append('plaats', plaats.trim())
+      if (audienceId === 'zakelijk') {
+        formData.append('bedrijfsnaam', bedrijfsnaam.trim())
+        if (startdatum) formData.append('startdatum', startdatum)
+      }
       for (const file of fotoFiles) {
         formData.append('fotos', file)
       }
@@ -280,17 +306,22 @@ function OfferteForm() {
         <div>
           <OfferteFormProgress currentStep={progressStep} />
           <OfferteContactStep
+            showBusinessFields={audienceId === 'zakelijk'}
+            bedrijfsnaam={bedrijfsnaam}
             naam={naam}
             telefoon={telefoon}
             email={email}
             postcode={postcode}
             plaats={plaats}
+            startdatum={startdatum}
             errors={errors}
+            onBedrijfsnaamChange={setBedrijfsnaam}
             onNaamChange={setNaam}
             onTelefoonChange={setTelefoon}
             onEmailChange={setEmail}
             onPostcodeChange={setPostcode}
             onPlaatsChange={setPlaats}
+            onStartdatumChange={setStartdatum}
             onPostcodeBlur={handlePostcodeBlur}
             onBack={() => setStep(5)}
             onSubmit={handleSubmit}

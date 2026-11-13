@@ -9,6 +9,7 @@ import Werkgebied from '@/components/werkgebied'
 import { pageReviews } from '@/lib/reviews'
 import { pageMetadata } from '@/lib/metadata'
 import { serviceAreaFromZwijndrecht } from '@/lib/service-area'
+import { siteStats } from '@/lib/site-stats'
 
 export const metadata: Metadata = pageMetadata.overOns
 
@@ -52,9 +53,27 @@ export default function OverOnsPage() {
           columns={4}
           size="md"
           items={[
-            { value: '10+', label: 'Jaar', sub: 'Vakmanschap' },
-            { value: '200+', label: 'Afgeronde', sub: 'projecten' },
-            { value: '95+', label: 'Vijfsterren', sub: 'reviews' },
+            {
+              value: siteStats.jaren.value,
+              valueKey: siteStats.jaren.key,
+              valueLabel: siteStats.jaren.editorLabel,
+              label: 'Jaar',
+              sub: 'Vakmanschap',
+            },
+            {
+              value: siteStats.projecten.value,
+              valueKey: siteStats.projecten.key,
+              valueLabel: siteStats.projecten.editorLabel,
+              label: 'Afgeronde',
+              sub: 'projecten',
+            },
+            {
+              value: siteStats.reviews.value,
+              valueKey: siteStats.reviews.key,
+              valueLabel: siteStats.reviews.editorLabel,
+              label: 'Vijfsterren',
+              sub: 'reviews',
+            },
             { value: '4', label: 'Regio\'s', sub: 'Actief' },
           ]}
         />

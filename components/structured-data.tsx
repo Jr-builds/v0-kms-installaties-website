@@ -1,8 +1,10 @@
 import { businessInfo } from '@/lib/business'
+import { getGoogleRating } from '@/lib/google-rating'
 import { serviceAreaProvinces } from '@/lib/service-area'
 import { trustLinks } from '@/lib/trust-links'
 
-export default function StructuredData() {
+export default async function StructuredData() {
+  const google = await getGoogleRating()
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': ['LocalBusiness', 'Electrician'],
@@ -40,8 +42,8 @@ export default function StructuredData() {
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: businessInfo.googleRating.ratingValue,
-      reviewCount: businessInfo.googleRating.reviewCount,
+      ratingValue: google.ratingValue,
+      reviewCount: google.reviewCount,
       bestRating: 5,
       worstRating: 1,
     },

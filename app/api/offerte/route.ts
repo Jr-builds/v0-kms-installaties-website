@@ -21,7 +21,7 @@ import {
   getOfferteQuestions,
   validateOfferteQuestionAnswers,
 } from '@/lib/offerte-questions'
-import { formatDutchPostcode, isValidDutchPostcode } from '@/lib/offerte'
+import { formatDutchPostcode, isValidDutchPostcode, isValidIsoDate } from '@/lib/offerte'
 import { validateEmail, validatePhone, validateRequired } from '@/lib/form-validation'
 
 const validCategoryIds = new Set(offerteCategories.map((category) => category.id))
@@ -82,6 +82,8 @@ export async function POST(request: Request) {
     const postcodeRaw = String(formData.get('postcode') ?? '').trim()
     const plaats = String(formData.get('plaats') ?? '').trim()
     const postcode = postcodeRaw ? formatDutchPostcode(postcodeRaw) : ''
+    const bedrijfsnaam = audienceId === 'zakelijk' ? String(formData.get('bedrijfsnaam') ?? '').trim() : ''
+    const startdatum = audienceId === 'zakelijk' ? String(formData.get('startdatum') ?? '').trim() : ''
 
     const questionErrors = validateOfferteQuestionAnswers(
       getOfferteQuestions(categoryId),
@@ -92,6 +94,8 @@ export async function POST(request: Request) {
       telefoon: validatePhone(telefoon),
       email: validateEmail(email),
       postcode: validateRequired(postcode, 'Postcode') ?? (isValidDutchPostcode(postcode) ? null : 'Voer een geldige postcode in'),
+      ...(audienceId === 'zakelijk' ? { bedrijfsnaam: validateRequired(bedrijfsnaam, 'Bedrijfsnaam') } : {}),
+      ...(startdatum && !isValidIsoDate(startdatum) ? { startdatum: 'Voer een geldige startdatum in' } : {}),
       ...questionErrors,
     }
 
@@ -117,6 +121,8 @@ export async function POST(request: Request) {
       email,
       postcode,
       plaats,
+      bedrijfsnaam,
+      startdatum,
       attachmentCount: fotoFiles.length,
     })
 

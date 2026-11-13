@@ -18,5 +18,3 @@ export const serviceAreaCoveragePhrase =
   `Wij bedienen particulieren en bedrijven in ${serviceAreaDisplay}.`
 
 export const serviceAreaActivePhrase = `Actief in ${serviceAreaDisplay}.`
-
-export const serviceAreaFooterPhrase = `10+ jaar vakmanschap in ${serviceAreaDisplay}.`

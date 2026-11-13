@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, type ElementType, type KeyboardEvent, type MouseEvent } from 'react'
+import { useEffect, useState, type ElementType, type KeyboardEvent, type MouseEvent, type ReactNode } from 'react'
 import { useRouter } from 'next/navigation'
 import { Pencil } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -17,6 +17,7 @@ interface EditableTextProps {
   className?: string
   multiline?: boolean
   id?: string
+  renderValue?: (value: string) => ReactNode
 }
 
 export default function EditableText({
@@ -27,6 +28,7 @@ export default function EditableText({
   className = '',
   multiline = false,
   id,
+  renderValue,
 }: EditableTextProps) {
   const { canEdit } = useCmsEdit()
   const router = useRouter()
@@ -184,7 +186,7 @@ export default function EditableText({
         }
         aria-label={canEdit ? `${label} bewerken` : undefined}
       >
-        {value}
+        {renderValue ? renderValue(value) : value}
         {canEdit ? (
           <span className="ml-1.5 inline-flex align-middle text-kms-yellow opacity-80" aria-hidden>
             <Pencil className="h-3.5 w-3.5" />

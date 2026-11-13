@@ -40,3 +40,11 @@ export function formatDutchPostcode(value: string): string {
   if (cleaned.length <= 4) return cleaned
   return `${cleaned.slice(0, 4)} ${cleaned.slice(4)}`
 }
+
+/** `YYYY-MM-DD` from an HTML date input. */
+export function isValidIsoDate(value: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false
+  const [year, month, day] = value.split('-').map(Number)
+  const date = new Date(year, month - 1, day)
+  return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day
+}

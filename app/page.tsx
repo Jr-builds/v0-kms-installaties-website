@@ -9,6 +9,7 @@ import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
 import ClosingCTA from '@/components/closing-cta'
 import Werkgebied from '@/components/werkgebied'
 import StatsBar from '@/components/stats-bar'
+import { siteStats } from '@/lib/site-stats'
 import Werkwijze from '@/components/werkwijze'
 import Reviews from '@/components/reviews'
 import AvailabilityPill, { OpeningHoursPill } from '@/components/availability-pill'
@@ -20,6 +21,7 @@ import { pageReviews } from '@/lib/reviews'
 import { pageMetadata } from '@/lib/metadata'
 import { DEFAULT_HERO_SUBTITLE } from '@/lib/seasonal'
 import HeroPhoneButton from '@/components/hero-phone-button'
+import AudienceTiles from '@/components/audience-tiles'
 import { serviceAreaInPhrase } from '@/lib/service-area'
 
 export const metadata: Metadata = pageMetadata.home
@@ -180,6 +182,8 @@ export default async function HomePage() {
           </div>
         </section>
 
+        <AudienceTiles />
+
         {/* TRUST BAR */}
         <TrustBar />
 
@@ -246,9 +250,24 @@ export default async function HomePage() {
 
         <StatsBar
           items={[
-            { value: '200+', label: 'Afgeronde projecten' },
-            { value: '10+', label: 'Jaar vakmanschap' },
-            { value: '95+', label: 'Vijfsterrenreviews' },
+            {
+              value: siteStats.projecten.value,
+              valueKey: siteStats.projecten.key,
+              valueLabel: siteStats.projecten.editorLabel,
+              label: 'Afgeronde projecten',
+            },
+            {
+              value: siteStats.jaren.value,
+              valueKey: siteStats.jaren.key,
+              valueLabel: siteStats.jaren.editorLabel,
+              label: 'Jaar vakmanschap',
+            },
+            {
+              value: siteStats.reviews.value,
+              valueKey: siteStats.reviews.key,
+              valueLabel: siteStats.reviews.editorLabel,
+              label: 'Vijfsterrenreviews',
+            },
           ]}
         />
 

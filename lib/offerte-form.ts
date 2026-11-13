@@ -184,6 +184,12 @@ export function getOfferteAudienceLabel(id: OfferteAudienceId): string {
   return offerteAudienceOptions.find((option) => option.id === id)?.label ?? id
 }
 
+/** `?voor=particulier` of `?voor=zakelijk` vanaf de pagina's Zakelijk en Particulier. */
+export function parseOfferteAudienceParam(value: string | null): OfferteAudienceId | null {
+  if (value === 'particulier' || value === 'zakelijk') return value
+  return null
+}
+
 /** Formstap (1–6) komt overeen met stepper-stap. E-mailverzending volgt in #9. */
 export function getOfferteProgressStep(formStep: number): number {
   return Math.min(Math.max(formStep, 1), OFFERTE_FORM_STEP_COUNT)

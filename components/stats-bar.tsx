@@ -2,12 +2,15 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
+import EditableText from '@/components/cms/editable-text'
 import { getPrefersReducedMotion } from '@/lib/use-prefers-reduced-motion'
 
 export interface StatItem {
   value: string
   label: string
   sub?: string
+  valueKey?: string
+  valueLabel?: string
 }
 
 interface StatsBarProps {
@@ -52,6 +55,8 @@ function CountUpValue({ end, suffix }: { end: number; suffix: string }) {
   useEffect(() => {
     const element = ref.current
     if (!element) return
+
+    hasAnimated.current = false
 
     const runAnimation = () => {
       if (hasAnimated.current) return
@@ -149,9 +154,19 @@ export default function StatsBar({
       <div className={cn('mx-auto px-4 sm:px-6 lg:px-8', columns === 4 ? 'max-w-5xl' : 'max-w-4xl')}>
         <div className={cn(gridClass, 'text-center')}>
           {items.map((item) => (
-            <div key={`${item.value}-${item.label}-${item.sub ?? ''}`}>
+            <div key={item.valueKey ?? `${item.label}-${item.sub ?? ''}`}>
               <div className={cn(valueClass, 'text-kms-yellow-light')}>
-                <StatValue value={item.value} />
+                {item.valueKey && item.valueLabel ? (
+                  <EditableText
+                    textKey={item.valueKey}
+                    label={item.valueLabel}
+                    defaultValue={item.value}
+                    as="span"
+                    renderValue={(value) => <StatValue value={value} />}
+                  />
+                ) : (
+                  <StatValue value={item.value} />
+                )}
               </div>
               {item.sub ? (
                 <>

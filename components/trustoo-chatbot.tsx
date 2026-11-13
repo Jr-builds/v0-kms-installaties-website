@@ -22,6 +22,10 @@ const TRUSTOO_MOUNT_ID = 'trustoo-chatbot'
 /** Teaserballon ("Hoi! Hulp nodig...") pas na deze delay tonen */
 const TRUSTOO_TEASER_DELAY_MS = 4000
 const TRUSTOO_TEASER_READY_CLASS = 'kms-trustoo-teaser-ready'
+/** Op telefoon verdwijnt alleen de ballon na een stukje scrollen. De ronde knop blijft. */
+const TRUSTOO_TEASER_SCROLLED_CLASS = 'kms-trustoo-teaser-scrolled'
+const TRUSTOO_TEASER_SCROLL_PX = 80
+const TRUSTOO_MOBILE_QUERY = '(max-width: 1023px)'
 
 const KNOWLEDGE = [
   'Je bent de vriendelijke en professionele digitale assistent van KMS Installaties.',
@@ -134,6 +138,19 @@ export default function TrustooChatbot() {
       document.body.classList.add(TRUSTOO_TEASER_READY_CLASS)
     }, TRUSTOO_TEASER_DELAY_MS)
 
+    const mobileQuery = window.matchMedia(TRUSTOO_MOBILE_QUERY)
+    const hideTeaserAfterScroll = () => {
+      if (!mobileQuery.matches) {
+        document.body.classList.remove(TRUSTOO_TEASER_SCROLLED_CLASS)
+        return
+      }
+      if (window.scrollY <= TRUSTOO_TEASER_SCROLL_PX) return
+      document.body.classList.add(TRUSTOO_TEASER_SCROLLED_CLASS)
+    }
+    hideTeaserAfterScroll()
+    window.addEventListener('scroll', hideTeaserAfterScroll, { passive: true })
+    mobileQuery.addEventListener('change', hideTeaserAfterScroll)
+
     if (!document.getElementById(TRUSTOO_STYLE_ID)) {
       const link = document.createElement('link')
       link.id = TRUSTOO_STYLE_ID
@@ -153,12 +170,16 @@ export default function TrustooChatbot() {
         existing.addEventListener('load', onLoad)
         return () => {
           window.clearTimeout(teaserTimer)
+          window.removeEventListener('scroll', hideTeaserAfterScroll)
+          mobileQuery.removeEventListener('change', hideTeaserAfterScroll)
           existing.removeEventListener('load', onLoad)
         }
       }
       // Geen cleanup die #trustoo-chatbot weghaalt: dat breekt Trustoo in React Strict Mode.
       return () => {
         window.clearTimeout(teaserTimer)
+        window.removeEventListener('scroll', hideTeaserAfterScroll)
+        mobileQuery.removeEventListener('change', hideTeaserAfterScroll)
       }
     }
 
@@ -176,6 +197,8 @@ export default function TrustooChatbot() {
 
     return () => {
       window.clearTimeout(teaserTimer)
+      window.removeEventListener('scroll', hideTeaserAfterScroll)
+      mobileQuery.removeEventListener('change', hideTeaserAfterScroll)
     }
   }, [])
 

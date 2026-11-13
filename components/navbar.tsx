@@ -19,6 +19,8 @@ const dienstenItems = [
 
 const navLinks = [
   { label: 'Home', href: '/' },
+  { label: 'Zakelijk', href: '/zakelijk' },
+  { label: 'Particulier', href: '/particulier' },
   { label: 'Diensten', href: '#', dropdown: true },
   { label: 'Projecten', href: '/projecten' },
   { label: 'Over ons', href: '/over-ons' },
@@ -99,13 +101,13 @@ export default function Navbar() {
             <SiteLogo size={60} priority className="size-10 lg:size-[60px]" />
             <div className="flex flex-col leading-tight">
               <span className="font-bold text-base lg:text-lg text-kms-navy">KMS Installaties</span>
-              <span className="hidden text-xs font-semibold tracking-widest text-kms-yellow-dark lg:block">
+              <span className="hidden text-xs font-semibold tracking-widest text-kms-yellow-dark xl:block">
                 ELEKTRA &amp; AIRCONDITIONING
               </span>
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Hoofdnavigatie">
+          <nav className="hidden shrink-0 lg:flex lg:items-center lg:gap-1" aria-label="Hoofdnavigatie">
             {navLinks.map((link) =>
               link.dropdown ? (
                 <div
@@ -116,7 +118,7 @@ export default function Navbar() {
                 >
                   <button
                     type="button"
-                    className={`px-4 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-1 ${
+                    className={`flex items-center gap-1 whitespace-nowrap rounded-md px-2 py-2 text-sm font-medium transition-colors xl:px-3 ${
                       isDiensten
                         ? 'text-kms-navy font-semibold'
                         : 'text-gray-700 hover:text-kms-navy'
@@ -160,7 +162,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                  className={`whitespace-nowrap rounded-md px-2 py-2 text-sm font-medium transition-colors xl:px-3 ${
                     pathname === link.href
                       ? 'font-semibold text-kms-navy'
                       : 'text-gray-700 hover:text-kms-navy'
@@ -173,7 +175,7 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <AvailabilityPill size="sm" />
+            <AvailabilityPill size="sm" className="hidden xl:inline-flex" />
             <Button render={<Link href="/offerte" />} nativeButton={false} variant="primary" size="sm">
               Offerte aanvragen
             </Button>

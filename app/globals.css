@@ -266,6 +266,13 @@
     pointer-events: auto !important;
   }
 
+  /* Alleen de ballon, na een stukje scrollen op telefoon. De class zet het script. */
+  body.kms-trustoo-teaser-ready.kms-trustoo-teaser-scrolled .trustoo-chatbot__teaser {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .project-grid-fade {
       animation: project-grid-fade 0.3s ease-out;

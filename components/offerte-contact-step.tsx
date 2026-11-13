@@ -8,24 +8,31 @@ import { formInputClassName } from '@/lib/form-validation'
 import { phoneDisplay, phoneTelHref } from '@/lib/business'
 
 interface OfferteContactStepErrors {
+  bedrijfsnaam?: string
   naam?: string
   telefoon?: string
   email?: string
   postcode?: string
+  startdatum?: string
 }
 
 interface OfferteContactStepProps {
+  showBusinessFields: boolean
+  bedrijfsnaam: string
   naam: string
   telefoon: string
   email: string
   postcode: string
   plaats: string
+  startdatum: string
   errors: OfferteContactStepErrors
+  onBedrijfsnaamChange: (value: string) => void
   onNaamChange: (value: string) => void
   onTelefoonChange: (value: string) => void
   onEmailChange: (value: string) => void
   onPostcodeChange: (value: string) => void
   onPlaatsChange: (value: string) => void
+  onStartdatumChange: (value: string) => void
   onPostcodeBlur: () => void
   onBack: () => void
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
@@ -34,17 +41,22 @@ interface OfferteContactStepProps {
 }
 
 export default function OfferteContactStep({
+  showBusinessFields,
+  bedrijfsnaam,
   naam,
   telefoon,
   email,
   postcode,
   plaats,
+  startdatum,
   errors,
+  onBedrijfsnaamChange,
   onNaamChange,
   onTelefoonChange,
   onEmailChange,
   onPostcodeChange,
   onPlaatsChange,
+  onStartdatumChange,
   onPostcodeBlur,
   onBack,
   onSubmit,
@@ -72,6 +84,26 @@ export default function OfferteContactStep({
           />
         </p>
       </div>
+
+      {showBusinessFields ? (
+        <div>
+          <label htmlFor="bedrijfsnaam" className="mb-1.5 block text-sm font-semibold text-gray-700">
+            Bedrijfsnaam <span className="text-red-500">*</span>
+          </label>
+          <input
+            id="bedrijfsnaam"
+            type="text"
+            value={bedrijfsnaam}
+            onChange={(event) => onBedrijfsnaamChange(event.target.value)}
+            placeholder="Naam van uw bedrijf"
+            autoComplete="organization"
+            aria-invalid={errors.bedrijfsnaam ? true : undefined}
+            aria-describedby={errors.bedrijfsnaam ? 'bedrijfsnaam-error' : undefined}
+            className={formInputClassName(Boolean(errors.bedrijfsnaam))}
+          />
+          {errors.bedrijfsnaam ? <FormFieldError id="bedrijfsnaam-error" message={errors.bedrijfsnaam} /> : null}
+        </div>
+      ) : null}
 
       <div>
         <label htmlFor="naam" className="mb-1.5 block text-sm font-semibold text-gray-700">
@@ -180,6 +212,24 @@ export default function OfferteContactStep({
           />
         </div>
       </div>
+
+      {showBusinessFields ? (
+        <div>
+          <label htmlFor="startdatum" className="mb-1.5 block text-sm font-semibold text-gray-700">
+            Gewenste startdatum <span className="font-normal text-gray-400">(optioneel)</span>
+          </label>
+          <input
+            id="startdatum"
+            type="date"
+            value={startdatum}
+            onChange={(event) => onStartdatumChange(event.target.value)}
+            aria-invalid={errors.startdatum ? true : undefined}
+            aria-describedby={errors.startdatum ? 'startdatum-error' : undefined}
+            className={formInputClassName(Boolean(errors.startdatum))}
+          />
+          {errors.startdatum ? <FormFieldError id="startdatum-error" message={errors.startdatum} /> : null}
+        </div>
+      ) : null}
 
       {submitError ? (
         <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">

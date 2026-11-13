@@ -19,6 +19,8 @@ export interface OfferteEmailPayload {
   email: string
   postcode: string
   plaats: string
+  bedrijfsnaam?: string
+  startdatum?: string
   attachmentCount: number
 }
 
@@ -51,6 +53,11 @@ function phoneToTelHref(phone: string): string {
     return `tel:${digits}`
   }
   return `tel:${digits}`
+}
+
+function formatStartDate(isoDate: string): string {
+  const [year, month, day] = isoDate.split('-').map(Number)
+  return new Intl.DateTimeFormat('nl-NL', { dateStyle: 'long' }).format(new Date(year, month - 1, day))
 }
 
 function formatReceivedAt(): string {
@@ -104,6 +111,9 @@ export function buildOfferteEmailContent(payload: OfferteEmailPayload): {
   const questions = getOfferteQuestions(payload.categoryId)
 
   const contactFields: EmailField[] = [
+    ...(payload.bedrijfsnaam?.trim()
+      ? [{ label: 'Bedrijfsnaam', value: payload.bedrijfsnaam.trim() }]
+      : []),
     { label: 'Naam', value: payload.naam },
     { label: 'Telefoon', value: payload.telefoon, href: phoneToTelHref(payload.telefoon) },
     ...(payload.email.trim()
@@ -111,6 +121,9 @@ export function buildOfferteEmailContent(payload: OfferteEmailPayload): {
       : []),
     { label: 'Postcode', value: payload.postcode },
     ...(payload.plaats.trim() ? [{ label: 'Plaats', value: payload.plaats.trim() }] : []),
+    ...(payload.startdatum?.trim()
+      ? [{ label: 'Gewenste startdatum', value: formatStartDate(payload.startdatum.trim()) }]
+      : []),
   ]
 
   const questionFields: EmailField[] = questions
