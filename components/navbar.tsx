@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import SiteLogo from '@/components/site-logo'
+import TopBar from '@/components/top-bar'
 import { Button } from '@/components/ui/button'
 import AvailabilityPill from '@/components/availability-pill'
 import { phoneDisplay, phoneTelHref } from '@/lib/business'
@@ -94,7 +95,9 @@ export default function Navbar() {
   }, [mobileOpen])
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+    <>
+      <TopBar />
+      <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-1.5 lg:h-18 lg:py-3">
           <Link href="/" className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
@@ -175,7 +178,6 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <AvailabilityPill size="sm" className="hidden xl:inline-flex" />
             <Button render={<Link href="/offerte" />} nativeButton={false} variant="primary" size="sm">
               Offerte aanvragen
             </Button>
@@ -295,6 +297,7 @@ export default function Navbar() {
           </nav>
         </div>
       )}
-    </header>
+      </header>
+    </>
   )
 }

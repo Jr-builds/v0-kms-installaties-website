@@ -12,7 +12,6 @@ import StatsBar from '@/components/stats-bar'
 import { siteStats } from '@/lib/site-stats'
 import Werkwijze from '@/components/werkwijze'
 import Reviews from '@/components/reviews'
-import AvailabilityPill, { OpeningHoursPill } from '@/components/availability-pill'
 import TrustHighlightGrid from '@/components/trust-highlight-grid'
 import { Button } from '@/components/ui/button'
 import type { SiteImageKey } from '@/lib/images'
@@ -131,10 +130,6 @@ export default async function HomePage() {
           <div className="hero-navy-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.25fr)] gap-10 lg:gap-12 items-center">
               <div>
-                <div className="mb-4 flex flex-wrap items-center gap-3 sm:mb-6">
-                  <AvailabilityPill size="md" variant="hero" />
-                  <OpeningHoursPill size="md" />
-                </div>
                 <h1 className="heading-hero-home text-white mb-5">
                   <EditableText
                     textKey="home.hero.title"
