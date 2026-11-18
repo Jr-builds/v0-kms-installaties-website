@@ -146,11 +146,15 @@ export default function EditableImage({
               e.stopPropagation()
               setOpen(true)
             }}
-            className="absolute inset-0 z-10 flex items-center justify-center bg-kms-navy/0 text-white opacity-0 transition-all hover:bg-kms-navy/55 hover:opacity-100 focus-visible:bg-kms-navy/55 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kms-yellow focus-visible:ring-offset-2"
+            className="group/photo-edit absolute inset-0 z-10 flex items-center justify-center bg-kms-navy/0 text-white transition-colors hover:bg-kms-navy/55 focus-visible:bg-kms-navy/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kms-yellow focus-visible:ring-offset-2"
             aria-label={`${label} vervangen`}
           >
-            <span className="inline-flex items-center gap-2 rounded-lg bg-white/95 px-3 py-2 text-sm font-semibold text-kms-navy shadow-sm">
+            <span className="inline-flex items-center gap-2 rounded-lg bg-white/95 px-3 py-2 text-sm font-semibold text-kms-navy opacity-0 shadow-sm transition-opacity group-hover/photo-edit:opacity-100 group-focus-visible/photo-edit:opacity-100">
               <Pencil className="h-4 w-4" aria-hidden />
+              Foto vervangen
+            </span>
+            <span className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-lg bg-white/95 px-2.5 py-1.5 text-xs font-semibold text-kms-navy shadow-md">
+              <Pencil className="h-3.5 w-3.5" aria-hidden />
               Foto vervangen
             </span>
           </button>

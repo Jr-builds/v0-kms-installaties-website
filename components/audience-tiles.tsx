@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import EditableText from '@/components/cms/editable-text'
+import AudienceTileFrame from '@/components/audience-tile-frame'
 import SiteImageOrPlaceholder from '@/components/site-image-or-placeholder'
 import type { SiteImageKey } from '@/lib/images'
 
@@ -36,11 +36,7 @@ export default function AudienceTiles() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-6">
           {tiles.map((tile) => (
-            <Link
-              key={tile.href}
-              href={tile.href}
-              className="group flex h-full flex-col overflow-hidden rounded-xl border border-gray-100 bg-kms-light transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kms-navy focus-visible:ring-offset-2"
-            >
+            <AudienceTileFrame key={tile.href} href={tile.href}>
               <SiteImageOrPlaceholder
                 imageKey={tile.imageKey}
                 placeholderLabel={`Homepage tegel: ${tile.title}`}
@@ -74,7 +70,7 @@ export default function AudienceTiles() {
                   />
                 </span>
               </div>
-            </Link>
+            </AudienceTileFrame>
           ))}
         </div>
       </div>
