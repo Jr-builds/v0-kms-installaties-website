@@ -177,10 +177,10 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <AudienceTiles />
-
         {/* TRUST BAR */}
         <TrustBar />
+
+        <AudienceTiles />
 
         {/* DIENSTEN GRID */}
         <section id="diensten" className="bg-white py-16 sm:py-20">
