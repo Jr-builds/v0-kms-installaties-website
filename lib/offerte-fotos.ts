@@ -1,13 +1,17 @@
 import type { OfferteCategoryId } from '@/lib/offerte-form'
 
 export const OFFERTE_FOTO_MAX_FILE_SIZE_BYTES = 8 * 1024 * 1024
+/** Het hele formulier gaat in één verzoek naar de server; boven deze grens weigert het platform het verzoek (413). */
+export const OFFERTE_FOTO_MAX_TOTAL_SIZE_BYTES = 4 * 1024 * 1024
 export const OFFERTE_FOTO_MAX_FILES = 10
 
 export const OFFERTE_FOTO_ACCEPT =
-  'image/jpeg,image/png,image/webp,image/heic,image/heif,application/pdf,video/mp4,video/quicktime'
+  'image/jpeg,image/png,image/webp,image/heic,image/heif,application/pdf'
+
+const OFFERTE_FOTO_ALLOWED_TYPES = new Set(OFFERTE_FOTO_ACCEPT.split(','))
 
 export const OFFERTE_FOTO_FORMAT_LABEL =
-  'JPEG, PNG, WebP, HEIC, PDF of video (MP4/MOV), max 8 MB per bestand'
+  'JPEG, PNG, WebP, HEIC of PDF. Foto\'s verkleinen wij automatisch.'
 
 export const offerteFotoTipsByCategory: Record<OfferteCategoryId, string> = {
   meterkast:
@@ -45,9 +49,21 @@ export function validateOfferteFotoFiles(files: File[]): string | null {
     return `U kunt maximaal ${OFFERTE_FOTO_MAX_FILES} bestanden toevoegen.`
   }
 
+  const unsupported = files.find(
+    (file) => file.type && !OFFERTE_FOTO_ALLOWED_TYPES.has(file.type),
+  )
+  if (unsupported) {
+    return `"${unsupported.name}" kan hier niet worden geüpload. Voeg een foto of PDF toe. Een video kunt u via WhatsApp sturen.`
+  }
+
   const tooLarge = files.find((file) => file.size > OFFERTE_FOTO_MAX_FILE_SIZE_BYTES)
   if (tooLarge) {
-    return `"${tooLarge.name}" is groter dan 8 MB. Kies een kleiner bestand.`
+    return `"${tooLarge.name}" is groter dan 8 MB. Kies een kleiner bestand of stuur het via WhatsApp.`
+  }
+
+  const totalSize = files.reduce((sum, file) => sum + file.size, 0)
+  if (totalSize > OFFERTE_FOTO_MAX_TOTAL_SIZE_BYTES) {
+    return 'De bestanden zijn samen te groot om te versturen. Verwijder een bestand of stuur de foto\'s via WhatsApp.'
   }
 
   return null

@@ -8,6 +8,7 @@ import OfferteFormBackLink from '@/components/offerte-form-back-link'
 import OfferteFormSecureNote from '@/components/offerte-form-secure-note'
 import { Button } from '@/components/ui/button'
 import type { OfferteCategoryId } from '@/lib/offerte-form'
+import { compressOfferteFotoFiles } from '@/lib/offerte-foto-compress'
 import {
   formatOfferteFileSize,
   getOfferteFotoTip,
@@ -35,24 +36,31 @@ export default function OfferteFotosStep({
 }: OfferteFotosStepProps) {
   const inputRef = useRef<HTMLInputElement>(null)
   const [isDragging, setIsDragging] = useState(false)
+  const [isProcessing, setIsProcessing] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  function addFiles(incoming: FileList | File[]) {
-    const nextFiles = mergeOfferteFotoFiles(files, Array.from(incoming))
-    const validationError = validateOfferteFotoFiles(nextFiles)
-
-    if (validationError) {
-      setError(validationError)
-      return
-    }
-
+  async function addFiles(incoming: FileList | File[]) {
+    setIsProcessing(true)
     setError(null)
-    onFilesChange(nextFiles)
+    try {
+      const compressed = await compressOfferteFotoFiles(Array.from(incoming))
+      const nextFiles = mergeOfferteFotoFiles(files, compressed)
+      const validationError = validateOfferteFotoFiles(nextFiles)
+
+      if (validationError) {
+        setError(validationError)
+        return
+      }
+
+      onFilesChange(nextFiles)
+    } finally {
+      setIsProcessing(false)
+    }
   }
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     if (event.target.files?.length) {
-      addFiles(event.target.files)
+      void addFiles(event.target.files)
     }
     event.target.value = ''
   }
@@ -61,7 +69,7 @@ export default function OfferteFotosStep({
     event.preventDefault()
     setIsDragging(false)
     if (event.dataTransfer.files.length) {
-      addFiles(event.dataTransfer.files)
+      void addFiles(event.dataTransfer.files)
     }
   }
 
@@ -176,6 +184,9 @@ export default function OfferteFotosStep({
             />
           </p>
           <p className="mt-2 text-xs text-gray-400">{OFFERTE_FOTO_FORMAT_LABEL}</p>
+          {isProcessing ? (
+            <p className="mt-2 text-sm font-medium text-kms-navy">Foto&apos;s verkleinen...</p>
+          ) : null}
         </div>
 
         {error ? (

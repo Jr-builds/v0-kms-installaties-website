@@ -33,6 +33,7 @@ import {
   validateOfferteQuestionAnswers,
 } from '@/lib/offerte-questions'
 import { validateEmail, validatePhone, validateRequired } from '@/lib/form-validation'
+import { OFFERTE_FOTO_MAX_TOTAL_SIZE_BYTES } from '@/lib/offerte-fotos'
 
 interface OfferteFormErrors {
   bedrijfsnaam?: string
@@ -142,6 +143,14 @@ function OfferteForm() {
       return
     }
 
+    const fotoTotalSize = fotoFiles.reduce((sum, file) => sum + file.size, 0)
+    if (fotoTotalSize > OFFERTE_FOTO_MAX_TOTAL_SIZE_BYTES) {
+      setSubmitError(
+        "De foto's zijn samen te groot om te versturen. Ga een stap terug, verwijder een foto of stuur de foto's via WhatsApp.",
+      )
+      return
+    }
+
     setErrors({})
     setSubmitError(null)
     setIsSubmitting(true)
@@ -173,6 +182,12 @@ function OfferteForm() {
       const result: { error?: string } = await response.json().catch(() => ({}))
 
       if (!response.ok) {
+        if (response.status === 413) {
+          setSubmitError(
+            "De foto's zijn te groot om te versturen. Ga een stap terug, verwijder de grootste foto's of stuur ze via WhatsApp.",
+          )
+          return
+        }
         setSubmitError(result.error ?? 'Versturen mislukt. Probeer het opnieuw of bel ons direct.')
         return
       }
