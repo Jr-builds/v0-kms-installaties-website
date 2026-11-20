@@ -10,8 +10,7 @@ export const OFFERTE_FOTO_ACCEPT =
 
 const OFFERTE_FOTO_ALLOWED_TYPES = new Set(OFFERTE_FOTO_ACCEPT.split(','))
 
-export const OFFERTE_FOTO_FORMAT_LABEL =
-  'JPEG, PNG, WebP, HEIC of PDF. Foto\'s verkleinen wij automatisch.'
+export const OFFERTE_FOTO_FORMAT_LABEL = 'JPEG, PNG, WebP, HEIC of PDF.'
 
 export const offerteFotoTipsByCategory: Record<OfferteCategoryId, string> = {
   meterkast:
